@@ -4,6 +4,7 @@ javac nomeArquivo.java
 
 java nomeArquivo
 
+
 ===================================
 
 java -jar nomeDoArquivo.jar
