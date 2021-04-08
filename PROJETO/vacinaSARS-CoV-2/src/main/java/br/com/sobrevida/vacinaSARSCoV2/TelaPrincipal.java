@@ -65,8 +65,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnCidadaoCadastro = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        btnTiposVacinas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vacinação SARS-COV-2");
@@ -355,17 +356,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(btnCidadaoCadastro);
 
+        jMenuItem1.setText("Vacinação");
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Vacinas");
 
-        jMenuItem2.setText("Cadastro");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        btnTiposVacinas.setText("Tipos de vacinas");
+        btnTiposVacinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                btnTiposVacinasActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu2.add(btnTiposVacinas);
 
         jMenuBar1.add(jMenu2);
 
@@ -399,9 +403,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCidadaoCadastroActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void btnTiposVacinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposVacinasActionPerformed
+       
+        //CHAMANDO A CLASSE "TipoVacinaCadastro.java"
+        TipoVacinaCadastro tipoVacinaCadastro = new TipoVacinaCadastro();
+        
+        //ADICIONANDO O OBJETO "TipoVacinaCadastro" AO OBJETO "jDesktop"
+        jDesktop.add(tipoVacinaCadastro);
+        
+        //DEPOIS DE ADICIONAR, TORNAR A CLASSE VISIVEL
+        tipoVacinaCadastro.setVisible(true);
+        
+    }//GEN-LAST:event_btnTiposVacinasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -440,6 +453,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnCidadaoCadastro;
+    private javax.swing.JMenuItem btnTiposVacinas;
     private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -473,7 +487,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
