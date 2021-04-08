@@ -5,6 +5,8 @@
  */
 package br.com.sobrevida.vacinaSARSCoV2;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author WERIKE
@@ -16,6 +18,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        //SE ALTO AJUSTA AO TAMANHO DO MONITOR
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -56,9 +60,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jDesktop);
         jDesktop.setBounds(0, 0, 1270, 660);
 
-        jMenu1.setText("Cidadão");
+        jMenu1.setText("Cadastro");
 
-        btnCidadaoCadastro.setText("Cadastro");
+        btnCidadaoCadastro.setText("Cidadão");
         btnCidadaoCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCidadaoCadastroActionPerformed(evt);
