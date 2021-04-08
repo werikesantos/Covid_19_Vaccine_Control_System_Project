@@ -1,0 +1,9 @@
+Executando JAVA pelo Terminal CMD:
+
+javac nomeArquivo.java
+
+java nomeArquivo
+
+===================================
+
+java -jar nomeDoArquivo.jar
