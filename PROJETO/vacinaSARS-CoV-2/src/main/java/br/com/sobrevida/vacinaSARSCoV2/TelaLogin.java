@@ -18,6 +18,10 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        //ALTERANDO O ICONE PADRAO DO JAVA
+        Utilitario utilitario = new Utilitario();
+        utilitario.inserirIcone(this);
     }
 
     /** This method is called from within the constructor to
