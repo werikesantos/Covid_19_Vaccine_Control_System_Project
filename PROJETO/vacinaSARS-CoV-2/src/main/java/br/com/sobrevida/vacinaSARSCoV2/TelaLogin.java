@@ -38,11 +38,13 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        loginEmail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        loginSenha = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        loginSenha = new javax.swing.JPasswordField();
+        mostraSenha = new javax.swing.JTextField();
+        boxMostraSenha = new javax.swing.JCheckBox();
+        loginEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
@@ -61,29 +63,30 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\vacinaLogin1.png")); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(60, 30, 120, 120);
+        jLabel2.setBounds(70, 10, 120, 120);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 255));
         jLabel3.setText("LOGIN");
-
-        loginEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginEmailActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(20, 11, 90, 40);
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 135, 197));
         jLabel5.setText("Username");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(20, 57, 60, 20);
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 135, 197));
         jLabel4.setText("Password");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(20, 134, 60, 20);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
         jButton1.setText("Login");
@@ -92,42 +95,41 @@ public class TelaLogin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton1);
+        jButton1.setBounds(120, 240, 75, 31);
+        jPanel2.add(loginSenha);
+        loginSenha.setBounds(20, 160, 180, 40);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(loginEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(loginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        mostraSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostraSenhaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(mostraSenha);
+        mostraSenha.setBounds(20, 160, 180, 40);
+
+        boxMostraSenha.setBackground(new java.awt.Color(204, 204, 255));
+        boxMostraSenha.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        boxMostraSenha.setForeground(new java.awt.Color(0, 135, 197));
+        boxMostraSenha.setText("Show password");
+        boxMostraSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxMostraSenhaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(boxMostraSenha);
+        boxMostraSenha.setBounds(20, 200, 110, 25);
+
+        loginEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginEmailActionPerformed(evt);
+            }
+        });
+        jPanel2.add(loginEmail);
+        loginEmail.setBounds(20, 83, 180, 40);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 170, 220, 260);
+        jPanel2.setBounds(20, 150, 220, 290);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 260, 500);
@@ -137,13 +139,31 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
+    private void mostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenhaActionPerformed
         //nome.setText("");
-    }//GEN-LAST:event_loginEmailActionPerformed
+    }//GEN-LAST:event_mostraSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(("user".equals(loginEmail.getText())) && ("123".equals(loginSenha.getText()))){    
+        String senha = new String(loginSenha.getPassword());
+        
+        if(boxMostraSenha.isSelected()){
+            if(("user".equals(loginEmail.getText())) && (senha.equals("123"))){ 
+                TelaLogin.this.dispose();
+                Carregar1 carregar1 = new Carregar1();
+                carregar1.setVisible(true);        
+            }else{
+                JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
+                        + "que você digitou não\n batem com nossos registros. "
+                        + "Por favor, verifique e\n tente novamente." 
+                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
+
+                mostraSenha.setText("");
+                loginSenha.setText("");
+            }
+        }
+        
+        if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
             /* 
             COMANDO PARA TESTE!!!
             
@@ -156,20 +176,35 @@ public class TelaLogin extends javax.swing.JFrame {
             );
             */
             
-            //CHAMANDO A CLASSE "TelaPrincipal.JAVA"
-            TelaPrincipal telaPrincipal = new TelaPrincipal();
-            //TORNAR A CLASSE VISIVEL
-            telaPrincipal.setVisible(true);            
+            TelaLogin.this.dispose();
+            Carregar1 carregar1 = new Carregar1();
+            carregar1.setVisible(true);            
         }else{
             JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
                     + "que você digitou não\n batem com nossos registros. "
                     + "Por favor, verifique e\n tente novamente." 
                 ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
             
-            loginEmail.setText("");
+            mostraSenha.setText("");
             loginSenha.setText("");
         }   
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
+        String senha = new String(loginSenha.getPassword());
+        if(boxMostraSenha.isSelected()){
+            mostraSenha.setVisible(true);
+            mostraSenha.setText(senha);
+            loginSenha.setVisible(false);
+        }else{
+            mostraSenha.setVisible(false);
+            loginSenha.setVisible(true);
+        }
+    }//GEN-LAST:event_boxMostraSenhaActionPerformed
+
+    private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +242,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox boxMostraSenha;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -216,7 +252,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField loginEmail;
-    private javax.swing.JTextField loginSenha;
+    private javax.swing.JPasswordField loginSenha;
+    private javax.swing.JTextField mostraSenha;
     // End of variables declaration//GEN-END:variables
 
 }
