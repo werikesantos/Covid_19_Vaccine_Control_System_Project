@@ -48,9 +48,30 @@ public class TelaLoginADM extends javax.swing.JFrame {
         formCadastrar = new javax.swing.JButton();
         formAlterar = new javax.swing.JButton();
         formDeletar = new javax.swing.JButton();
+        cadastroUsuario = new javax.swing.JLayeredPane();
+        jLabel2 = new javax.swing.JLabel();
+        formCadastroUsuario = new javax.swing.JLayeredPane();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        cID = new javax.swing.JTextField();
+        cPerfil = new javax.swing.JTextField();
+        cNome = new javax.swing.JTextField();
+        cCpf = new javax.swing.JTextField();
+        cEndereco = new javax.swing.JTextField();
+        cRua = new javax.swing.JTextField();
+        cRg = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        cCep = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        cTelefone = new javax.swing.JTextField();
         alterarUsuario = new javax.swing.JLayeredPane();
         jLabel19 = new javax.swing.JLabel();
-        jLayeredPane3 = new javax.swing.JLayeredPane();
+        formAlterarUsuario = new javax.swing.JLayeredPane();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -71,7 +92,7 @@ public class TelaLoginADM extends javax.swing.JFrame {
         jTextField16 = new javax.swing.JTextField();
         deletarUsuario = new javax.swing.JLayeredPane();
         jLabel30 = new javax.swing.JLabel();
-        jLayeredPane5 = new javax.swing.JLayeredPane();
+        formDeletarUsuario = new javax.swing.JLayeredPane();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -90,31 +111,10 @@ public class TelaLoginADM extends javax.swing.JFrame {
         jTextField34 = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jTextField35 = new javax.swing.JTextField();
-        cadastroUsuario = new javax.swing.JLayeredPane();
-        jLabel2 = new javax.swing.JLabel();
-        jLayeredPane6 = new javax.swing.JLayeredPane();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
-        jTextField42 = new javax.swing.JTextField();
-        jLabel48 = new javax.swing.JLabel();
-        jTextField43 = new javax.swing.JTextField();
-        jLabel49 = new javax.swing.JLabel();
-        jTextField44 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Administrador");
+        setTitle("Manager");
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -173,7 +173,7 @@ public class TelaLoginADM extends javax.swing.JFrame {
             }
         });
         getContentPane().add(voltar);
-        voltar.setBounds(15, 220, 210, 40);
+        voltar.setBounds(15, 225, 210, 40);
 
         formCadastrar.setBackground(new java.awt.Color(0, 204, 0));
         formCadastrar.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
@@ -211,6 +211,161 @@ public class TelaLoginADM extends javax.swing.JFrame {
         getContentPane().add(formDeletar);
         formDeletar.setBounds(50, 370, 130, 40);
 
+        cadastroUsuario.setOpaque(true);
+
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setText("CADASTRO DE USUÁRIO");
+        cadastroUsuario.add(jLabel2);
+        jLabel2.setBounds(148, 22, 217, 23);
+
+        formCadastroUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        formCadastroUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 102)));
+        formCadastroUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        formCadastroUsuario.setOpaque(true);
+        formCadastroUsuario.setPreferredSize(new java.awt.Dimension(508, 292));
+
+        jLabel41.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel41.setText("ID");
+
+        jLabel42.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel42.setText("Nome");
+
+        jLabel43.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel43.setText("CPF");
+
+        jLabel44.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel44.setText("Perfil");
+
+        jLabel45.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel45.setText("Rua");
+
+        jLabel46.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel46.setText("RG");
+
+        jLabel47.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel47.setText("Endereço");
+
+        cPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cPerfilActionPerformed(evt);
+            }
+        });
+
+        jLabel48.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel48.setText("CEP");
+
+        jLabel49.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel49.setText("Telefone");
+
+        formCadastroUsuario.setLayer(jLabel41, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel42, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel43, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel44, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel45, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel46, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel47, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cPerfil, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cNome, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cCpf, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cRua, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cRg, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel48, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cCep, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(jLabel49, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formCadastroUsuario.setLayer(cTelefone, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout formCadastroUsuarioLayout = new javax.swing.GroupLayout(formCadastroUsuario);
+        formCadastroUsuario.setLayout(formCadastroUsuarioLayout);
+        formCadastroUsuarioLayout.setHorizontalGroup(
+            formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formCadastroUsuarioLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel42)
+                    .addComponent(jLabel41)
+                    .addComponent(jLabel43)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formCadastroUsuarioLayout.createSequentialGroup()
+                        .addComponent(cID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cNome, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(formCadastroUsuarioLayout.createSequentialGroup()
+                        .addComponent(cCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel46)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cRg, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(formCadastroUsuarioLayout.createSequentialGroup()
+                        .addComponent(cRua, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel48)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cCep, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(124, 124, 124))
+        );
+        formCadastroUsuarioLayout.setVerticalGroup(
+            formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formCadastroUsuarioLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81))
+        );
+
+        cadastroUsuario.add(formCadastroUsuario);
+        formCadastroUsuario.setBounds(10, 60, 500, 300);
+
+        getContentPane().add(cadastroUsuario);
+        cadastroUsuario.setBounds(245, 26, 520, 400);
+
         alterarUsuario.setOpaque(true);
 
         jLabel19.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
@@ -219,10 +374,11 @@ public class TelaLoginADM extends javax.swing.JFrame {
         alterarUsuario.add(jLabel19);
         jLabel19.setBounds(114, 22, 295, 23);
 
-        jLayeredPane3.setBackground(new java.awt.Color(255, 255, 255));
-        jLayeredPane3.setForeground(new java.awt.Color(255, 255, 255));
-        jLayeredPane3.setOpaque(true);
-        jLayeredPane3.setPreferredSize(new java.awt.Dimension(508, 292));
+        formAlterarUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        formAlterarUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 102)));
+        formAlterarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        formAlterarUsuario.setOpaque(true);
+        formAlterarUsuario.setPreferredSize(new java.awt.Dimension(508, 292));
 
         jLabel12.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 102));
@@ -260,32 +416,32 @@ public class TelaLoginADM extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(0, 0, 102));
         jLabel31.setText("Telefone");
 
-        jLayeredPane3.setLayer(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel13, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel14, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel18, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel20, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField12, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField13, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField14, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField15, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField17, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel17, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel31, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField16, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel13, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel14, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel18, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel20, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField12, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField13, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField14, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField15, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField17, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel17, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jLabel31, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formAlterarUsuario.setLayer(jTextField16, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
-        jLayeredPane3.setLayout(jLayeredPane3Layout);
-        jLayeredPane3Layout.setHorizontalGroup(
-            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane3Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout formAlterarUsuarioLayout = new javax.swing.GroupLayout(formAlterarUsuario);
+        formAlterarUsuario.setLayout(formAlterarUsuarioLayout);
+        formAlterarUsuarioLayout.setHorizontalGroup(
+            formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formAlterarUsuarioLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel13)
                     .addComponent(jLabel12)
                     .addComponent(jLabel14)
@@ -293,22 +449,22 @@ public class TelaLoginADM extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(jLabel31))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formAlterarUsuarioLayout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                    .addGroup(formAlterarUsuarioLayout.createSequentialGroup()
                         .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                    .addGroup(formAlterarUsuarioLayout.createSequentialGroup()
                         .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel17)
@@ -317,44 +473,44 @@ public class TelaLoginADM extends javax.swing.JFrame {
                     .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(124, 124, 124))
         );
-        jLayeredPane3Layout.setVerticalGroup(
-            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+        formAlterarUsuarioLayout.setVerticalGroup(
+            formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formAlterarUsuarioLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formAlterarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(81, 81, 81))
         );
 
-        alterarUsuario.add(jLayeredPane3);
-        jLayeredPane3.setBounds(10, 60, 500, 300);
+        alterarUsuario.add(formAlterarUsuario);
+        formAlterarUsuario.setBounds(10, 60, 500, 300);
 
         getContentPane().add(alterarUsuario);
         alterarUsuario.setBounds(245, 26, 520, 400);
@@ -368,10 +524,11 @@ public class TelaLoginADM extends javax.swing.JFrame {
         deletarUsuario.add(jLabel30);
         jLabel30.setBounds(111, 22, 303, 23);
 
-        jLayeredPane5.setBackground(new java.awt.Color(255, 255, 255));
-        jLayeredPane5.setForeground(new java.awt.Color(255, 255, 255));
-        jLayeredPane5.setOpaque(true);
-        jLayeredPane5.setPreferredSize(new java.awt.Dimension(508, 292));
+        formDeletarUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        formDeletarUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 102)));
+        formDeletarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        formDeletarUsuario.setOpaque(true);
+        formDeletarUsuario.setPreferredSize(new java.awt.Dimension(508, 292));
 
         jLabel32.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 102));
@@ -409,32 +566,32 @@ public class TelaLoginADM extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(0, 0, 102));
         jLabel40.setText("Telefone");
 
-        jLayeredPane5.setLayer(jLabel32, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel33, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel34, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel35, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel36, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel37, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel38, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField18, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField28, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField29, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField30, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField31, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField32, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField33, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel39, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField34, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel40, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jTextField35, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel32, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel33, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel34, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel35, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel36, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel37, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel38, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField18, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField28, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField29, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField30, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField31, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField32, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField33, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel39, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField34, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jLabel40, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        formDeletarUsuario.setLayer(jTextField35, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
-        jLayeredPane5.setLayout(jLayeredPane5Layout);
-        jLayeredPane5Layout.setHorizontalGroup(
-            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout formDeletarUsuarioLayout = new javax.swing.GroupLayout(formDeletarUsuario);
+        formDeletarUsuario.setLayout(formDeletarUsuarioLayout);
+        formDeletarUsuarioLayout.setHorizontalGroup(
+            formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formDeletarUsuarioLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel33)
                     .addComponent(jLabel32)
                     .addComponent(jLabel34)
@@ -442,22 +599,22 @@ public class TelaLoginADM extends javax.swing.JFrame {
                     .addComponent(jLabel36)
                     .addComponent(jLabel40))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formDeletarUsuarioLayout.createSequentialGroup()
                         .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                    .addGroup(formDeletarUsuarioLayout.createSequentialGroup()
                         .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel37)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                    .addGroup(formDeletarUsuarioLayout.createSequentialGroup()
                         .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel39)
@@ -466,195 +623,47 @@ public class TelaLoginADM extends javax.swing.JFrame {
                     .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(124, 124, 124))
         );
-        jLayeredPane5Layout.setVerticalGroup(
-            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+        formDeletarUsuarioLayout.setVerticalGroup(
+            formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formDeletarUsuarioLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(formDeletarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(81, 81, 81))
         );
 
-        deletarUsuario.add(jLayeredPane5);
-        jLayeredPane5.setBounds(10, 60, 500, 300);
+        deletarUsuario.add(formDeletarUsuario);
+        formDeletarUsuario.setBounds(10, 60, 500, 300);
 
         getContentPane().add(deletarUsuario);
         deletarUsuario.setBounds(245, 26, 520, 400);
-
-        cadastroUsuario.setOpaque(true);
-
-        jLabel2.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setText("CADASTRO DE USUÁRIO");
-        cadastroUsuario.add(jLabel2);
-        jLabel2.setBounds(148, 22, 217, 23);
-
-        jLayeredPane6.setBackground(new java.awt.Color(255, 255, 255));
-        jLayeredPane6.setForeground(new java.awt.Color(255, 255, 255));
-        jLayeredPane6.setOpaque(true);
-        jLayeredPane6.setPreferredSize(new java.awt.Dimension(508, 292));
-
-        jLabel41.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel41.setText("ID");
-
-        jLabel42.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel42.setText("Nome");
-
-        jLabel43.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel43.setText("CPF");
-
-        jLabel44.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel44.setText("Perfil");
-
-        jLabel45.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel45.setText("Rua");
-
-        jLabel46.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel46.setText("RG");
-
-        jLabel47.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel47.setText("Endereço");
-
-        jLabel48.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel48.setText("CEP");
-
-        jLabel49.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel49.setText("Telefone");
-
-        jLayeredPane6.setLayer(jLabel41, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel42, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel43, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel44, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel45, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel46, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel47, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField36, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField37, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField38, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField39, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField40, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField41, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField42, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel48, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField43, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jLabel49, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jTextField44, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane6Layout = new javax.swing.GroupLayout(jLayeredPane6);
-        jLayeredPane6.setLayout(jLayeredPane6Layout);
-        jLayeredPane6Layout.setHorizontalGroup(
-            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel42)
-                    .addComponent(jLabel41)
-                    .addComponent(jLabel43)
-                    .addComponent(jLabel47)
-                    .addComponent(jLabel45)
-                    .addComponent(jLabel49))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                        .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel44)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                        .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                        .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel48)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField44, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(124, 124, 124))
-        );
-        jLayeredPane6Layout.setVerticalGroup(
-            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81))
-        );
-
-        cadastroUsuario.add(jLayeredPane6);
-        jLayeredPane6.setBounds(10, 60, 500, 300);
-
-        getContentPane().add(cadastroUsuario);
-        cadastroUsuario.setBounds(245, 26, 520, 400);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\adm2.jpg")); // NOI18N
         jLabel1.setOpaque(true);
@@ -735,12 +744,30 @@ public class TelaLoginADM extends javax.swing.JFrame {
     }//GEN-LAST:event_formAlterarMouseClicked
 
     private void formCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formCadastrarMouseClicked
-        // TODO add your handling code here:
+        String cadastroID = cID.getText();
+        String cadastroPerfil = cPerfil.getText();
+        String cadastroNome = cNome.getText();
+        String cadastroCpf = cCpf.getText();
+        String cadastroEndereco = cEndereco.getText();
+        String cadastroRua = cRua.getText();
+        String cadastroRg = cRg.getText();
+        String cadastroCep = cCep.getText();
+        String cadastroTelefone = cTelefone.getText();
+        
+        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso! "
+            +"\n"+cadastroID+"\n"+cadastroPerfil+"\n"+cadastroNome+"\n"+cadastroCpf
+            +"\n"+cadastroEndereco+"\n"+cadastroRua+"\n"+cadastroRg+"\n"+cadastroCep 
+            +"\n"+cadastroTelefone
+            ,"Cadastro de usuário", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_formCadastrarMouseClicked
 
     private void formDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formDeletarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_formDeletarMouseClicked
+
+    private void cPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cPerfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -781,13 +808,25 @@ public class TelaLoginADM extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alterar;
     private javax.swing.JLayeredPane alterarUsuario;
+    private javax.swing.JTextField cCep;
+    private javax.swing.JTextField cCpf;
+    private javax.swing.JTextField cEndereco;
+    private javax.swing.JTextField cID;
+    private javax.swing.JTextField cNome;
+    private javax.swing.JTextField cPerfil;
+    private javax.swing.JTextField cRg;
+    private javax.swing.JTextField cRua;
+    private javax.swing.JTextField cTelefone;
     private javax.swing.JButton cadastrar;
     private javax.swing.JLayeredPane cadastroUsuario;
     private javax.swing.JButton deletar;
     private javax.swing.JLayeredPane deletarUsuario;
     private javax.swing.JButton formAlterar;
+    private javax.swing.JLayeredPane formAlterarUsuario;
     private javax.swing.JButton formCadastrar;
+    private javax.swing.JLayeredPane formCadastroUsuario;
     private javax.swing.JButton formDeletar;
+    private javax.swing.JLayeredPane formDeletarUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -819,9 +858,6 @@ public class TelaLoginADM extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLayeredPane jLayeredPane3;
-    private javax.swing.JLayeredPane jLayeredPane5;
-    private javax.swing.JLayeredPane jLayeredPane6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -840,15 +876,6 @@ public class TelaLoginADM extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
-    private javax.swing.JTextField jTextField43;
-    private javax.swing.JTextField jTextField44;
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 

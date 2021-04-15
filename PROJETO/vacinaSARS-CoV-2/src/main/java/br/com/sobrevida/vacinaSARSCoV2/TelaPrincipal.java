@@ -6,6 +6,7 @@
 package br.com.sobrevida.vacinaSARSCoV2;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +44,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         btnTiposVacinas = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        trocarPerfil = new javax.swing.JMenuItem();
+        sair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vacinação SARS-COV-2");
@@ -81,6 +86,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2.add(btnTiposVacinas);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Sistema");
+        jMenuBar1.add(jMenu4);
+
+        jMenu3.setText("Sair");
+
+        trocarPerfil.setText("Trocar perfil");
+        trocarPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trocarPerfilMouseClicked(evt);
+            }
+        });
+        trocarPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trocarPerfilActionPerformed(evt);
+            }
+        });
+        jMenu3.add(trocarPerfil);
+
+        sair.setText("Exit");
+        sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sairMouseClicked(evt);
+            }
+        });
+        sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairActionPerformed(evt);
+            }
+        });
+        jMenu3.add(sair);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -127,6 +165,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnTiposVacinasActionPerformed
 
+    private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
+        
+    }//GEN-LAST:event_trocarPerfilMouseClicked
+
+    private void trocarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trocarPerfilActionPerformed
+        JOptionPane.showMessageDialog(null, "O programa será reiniciado!" 
+            ,"Atenção", JOptionPane.WARNING_MESSAGE);
+        
+        TelaPrincipal.this.dispose();
+        Carregar carregar = new Carregar();
+        carregar.setVisible(true);
+    }//GEN-LAST:event_trocarPerfilActionPerformed
+
+    private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
+        JOptionPane.showMessageDialog(null, "O programa será Finalizado!" 
+            ,"Atenção", JOptionPane.WARNING_MESSAGE);
+        
+        TelaPrincipal.this.dispose();
+        new TelaPrincipal().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }//GEN-LAST:event_sairActionPerformed
+
+    private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
+        
+    }//GEN-LAST:event_sairMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -169,7 +232,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem sair;
+    private javax.swing.JMenuItem trocarPerfil;
     // End of variables declaration//GEN-END:variables
 }
