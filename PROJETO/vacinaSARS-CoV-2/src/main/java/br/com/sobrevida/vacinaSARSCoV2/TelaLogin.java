@@ -216,7 +216,17 @@ public class TelaLogin extends javax.swing.JFrame {
             
             mostraSenha.setText("");
             loginSenha.setText("");
-        }   
+        } 
+        
+        if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
+            
+            JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
+                ,"Atenção", JOptionPane.WARNING_MESSAGE);
+            
+            TelaLogin.this.dispose();
+            Carregar2 Carregar2 = new Carregar2();
+            Carregar2.setVisible(true); 
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed

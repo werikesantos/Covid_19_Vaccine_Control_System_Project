@@ -76,7 +76,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel5.setText("E-mail");
+        jLabel5.setText("Username");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(20, 57, 60, 17);
 
