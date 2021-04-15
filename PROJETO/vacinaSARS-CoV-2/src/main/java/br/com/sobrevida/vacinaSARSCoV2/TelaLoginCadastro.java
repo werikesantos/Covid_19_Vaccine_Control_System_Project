@@ -12,10 +12,10 @@ import javax.swing.JOptionPane;
  *
  * @author WERIKE
  */
-public class TelaLogin extends javax.swing.JFrame {
+public class TelaLoginCadastro extends javax.swing.JFrame {
 
     /** Creates new form TelaLogin */
-    public TelaLogin() {
+    public TelaLoginCadastro() {
         initComponents();
         setLocationRelativeTo(null);
         
@@ -33,7 +33,6 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -41,73 +40,88 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        loginSenha1 = new javax.swing.JPasswordField();
+        mostraSenha1 = new javax.swing.JTextField();
         loginSenha = new javax.swing.JPasswordField();
         mostraSenha = new javax.swing.JTextField();
         boxMostraSenha = new javax.swing.JCheckBox();
         loginEmail = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Sign up");
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\vacinaLogin2.png")); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(260, -180, 2570, 710);
-
         jPanel1.setBackground(new java.awt.Color(228, 229, 232));
         jPanel1.setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\vacinaLogin1.png")); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(70, 10, 120, 120);
+        jLabel2.setBounds(62, 10, 120, 120);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setMinimumSize(new java.awt.Dimension(220, 270));
         jPanel2.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel3.setText("LOGIN");
+        jLabel3.setText("Sign up");
         jPanel2.add(jLabel3);
         jLabel3.setBounds(20, 11, 90, 40);
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 135, 197));
         jLabel5.setText("Username");
-        jLabel5.setMaximumSize(new java.awt.Dimension(35, 17));
-        jLabel5.setMinimumSize(new java.awt.Dimension(35, 17));
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 57, 60, 20);
+        jLabel5.setBounds(20, 57, 60, 17);
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel4.setText("Password");
+        jLabel4.setText("Confirm Password");
         jLabel4.setMaximumSize(new java.awt.Dimension(35, 17));
         jLabel4.setMinimumSize(new java.awt.Dimension(35, 17));
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 130, 60, 20);
+        jLabel4.setBounds(20, 160, 110, 20);
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
-        jButton1.setText("Login");
+        jButton1.setText("Sign up");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(120, 220, 75, 31);
+        jButton1.setBounds(125, 240, 80, 31);
+
+        loginSenha1.setBackground(new java.awt.Color(204, 204, 255));
+        loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        loginSenha1.setOpaque(false);
+        jPanel2.add(loginSenha1);
+        loginSenha1.setBounds(20, 180, 180, 30);
+
+        mostraSenha1.setBackground(new java.awt.Color(204, 204, 255));
+        mostraSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        mostraSenha1.setOpaque(false);
+        mostraSenha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostraSenha1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(mostraSenha1);
+        mostraSenha1.setBounds(20, 180, 180, 30);
 
         loginSenha.setBackground(new java.awt.Color(204, 204, 255));
         loginSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha.setOpaque(false);
         jPanel2.add(loginSenha);
-        loginSenha.setBounds(20, 150, 180, 30);
+        loginSenha.setBounds(20, 130, 180, 30);
 
         mostraSenha.setBackground(new java.awt.Color(204, 204, 255));
         mostraSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -118,7 +132,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(mostraSenha);
-        mostraSenha.setBounds(20, 150, 180, 30);
+        mostraSenha.setBounds(20, 130, 180, 30);
 
         boxMostraSenha.setBackground(new java.awt.Color(204, 204, 255));
         boxMostraSenha.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
@@ -132,7 +146,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(boxMostraSenha);
-        boxMostraSenha.setBounds(20, 180, 110, 25);
+        boxMostraSenha.setBounds(20, 210, 110, 25);
 
         loginEmail.setBackground(new java.awt.Color(204, 204, 255));
         loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
@@ -145,23 +159,23 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2.add(loginEmail);
         loginEmail.setBounds(20, 80, 180, 30);
 
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 150, 220, 270);
+        jLabel7.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 135, 197));
+        jLabel7.setText("Password");
+        jLabel7.setMaximumSize(new java.awt.Dimension(35, 17));
+        jLabel7.setMinimumSize(new java.awt.Dimension(35, 17));
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(20, 110, 60, 20);
 
-        jLabel6.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel6.setText("Create free account");
-        jLabel6.setPreferredSize(new java.awt.Dimension(35, 17));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(130, 430, 110, 17);
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(12, 150, 220, 280);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 260, 500);
+        jPanel1.setBounds(540, 0, 260, 500);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\vacinaLogin2.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-370, -210, 2570, 710);
 
         getAccessibleContext().setAccessibleDescription("Login");
 
@@ -178,7 +192,7 @@ public class TelaLogin extends javax.swing.JFrame {
         
         if(boxMostraSenha.isSelected()){
             if(("user".equals(loginEmail.getText())) && (senha.equals("123"))){ 
-                TelaLogin.this.dispose();
+                TelaLoginCadastro.this.dispose();
                 Carregar1 carregar1 = new Carregar1();
                 carregar1.setVisible(true);        
             }else{
@@ -205,7 +219,7 @@ public class TelaLogin extends javax.swing.JFrame {
             );
             */
             
-            TelaLogin.this.dispose();
+            TelaLoginCadastro.this.dispose();
             Carregar1 carregar1 = new Carregar1();
             carregar1.setVisible(true);            
         }else{
@@ -216,17 +230,7 @@ public class TelaLogin extends javax.swing.JFrame {
             
             mostraSenha.setText("");
             loginSenha.setText("");
-        } 
-        
-        if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
-            
-            JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
-                ,"Atenção", JOptionPane.WARNING_MESSAGE);
-            
-            TelaLogin.this.dispose();
-            Carregar2 Carregar2 = new Carregar2();
-            Carregar2.setVisible(true); 
-        }
+        }   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
@@ -245,11 +249,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginEmailActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        TelaLogin.this.dispose();
-        TelaLoginCadastro telaLoginCadastro = new TelaLoginCadastro();
-        telaLoginCadastro.setVisible(true);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    private void mostraSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenha1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mostraSenha1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,20 +270,21 @@ public class TelaLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                new TelaLoginCadastro().setVisible(true);
             }
         });
     }
@@ -294,12 +297,14 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField loginEmail;
     private javax.swing.JPasswordField loginSenha;
+    private javax.swing.JPasswordField loginSenha1;
     private javax.swing.JTextField mostraSenha;
+    private javax.swing.JTextField mostraSenha1;
     // End of variables declaration//GEN-END:variables
 
 }
