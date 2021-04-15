@@ -39,7 +39,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        signUP = new javax.swing.JButton();
         loginSenha1 = new javax.swing.JPasswordField();
         mostraSenha1 = new javax.swing.JTextField();
         loginSenha = new javax.swing.JPasswordField();
@@ -47,6 +47,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         boxMostraSenha = new javax.swing.JCheckBox();
         loginEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -62,7 +63,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\vacinaLogin1.png")); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(62, 10, 120, 120);
+        jLabel2.setBounds(75, 10, 120, 120);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setMinimumSize(new java.awt.Dimension(220, 270));
@@ -88,17 +89,17 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel2.add(jLabel4);
         jLabel4.setBounds(20, 160, 110, 20);
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 255));
-        jButton1.setText("Sign up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signUP.setBackground(new java.awt.Color(204, 204, 255));
+        signUP.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        signUP.setForeground(new java.awt.Color(51, 51, 255));
+        signUP.setText("Sign up");
+        signUP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signUPActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(125, 240, 80, 31);
+        jPanel2.add(signUP);
+        signUP.setBounds(125, 233, 80, 31);
 
         loginSenha1.setBackground(new java.awt.Color(204, 204, 255));
         loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
@@ -168,10 +169,21 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jLabel7.setBounds(20, 110, 60, 20);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(12, 150, 220, 280);
+        jPanel2.setBounds(22, 140, 220, 280);
+
+        jLabel6.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel6.setText("Return");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(24, 417, 100, 30);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(540, 0, 260, 500);
+        jPanel1.setBounds(520, 0, 280, 500);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\vacinaLogin2.png")); // NOI18N
         getContentPane().add(jLabel1);
@@ -186,15 +198,36 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         //nome.setText("");
     }//GEN-LAST:event_mostraSenhaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void signUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUPActionPerformed
         
         String senha = new String(loginSenha.getPassword());
+        String confirmacao = new String(loginSenha1.getPassword());
         
-        if(boxMostraSenha.isSelected()){
-            if(("user".equals(loginEmail.getText())) && (senha.equals("123"))){ 
+        if(senha.equals(confirmacao)){
+            
+            if(boxMostraSenha.isSelected()){
+                if(("user".equals(loginEmail.getText())) && (senha.equals("123"))){ 
+                    TelaLoginCadastro.this.dispose();
+                    Carregar1 carregar1 = new Carregar1();
+                    carregar1.setVisible(true);        
+                }else{
+                    JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
+                            + "que você digitou não\n batem com nossos registros. "
+                            + "Por favor, verifique e\n tente novamente." 
+                        ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
+
+                    mostraSenha.setText("");
+                    loginSenha.setText("");
+                }
+            }
+        
+            if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){ 
+                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
+                    + "\nUsuário: "+loginEmail.getText()+"\nSenha: "+senha 
+                    ,"Cadastro realizado", JOptionPane.WARNING_MESSAGE);
                 TelaLoginCadastro.this.dispose();
-                Carregar1 carregar1 = new Carregar1();
-                carregar1.setVisible(true);        
+                TelaLogin TelaLogin = new TelaLogin();
+                TelaLogin.setVisible(true);            
             }else{
                 JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
                         + "que você digitou não\n batem com nossos registros. "
@@ -203,45 +236,28 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
                 mostraSenha.setText("");
                 loginSenha.setText("");
-            }
-        }
-        
-        if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
-            /* 
-            COMANDO PARA TESTE!!!
+            } 
             
-            String email = loginEmail.getText();
-            String senha = loginSenha.getText();
-            
-            JOptionPane.showMessageDialog(null, "E-Mail: "+email
-                +"\nSenha: "+senha
-                ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
-            );
-            */
-            
-            TelaLoginCadastro.this.dispose();
-            Carregar1 carregar1 = new Carregar1();
-            carregar1.setVisible(true);            
         }else{
-            JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                    + "que você digitou não\n batem com nossos registros. "
-                    + "Por favor, verifique e\n tente novamente." 
-                ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
-            
-            mostraSenha.setText("");
-            loginSenha.setText("");
-        }   
-    }//GEN-LAST:event_jButton1ActionPerformed
+            JOptionPane.showMessageDialog(null, "Confirmação de senha inválida" 
+                ,"Senha inválida", JOptionPane.WARNING_MESSAGE);
+        } 
+    }//GEN-LAST:event_signUPActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
         String senha = new String(loginSenha.getPassword());
         if(boxMostraSenha.isSelected()){
             mostraSenha.setVisible(true);
             mostraSenha.setText(senha);
+            mostraSenha1.setVisible(true);
+            mostraSenha1.setText(senha);
             loginSenha.setVisible(false);
+            loginSenha1.setVisible(false);
         }else{
             mostraSenha.setVisible(false);
+            mostraSenha1.setVisible(false);
             loginSenha.setVisible(true);
+            loginSenha1.setVisible(true);
         }
     }//GEN-LAST:event_boxMostraSenhaActionPerformed
 
@@ -252,6 +268,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     private void mostraSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenha1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mostraSenha1ActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        TelaLoginCadastro.this.dispose();
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -291,12 +313,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox boxMostraSenha;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -305,6 +327,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     private javax.swing.JPasswordField loginSenha1;
     private javax.swing.JTextField mostraSenha;
     private javax.swing.JTextField mostraSenha1;
+    private javax.swing.JButton signUP;
     // End of variables declaration//GEN-END:variables
 
 }

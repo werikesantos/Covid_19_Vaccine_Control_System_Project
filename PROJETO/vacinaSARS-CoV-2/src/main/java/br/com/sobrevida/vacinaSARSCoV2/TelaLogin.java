@@ -158,7 +158,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(130, 430, 110, 17);
+        jLabel6.setBounds(130, 425, 110, 17);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 260, 500);

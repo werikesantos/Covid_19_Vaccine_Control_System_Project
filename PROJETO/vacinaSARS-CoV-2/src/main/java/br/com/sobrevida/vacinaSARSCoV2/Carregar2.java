@@ -50,18 +50,18 @@ public class Carregar2 extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         carrega.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        carrega.setForeground(new java.awt.Color(0, 0, 204));
+        carrega.setForeground(new java.awt.Color(255, 255, 255));
         carrega.setText("0%");
         jPanel1.add(carrega);
         carrega.setBounds(370, 210, 70, 47);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\carregar.gif")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\b.gif")); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(360, 120, 70, 70);
 
-        imgFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\painel2.jpg")); // NOI18N
+        imgFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\images\\a.jpg")); // NOI18N
         jPanel1.add(imgFundo);
-        imgFundo.setBounds(-1130, -720, 1920, 1080);
+        imgFundo.setBounds(-1090, -530, 1920, 1080);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 770, 350);
