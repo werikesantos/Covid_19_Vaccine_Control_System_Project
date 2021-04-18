@@ -6,6 +6,7 @@
 
 package br.com.sobrevida.vacinaSARSCoV2;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -729,6 +730,7 @@ public class TelaLoginADM extends javax.swing.JFrame {
 
     private void voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarMouseClicked
         TelaLoginADM.this.dispose();
+        new TelaLoginADM().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Carregar3 carregar3 = new Carregar3();
         carregar3.setVisible(true);
     }//GEN-LAST:event_voltarMouseClicked

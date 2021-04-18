@@ -51,6 +51,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vacinação SARS-COV-2");
+        setLocationByPlatform(true);
         setResizable(false);
 
         jDesktop.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -174,6 +175,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             ,"Atenção", JOptionPane.WARNING_MESSAGE);
         
         TelaPrincipal.this.dispose();
+        new TelaPrincipal().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Carregar carregar = new Carregar();
         carregar.setVisible(true);
     }//GEN-LAST:event_trocarPerfilActionPerformed
@@ -183,7 +185,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             ,"Atenção", JOptionPane.WARNING_MESSAGE);
         
         TelaPrincipal.this.dispose();
-        new TelaPrincipal().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }//GEN-LAST:event_sairActionPerformed
 
     private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked

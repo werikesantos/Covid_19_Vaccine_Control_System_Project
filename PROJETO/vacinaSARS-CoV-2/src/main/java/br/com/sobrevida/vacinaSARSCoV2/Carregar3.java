@@ -6,6 +6,7 @@
 package br.com.sobrevida.vacinaSARSCoV2;
 
 import static java.lang.Thread.sleep;
+import javax.swing.JFrame;
 /**
  *
  * @author WERIKE
@@ -87,6 +88,7 @@ public class Carregar3 extends javax.swing.JFrame {
             }
             
             Carregar3.this.dispose();
+            new Carregar3().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             TelaLogin telaLogin = new TelaLogin();
             telaLogin.setVisible(true);  
         }
