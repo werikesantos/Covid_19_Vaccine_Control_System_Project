@@ -6,6 +6,7 @@
 
 package br.com.sobrevida.vacinaSARSCoV2;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -208,6 +209,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
             if(boxMostraSenha.isSelected()){
                 if(("user".equals(loginEmail.getText())) && (senha.equals("123"))){ 
                     TelaLoginCadastro.this.dispose();
+                    new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     Carregar1 carregar1 = new Carregar1();
                     carregar1.setVisible(true);        
                 }else{
@@ -226,6 +228,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                     + "\nUsuário: "+loginEmail.getText()+"\nSenha: "+senha 
                     ,"Cadastro realizado", JOptionPane.WARNING_MESSAGE);
                 TelaLoginCadastro.this.dispose();
+                new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 TelaLogin TelaLogin = new TelaLogin();
                 TelaLogin.setVisible(true);            
             }else{
@@ -271,6 +274,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         TelaLoginCadastro.this.dispose();
+        new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaLogin telaLogin = new TelaLogin();
         telaLogin.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked

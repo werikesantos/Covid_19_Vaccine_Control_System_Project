@@ -6,6 +6,8 @@
 package br.com.sobrevida.vacinaSARSCoV2;
 
 import static java.lang.Thread.sleep;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author WERIKE
@@ -87,6 +89,11 @@ public class Carregar1 extends javax.swing.JFrame {
             }
             
             Carregar1.this.dispose();
+            new Carregar1().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
+            JOptionPane.showMessageDialog(null, "Seja Bem-Vindo, "+ "User"+"!"
+                ,"Bem-Vindo", JOptionPane.PLAIN_MESSAGE);
+            
             TelaPrincipal telaPrincipal = new TelaPrincipal();
             telaPrincipal.setVisible(true); 
         }
