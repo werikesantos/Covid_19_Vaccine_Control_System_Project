@@ -5,7 +5,7 @@
  */
 package br.com.sobrevida.vacinaSARSCoV2.controller;
 
-import br.com.sobrevida.vacinaSARSCoV2.model.DAO;
+import br.com.sobrevida.vacinaSARSCoV2.model.Dao;
 import br.com.sobrevida.vacinaSARSCoV2.model.PessoaModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,7 +21,7 @@ public class PessoaController {
         String sql = "INSERT INTO tb_pessoa(nome, fone, email) VALUES (?, ?, ?)";
         
         //2: Abrir uma conexão
-        DAO dao = new DAO();
+        Dao dao = new Dao();
         try(Connection conn = dao.connection()){
             
             //3: Pré compila o comando
