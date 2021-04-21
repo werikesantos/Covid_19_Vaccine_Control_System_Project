@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author WERIKE
  */
-public class Teste {
+public class Teste{
     public static void main(String []args){
         
         String menu = "1-Cadastrar\n2-Atualizar\n3-Apagar\n4-Listar\n0-Sair";

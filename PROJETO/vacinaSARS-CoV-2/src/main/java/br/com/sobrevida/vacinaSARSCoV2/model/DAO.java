@@ -11,7 +11,7 @@ import java.sql.DriverManager;
  *
  * @author WERIKE
  */
-public class DAO {
+public class Dao {
     
     private final String URL = "jdbc:mysql://";
     private final String USUARIO = "root";
