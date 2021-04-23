@@ -53,9 +53,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sign up");
-        setMaximumSize(new java.awt.Dimension(800, 500));
-        setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setMaximumSize(new java.awt.Dimension(800, 510));
+        setMinimumSize(new java.awt.Dimension(800, 510));
+        setPreferredSize(new java.awt.Dimension(800, 510));
         setResizable(false);
         getContentPane().setLayout(null);
 

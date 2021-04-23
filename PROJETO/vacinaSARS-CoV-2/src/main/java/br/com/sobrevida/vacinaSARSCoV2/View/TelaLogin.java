@@ -9,6 +9,7 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,9 +21,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         setLocationRelativeTo(null);
-        
-        
-        
+
         //ALTERANDO O ICONE PADRAO DO JAVA
         Utilitario utilitario = new Utilitario();
         utilitario.inserirIcone(this);
@@ -49,13 +48,13 @@ public class TelaLogin extends javax.swing.JFrame {
         mostraSenha = new javax.swing.JTextField();
         boxMostraSenha = new javax.swing.JCheckBox();
         loginEmail = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        linkCadastroUsuario = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
-        setMaximumSize(new java.awt.Dimension(800, 500));
-        setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setMaximumSize(new java.awt.Dimension(800, 510));
+        setMinimumSize(new java.awt.Dimension(800, 510));
+        setPreferredSize(new java.awt.Dimension(800, 510));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -177,20 +176,20 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 150, 220, 270);
 
-        jLabel6.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel6.setText("Create free account");
-        jLabel6.setPreferredSize(new java.awt.Dimension(35, 17));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        linkCadastroUsuario.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        linkCadastroUsuario.setForeground(new java.awt.Color(51, 51, 255));
+        linkCadastroUsuario.setText("Create free account");
+        linkCadastroUsuario.setPreferredSize(new java.awt.Dimension(35, 17));
+        linkCadastroUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                linkCadastroUsuarioMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(130, 425, 110, 17);
+        jPanel1.add(linkCadastroUsuario);
+        linkCadastroUsuario.setBounds(130, 425, 110, 17);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 260, 500);
+        jPanel1.setBounds(0, 0, 260, 530);
 
         getAccessibleContext().setAccessibleDescription("Login");
 
@@ -202,104 +201,26 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_mostraSenhaActionPerformed
 
     private void loginBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBotaoActionPerformed
-        
         String email = (loginEmail.getText());
         String senha = new String(loginSenha.getPassword());
         
-        UsuarioController usuarioController = new UsuarioController();
+        UsuarioController usuarioController = new UsuarioController();  
+        boolean logar = usuarioController.tentarLogar(email, senha, false);
         
-        boolean resultado = usuarioController.logar(email, senha, false);
-        
-        if(resultado == true){
-            TelaLogin.this.dispose();
-            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-        }
-        
-        /*
-        //1: Definir o comando SQL
-        String sql = "SELECT email, senha FROM bd_vacinasars_cov_2.usuario";
-        
-        //2: Abrir uma conexão
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        
-        try(Connection conn = connectionFactory.connection()){
-        
-            //3: Pré compila o comando
-            PreparedStatement ps = conn.prepareStatement(sql);
-
-            //4: Executa o comando e guarda
-            //o resultado em um ResultSet
-            ResultSet rs = ps.executeQuery();
-            
-            //5: itera sobre o resultado
-            while(rs.next()){
-                String bancoEmail = rs.getString("email");
-                String bancoSenha = rs.getString("senha");
-                                
-                if((email.equals(bancoEmail)) && (senha.equals(bancoSenha))){
-                    TelaLogin.this.dispose();
-                    new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    Carregar1 carregar1 = new Carregar1();
-                    carregar1.setVisible(true);
-                }
-            } 
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }*/
-        
-        
-        /*
-        String email = (loginEmail.getText());
-        String senha = new String(loginSenha.getPassword());
-        
-        UsuarioController usuarioController = new UsuarioController();
-        usuarioController.logar(email, senha);
-        
-        TelaLogin.this.dispose();
-        new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        */
-        
-        /*if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
-            /* 
-            COMANDO PARA TESTE!!!
-            
-            String email = loginEmail.getText();
-            String senha = loginSenha.getText();
-            
-            JOptionPane.showMessageDialog(null, "E-Mail: "+email
-                +"\nSenha: "+senha
-                ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
-            );
-            
-            
+        if(logar == true){
             TelaLogin.this.dispose();
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             Carregar1 carregar1 = new Carregar1();
-            carregar1.setVisible(true);            
+            carregar1.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                    + "que você digitou não\n batem com nossos registros. "
-                    + "Por favor, verifique e\n tente novamente." 
-                ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
-            
-            mostraSenha.setText("");
+                + "que você digitou não\n batem com nossos registros. "
+                + "Por favor, verifique e\n tente novamente." 
+                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
+            );
+            loginEmail.setText("");
             loginSenha.setText("");
-        } 
-        
-        if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
-            
-            JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
-                ,"Atenção", JOptionPane.WARNING_MESSAGE);
-            
-            TelaLogin.this.dispose();
-            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            Carregar2 Carregar2 = new Carregar2();
-            Carregar2.setVisible(true); 
-        }*/
+        }
     }//GEN-LAST:event_loginBotaoActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
@@ -318,12 +239,12 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginEmailActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void linkCadastroUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkCadastroUsuarioMouseClicked
         TelaLogin.this.dispose();
         new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaLoginCadastro telaLoginCadastro = new TelaLoginCadastro();
         telaLoginCadastro.setVisible(true);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_linkCadastroUsuarioMouseClicked
     private void loginBotaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBotaoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_loginBotaoMouseClicked
@@ -334,52 +255,23 @@ public class TelaLogin extends javax.swing.JFrame {
             String email = (loginEmail.getText());
             String senha = new String(loginSenha.getPassword());
 
-            UsuarioController usuarioController = new UsuarioController();
-            //usuarioController.logar(email, senha);
+            UsuarioController usuarioController = new UsuarioController();  
+            boolean logar = usuarioController.tentarLogar(email, senha, false);
 
-            TelaLogin.this.dispose();
-            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-            /*
-            String senha = new String(loginSenha.getPassword());
-        
-            if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
-                /* 
-                COMANDO PARA TESTE!!!
-
-                String email = loginEmail.getText();
-                String senha = loginSenha.getText();
-
-                JOptionPane.showMessageDialog(null, "E-Mail: "+email
-                    +"\nSenha: "+senha
-                    ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
-                );
-                *
-            
+            if(logar == true){
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar1 carregar1 = new Carregar1();
-                carregar1.setVisible(true);            
+                carregar1.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                        + "que você digitou não\n batem com nossos registros. "
-                        + "Por favor, verifique e\n tente novamente." 
-                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
-
-                mostraSenha.setText("");
+                    + "que você digitou não\n batem com nossos registros. "
+                    + "Por favor, verifique e\n tente novamente." 
+                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE
+                );
+                loginEmail.setText("");
                 loginSenha.setText("");
-            } 
-        
-            if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
-
-                JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
-                    ,"Atenção", JOptionPane.WARNING_MESSAGE);
-
-                TelaLogin.this.dispose();
-                new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                Carregar2 Carregar2 = new Carregar2();
-                Carregar2.setVisible(true); 
-            }*/
+            }
         }
     }//GEN-LAST:event_loginSenhaKeyPressed
 
@@ -389,52 +281,23 @@ public class TelaLogin extends javax.swing.JFrame {
             String email = (loginEmail.getText());
             String senha = new String(loginSenha.getPassword());
 
-            UsuarioController usuarioController = new UsuarioController();
-            //usuarioController.logar(email, senha);
+            UsuarioController usuarioController = new UsuarioController();  
+            boolean logar = usuarioController.tentarLogar(email, senha, false);
 
-            TelaLogin.this.dispose();
-            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            
-            /*
-            String senha = new String(loginSenha.getPassword());
-        
-            if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
-                /* 
-                COMANDO PARA TESTE!!!
-
-                String email = loginEmail.getText();
-                String senha = loginSenha.getText();
-
-                JOptionPane.showMessageDialog(null, "E-Mail: "+email
-                    +"\nSenha: "+senha
-                    ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
-                );
-                *
-            
+            if(logar == true){
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar1 carregar1 = new Carregar1();
-                carregar1.setVisible(true);            
+                carregar1.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                        + "que você digitou não\n batem com nossos registros. "
-                        + "Por favor, verifique e\n tente novamente." 
-                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
-
-                mostraSenha.setText("");
+                    + "que você digitou não\n batem com nossos registros. "
+                    + "Por favor, verifique e\n tente novamente." 
+                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE
+                );
+                loginEmail.setText("");
                 loginSenha.setText("");
-            } 
-        
-            if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
-
-                JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
-                    ,"Atenção", JOptionPane.WARNING_MESSAGE);
-
-                TelaLogin.this.dispose();
-                new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                Carregar2 Carregar2 = new Carregar2();
-                Carregar2.setVisible(true); 
-            }*/
+            }
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
 
@@ -444,52 +307,23 @@ public class TelaLogin extends javax.swing.JFrame {
             String email = (loginEmail.getText());
             String senha = new String(loginSenha.getPassword());
 
-            UsuarioController usuarioController = new UsuarioController();
-            //usuarioController.logar(email, senha);
+            UsuarioController usuarioController = new UsuarioController();  
+            boolean logar = usuarioController.tentarLogar(email, senha, false);
 
-            TelaLogin.this.dispose();
-            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-            /*
-            String senha = new String(loginSenha.getPassword());
-        
-            if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
-                /* 
-                COMANDO PARA TESTE!!!
-
-                String email = loginEmail.getText();
-                String senha = loginSenha.getText();
-
-                JOptionPane.showMessageDialog(null, "E-Mail: "+email
-                    +"\nSenha: "+senha
-                    ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
-                );
-                *
-            
+            if(logar == true){
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar1 carregar1 = new Carregar1();
-                carregar1.setVisible(true);            
+                carregar1.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                        + "que você digitou não\n batem com nossos registros. "
-                        + "Por favor, verifique e\n tente novamente." 
-                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
-
-                mostraSenha.setText("");
+                    + "que você digitou não\n batem com nossos registros. "
+                    + "Por favor, verifique e\n tente novamente." 
+                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE
+                );
+                loginEmail.setText("");
                 loginSenha.setText("");
-            } 
-        
-            if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
-
-                JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
-                    ,"Atenção", JOptionPane.WARNING_MESSAGE);
-
-                TelaLogin.this.dispose();
-                new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                Carregar2 Carregar2 = new Carregar2();
-                Carregar2.setVisible(true); 
-            }*/
+            }
         }
     }//GEN-LAST:event_boxMostraSenhaKeyPressed
 
@@ -499,51 +333,23 @@ public class TelaLogin extends javax.swing.JFrame {
             String email = (loginEmail.getText());
             String senha = new String(loginSenha.getPassword());
 
-            UsuarioController usuarioController = new UsuarioController();
-            //usuarioController.logar(email, senha);
+            UsuarioController usuarioController = new UsuarioController();  
+            boolean logar = usuarioController.tentarLogar(email, senha, false);
 
-            TelaLogin.this.dispose();
-            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-            /*String senha = new String(loginSenha.getPassword());
-        
-            if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
-                /* 
-                COMANDO PARA TESTE!!!
-
-                String email = loginEmail.getText();
-                String senha = loginSenha.getText();
-
-                JOptionPane.showMessageDialog(null, "E-Mail: "+email
-                    +"\nSenha: "+senha
-                    ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
-                );
-                //*
-            
+            if(logar == true){
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar1 carregar1 = new Carregar1();
-                carregar1.setVisible(true);            
+                carregar1.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                        + "que você digitou não\n batem com nossos registros. "
-                        + "Por favor, verifique e\n tente novamente." 
-                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
-
-                mostraSenha.setText("");
+                    + "que você digitou não\n batem com nossos registros. "
+                    + "Por favor, verifique e\n tente novamente." 
+                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE
+                );
+                loginEmail.setText("");
                 loginSenha.setText("");
-            } 
-        
-            if(("adm".equals(loginEmail.getText())) && ("adm".equals(senha))){  
-
-                JOptionPane.showMessageDialog(null, "Esse perfil é de usuário Administrador!" 
-                    ,"Atenção", JOptionPane.WARNING_MESSAGE);
-
-                TelaLogin.this.dispose();
-                new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                Carregar2 Carregar2 = new Carregar2();
-                Carregar2.setVisible(true); 
-            }*/
+            }
         }
     }//GEN-LAST:event_loginEmailKeyPressed
     /**
@@ -588,9 +394,9 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel linkCadastroUsuario;
     private javax.swing.JButton loginBotao;
     private javax.swing.JTextField loginEmail;
     private javax.swing.JPasswordField loginSenha;
