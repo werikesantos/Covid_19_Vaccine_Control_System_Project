@@ -5,8 +5,9 @@
  */
 package br.com.sobrevida.vacinaSARSCoV2.controller;
 
-import br.com.sobrevida.vacinaSARSCoV2.model.Dao;
+import br.com.sobrevida.vacinaSARSCoV2.model.dao.ConnectionFactory;
 import br.com.sobrevida.vacinaSARSCoV2.model.PessoaModel;
+import br.com.sobrevida.vacinaSARSCoV2.model.dao.PessoaDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -14,8 +15,19 @@ import java.sql.PreparedStatement;
  *
  * @author WERIKE
  */
-public class PessoaController {
-       
+public class PessoaController{
+    
+    PessoaDao pessoaDao = new PessoaDao();
+    PessoaModel pessoaModel = new PessoaModel();
+    
+    public void inserir(String nome, String fone, String email){
+        //FAÇO VALIDAÇÕES DOS DADOS
+        pessoaModel.setNome(nome);
+        
+        pessoaDao.inserir(pessoaModel);
+    }
+    
+    /*
     public void inserir(PessoaModel pm){
         //1: Definir o comando SQL
         String sql = "INSERT INTO tb_pessoa(nome, fone, email) VALUES (?, ?, ?)";
@@ -38,6 +50,7 @@ public class PessoaController {
         catch(Exception e){
             e.printStackTrace();
         }
-    }
+    
+    }*/
     
 }

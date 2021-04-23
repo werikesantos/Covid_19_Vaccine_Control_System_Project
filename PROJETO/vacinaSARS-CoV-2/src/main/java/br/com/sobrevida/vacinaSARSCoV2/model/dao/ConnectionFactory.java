@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sobrevida.vacinaSARSCoV2.model;
+package br.com.sobrevida.vacinaSARSCoV2.model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,14 +11,14 @@ import java.sql.DriverManager;
  *
  * @author WERIKE
  */
-public class Dao {
+public class ConnectionFactory{
     
     private final String URL = "jdbc:mysql://";
     private final String USUARIO = "root";
     private final String SENHA = "";
     private final String HOST = "localhost:";
     private final String PORTA = "3306/";
-    private final String BD = "db_pessoas";
+    private final String BD = "bd_vacinasars_cov_2";
     
     public Connection connection(){ 
         try{

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sobrevida.vacinaSARSCoV2.View;
+package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
@@ -35,8 +35,8 @@ public class Carregar2 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         carrega = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        imgFundo = new javax.swing.JLabel();
+        icoCarrega = new javax.swing.JLabel();
+        imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(763, 352));
@@ -55,10 +55,14 @@ public class Carregar2 extends javax.swing.JFrame {
         carrega.setText("0%");
         jPanel1.add(carrega);
         carrega.setBounds(370, 210, 70, 47);
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(360, 120, 70, 70);
-        jPanel1.add(imgFundo);
-        imgFundo.setBounds(-1090, -530, 1920, 1080);
+
+        icoCarrega.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\b.gif")); // NOI18N
+        jPanel1.add(icoCarrega);
+        icoCarrega.setBounds(360, 120, 70, 70);
+
+        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\a.jpg")); // NOI18N
+        jPanel1.add(imageFundo);
+        imageFundo.setBounds(-1090, -530, 1920, 1080);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 770, 350);
@@ -132,8 +136,8 @@ public class Carregar2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel carrega;
-    private javax.swing.JLabel imgFundo;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel icoCarrega;
+    private javax.swing.JLabel imageFundo;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
