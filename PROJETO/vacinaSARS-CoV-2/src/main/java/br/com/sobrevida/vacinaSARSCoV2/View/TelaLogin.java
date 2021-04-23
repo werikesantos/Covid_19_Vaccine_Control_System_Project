@@ -9,7 +9,6 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -208,10 +207,61 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = new String(loginSenha.getPassword());
         
         UsuarioController usuarioController = new UsuarioController();
+        
+        boolean resultado = usuarioController.logar(email, senha, false);
+        
+        if(resultado == true){
+            TelaLogin.this.dispose();
+            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }else{
+            loginEmail.setText("");
+            loginSenha.setText("");
+        }
+        
+        /*
+        //1: Definir o comando SQL
+        String sql = "SELECT email, senha FROM bd_vacinasars_cov_2.usuario";
+        
+        //2: Abrir uma conexão
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        
+        try(Connection conn = connectionFactory.connection()){
+        
+            //3: Pré compila o comando
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            //4: Executa o comando e guarda
+            //o resultado em um ResultSet
+            ResultSet rs = ps.executeQuery();
+            
+            //5: itera sobre o resultado
+            while(rs.next()){
+                String bancoEmail = rs.getString("email");
+                String bancoSenha = rs.getString("senha");
+                                
+                if((email.equals(bancoEmail)) && (senha.equals(bancoSenha))){
+                    TelaLogin.this.dispose();
+                    new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    Carregar1 carregar1 = new Carregar1();
+                    carregar1.setVisible(true);
+                }
+            } 
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }*/
+        
+        
+        /*
+        String email = (loginEmail.getText());
+        String senha = new String(loginSenha.getPassword());
+        
+        UsuarioController usuarioController = new UsuarioController();
         usuarioController.logar(email, senha);
         
         TelaLogin.this.dispose();
         new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        */
         
         /*if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
             /* 
@@ -285,7 +335,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();
-            usuarioController.logar(email, senha);
+            //usuarioController.logar(email, senha);
 
             TelaLogin.this.dispose();
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -340,7 +390,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();
-            usuarioController.logar(email, senha);
+            //usuarioController.logar(email, senha);
 
             TelaLogin.this.dispose();
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -395,7 +445,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();
-            usuarioController.logar(email, senha);
+            //usuarioController.logar(email, senha);
 
             TelaLogin.this.dispose();
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -450,7 +500,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();
-            usuarioController.logar(email, senha);
+            //usuarioController.logar(email, senha);
 
             TelaLogin.this.dispose();
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
