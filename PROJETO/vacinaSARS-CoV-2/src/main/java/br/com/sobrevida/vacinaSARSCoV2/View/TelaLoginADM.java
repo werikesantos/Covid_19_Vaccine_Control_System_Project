@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.com.sobrevida.vacinaSARSCoV2.View;
+package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -112,7 +112,7 @@ public class TelaLoginADM extends javax.swing.JFrame {
         jTextField34 = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jTextField35 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Manager");
@@ -666,14 +666,15 @@ public class TelaLoginADM extends javax.swing.JFrame {
         getContentPane().add(deletarUsuario);
         deletarUsuario.setBounds(245, 26, 520, 400);
 
-        jLabel1.setOpaque(true);
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\adm2.jpg")); // NOI18N
+        imageFundo.setOpaque(true);
+        imageFundo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                imageFundoMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-130, -150, 2570, 710);
+        getContentPane().add(imageFundo);
+        imageFundo.setBounds(-130, -150, 2570, 710);
 
         getAccessibleContext().setAccessibleDescription("Login");
 
@@ -734,11 +735,11 @@ public class TelaLoginADM extends javax.swing.JFrame {
         carregar3.setVisible(true);
     }//GEN-LAST:event_voltarMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void imageFundoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageFundoMouseClicked
         /*cadastroUsuario.setVisible(false);
         alterarUsuario.setVisible(false);
         deletarUsuario.setVisible(false);*/
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_imageFundoMouseClicked
 
     private void formAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formAlterarMouseClicked
         // TODO add your handling code here:
@@ -828,7 +829,7 @@ public class TelaLoginADM extends javax.swing.JFrame {
     private javax.swing.JLayeredPane formCadastroUsuario;
     private javax.swing.JButton formDeletar;
     private javax.swing.JLayeredPane formDeletarUsuario;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

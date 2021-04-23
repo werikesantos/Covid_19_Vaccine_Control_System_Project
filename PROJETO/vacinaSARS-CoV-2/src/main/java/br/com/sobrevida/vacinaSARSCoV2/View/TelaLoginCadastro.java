@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.com.sobrevida.vacinaSARSCoV2.View;
+package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -35,7 +35,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        icon = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -49,7 +49,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         loginEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sign up");
@@ -61,8 +61,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(228, 229, 232));
         jPanel1.setLayout(null);
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(75, 10, 120, 120);
+
+        icon.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin1.png")); // NOI18N
+        jPanel1.add(icon);
+        icon.setBounds(75, 10, 120, 120);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setMinimumSize(new java.awt.Dimension(220, 270));
@@ -183,8 +185,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(520, 0, 280, 500);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-370, -210, 2570, 710);
+
+        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin2.png")); // NOI18N
+        getContentPane().add(imageFundo);
+        imageFundo.setBounds(-370, -210, 2570, 710);
 
         getAccessibleContext().setAccessibleDescription("Login");
 
@@ -313,8 +317,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox boxMostraSenha;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel icon;
+    private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

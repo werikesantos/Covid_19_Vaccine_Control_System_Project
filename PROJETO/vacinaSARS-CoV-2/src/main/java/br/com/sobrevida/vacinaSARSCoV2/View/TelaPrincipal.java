@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sobrevida.vacinaSARSCoV2.View;
+package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -20,7 +20,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         //SE ALTO AJUSTA AO TAMANHO DO MONITOR
-        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         //ALTERANDO O ICONE PADRAO DO JAVA
         Utilitario utilitario = new Utilitario();
@@ -37,6 +37,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktop = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -52,12 +53,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vacinação SARS-COV-2");
         setLocationByPlatform(true);
-        setResizable(false);
+        setMaximumSize(new java.awt.Dimension(1366, 768));
+        setMinimumSize(new java.awt.Dimension(1366, 740));
+        setPreferredSize(new java.awt.Dimension(1366, 740));
 
         jDesktop.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktop.setPreferredSize(new java.awt.Dimension(720, 480));
+        jDesktop.setMaximumSize(new java.awt.Dimension(1366, 768));
+        jDesktop.setMinimumSize(new java.awt.Dimension(1280, 720));
+        jDesktop.setPreferredSize(new java.awt.Dimension(1366, 768));
+
+        jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 780, Short.MAX_VALUE)
+        );
+
+        jDesktop.add(jPanel1);
+        jPanel1.setBounds(960, 0, 420, 780);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\painel1.jpg")); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(1366, 768));
+        jLabel1.setMinimumSize(new java.awt.Dimension(1280, 720));
+        jLabel1.setName(""); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(1280, 720));
         jDesktop.add(jLabel1);
-        jLabel1.setBounds(-640, -10, 0, 680);
+        jLabel1.setBounds(-540, -10, 1910, 790);
+
+        jMenuBar1.setMaximumSize(new java.awt.Dimension(1366, 768));
+        jMenuBar1.setMinimumSize(new java.awt.Dimension(1280, 720));
 
         jMenu1.setText("Cadastro");
 
@@ -126,15 +157,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktop, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesktop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jDesktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1280, 721));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -236,6 +267,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem sair;
     private javax.swing.JMenuItem trocarPerfil;
     // End of variables declaration//GEN-END:variables

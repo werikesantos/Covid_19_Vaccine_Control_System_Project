@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sobrevida.vacinaSARSCoV2.View;
+package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.PessoaController;
 import br.com.sobrevida.vacinaSARSCoV2.model.PessoaModel;
@@ -30,14 +30,18 @@ public class Teste{
                     String fone = JOptionPane.showInputDialog("Fone?");
                     String email = JOptionPane.showInputDialog("Email?");
                     
-                    PessoaModel pm = new PessoaModel();
-                    PessoaController pc = new PessoaController();
+                    PessoaController pessoaController = new PessoaController();
                     
-                    pm.setNome(nome);
-                    pm.setFone(fone);
-                    pm.setEmail(email);
+                    pessoaController.inserir(nome, fone, email);
+                            
+                    //PessoaModel pm = new PessoaModel();
+                    //PessoaController pc = new PessoaController();
                     
-                    pc.inserir(pm);
+                    //pm.setNome(nome);
+                    //pm.setFone(fone);
+                    //pm.setEmail(email);
+                    
+                    //pc.inserir(pm);
                     break;
                 }
                 case 2:

@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package br.com.sobrevida.vacinaSARSCoV2.View;
+package br.com.sobrevida.vacinaSARSCoV2.view;
 
+import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,6 +22,8 @@ public class TelaLogin extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
+        
+        
         //ALTERANDO O ICONE PADRAO DO JAVA
         Utilitario utilitario = new Utilitario();
         utilitario.inserirIcone(this);
@@ -35,9 +38,9 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        imageFundo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        Icon = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -56,13 +59,17 @@ public class TelaLogin extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
         getContentPane().setLayout(null);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(260, -180, 2570, 710);
+
+        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin2.png")); // NOI18N
+        getContentPane().add(imageFundo);
+        imageFundo.setBounds(260, -180, 2570, 710);
 
         jPanel1.setBackground(new java.awt.Color(228, 229, 232));
         jPanel1.setLayout(null);
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(70, 10, 120, 120);
+
+        Icon.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin1.png")); // NOI18N
+        jPanel1.add(Icon);
+        Icon.setBounds(70, 10, 120, 120);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setLayout(null);
@@ -197,9 +204,16 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void loginBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBotaoActionPerformed
         
+        String email = (loginEmail.getText());
         String senha = new String(loginSenha.getPassword());
         
-        if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
+        UsuarioController usuarioController = new UsuarioController();
+        usuarioController.logar(email, senha);
+        
+        TelaLogin.this.dispose();
+        new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        /*if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
             /* 
             COMANDO PARA TESTE!!!
             
@@ -210,7 +224,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 +"\nSenha: "+senha
                 ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
             );
-            */
+            
             
             TelaLogin.this.dispose();
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -235,7 +249,7 @@ public class TelaLogin extends javax.swing.JFrame {
             new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             Carregar2 Carregar2 = new Carregar2();
             Carregar2.setVisible(true); 
-        }
+        }*/
     }//GEN-LAST:event_loginBotaoActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
@@ -267,6 +281,16 @@ public class TelaLogin extends javax.swing.JFrame {
     private void loginSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
+            String email = (loginEmail.getText());
+            String senha = new String(loginSenha.getPassword());
+
+            UsuarioController usuarioController = new UsuarioController();
+            usuarioController.logar(email, senha);
+
+            TelaLogin.this.dispose();
+            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+            /*
             String senha = new String(loginSenha.getPassword());
         
             if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
@@ -280,7 +304,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     +"\nSenha: "+senha
                     ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
                 );
-                */
+                *
             
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -305,13 +329,23 @@ public class TelaLogin extends javax.swing.JFrame {
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar2 Carregar2 = new Carregar2();
                 Carregar2.setVisible(true); 
-            }
+            }*/
         }
     }//GEN-LAST:event_loginSenhaKeyPressed
 
     private void mostraSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mostraSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
+            String email = (loginEmail.getText());
+            String senha = new String(loginSenha.getPassword());
+
+            UsuarioController usuarioController = new UsuarioController();
+            usuarioController.logar(email, senha);
+
+            TelaLogin.this.dispose();
+            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
+            /*
             String senha = new String(loginSenha.getPassword());
         
             if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
@@ -325,7 +359,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     +"\nSenha: "+senha
                     ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
                 );
-                */
+                *
             
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -350,13 +384,23 @@ public class TelaLogin extends javax.swing.JFrame {
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar2 Carregar2 = new Carregar2();
                 Carregar2.setVisible(true); 
-            }
+            }*/
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
 
     private void boxMostraSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxMostraSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
+            String email = (loginEmail.getText());
+            String senha = new String(loginSenha.getPassword());
+
+            UsuarioController usuarioController = new UsuarioController();
+            usuarioController.logar(email, senha);
+
+            TelaLogin.this.dispose();
+            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+            /*
             String senha = new String(loginSenha.getPassword());
         
             if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
@@ -370,7 +414,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     +"\nSenha: "+senha
                     ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
                 );
-                */
+                *
             
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -395,14 +439,23 @@ public class TelaLogin extends javax.swing.JFrame {
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar2 Carregar2 = new Carregar2();
                 Carregar2.setVisible(true); 
-            }
+            }*/
         }
     }//GEN-LAST:event_boxMostraSenhaKeyPressed
 
     private void loginEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginEmailKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
+            String email = (loginEmail.getText());
             String senha = new String(loginSenha.getPassword());
+
+            UsuarioController usuarioController = new UsuarioController();
+            usuarioController.logar(email, senha);
+
+            TelaLogin.this.dispose();
+            new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+            /*String senha = new String(loginSenha.getPassword());
         
             if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){    
                 /* 
@@ -415,7 +468,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     +"\nSenha: "+senha
                     ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE
                 );
-                */
+                //*
             
                 TelaLogin.this.dispose();
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -440,7 +493,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Carregar2 Carregar2 = new Carregar2();
                 Carregar2.setVisible(true); 
-            }
+            }*/
         }
     }//GEN-LAST:event_loginEmailKeyPressed
     /**
@@ -479,9 +532,9 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Icon;
     private javax.swing.JCheckBox boxMostraSenha;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
