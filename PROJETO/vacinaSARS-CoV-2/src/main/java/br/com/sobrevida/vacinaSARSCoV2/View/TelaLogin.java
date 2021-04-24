@@ -48,6 +48,7 @@ public class TelaLogin extends javax.swing.JFrame {
         mostraSenha = new javax.swing.JTextField();
         boxMostraSenha = new javax.swing.JCheckBox();
         loginEmail = new javax.swing.JTextField();
+        linkResetCadastro = new javax.swing.JLabel();
         linkCadastroUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,11 +81,11 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel5.setText("Username");
+        jLabel5.setText("Email address");
         jLabel5.setMaximumSize(new java.awt.Dimension(35, 17));
         jLabel5.setMinimumSize(new java.awt.Dimension(35, 17));
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 57, 60, 20);
+        jLabel5.setBounds(20, 57, 80, 20);
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 135, 197));
@@ -176,6 +177,18 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 150, 220, 270);
 
+        linkResetCadastro.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        linkResetCadastro.setForeground(new java.awt.Color(51, 51, 255));
+        linkResetCadastro.setText("Reset password");
+        linkResetCadastro.setPreferredSize(new java.awt.Dimension(35, 17));
+        linkResetCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkResetCadastroMouseClicked(evt);
+            }
+        });
+        jPanel1.add(linkResetCadastro);
+        linkResetCadastro.setBounds(20, 425, 100, 17);
+
         linkCadastroUsuario.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         linkCadastroUsuario.setForeground(new java.awt.Color(51, 51, 255));
         linkCadastroUsuario.setText("Create free account");
@@ -186,7 +199,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(linkCadastroUsuario);
-        linkCadastroUsuario.setBounds(130, 425, 110, 17);
+        linkCadastroUsuario.setBounds(135, 425, 110, 17);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 260, 530);
@@ -352,6 +365,13 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_loginEmailKeyPressed
+
+    private void linkResetCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkResetCadastroMouseClicked
+        TelaLogin.this.dispose();
+        new TelaLogin().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        TelaLoginReset telaLoginReset = new TelaLoginReset();
+        telaLoginReset.setVisible(true);
+    }//GEN-LAST:event_linkResetCadastroMouseClicked
     /**
      * @param args the command line arguments
      */
@@ -397,6 +417,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel linkCadastroUsuario;
+    private javax.swing.JLabel linkResetCadastro;
     private javax.swing.JButton loginBotao;
     private javax.swing.JTextField loginEmail;
     private javax.swing.JPasswordField loginSenha;
