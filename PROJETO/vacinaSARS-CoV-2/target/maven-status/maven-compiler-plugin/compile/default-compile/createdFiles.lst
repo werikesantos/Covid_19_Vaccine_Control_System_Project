@@ -1,6 +1,7 @@
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginADM$11.class
 br\com\sobrevida\vacinaSARSCoV2\view\Carregar2$2.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginCadastro.class
+br\com\sobrevida\vacinaSARSCoV2\controller\UsuarioController.class
 br\com\sobrevida\vacinaSARSCoV2\view\Carregar2.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginADM$6.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginADM$2.class
@@ -15,6 +16,7 @@ br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginADM$9.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLogin$7.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginCadastro$5.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLogin$1.class
+br\com\sobrevida\vacinaSARSCoV2\model\dao\ConnectionFactory.class
 br\com\sobrevida\vacinaSARSCoV2\view\Carregar3$1.class
 br\com\sobrevida\vacinaSARSCoV2\view\TipoVacinaCadastro.class
 br\com\sobrevida\vacinaSARSCoV2\view\Carregar1$1.class
@@ -22,6 +24,7 @@ br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginADM$10.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLogin$8.class
 br\com\sobrevida\vacinaSARSCoV2\view\TipoVacinaCadastro$1.class
 br\com\sobrevida\vacinaSARSCoV2\controller\PessoaController.class
+br\com\sobrevida\vacinaSARSCoV2\model\UsuarioModel.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginCadastro$7.class
 br\com\sobrevida\vacinaSARSCoV2\view\CidadaoCadastro$3.class
 br\com\sobrevida\vacinaSARSCoV2\view\Carregar.class
@@ -67,5 +70,6 @@ br\com\sobrevida\vacinaSARSCoV2\view\Carregar2$1.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginADM$8.class
 br\com\sobrevida\vacinaSARSCoV2\view\Carregar3$3.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLoginCadastro$6.class
-br\com\sobrevida\vacinaSARSCoV2\model\Dao.class
+br\com\sobrevida\vacinaSARSCoV2\model\dao\PessoaDao.class
 br\com\sobrevida\vacinaSARSCoV2\view\TelaLogin$3.class
+br\com\sobrevida\vacinaSARSCoV2\model\dao\UsuarioDao.class

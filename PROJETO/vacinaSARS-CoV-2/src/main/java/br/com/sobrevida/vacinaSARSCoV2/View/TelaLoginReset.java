@@ -14,10 +14,10 @@ import javax.swing.JOptionPane;
  *
  * @author WERIKE
  */
-public class TelaLoginCadastro extends javax.swing.JFrame {
+public class TelaLoginReset extends javax.swing.JFrame {
 
     /** Creates new form TelaLogin */
-    public TelaLoginCadastro() {
+    public TelaLoginReset() {
         initComponents();
         setLocationRelativeTo(null);
         
@@ -53,7 +53,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sign up");
+        setTitle("Reset Password");
         setMaximumSize(new java.awt.Dimension(800, 510));
         setMinimumSize(new java.awt.Dimension(800, 510));
         setPreferredSize(new java.awt.Dimension(800, 510));
@@ -71,11 +71,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(220, 270));
         jPanel2.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel3.setText("Sign up");
+        jLabel3.setText("Forgot your password?");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(20, 11, 90, 40);
+        jLabel3.setBounds(20, 11, 190, 40);
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 135, 197));
@@ -294,8 +294,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_mostraSenha1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        TelaLoginCadastro.this.dispose();
-        new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        TelaLoginReset.this.dispose();
+        new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaLogin telaLogin = new TelaLogin();
         telaLogin.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
@@ -317,21 +317,23 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginReset.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginReset.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginReset.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginReset.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLoginCadastro().setVisible(true);
+                new TelaLoginReset().setVisible(true);
             }
         });
     }
