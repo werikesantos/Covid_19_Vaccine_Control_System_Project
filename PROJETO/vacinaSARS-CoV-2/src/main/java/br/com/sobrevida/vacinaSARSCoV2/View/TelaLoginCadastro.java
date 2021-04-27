@@ -52,6 +52,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,6 +107,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         signUP.setBounds(125, 233, 80, 31);
 
         loginSenha1.setBackground(new java.awt.Color(204, 204, 255));
+        loginSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        loginSenha1.setForeground(new java.awt.Color(0, 102, 102));
         loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha1.setOpaque(false);
         loginSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -117,6 +120,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         loginSenha1.setBounds(20, 180, 180, 30);
 
         mostraSenha1.setBackground(new java.awt.Color(204, 204, 255));
+        mostraSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        mostraSenha1.setForeground(new java.awt.Color(0, 102, 102));
         mostraSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         mostraSenha1.setOpaque(false);
         mostraSenha1.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +138,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         mostraSenha1.setBounds(20, 180, 180, 30);
 
         loginSenha.setBackground(new java.awt.Color(204, 204, 255));
+        loginSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        loginSenha.setForeground(new java.awt.Color(0, 102, 102));
         loginSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha.setOpaque(false);
         loginSenha.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -144,6 +151,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         loginSenha.setBounds(20, 130, 180, 30);
 
         mostraSenha.setBackground(new java.awt.Color(204, 204, 255));
+        mostraSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        mostraSenha.setForeground(new java.awt.Color(0, 102, 102));
         mostraSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         mostraSenha.setOpaque(false);
         mostraSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -179,6 +188,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         boxMostraSenha.setBounds(20, 210, 110, 25);
 
         loginEmail.setBackground(new java.awt.Color(204, 204, 255));
+        loginEmail.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        loginEmail.setForeground(new java.awt.Color(0, 102, 102));
         loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginEmail.setOpaque(false);
         loginEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +231,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel1.setBounds(520, 0, 280, 500);
 
         avisoSenha.setBackground(new java.awt.Color(255, 102, 51));
+        avisoSenha.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        avisoSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                avisoSenhaMouseClicked(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
@@ -238,23 +255,42 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("O sistema diferencia letras maiúsculas de minúsculas. ");
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("X");
+        jLabel10.setPreferredSize(new java.awt.Dimension(17, 12));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout avisoSenhaLayout = new javax.swing.GroupLayout(avisoSenha);
         avisoSenha.setLayout(avisoSenhaLayout);
         avisoSenhaLayout.setHorizontalGroup(
             avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(avisoSenhaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(avisoSenhaLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(avisoSenhaLayout.createSequentialGroup()
+                        .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         avisoSenhaLayout.setVerticalGroup(
             avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(avisoSenhaLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, avisoSenhaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -262,11 +298,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         getContentPane().add(avisoSenha);
-        avisoSenha.setBounds(70, 210, 440, 160);
+        avisoSenha.setBounds(50, 210, 460, 160);
 
         imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin2.png")); // NOI18N
         getContentPane().add(imageFundo);
@@ -649,6 +685,14 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_boxMostraSenhaKeyPressed
 
+    private void avisoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_avisoSenhaMouseClicked
+        
+    }//GEN-LAST:event_avisoSenhaMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        avisoSenha.setVisible(false);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -691,6 +735,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel icon;
     private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

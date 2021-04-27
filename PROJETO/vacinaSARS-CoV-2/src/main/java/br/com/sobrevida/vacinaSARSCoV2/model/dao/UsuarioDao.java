@@ -10,7 +10,7 @@ import java.sql.ResultSet;
  * @author WERIKE
  */
 public class UsuarioDao{
-      
+    
     public boolean logar(UsuarioModel usuarioModel, boolean resultado){
          
         boolean result = resultado;
