@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import javax.swing.JOptionPane;
@@ -13,9 +8,6 @@ import javax.swing.JOptionPane;
  */
 public class CidadaoCadastro extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form CidadaoCadastro
-     */
     public CidadaoCadastro() {
         initComponents();
     }
@@ -288,7 +280,7 @@ public class CidadaoCadastro extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cidadaoEmailTXTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadaoEmailTXTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cidadaoEmailTXTFActionPerformed
 
     private void cidadaoCadastrarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadaoCadastrarBTNActionPerformed
@@ -321,8 +313,7 @@ public class CidadaoCadastro extends javax.swing.JInternalFrame {
             cidadaoEmailTXTF.setText("");
             cidadaoNascimentoTXTF.setText("");
             cidadaoCPFTXTF.setText("");
-            cidadaoCelularTXTF.setText("");
-            
+            cidadaoCelularTXTF.setText("");   
         }else{
             JOptionPane.showMessageDialog(null, "Preencher todos os campos!!!" 
                 ,"Confirmação de cadastro", JOptionPane.PLAIN_MESSAGE);
@@ -346,7 +337,7 @@ public class CidadaoCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cidadaoLimparBTNActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
 

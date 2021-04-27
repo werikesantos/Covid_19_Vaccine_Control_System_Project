@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import javax.swing.JFrame;
@@ -14,11 +9,9 @@ import javax.swing.JOptionPane;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaPrincipal
-     */
     public TelaPrincipal() {
         initComponents();
+        
         //SE ALTO AJUSTA AO TAMANHO DO MONITOR
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
@@ -170,29 +163,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCidadaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCidadaoCadastroActionPerformed
-        
-        //CHAMANDO A CLASSE "CIDADAOCADASTRO.JAVA"
         CidadaoCadastro cidadaoCadastro = new CidadaoCadastro();
-        
-        //ADICIONANDO O OBJETO "cidadaoCadastro" AO OBJETO "jDesktop"
         jDesktop.add(cidadaoCadastro);
-        
-        //DEPOIS DE ADICIONAR, TORNAR A CLASSE VISIVEL
         cidadaoCadastro.setVisible(true);
-        
     }//GEN-LAST:event_btnCidadaoCadastroActionPerformed
 
     private void btnTiposVacinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposVacinasActionPerformed
-       
-        //CHAMANDO A CLASSE "TipoVacinaCadastro.java"
         TipoVacinaCadastro tipoVacinaCadastro = new TipoVacinaCadastro();
-        
-        //ADICIONANDO O OBJETO "TipoVacinaCadastro" AO OBJETO "jDesktop"
         jDesktop.add(tipoVacinaCadastro);
-        
-        //DEPOIS DE ADICIONAR, TORNAR A CLASSE VISIVEL
         tipoVacinaCadastro.setVisible(true);
-        
     }//GEN-LAST:event_btnTiposVacinasActionPerformed
 
     private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
@@ -255,7 +234,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JMenuItem btnTiposVacinas;

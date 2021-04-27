@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
+
 /**
  *
  * @author WERIKE
  */
 public class Carregar3 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Carregar
-     */
     public Carregar3() {
         initComponents();
         
@@ -79,12 +72,12 @@ public class Carregar3 extends javax.swing.JFrame {
             public void run(){
                 while(i<=100){
                     carrega.setText(String.valueOf(i)+"%");
-                    i = i+5;           
+                    i = i+5;   
+                    
                 try{
                     sleep(150);
                 }catch (Exception e){    
                 }
-                
             }
             
             Carregar3.this.dispose();
@@ -92,8 +85,7 @@ public class Carregar3 extends javax.swing.JFrame {
             TelaLogin telaLogin = new TelaLogin();
             telaLogin.setVisible(true);  
         }
-        }.start();
-        
+        }.start(); 
     }//GEN-LAST:event_formWindowOpened
 
     /**

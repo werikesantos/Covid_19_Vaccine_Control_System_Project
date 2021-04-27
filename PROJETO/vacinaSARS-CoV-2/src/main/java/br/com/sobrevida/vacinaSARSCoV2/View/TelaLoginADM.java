@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import javax.swing.JFrame;
@@ -15,7 +9,6 @@ import javax.swing.JOptionPane;
  */
 public class TelaLoginADM extends javax.swing.JFrame {
 
-    /** Creates new form TelaLogin */
     public TelaLoginADM() {
         initComponents();
         cadastroUsuario.setVisible(false);
@@ -699,7 +692,7 @@ public class TelaLoginADM extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarMouseClicked
 
     private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_alterarActionPerformed
 
     private void alterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alterarMouseClicked
@@ -736,13 +729,11 @@ public class TelaLoginADM extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarMouseClicked
 
     private void imageFundoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageFundoMouseClicked
-        /*cadastroUsuario.setVisible(false);
-        alterarUsuario.setVisible(false);
-        deletarUsuario.setVisible(false);*/
+
     }//GEN-LAST:event_imageFundoMouseClicked
 
     private void formAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formAlterarMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_formAlterarMouseClicked
 
     private void formCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formCadastrarMouseClicked
@@ -764,11 +755,11 @@ public class TelaLoginADM extends javax.swing.JFrame {
     }//GEN-LAST:event_formCadastrarMouseClicked
 
     private void formDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formDeletarMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_formDeletarMouseClicked
 
     private void cPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cPerfilActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cPerfilActionPerformed
 
     /**
@@ -880,5 +871,4 @@ public class TelaLoginADM extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField35;
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
-
 }

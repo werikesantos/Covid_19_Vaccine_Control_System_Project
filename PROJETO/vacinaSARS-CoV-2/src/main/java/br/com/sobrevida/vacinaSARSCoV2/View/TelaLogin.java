@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
@@ -17,7 +11,6 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
-    /** Creates new form TelaLogin */
     public TelaLogin() {
         initComponents();
         setLocationRelativeTo(null);
@@ -210,7 +203,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenhaActionPerformed
-        //nome.setText("");
+
     }//GEN-LAST:event_mostraSenhaActionPerformed
 
     private void loginBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBotaoActionPerformed
@@ -218,7 +211,7 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = new String(loginSenha.getPassword());
         
         UsuarioController usuarioController = new UsuarioController();  
-        boolean logar = usuarioController.tentarLogar(email, senha, false);
+        boolean logar = usuarioController.logar(email, senha, false);
         
         if(logar == true){
             TelaLogin.this.dispose();
@@ -250,7 +243,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_boxMostraSenhaActionPerformed
 
     private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_loginEmailActionPerformed
 
     private void linkCadastroUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkCadastroUsuarioMouseClicked
@@ -260,7 +253,7 @@ public class TelaLogin extends javax.swing.JFrame {
         telaLoginCadastro.setVisible(true);
     }//GEN-LAST:event_linkCadastroUsuarioMouseClicked
     private void loginBotaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBotaoMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_loginBotaoMouseClicked
 
     private void loginSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenhaKeyPressed
@@ -270,7 +263,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();  
-            boolean logar = usuarioController.tentarLogar(email, senha, false);
+            boolean logar = usuarioController.logar(email, senha, false);
 
             if(logar == true){
                 TelaLogin.this.dispose();
@@ -297,7 +290,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();  
-            boolean logar = usuarioController.tentarLogar(email, senha, false);
+            boolean logar = usuarioController.logar(email, senha, false);
 
             if(logar == true){
                 TelaLogin.this.dispose();
@@ -324,7 +317,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();  
-            boolean logar = usuarioController.tentarLogar(email, senha, false);
+            boolean logar = usuarioController.logar(email, senha, false);
 
             if(logar == true){
                 TelaLogin.this.dispose();
@@ -351,7 +344,7 @@ public class TelaLogin extends javax.swing.JFrame {
             String senha = new String(loginSenha.getPassword());
 
             UsuarioController usuarioController = new UsuarioController();  
-            boolean logar = usuarioController.tentarLogar(email, senha, false);
+            boolean logar = usuarioController.logar(email, senha, false);
 
             if(logar == true){
                 TelaLogin.this.dispose();
@@ -428,5 +421,4 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField loginSenha;
     private javax.swing.JTextField mostraSenha;
     // End of variables declaration//GEN-END:variables
-
 }

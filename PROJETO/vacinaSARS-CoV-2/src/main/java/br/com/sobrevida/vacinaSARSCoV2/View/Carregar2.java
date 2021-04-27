@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
+
 /**
  *
  * @author WERIKE
  */
 public class Carregar2 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Carregar
-     */
     public Carregar2() {
         initComponents();
         

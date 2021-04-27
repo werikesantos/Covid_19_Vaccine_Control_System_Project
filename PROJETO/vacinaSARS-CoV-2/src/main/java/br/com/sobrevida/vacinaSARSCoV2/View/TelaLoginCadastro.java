@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
-import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioCadastroController;
+import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,7 +11,6 @@ import javax.swing.JOptionPane;
  */
 public class TelaLoginCadastro extends javax.swing.JFrame {
 
-    /** Creates new form TelaLogin */
     public TelaLoginCadastro() {
         initComponents();
         setLocationRelativeTo(null);
@@ -296,10 +289,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                          
         if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
             
-            UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-            boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+            UsuarioController usuarioController = new UsuarioController();  
+            boolean cadastro = usuarioController.cadastrar(email, senha, false);
         
-            if(logar == true){
+            if(cadastro == true){
                 loginEmail.setText("");
                 loginSenha.setText("");
                 loginSenha1.setText("");
@@ -353,11 +346,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_boxMostraSenhaActionPerformed
 
     private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_loginEmailActionPerformed
 
     private void mostraSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenha1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_mostraSenha1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -377,10 +370,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
             if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-                boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+                UsuarioController usuarioController = new UsuarioController();  
+                boolean cadastro = usuarioController.cadastrar(email, senha, false);
 
-                if(logar == true){
+                if(cadastro == true){
                     loginEmail.setText("");
                     loginSenha.setText("");
                     loginSenha1.setText("");
@@ -425,10 +418,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
             if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-                boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+                UsuarioController usuarioController = new UsuarioController();  
+                boolean cadastro = usuarioController.cadastrar(email, senha, false);
 
-                if(logar == true){
+                if(cadastro == true){
                     loginEmail.setText("");
                     loginSenha.setText("");
                     loginSenha1.setText("");
@@ -473,10 +466,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
             if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-                boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+                UsuarioController usuarioController = new UsuarioController();  
+                boolean cadastro = usuarioController.cadastrar(email, senha, false);
 
-                if(logar == true){
+                if(cadastro == true){
                     loginEmail.setText("");
                     loginSenha.setText("");
                     loginSenha1.setText("");
@@ -521,10 +514,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
             if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-                boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+                UsuarioController usuarioController = new UsuarioController();  
+                boolean cadastro = usuarioController.cadastrar(email, senha, false);
 
-                if(logar == true){
+                if(cadastro == true){
                     loginEmail.setText("");
                     loginSenha.setText("");
                     loginSenha1.setText("");
@@ -569,10 +562,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
             if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-                boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+                UsuarioController usuarioController = new UsuarioController();  
+                boolean cadastro = usuarioController.cadastrar(email, senha, false);
 
-                if(logar == true){
+                if(cadastro == true){
                     loginEmail.setText("");
                     loginSenha.setText("");
                     loginSenha1.setText("");
@@ -617,10 +610,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
             if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-                boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+                UsuarioController usuarioController = new UsuarioController();  
+                boolean cadastro = usuarioController.cadastrar(email, senha, false);
 
-                if(logar == true){
+                if(cadastro == true){
                     loginEmail.setText("");
                     loginSenha.setText("");
                     loginSenha1.setText("");
