@@ -7,6 +7,7 @@
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioCadastroController;
+import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -52,7 +53,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         imageFundo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reset Password");
         setMaximumSize(new java.awt.Dimension(800, 510));
         setMinimumSize(new java.awt.Dimension(800, 510));
@@ -85,7 +86,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel4.setText("Confirm Password");
+        jLabel4.setText("New password");
         jLabel4.setMaximumSize(new java.awt.Dimension(35, 17));
         jLabel4.setMinimumSize(new java.awt.Dimension(35, 17));
         jPanel2.add(jLabel4);
@@ -175,14 +176,14 @@ public class TelaLoginReset extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel6.setText("Return");
+        jLabel6.setText("Return page");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(24, 417, 100, 30);
+        jLabel6.setBounds(24, 420, 110, 40);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(520, 0, 280, 500);
@@ -204,68 +205,45 @@ public class TelaLoginReset extends javax.swing.JFrame {
         
         String email = (loginEmail.getText());
         String senha = new String(loginSenha.getPassword());
+        String newSenha = new String(loginSenha1.getPassword());
         
-        UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
-        boolean logar = usuarioCadastroController.tentarLogar(email, senha, false);
+        UsuarioController usuarioController = new UsuarioController();  
+        boolean logar = usuarioController.tentarLogar(email, senha, false);
         
         if(logar == true){
-            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!" 
-                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE
-            );
-        }else{
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                + "Por favor, verifique e tente novamente." 
-                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-            );
-            loginEmail.setText("");
-            loginSenha.setText("");
-        }
-        
-        /*
-        String senha = new String(loginSenha.getPassword());
-        String confirmacao = new String(loginSenha1.getPassword());
-        
-        if(senha.equals(confirmacao)){
+            if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
             
-            if(boxMostraSenha.isSelected()){
-                if(("user".equals(loginEmail.getText())) && (senha.equals("123"))){ 
-                    TelaLoginCadastro.this.dispose();
-                    new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    Carregar1 carregar1 = new Carregar1();
-                    carregar1.setVisible(true);        
-                }else{
-                    JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                            + "que você digitou não\n batem com nossos registros. "
-                            + "Por favor, verifique e\n tente novamente." 
-                        ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
+                UsuarioCadastroController usuarioCadastroController = new UsuarioCadastroController();  
+                boolean trocarSenha = usuarioCadastroController.trocarSenha(email, newSenha, false);
 
-                    mostraSenha.setText("");
+                if(trocarSenha == true){
+                    loginEmail.setText("");
                     loginSenha.setText("");
-                }
-            }
-        
-            if(("user".equals(loginEmail.getText())) && ("123".equals(senha))){ 
-                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                    + "\nUsuário: "+loginEmail.getText()+"\nSenha: "+senha 
-                    ,"Cadastro realizado", JOptionPane.WARNING_MESSAGE);
-                TelaLoginCadastro.this.dispose();
-                new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                TelaLogin TelaLogin = new TelaLogin();
-                TelaLogin.setVisible(true);            
-            }else{
-                JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                        + "que você digitou não\n batem com nossos registros. "
-                        + "Por favor, verifique e\n tente novamente." 
-                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE);
+                    loginSenha1.setText("");
+                    mostraSenha.setText("");
+                    mostraSenha1.setText("");
 
-                mostraSenha.setText("");
-                loginSenha.setText("");
+                    JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                        ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                    TelaLoginReset.this.dispose();
+                    new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    TelaLogin TelaLogin = new TelaLogin();
+                    TelaLogin.setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                        + "Por favor, verifique e tente novamente." 
+                        ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                    );
+                    
+                    loginEmail.setText("");
+                    loginSenha.setText("");
+                    loginSenha1.setText("");
+                    mostraSenha.setText("");
+                    mostraSenha1.setText("");
+                }
             } 
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "Confirmação de senha inválida" 
-                ,"Senha inválida", JOptionPane.WARNING_MESSAGE);
-        } */
+        }
     }//GEN-LAST:event_signUPActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed

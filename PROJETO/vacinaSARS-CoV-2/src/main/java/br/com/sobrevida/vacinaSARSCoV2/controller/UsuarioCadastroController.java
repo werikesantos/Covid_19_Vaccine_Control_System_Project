@@ -42,4 +42,31 @@ public class UsuarioCadastroController{
         }
         return result;
     }
+    
+    public boolean trocarSenha(String email, String newSenha, boolean resultado){
+            
+        boolean result = resultado;
+        
+        if((!"".equals(email)) && (newSenha != null)){
+            
+            usuarioModel.setEmail(email);
+            usuarioModel.setSenha(newSenha);
+            
+            UsuarioCadastroDao usuarioCadastroDao = new UsuarioCadastroDao();
+            resultado = usuarioCadastroDao.trocarSenha(usuarioModel, false);
+                
+            if(resultado == true){
+                return resultado;
+            }
+            
+            /*
+            UsuarioDao usuarioDao = new UsuarioDao();
+            resultado = usuarioDao.tentarLogar(email, senha, false);
+            
+            if(resultado == true){
+                return resultado;
+            } */
+        }
+        return result;
+    }
 }

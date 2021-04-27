@@ -187,7 +187,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(linkResetCadastro);
-        linkResetCadastro.setBounds(20, 425, 100, 17);
+        linkResetCadastro.setBounds(20, 420, 110, 40);
 
         linkCadastroUsuario.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         linkCadastroUsuario.setForeground(new java.awt.Color(51, 51, 255));
@@ -199,7 +199,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(linkCadastroUsuario);
-        linkCadastroUsuario.setBounds(135, 425, 110, 17);
+        linkCadastroUsuario.setBounds(135, 420, 110, 40);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 260, 530);
@@ -233,6 +233,7 @@ public class TelaLogin extends javax.swing.JFrame {
             );
             loginEmail.setText("");
             loginSenha.setText("");
+            mostraSenha.setText("");
         }
     }//GEN-LAST:event_loginBotaoActionPerformed
 
@@ -284,6 +285,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 );
                 loginEmail.setText("");
                 loginSenha.setText("");
+                mostraSenha.setText("");
             }
         }
     }//GEN-LAST:event_loginSenhaKeyPressed
@@ -310,6 +312,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 );
                 loginEmail.setText("");
                 loginSenha.setText("");
+                mostraSenha.setText("");
             }
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
@@ -336,6 +339,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 );
                 loginEmail.setText("");
                 loginSenha.setText("");
+                mostraSenha.setText("");
             }
         }
     }//GEN-LAST:event_boxMostraSenhaKeyPressed
@@ -362,6 +366,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 );
                 loginEmail.setText("");
                 loginSenha.setText("");
+                mostraSenha.setText("");
             }
         }
     }//GEN-LAST:event_loginEmailKeyPressed

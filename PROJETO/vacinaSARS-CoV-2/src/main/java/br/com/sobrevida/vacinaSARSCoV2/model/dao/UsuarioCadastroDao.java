@@ -35,6 +35,37 @@ public class UsuarioCadastroDao {
             
             //5: Executa o comando
             ps.execute();
+            
+            return resultado = true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
+    public boolean trocarSenha(UsuarioModel usuarioModel, boolean resultado){
+         
+        boolean result = resultado;
+        
+        //1: Definir o comando SQL
+        String sql = "UPDATE bd_vacinasars_cov_2.usuario SET senha = ? WHERE (email = ?)";
+        
+        //2: Abrir uma conexão
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try(Connection conn = connectionFactory.connection()){
+            
+            //3: Pré compila o comando
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            //4: Preenche os dados faltantes
+            ps.setString(1, usuarioModel.getSenha());
+            ps.setString(2, usuarioModel.getEmail());
+            
+            //5: Executa o comando
+            ps.execute();
+            
+            return resultado = true;
         }
         catch(Exception e){
             e.printStackTrace();
