@@ -69,21 +69,23 @@ public class Carregar extends javax.swing.JFrame {
             int i=0;
             
             public void run(){
+                
                 while(i<100){
                     i = i+5;
                     carrega.setText(String.valueOf(i)+"%");
                     
-                try{
-                    sleep(100);//600
-                }catch (Exception e){    
+                    try{
+                        sleep(100);//600
+                    }catch (Exception e){
+                        
+                    }
                 }
-            }
             
-            Carregar.this.dispose();
-            new Carregar().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            TelaLogin TelaLogin = new TelaLogin();
-            TelaLogin.setVisible(true);  
-        }
+                Carregar.this.dispose();
+                new Carregar().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                TelaLogin TelaLogin = new TelaLogin();
+                TelaLogin.setVisible(true);  
+            }
         }.start();
     }//GEN-LAST:event_formWindowOpened
 

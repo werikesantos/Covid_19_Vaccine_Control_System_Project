@@ -2,6 +2,7 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
+import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         utilitario.inserirIcone(this);
         
         avisoSenha.setVisible(false);
+        carga.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -48,6 +50,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         loginEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        carga = new javax.swing.JLabel();
         avisoSenha = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -223,6 +226,10 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(24, 420, 110, 40);
 
+        carga.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carga1.gif")); // NOI18N
+        jPanel1.add(carga);
+        carga.setBounds(220, 10, 30, 30);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(520, 0, 280, 500);
 
@@ -314,52 +321,71 @@ public class TelaLoginReset extends javax.swing.JFrame {
 
     private void signUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUPActionPerformed
         
-        String email = (loginEmail.getText());
-        String senha = new String(loginSenha.getPassword());
-        String newSenha = new String(loginSenha1.getPassword());
+        new Thread(){
+            int i=0;
             
-        boolean logar = usuarioController.logar(email, senha, false);
-        
-        if(logar == true){
-            if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
-             
-                boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
-
-                if(trocarSenha == true){
-                    loginEmail.setText("");
-                    loginSenha.setText("");
-                    loginSenha1.setText("");
-                    mostraSenha.setText("");
-                    mostraSenha1.setText("");
-
-                    JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                        ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                    TelaLoginReset.this.dispose();
-                    new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    TelaLogin TelaLogin = new TelaLogin();
-                    TelaLogin.setVisible(true);
-                }else{
-                    JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                        + "Por favor, verifique e tente novamente." 
-                        ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                    );
-                    
-                    loginEmail.setText("");
-                    loginSenha.setText("");
-                    loginSenha1.setText("");
-                    mostraSenha.setText("");
-                    mostraSenha1.setText("");
+            public void run(){
+                
+                while(i<100){
+                    i = i+5;
+                    try{
+                        carga.setVisible(true);
+                        sleep(200);//600
+                    }catch (Exception e){
+                        
+                    }
                 }
-            } 
-        }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-        }
+        
+                String email = (loginEmail.getText());
+                String senha = new String(loginSenha.getPassword());
+                String newSenha = new String(loginSenha1.getPassword());
+
+                boolean logar = usuarioController.logar(email, senha, false);
+
+                if(logar == true){
+                    carga.setVisible(false);
+                    if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+
+                        boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
+
+                        if(trocarSenha == true){
+                            loginEmail.setText("");
+                            loginSenha.setText("");
+                            loginSenha1.setText("");
+                            mostraSenha.setText("");
+                            mostraSenha1.setText("");
+
+                            JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                                ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                            TelaLoginReset.this.dispose();
+                            new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            TelaLogin TelaLogin = new TelaLogin();
+                            TelaLogin.setVisible(true);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                                + "Por favor, verifique e tente novamente." 
+                                ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                            );
+
+                            loginEmail.setText("");
+                            loginSenha.setText("");
+                            loginSenha1.setText("");
+                            mostraSenha.setText("");
+                            mostraSenha1.setText("");
+                        }
+                    } 
+                }else{
+                    carga.setVisible(false);
+                    loginEmail.setText("");
+                    loginSenha.setText("");
+                    loginSenha1.setText("");
+                    mostraSenha.setText("");
+                    mostraSenha1.setText("");
+                    avisoSenha.setVisible(true);
+                }
+            }
+        }.start();
     }//GEN-LAST:event_signUPActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
@@ -397,260 +423,355 @@ public class TelaLoginReset extends javax.swing.JFrame {
     private void loginEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginEmailKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
-            String email = (loginEmail.getText());
-            String senha = new String(loginSenha.getPassword());
-            String newSenha = new String(loginSenha1.getPassword());
+            new Thread(){
+            int i=0;
+            
+                public void run(){
 
-            boolean logar = usuarioController.logar(email, senha, false);
+                    while(i<100){
+                        i = i+5;
+                        try{
+                            carga.setVisible(true);
+                            sleep(200);//600
+                        }catch (Exception e){
 
-            if(logar == true){
-                if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
-
-                    boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
-
-                    if(trocarSenha == true){
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
-
-                        JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                            ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                        TelaLoginReset.this.dispose();
-                        new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        TelaLogin TelaLogin = new TelaLogin();
-                        TelaLogin.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                            + "Por favor, verifique e tente novamente." 
-                            ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                        );
-
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
+                        }
                     }
-                } 
-            }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-            }
+
+                    String email = (loginEmail.getText());
+                    String senha = new String(loginSenha.getPassword());
+                    String newSenha = new String(loginSenha1.getPassword());
+
+                    boolean logar = usuarioController.logar(email, senha, false);
+
+                    if(logar == true){
+                        carga.setVisible(false);
+                        if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+
+                            boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
+
+                            if(trocarSenha == true){
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+
+                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                                TelaLoginReset.this.dispose();
+                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                TelaLogin TelaLogin = new TelaLogin();
+                                TelaLogin.setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                                    + "Por favor, verifique e tente novamente." 
+                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                                );
+
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+                            }
+                        } 
+                    }else{
+                        carga.setVisible(false);
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+                        avisoSenha.setVisible(true);
+                    }
+                }
+            }.start();
         }
     }//GEN-LAST:event_loginEmailKeyPressed
 
     private void loginSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
-            String email = (loginEmail.getText());
-            String senha = new String(loginSenha.getPassword());
-            String newSenha = new String(loginSenha1.getPassword());
- 
-            boolean logar = usuarioController.logar(email, senha, false);
+            new Thread(){
+            int i=0;
+            
+                public void run(){
 
-            if(logar == true){
-                if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+                    while(i<100){
+                        i = i+5;
+                        try{
+                            carga.setVisible(true);
+                            sleep(200);//600
+                        }catch (Exception e){
 
-                    boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
-
-                    if(trocarSenha == true){
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
-
-                        JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                            ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                        TelaLoginReset.this.dispose();
-                        new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        TelaLogin TelaLogin = new TelaLogin();
-                        TelaLogin.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                            + "Por favor, verifique e tente novamente." 
-                            ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                        );
-
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
+                        }
                     }
-                } 
-            }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-            }
+
+                    String email = (loginEmail.getText());
+                    String senha = new String(loginSenha.getPassword());
+                    String newSenha = new String(loginSenha1.getPassword());
+
+                    boolean logar = usuarioController.logar(email, senha, false);
+
+                    if(logar == true){
+                        carga.setVisible(false);
+                        if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+
+                            boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
+
+                            if(trocarSenha == true){
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+
+                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                                TelaLoginReset.this.dispose();
+                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                TelaLogin TelaLogin = new TelaLogin();
+                                TelaLogin.setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                                    + "Por favor, verifique e tente novamente." 
+                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                                );
+
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+                            }
+                        } 
+                    }else{
+                        carga.setVisible(false);
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+                        avisoSenha.setVisible(true);
+                    }
+                }
+            }.start();
         }
     }//GEN-LAST:event_loginSenhaKeyPressed
 
     private void loginSenha1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenha1KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
-            String email = (loginEmail.getText());
-            String senha = new String(loginSenha.getPassword());
-            String newSenha = new String(loginSenha1.getPassword());
- 
-            boolean logar = usuarioController.logar(email, senha, false);
+            new Thread(){
+            int i=0;
+            
+                public void run(){
 
-            if(logar == true){
-                if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+                    while(i<100){
+                        i = i+5;
+                        try{
+                            carga.setVisible(true);
+                            sleep(200);//600
+                        }catch (Exception e){
 
-                    boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
-
-                    if(trocarSenha == true){
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
-
-                        JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                            ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                        TelaLoginReset.this.dispose();
-                        new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        TelaLogin TelaLogin = new TelaLogin();
-                        TelaLogin.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                            + "Por favor, verifique e tente novamente." 
-                            ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                        );
-
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
+                        }
                     }
-                } 
-            }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-            }
+
+                    String email = (loginEmail.getText());
+                    String senha = new String(loginSenha.getPassword());
+                    String newSenha = new String(loginSenha1.getPassword());
+
+                    boolean logar = usuarioController.logar(email, senha, false);
+
+                    if(logar == true){
+                        carga.setVisible(false);
+                        if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+
+                            boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
+
+                            if(trocarSenha == true){
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+
+                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                                TelaLoginReset.this.dispose();
+                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                TelaLogin TelaLogin = new TelaLogin();
+                                TelaLogin.setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                                    + "Por favor, verifique e tente novamente." 
+                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                                );
+
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+                            }
+                        } 
+                    }else{
+                        carga.setVisible(false);
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+                        avisoSenha.setVisible(true);
+                    }
+                }
+            }.start();
         }
     }//GEN-LAST:event_loginSenha1KeyPressed
 
     private void mostraSenha1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mostraSenha1KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
-            String email = (loginEmail.getText());
-            String senha = new String(loginSenha.getPassword());
-            String newSenha = new String(loginSenha1.getPassword());
- 
-            boolean logar = usuarioController.logar(email, senha, false);
+            new Thread(){
+            int i=0;
+            
+                public void run(){
 
-            if(logar == true){
-                if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+                    while(i<100){
+                        i = i+5;
+                        try{
+                            carga.setVisible(true);
+                            sleep(200);//600
+                        }catch (Exception e){
 
-                    boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
-
-                    if(trocarSenha == true){
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
-
-                        JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                            ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                        TelaLoginReset.this.dispose();
-                        new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        TelaLogin TelaLogin = new TelaLogin();
-                        TelaLogin.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                            + "Por favor, verifique e tente novamente." 
-                            ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                        );
-
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
+                        }
                     }
-                } 
-            }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-            }
+
+                    String email = (loginEmail.getText());
+                    String senha = new String(loginSenha.getPassword());
+                    String newSenha = new String(loginSenha1.getPassword());
+
+                    boolean logar = usuarioController.logar(email, senha, false);
+
+                    if(logar == true){
+                        carga.setVisible(false);
+                        if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+
+                            boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
+
+                            if(trocarSenha == true){
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+
+                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                                TelaLoginReset.this.dispose();
+                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                TelaLogin TelaLogin = new TelaLogin();
+                                TelaLogin.setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                                    + "Por favor, verifique e tente novamente." 
+                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                                );
+
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+                            }
+                        } 
+                    }else{
+                        carga.setVisible(false);
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+                        avisoSenha.setVisible(true);
+                    }
+                }
+            }.start();
         }
     }//GEN-LAST:event_mostraSenha1KeyPressed
 
     private void mostraSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mostraSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             
-            String email = (loginEmail.getText());
-            String senha = new String(loginSenha.getPassword());
-            String newSenha = new String(loginSenha1.getPassword());
+            new Thread(){
+            int i=0;
+            
+                public void run(){
 
-            boolean logar = usuarioController.logar(email, senha, false);
+                    while(i<100){
+                        i = i+5;
+                        try{
+                            carga.setVisible(true);
+                            sleep(200);//600
+                        }catch (Exception e){
 
-            if(logar == true){
-                if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
-
-                    boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
-
-                    if(trocarSenha == true){
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
-
-                        JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                            ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                        TelaLoginReset.this.dispose();
-                        new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        TelaLogin TelaLogin = new TelaLogin();
-                        TelaLogin.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                            + "Por favor, verifique e tente novamente." 
-                            ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                        );
-
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
+                        }
                     }
-                } 
-            }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-            }
+
+                    String email = (loginEmail.getText());
+                    String senha = new String(loginSenha.getPassword());
+                    String newSenha = new String(loginSenha1.getPassword());
+
+                    boolean logar = usuarioController.logar(email, senha, false);
+
+                    if(logar == true){
+                        carga.setVisible(false);
+                        if((newSenha.length() >= 8) && (newSenha.length() <= 16)){  
+
+                            boolean trocarSenha = usuarioController.trocarSenha(email, newSenha, false);
+
+                            if(trocarSenha == true){
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+
+                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
+                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
+
+                                TelaLoginReset.this.dispose();
+                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                TelaLogin TelaLogin = new TelaLogin();
+                                TelaLogin.setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
+                                    + "Por favor, verifique e tente novamente." 
+                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
+                                );
+
+                                loginEmail.setText("");
+                                loginSenha.setText("");
+                                loginSenha1.setText("");
+                                mostraSenha.setText("");
+                                mostraSenha1.setText("");
+                            }
+                        } 
+                    }else{
+                        carga.setVisible(false);
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+                        avisoSenha.setVisible(true);
+                    }
+                }
+            }.start();
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
 
@@ -703,6 +824,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel avisoSenha;
     private javax.swing.JCheckBox boxMostraSenha;
+    private javax.swing.JLabel carga;
     private javax.swing.JLabel icon;
     private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel1;

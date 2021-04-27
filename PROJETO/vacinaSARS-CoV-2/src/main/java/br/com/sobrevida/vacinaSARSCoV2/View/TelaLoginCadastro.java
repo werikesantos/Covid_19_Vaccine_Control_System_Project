@@ -2,6 +2,7 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
+import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         
         //TELA DE AVISOS
         avisoSenha.setVisible(false);
+        carga.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -47,6 +49,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         loginEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        carga = new javax.swing.JLabel();
         avisoSenha = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -227,6 +230,10 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(24, 420, 110, 40);
 
+        carga.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carga1.gif")); // NOI18N
+        jPanel1.add(carga);
+        carga.setBounds(220, 10, 30, 30);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(520, 0, 280, 500);
 
@@ -319,48 +326,67 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
     private void signUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUPActionPerformed
         
-        String email = (loginEmail.getText());
-        String senha = new String(loginSenha.getPassword());
-        String senhaConfirmar = new String(loginSenha1.getPassword());
-                         
-        if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
+        new Thread(){
+            int i=0;
             
-            UsuarioController usuarioController = new UsuarioController();  
-            boolean cadastro = usuarioController.cadastrar(email, senha, false);
-        
-            if(cadastro == true){
-                loginEmail.setText("");
-                loginSenha.setText("");
-                loginSenha1.setText("");
-                mostraSenha.setText("");
-                mostraSenha1.setText("");
+            public void run(){
                 
-                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!" 
-                    ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+                while(i<100){
+                    i = i+5;
+                    try{
+                        carga.setVisible(true);
+                        sleep(200);//600
+                    }catch (Exception e){
+                        
+                    }
+                }
                 
-                TelaLoginCadastro.this.dispose();
-                new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                TelaLogin TelaLogin = new TelaLogin();
-                TelaLogin.setVisible(true);
-            }else{
-                JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                    + "Por favor, verifique e tente novamente." 
-                    ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                );
-                loginEmail.setText("");
-                loginSenha.setText("");
-                loginSenha1.setText("");
-                mostraSenha.setText("");
-                mostraSenha1.setText("");
+                String email = (loginEmail.getText());
+                String senha = new String(loginSenha.getPassword());
+                String senhaConfirmar = new String(loginSenha1.getPassword());
+
+                if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
+
+                    UsuarioController usuarioController = new UsuarioController();  
+                    boolean cadastro = usuarioController.cadastrar(email, senha, false);
+
+                    if(cadastro == true){
+                        carga.setVisible(false);
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+
+                        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!" 
+                            ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+
+                        TelaLoginCadastro.this.dispose();
+                        new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        TelaLogin TelaLogin = new TelaLogin();
+                        TelaLogin.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                            + "Por favor, verifique e tente novamente." 
+                            ,"Login Inválido", JOptionPane.WARNING_MESSAGE
+                        );
+                        loginEmail.setText("");
+                        loginSenha.setText("");
+                        loginSenha1.setText("");
+                        mostraSenha.setText("");
+                        mostraSenha1.setText("");
+                    }
+                }else{
+                    carga.setVisible(false);
+                    loginEmail.setText("");
+                    loginSenha.setText("");
+                    loginSenha1.setText("");
+                    mostraSenha.setText("");
+                    mostraSenha1.setText("");
+                    avisoSenha.setVisible(true);
+                }
             }
-        }else{
-            loginEmail.setText("");
-            loginSenha.setText("");
-            loginSenha1.setText("");
-            mostraSenha.setText("");
-            mostraSenha1.setText("");
-            avisoSenha.setVisible(true);
-        }
+        }.start();
     }//GEN-LAST:event_signUPActionPerformed
 
     private void boxMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMostraSenhaActionPerformed
@@ -732,6 +758,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel avisoSenha;
     private javax.swing.JCheckBox boxMostraSenha;
+    private javax.swing.JLabel carga;
     private javax.swing.JLabel icon;
     private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel1;
