@@ -1,0 +1,17 @@
+Executando JAVA pelo Terminal CMD:
+
+javac nomeArquivo.java
+
+java nomeArquivo
+
+
+===================================
+
+java -jar nomeDoArquivo.jar
+
+
+===================================
+
+Executar Projeto Covid
+
+java -cp vacinaSARS-CoV-2-1.0.jar br.com.sobrevida.vacinaSARSCoV2.TelaPrincipal
