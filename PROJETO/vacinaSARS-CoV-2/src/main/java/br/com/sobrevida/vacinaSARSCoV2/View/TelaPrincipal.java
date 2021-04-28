@@ -50,13 +50,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jDesktop = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
-        usuario = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        usuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -85,6 +89,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         trocarPerfil = new javax.swing.JMenuItem();
         sair = new javax.swing.JMenuItem();
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vacinação SARS-COV-2");
         setLocationByPlatform(true);
@@ -101,11 +116,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(null);
 
-        usuario.setText("Seja bem vindo, werike!");
-        usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(usuario);
-        usuario.setBounds(210, 10, 200, 15);
-
         jButton13.setText("Carteira de vacina");
         jPanel1.add(jButton13);
         jButton13.setBounds(50, 420, 260, 70);
@@ -121,6 +131,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton10.setText("Cadastrar Cidadão");
         jPanel1.add(jButton10);
         jButton10.setBounds(50, 60, 260, 70);
+
+        usuario.setText("Seja bem vindo, werike!");
+        usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(usuario);
+        usuario.setBounds(210, 10, 200, 15);
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(48, 47, 61));
+        jLabel2.setText("Powered by Group Seven LTDA ® ");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(160, 660, 210, 15);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(0, -10, 370, 810);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\painel1.jpg")); // NOI18N
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(-1250, -20, 1660, 870);
 
         jDesktop.add(jPanel1);
         jPanel1.setBounds(1000, 0, 370, 780);
@@ -177,7 +207,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1.setName(""); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(1280, 720));
         jDesktop.add(jLabel1);
-        jLabel1.setBounds(-540, -10, 1910, 790);
+        jLabel1.setBounds(-250, -20, 1920, 870);
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(1366, 768));
         jMenuBar1.setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -351,6 +381,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -365,6 +398,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JMenuItem sair;
     private javax.swing.JMenuItem trocarPerfil;
     private javax.swing.JLabel usuario;

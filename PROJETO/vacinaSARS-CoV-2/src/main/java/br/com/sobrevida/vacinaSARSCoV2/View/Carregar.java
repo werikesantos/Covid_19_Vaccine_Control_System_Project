@@ -28,6 +28,8 @@ public class Carregar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         carrega = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -43,14 +45,22 @@ public class Carregar extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         carrega.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        carrega.setForeground(new java.awt.Color(0, 0, 204));
+        carrega.setForeground(new java.awt.Color(153, 0, 0));
         carrega.setText("0%");
         jPanel1.add(carrega);
-        carrega.setBounds(370, 210, 70, 47);
+        carrega.setBounds(360, 230, 70, 47);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carregar.gif")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carregar1.gif")); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(360, 120, 70, 70);
+        jLabel3.setBounds(350, 150, 70, 70);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\logo1.png")); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(-60, 40, 420, 80);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(-20, -20, 820, 400);
 
         imgFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\painel2.jpg")); // NOI18N
         jPanel1.add(imgFundo);
@@ -75,7 +85,7 @@ public class Carregar extends javax.swing.JFrame {
                     carrega.setText(String.valueOf(i)+"%");
                     
                     try{
-                        sleep(200);//600
+                        sleep(60);//600
                     }catch (Exception e){
                         
                     }
@@ -127,6 +137,8 @@ public class Carregar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel carrega;
     private javax.swing.JLabel imgFundo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

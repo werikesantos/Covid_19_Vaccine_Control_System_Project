@@ -76,7 +76,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel5.setMaximumSize(new java.awt.Dimension(35, 17));
         jLabel5.setMinimumSize(new java.awt.Dimension(35, 17));
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(30, 20, 110, 20);
+        jLabel5.setBounds(35, 20, 110, 20);
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(70, 66, 85));
@@ -84,7 +84,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel4.setMaximumSize(new java.awt.Dimension(35, 17));
         jLabel4.setMinimumSize(new java.awt.Dimension(35, 17));
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(30, 90, 100, 20);
+        jLabel4.setBounds(35, 90, 100, 20);
 
         loginBotao.setBackground(new java.awt.Color(226, 226, 235));
         loginBotao.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
@@ -101,7 +101,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(loginBotao);
-        loginBotao.setBounds(160, 150, 90, 40);
+        loginBotao.setBounds(170, 150, 90, 40);
 
         loginSenha.setBackground(new java.awt.Color(255, 255, 255));
         loginSenha.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -114,7 +114,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(loginSenha);
-        loginSenha.setBounds(30, 110, 230, 30);
+        loginSenha.setBounds(35, 110, 230, 30);
 
         mostraSenha.setBackground(new java.awt.Color(255, 255, 255));
         mostraSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
@@ -132,10 +132,10 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(mostraSenha);
-        mostraSenha.setBounds(30, 110, 230, 30);
+        mostraSenha.setBounds(35, 110, 230, 30);
 
         boxMostraSenha.setBackground(new java.awt.Color(255, 255, 255));
-        boxMostraSenha.setFont(new java.awt.Font("Dubai Medium", 2, 13)); // NOI18N
+        boxMostraSenha.setFont(new java.awt.Font("Dubai Medium", 0, 13)); // NOI18N
         boxMostraSenha.setForeground(new java.awt.Color(113, 113, 122));
         boxMostraSenha.setText("Show password");
         boxMostraSenha.setMaximumSize(new java.awt.Dimension(35, 17));
@@ -151,7 +151,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(boxMostraSenha);
-        boxMostraSenha.setBounds(30, 150, 120, 31);
+        boxMostraSenha.setBounds(34, 150, 120, 31);
 
         loginEmail.setBackground(new java.awt.Color(255, 255, 255));
         loginEmail.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -169,10 +169,10 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(loginEmail);
-        loginEmail.setBounds(30, 40, 230, 30);
+        loginEmail.setBounds(35, 40, 230, 30);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(250, 180, 300, 200);
+        jPanel2.setBounds(250, 180, 300, 210);
 
         linkResetCadastro.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         linkResetCadastro.setForeground(new java.awt.Color(48, 47, 61));
@@ -184,7 +184,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(linkResetCadastro);
-        linkResetCadastro.setBounds(420, 380, 110, 40);
+        linkResetCadastro.setBounds(420, 390, 110, 40);
 
         linkCadastroUsuario.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         linkCadastroUsuario.setForeground(new java.awt.Color(48, 47, 61));
@@ -196,7 +196,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(linkCadastroUsuario);
-        linkCadastroUsuario.setBounds(270, 380, 130, 40);
+        linkCadastroUsuario.setBounds(270, 390, 130, 40);
 
         jLabel3.setBackground(new java.awt.Color(51, 44, 52));
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
@@ -209,11 +209,12 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(28, 52, 450, 90);
 
-        jLabel2.setBackground(new java.awt.Color(39, 32, 39));
-        jLabel2.setForeground(new java.awt.Color(39, 32, 39));
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(48, 47, 61));
         jLabel2.setText("Powered by Group Seven LTDA ® ");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(510, 430, 210, 15);
+        jLabel2.setBounds(605, 465, 210, 15);
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
         jLabel7.setText("jLabel7");

@@ -37,9 +37,13 @@ public class TelaLoginReset extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        icon = new javax.swing.JLabel();
+        avisoSenha = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         signUP = new javax.swing.JButton();
@@ -50,15 +54,12 @@ public class TelaLoginReset extends javax.swing.JFrame {
         boxMostraSenha = new javax.swing.JCheckBox();
         loginEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         carga = new javax.swing.JLabel();
-        avisoSenha = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        imageFundo = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reset Password");
@@ -71,193 +72,31 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(228, 229, 232));
         jPanel1.setLayout(null);
 
-        icon.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin1.png")); // NOI18N
-        jPanel1.add(icon);
-        icon.setBounds(75, 10, 120, 120);
-
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel2.setMinimumSize(new java.awt.Dimension(220, 270));
-        jPanel2.setLayout(null);
-
-        jLabel3.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel3.setText("Forgot your password?");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(20, 11, 190, 40);
-
-        jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel5.setText("Email address");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 57, 80, 17);
-
-        jLabel4.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel4.setText("New password");
-        jLabel4.setMaximumSize(new java.awt.Dimension(35, 17));
-        jLabel4.setMinimumSize(new java.awt.Dimension(35, 17));
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 160, 110, 20);
-
-        signUP.setBackground(new java.awt.Color(204, 204, 255));
-        signUP.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        signUP.setForeground(new java.awt.Color(51, 51, 255));
-        signUP.setText("Sign up");
-        signUP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUPActionPerformed(evt);
-            }
-        });
-        jPanel2.add(signUP);
-        signUP.setBounds(125, 233, 80, 31);
-
-        loginSenha1.setBackground(new java.awt.Color(204, 204, 255));
-        loginSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginSenha1.setForeground(new java.awt.Color(0, 102, 102));
-        loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        loginSenha1.setOpaque(false);
-        loginSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                loginSenha1KeyPressed(evt);
-            }
-        });
-        jPanel2.add(loginSenha1);
-        loginSenha1.setBounds(20, 180, 180, 30);
-
-        mostraSenha1.setBackground(new java.awt.Color(204, 204, 255));
-        mostraSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        mostraSenha1.setForeground(new java.awt.Color(0, 102, 102));
-        mostraSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        mostraSenha1.setOpaque(false);
-        mostraSenha1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostraSenha1ActionPerformed(evt);
-            }
-        });
-        mostraSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                mostraSenha1KeyPressed(evt);
-            }
-        });
-        jPanel2.add(mostraSenha1);
-        mostraSenha1.setBounds(20, 180, 180, 30);
-
-        loginSenha.setBackground(new java.awt.Color(204, 204, 255));
-        loginSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginSenha.setForeground(new java.awt.Color(0, 102, 102));
-        loginSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        loginSenha.setOpaque(false);
-        loginSenha.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                loginSenhaKeyPressed(evt);
-            }
-        });
-        jPanel2.add(loginSenha);
-        loginSenha.setBounds(20, 130, 180, 30);
-
-        mostraSenha.setBackground(new java.awt.Color(204, 204, 255));
-        mostraSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        mostraSenha.setForeground(new java.awt.Color(0, 102, 102));
-        mostraSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        mostraSenha.setOpaque(false);
-        mostraSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostraSenhaActionPerformed(evt);
-            }
-        });
-        mostraSenha.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                mostraSenhaKeyPressed(evt);
-            }
-        });
-        jPanel2.add(mostraSenha);
-        mostraSenha.setBounds(20, 130, 180, 30);
-
-        boxMostraSenha.setBackground(new java.awt.Color(204, 204, 255));
-        boxMostraSenha.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        boxMostraSenha.setForeground(new java.awt.Color(0, 135, 197));
-        boxMostraSenha.setText("Show password");
-        boxMostraSenha.setMaximumSize(new java.awt.Dimension(35, 17));
-        boxMostraSenha.setMinimumSize(new java.awt.Dimension(35, 17));
-        boxMostraSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxMostraSenhaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(boxMostraSenha);
-        boxMostraSenha.setBounds(20, 210, 110, 25);
-
-        loginEmail.setBackground(new java.awt.Color(204, 204, 255));
-        loginEmail.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginEmail.setForeground(new java.awt.Color(0, 102, 102));
-        loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        loginEmail.setOpaque(false);
-        loginEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginEmailActionPerformed(evt);
-            }
-        });
-        loginEmail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                loginEmailKeyPressed(evt);
-            }
-        });
-        jPanel2.add(loginEmail);
-        loginEmail.setBounds(20, 80, 180, 30);
-
-        jLabel7.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 135, 197));
-        jLabel7.setText("Password");
-        jLabel7.setMaximumSize(new java.awt.Dimension(35, 17));
-        jLabel7.setMinimumSize(new java.awt.Dimension(35, 17));
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(20, 110, 60, 20);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(22, 140, 220, 280);
-
-        jLabel6.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel6.setText("Return page");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(24, 420, 110, 40);
-
-        carga.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carga1.gif")); // NOI18N
-        jPanel1.add(carga);
-        carga.setBounds(220, 10, 30, 30);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(520, 0, 280, 500);
-
-        avisoSenha.setBackground(new java.awt.Color(255, 102, 51));
+        avisoSenha.setBackground(new java.awt.Color(178, 55, 55));
         avisoSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 avisoSenhaMouseClicked(evt);
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setBackground(new java.awt.Color(51, 44, 52));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("INSTRUÇÕES PARA TROCAR DE SENHA:");
 
-        jLabel2.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Utilizar somente letras e números.");
 
-        jLabel8.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Mínimo de oito e máximo de 16 caracteres.");
 
-        jLabel9.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("O sistema diferencia letras maiúsculas de minúsculas. ");
 
+        jLabel10.setBackground(new java.awt.Color(51, 44, 52));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("X");
         jLabel10.setPreferredSize(new java.awt.Dimension(17, 12));
@@ -275,9 +114,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(avisoSenhaLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(avisoSenhaLayout.createSequentialGroup()
                         .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -290,26 +129,198 @@ public class TelaLoginReset extends javax.swing.JFrame {
             avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(avisoSenhaLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, avisoSenhaLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addGap(23, 23, 23))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        getContentPane().add(avisoSenha);
-        avisoSenha.setBounds(50, 210, 460, 160);
+        jPanel1.add(avisoSenha);
+        avisoSenha.setBounds(320, 180, 380, 130);
 
-        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\View\\Image\\vacinaLogin2.png")); // NOI18N
-        getContentPane().add(imageFundo);
-        imageFundo.setBounds(-370, -210, 2570, 710);
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(231, 214, 214), 1, true));
+        jPanel2.setMinimumSize(new java.awt.Dimension(220, 270));
+        jPanel2.setLayout(null);
+
+        jLabel5.setBackground(new java.awt.Color(116, 116, 134));
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(70, 66, 85));
+        jLabel5.setText("Email address");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(30, 20, 120, 16);
+
+        jLabel4.setBackground(new java.awt.Color(116, 116, 134));
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(70, 66, 85));
+        jLabel4.setText("New password");
+        jLabel4.setMaximumSize(new java.awt.Dimension(35, 17));
+        jLabel4.setMinimumSize(new java.awt.Dimension(35, 17));
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(30, 140, 140, 20);
+
+        signUP.setBackground(new java.awt.Color(226, 226, 235));
+        signUP.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        signUP.setForeground(new java.awt.Color(75, 75, 91));
+        signUP.setText("Sign up");
+        signUP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUPActionPerformed(evt);
+            }
+        });
+        jPanel2.add(signUP);
+        signUP.setBounds(165, 200, 90, 40);
+
+        loginSenha1.setBackground(new java.awt.Color(255, 255, 255));
+        loginSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        loginSenha1.setForeground(new java.awt.Color(0, 0, 0));
+        loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        loginSenha1.setOpaque(false);
+        loginSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginSenha1KeyPressed(evt);
+            }
+        });
+        jPanel2.add(loginSenha1);
+        loginSenha1.setBounds(30, 160, 230, 30);
+
+        mostraSenha1.setBackground(new java.awt.Color(255, 255, 255));
+        mostraSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        mostraSenha1.setForeground(new java.awt.Color(0, 0, 0));
+        mostraSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        mostraSenha1.setOpaque(false);
+        mostraSenha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostraSenha1ActionPerformed(evt);
+            }
+        });
+        mostraSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                mostraSenha1KeyPressed(evt);
+            }
+        });
+        jPanel2.add(mostraSenha1);
+        mostraSenha1.setBounds(30, 160, 230, 30);
+
+        loginSenha.setBackground(new java.awt.Color(255, 255, 255));
+        loginSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        loginSenha.setForeground(new java.awt.Color(0, 0, 0));
+        loginSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        loginSenha.setOpaque(false);
+        loginSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginSenhaKeyPressed(evt);
+            }
+        });
+        jPanel2.add(loginSenha);
+        loginSenha.setBounds(30, 100, 230, 30);
+
+        mostraSenha.setBackground(new java.awt.Color(255, 255, 255));
+        mostraSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        mostraSenha.setForeground(new java.awt.Color(0, 0, 0));
+        mostraSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        mostraSenha.setOpaque(false);
+        mostraSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostraSenhaActionPerformed(evt);
+            }
+        });
+        mostraSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                mostraSenhaKeyPressed(evt);
+            }
+        });
+        jPanel2.add(mostraSenha);
+        mostraSenha.setBounds(30, 100, 230, 30);
+
+        boxMostraSenha.setBackground(new java.awt.Color(255, 255, 255));
+        boxMostraSenha.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
+        boxMostraSenha.setForeground(new java.awt.Color(113, 113, 122));
+        boxMostraSenha.setText("Show password");
+        boxMostraSenha.setMaximumSize(new java.awt.Dimension(35, 17));
+        boxMostraSenha.setMinimumSize(new java.awt.Dimension(35, 17));
+        boxMostraSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxMostraSenhaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(boxMostraSenha);
+        boxMostraSenha.setBounds(32, 200, 120, 26);
+
+        loginEmail.setBackground(new java.awt.Color(255, 255, 255));
+        loginEmail.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        loginEmail.setForeground(new java.awt.Color(0, 0, 0));
+        loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        loginEmail.setOpaque(false);
+        loginEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginEmailActionPerformed(evt);
+            }
+        });
+        loginEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginEmailKeyPressed(evt);
+            }
+        });
+        jPanel2.add(loginEmail);
+        loginEmail.setBounds(30, 40, 230, 30);
+
+        jLabel7.setBackground(new java.awt.Color(116, 116, 134));
+        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(70, 66, 85));
+        jLabel7.setText("Password");
+        jLabel7.setMaximumSize(new java.awt.Dimension(35, 17));
+        jLabel7.setMinimumSize(new java.awt.Dimension(35, 17));
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(30, 80, 80, 20);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(260, 140, 300, 270);
+
+        jLabel3.setBackground(new java.awt.Color(51, 44, 52));
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 22)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(95, 101, 110));
+        jLabel3.setText("FORGOT YOUR PASSWORD?");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(260, 100, 300, 40);
+
+        jLabel6.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(48, 47, 61));
+        jLabel6.setText("Return page");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(280, 410, 130, 40);
+
+        carga.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carga1.gif")); // NOI18N
+        jPanel1.add(carga);
+        carga.setBounds(635, 34, 40, 40);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\logo1.png")); // NOI18N
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(28, 21, 450, 90);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
+        jLabel13.setText("jLabel7");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(110, 15, 600, 440);
+
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\vacina.jpeg")); // NOI18N
+        jLabel14.setText("jLabel1");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(0, 0, 810, 510);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 800, 500);
 
         getAccessibleContext().setAccessibleDescription("Login");
 
@@ -819,10 +830,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
     private javax.swing.JPanel avisoSenha;
     private javax.swing.JCheckBox boxMostraSenha;
     private javax.swing.JLabel carga;
-    private javax.swing.JLabel icon;
-    private javax.swing.JLabel imageFundo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
