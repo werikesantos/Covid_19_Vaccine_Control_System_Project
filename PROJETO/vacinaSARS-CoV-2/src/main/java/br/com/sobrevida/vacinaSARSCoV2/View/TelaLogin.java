@@ -6,7 +6,6 @@ import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author WERIKE
