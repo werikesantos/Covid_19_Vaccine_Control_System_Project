@@ -22,6 +22,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //ALTERANDO O ICONE PADRAO DO JAVA
         Utilitario utilitario = new Utilitario();
         utilitario.inserirIcone(this);
+        
+        cadastroCidadaoTela.setVisible(false);
     }
     
     public TelaPrincipal(String email, String senha) {
@@ -53,6 +55,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jDesktop = new javax.swing.JDesktopPane();
+        cadastroCidadaoTela = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jButton13 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -113,6 +162,282 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDesktop.setMinimumSize(new java.awt.Dimension(1280, 720));
         jDesktop.setPreferredSize(new java.awt.Dimension(1366, 768));
 
+        cadastroCidadaoTela.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroCidadaoTela.setForeground(new java.awt.Color(255, 255, 255));
+        cadastroCidadaoTela.setLayout(null);
+
+        jLabel12.setBackground(new java.awt.Color(153, 0, 0));
+        jLabel12.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel12.setText("  X");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(jLabel12);
+        jLabel12.setBounds(962, 12, 38, 24);
+        cadastroCidadaoTela.add(jSeparator2);
+        jSeparator2.setBounds(60, 400, 842, 2);
+        cadastroCidadaoTela.add(jSeparator1);
+        jSeparator1.setBounds(60, 68, 842, 10);
+
+        jLabel38.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel38.setText("Lista de Paciêntes");
+        cadastroCidadaoTela.add(jLabel38);
+        jLabel38.setBounds(60, 364, 180, 30);
+
+        jLabel13.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel13.setText("Cadastro de Paciêntes");
+        cadastroCidadaoTela.add(jLabel13);
+        jLabel13.setBounds(60, 32, 230, 30);
+
+        jLabel19.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel19.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel19.setText("Código");
+        cadastroCidadaoTela.add(jLabel19);
+        jLabel19.setBounds(60, 90, 100, 16);
+
+        jLabel24.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel24.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel24.setText("CPF");
+        cadastroCidadaoTela.add(jLabel24);
+        jLabel24.setBounds(662, 190, 30, 16);
+
+        jLabel22.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel22.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel22.setText("Celular");
+        cadastroCidadaoTela.add(jLabel22);
+        jLabel22.setBounds(390, 190, 50, 16);
+
+        jLabel30.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel30.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel30.setText("Nº");
+        cadastroCidadaoTela.add(jLabel30);
+        jLabel30.setBounds(740, 240, 20, 16);
+
+        jLabel32.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel32.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel32.setText("E-Mail");
+        cadastroCidadaoTela.add(jLabel32);
+        jLabel32.setBounds(60, 290, 40, 16);
+
+        jLabel28.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel28.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel28.setText("Endereço");
+        cadastroCidadaoTela.add(jLabel28);
+        jLabel28.setBounds(60, 240, 60, 16);
+
+        jLabel18.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel18.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel18.setText("Data de Nascimento");
+        cadastroCidadaoTela.add(jLabel18);
+        jLabel18.setBounds(60, 190, 130, 16);
+
+        jLabel14.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel14.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Nome completo");
+        cadastroCidadaoTela.add(jLabel14);
+        jLabel14.setBounds(60, 140, 100, 16);
+
+        jLabel31.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel31.setText("*");
+        cadastroCidadaoTela.add(jLabel31);
+        jLabel31.setBounds(760, 240, 10, 15);
+
+        jLabel25.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel25.setText("*");
+        cadastroCidadaoTela.add(jLabel25);
+        jLabel25.setBounds(692, 190, 10, 15);
+
+        jLabel23.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel23.setText("*");
+        cadastroCidadaoTela.add(jLabel23);
+        jLabel23.setBounds(440, 190, 10, 15);
+
+        jLabel33.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel33.setText("*");
+        cadastroCidadaoTela.add(jLabel33);
+        jLabel33.setBounds(100, 290, 10, 15);
+
+        jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel29.setText("*");
+        cadastroCidadaoTela.add(jLabel29);
+        jLabel29.setBounds(122, 240, 10, 15);
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setText("*");
+        cadastroCidadaoTela.add(jLabel20);
+        jLabel20.setBounds(190, 190, 10, 15);
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setText("*");
+        cadastroCidadaoTela.add(jLabel15);
+        jLabel15.setBounds(160, 140, 10, 15);
+
+        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField11.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField11.setText("Pesquisar");
+        cadastroCidadaoTela.add(jTextField11);
+        jTextField11.setBounds(622, 407, 280, 28);
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField3.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField3.setText("Consultar");
+        cadastroCidadaoTela.add(jTextField3);
+        jTextField3.setBounds(622, 32, 280, 28);
+
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField10);
+        jTextField10.setBounds(230, 284, 390, 28);
+
+        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField8);
+        jTextField8.setBounds(230, 234, 480, 28);
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField2);
+        jTextField2.setBounds(522, 134, 380, 28);
+
+        jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroCidadaoTela.add(jTextField4);
+        jTextField4.setBounds(230, 86, 110, 28);
+
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField7);
+        jTextField7.setBounds(722, 184, 180, 28);
+
+        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField6);
+        jTextField6.setBounds(470, 184, 150, 28);
+
+        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField9);
+        jTextField9.setBounds(782, 234, 120, 28);
+
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField5);
+        jTextField5.setBounds(230, 184, 120, 28);
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCidadaoTela.add(jTextField1);
+        jTextField1.setBounds(230, 134, 270, 28);
+
+        jLabel17.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel17.setText("Sobrenome");
+        cadastroCidadaoTela.add(jLabel17);
+        jLabel17.setBounds(522, 163, 100, 15);
+
+        jLabel27.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel27.setText("000.000.000-00");
+        cadastroCidadaoTela.add(jLabel27);
+        jLabel27.setBounds(722, 213, 120, 15);
+
+        jLabel26.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel26.setText("00 9 0000-0000");
+        cadastroCidadaoTela.add(jLabel26);
+        jLabel26.setBounds(470, 213, 120, 15);
+
+        jLabel34.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel34.setText("Rua - Avenida - Ap. - Praça... ");
+        cadastroCidadaoTela.add(jLabel34);
+        jLabel34.setBounds(230, 263, 170, 15);
+
+        jLabel35.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel35.setText("Número do local");
+        cadastroCidadaoTela.add(jLabel35);
+        jLabel35.setBounds(782, 263, 100, 15);
+
+        jLabel36.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel36.setText("Endereço de E-mail");
+        cadastroCidadaoTela.add(jLabel36);
+        jLabel36.setBounds(230, 313, 120, 15);
+
+        jLabel21.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel21.setText("dd/mm/aaaa");
+        cadastroCidadaoTela.add(jLabel21);
+        jLabel21.setBounds(230, 213, 120, 15);
+
+        jLabel37.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel37.setText("Código do usuário");
+        cadastroCidadaoTela.add(jLabel37);
+        jLabel37.setBounds(231, 115, 110, 15);
+
+        jLabel16.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("Primeiro nome");
+        cadastroCidadaoTela.add(jLabel16);
+        jLabel16.setBounds(230, 163, 100, 15);
+
+        jButton15.setText("Salvar");
+        cadastroCidadaoTela.add(jButton15);
+        jButton15.setBounds(590, 334, 140, 30);
+
+        jButton16.setText("Deletar");
+        cadastroCidadaoTela.add(jButton16);
+        jButton16.setBounds(760, 640, 140, 30);
+
+        jButton17.setText("Alterar");
+        cadastroCidadaoTela.add(jButton17);
+        jButton17.setBounds(590, 640, 140, 30);
+
+        jButton14.setText("Limpar");
+        cadastroCidadaoTela.add(jButton14);
+        jButton14.setBounds(759, 334, 140, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        cadastroCidadaoTela.add(jScrollPane1);
+        jScrollPane1.setBounds(60, 440, 840, 190);
+
+        jDesktop.add(cadastroCidadaoTela);
+        cadastroCidadaoTela.setBounds(0, 0, 1004, 695);
+
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(null);
@@ -130,6 +455,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton12.setBounds(50, 180, 260, 70);
 
         jButton10.setText("Cadastrar Cidadão");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton10);
         jButton10.setBounds(50, 60, 260, 70);
 
@@ -285,7 +615,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -330,6 +660,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_sairMouseClicked
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        cadastroCidadaoTela.setVisible(true);
+        //CadastroCidadao cadastroCidadao = new CadastroCidadao();
+        //cadastroCidadao.setVisible(true);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        cadastroCidadaoTela.setVisible(false);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -367,11 +707,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JMenuItem btnTiposVacinas;
+    private javax.swing.JPanel cadastroCidadaoTela;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -384,8 +729,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -400,6 +772,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JMenuItem sair;
     private javax.swing.JMenuItem trocarPerfil;
     private javax.swing.JLabel usuario;
