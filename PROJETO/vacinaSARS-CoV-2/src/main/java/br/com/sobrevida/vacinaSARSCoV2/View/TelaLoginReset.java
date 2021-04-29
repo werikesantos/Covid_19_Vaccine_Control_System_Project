@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaLoginReset extends javax.swing.JFrame {
 
+    
     UsuarioController usuarioController = new UsuarioController();
     Utilitario utilitario = new Utilitario();
     TelaLogin telaLogin = new TelaLogin();
