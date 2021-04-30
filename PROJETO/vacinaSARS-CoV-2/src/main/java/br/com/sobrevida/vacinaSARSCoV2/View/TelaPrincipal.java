@@ -1,5 +1,7 @@
 package br.com.sobrevida.vacinaSARSCoV2.view;
 
+import br.com.sobrevida.vacinaSARSCoV2.controller.CidadaoController;
+import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -9,10 +11,9 @@ import javax.swing.JOptionPane;
  */
 
 public class TelaPrincipal extends javax.swing.JFrame {
-
-    private String email;
-    private String senha;
     
+    CidadaoController cidadaoController = new CidadaoController();
+            
     public TelaPrincipal() {
         initComponents();
         
@@ -25,25 +26,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         cadastroCidadaoTela.setVisible(false);
     }
-    
-    public TelaPrincipal(String email, String senha) {
-       this.email = email;
-       this.senha = senha;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-    
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,16 +60,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        consulta = new javax.swing.JTextField();
+        cadastroEmail = new javax.swing.JTextField();
+        cadastroEndereco = new javax.swing.JTextField();
+        sobreNome = new javax.swing.JTextField();
+        idCodigo = new javax.swing.JTextField();
+        cadastroCpf = new javax.swing.JTextField();
+        cadastroCelular = new javax.swing.JTextField();
+        cadastroEnderecoNumero = new javax.swing.JTextField();
+        cadastroNascimento = new javax.swing.JTextField();
+        primeiroNome = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -96,10 +79,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
+        salvar = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        limpar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -164,6 +147,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         cadastroCidadaoTela.setBackground(new java.awt.Color(255, 255, 255));
         cadastroCidadaoTela.setForeground(new java.awt.Color(255, 255, 255));
+        cadastroCidadaoTela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroCidadaoTelaMouseClicked(evt);
+            }
+        });
         cadastroCidadaoTela.setLayout(null);
 
         jLabel12.setBackground(new java.awt.Color(153, 0, 0));
@@ -180,7 +168,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(jSeparator2);
         jSeparator2.setBounds(60, 400, 842, 2);
         cadastroCidadaoTela.add(jSeparator1);
-        jSeparator1.setBounds(60, 68, 842, 10);
+        jSeparator1.setBounds(60, 68, 842, 2);
 
         jLabel38.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(102, 102, 102));
@@ -298,56 +286,120 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(jTextField11);
         jTextField11.setBounds(622, 407, 280, 28);
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField3.setText("Consultar");
-        cadastroCidadaoTela.add(jTextField3);
-        jTextField3.setBounds(622, 32, 280, 28);
+        consulta.setBackground(new java.awt.Color(255, 255, 255));
+        consulta.setForeground(new java.awt.Color(51, 51, 51));
+        consulta.setText("Consultar...");
+        consulta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                consultaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                consultaMouseEntered(evt);
+            }
+        });
+        consulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultaActionPerformed(evt);
+            }
+        });
+        consulta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                consultaKeyPressed(evt);
+            }
+        });
+        cadastroCidadaoTela.add(consulta);
+        consulta.setBounds(622, 32, 280, 28);
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField10);
-        jTextField10.setBounds(230, 284, 390, 28);
+        cadastroEmail.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroEmailMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(cadastroEmail);
+        cadastroEmail.setBounds(230, 284, 390, 28);
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField8);
-        jTextField8.setBounds(230, 234, 480, 28);
+        cadastroEndereco.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroEndereco.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroEndereco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroEnderecoMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(cadastroEndereco);
+        cadastroEndereco.setBounds(230, 234, 480, 28);
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField2);
-        jTextField2.setBounds(522, 134, 380, 28);
+        sobreNome.setBackground(new java.awt.Color(255, 255, 255));
+        sobreNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        sobreNome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sobreNomeMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(sobreNome);
+        sobreNome.setBounds(522, 134, 380, 28);
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroCidadaoTela.add(jTextField4);
-        jTextField4.setBounds(230, 86, 110, 28);
+        idCodigo.setEditable(false);
+        idCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        idCodigo.setEnabled(false);
+        idCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                idCodigoMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(idCodigo);
+        idCodigo.setBounds(230, 86, 110, 28);
 
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField7);
-        jTextField7.setBounds(722, 184, 180, 28);
+        cadastroCpf.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCpf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroCpfMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(cadastroCpf);
+        cadastroCpf.setBounds(722, 184, 180, 28);
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField6);
-        jTextField6.setBounds(470, 184, 150, 28);
+        cadastroCelular.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroCelular.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroCelular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroCelularMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(cadastroCelular);
+        cadastroCelular.setBounds(470, 184, 150, 28);
 
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField9);
-        jTextField9.setBounds(782, 234, 120, 28);
+        cadastroEnderecoNumero.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroEnderecoNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroEnderecoNumero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroEnderecoNumeroMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(cadastroEnderecoNumero);
+        cadastroEnderecoNumero.setBounds(782, 234, 120, 28);
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField5);
-        jTextField5.setBounds(230, 184, 120, 28);
+        cadastroNascimento.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroNascimento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        cadastroNascimento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroNascimentoMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(cadastroNascimento);
+        cadastroNascimento.setBounds(230, 184, 120, 28);
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCidadaoTela.add(jTextField1);
-        jTextField1.setBounds(230, 134, 270, 28);
+        primeiroNome.setBackground(new java.awt.Color(255, 255, 255));
+        primeiroNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        primeiroNome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                primeiroNomeMouseClicked(evt);
+            }
+        });
+        cadastroCidadaoTela.add(primeiroNome);
+        primeiroNome.setBounds(230, 134, 270, 28);
 
         jLabel17.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(102, 102, 102));
@@ -403,21 +455,41 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(jLabel16);
         jLabel16.setBounds(230, 163, 100, 15);
 
-        jButton15.setText("Salvar");
-        cadastroCidadaoTela.add(jButton15);
-        jButton15.setBounds(590, 334, 140, 30);
+        salvar.setText("Salvar");
+        salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarActionPerformed(evt);
+            }
+        });
+        salvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                salvarKeyPressed(evt);
+            }
+        });
+        cadastroCidadaoTela.add(salvar);
+        salvar.setBounds(590, 334, 140, 30);
 
         jButton16.setText("Deletar");
         cadastroCidadaoTela.add(jButton16);
-        jButton16.setBounds(760, 640, 140, 30);
+        jButton16.setBounds(759, 640, 140, 30);
 
         jButton17.setText("Alterar");
         cadastroCidadaoTela.add(jButton17);
         jButton17.setBounds(590, 640, 140, 30);
 
-        jButton14.setText("Limpar");
-        cadastroCidadaoTela.add(jButton14);
-        jButton14.setBounds(759, 334, 140, 30);
+        limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
+        limpar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                limparKeyPressed(evt);
+            }
+        });
+        cadastroCidadaoTela.add(limpar);
+        limpar.setBounds(759, 334, 140, 30);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -436,7 +508,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setBounds(60, 440, 840, 190);
 
         jDesktop.add(cadastroCidadaoTela);
-        cadastroCidadaoTela.setBounds(0, 0, 1004, 695);
+        cadastroCidadaoTela.setBounds(0, 0, 1004, 730);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -662,13 +734,209 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         cadastroCidadaoTela.setVisible(true);
-        //CadastroCidadao cadastroCidadao = new CadastroCidadao();
-        //cadastroCidadao.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         cadastroCidadaoTela.setVisible(false);
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
+        
+        String primeiro = (primeiroNome.getText());
+        String segundo = (sobreNome.getText());
+        String nome = primeiro+" "+segundo;
+        
+        String nascimento = (cadastroNascimento.getText());
+        String celular = (cadastroCelular.getText());
+        String cpf = (cadastroCpf.getText());
+        String endereco = (cadastroEndereco.getText());
+        String numero = (cadastroEnderecoNumero.getText());
+        String email = (cadastroEmail.getText());
+        
+        boolean cadastro = cidadaoController.cadastrar(nome, nascimento, celular,
+            cpf, endereco, numero, email, false);
+        
+        if(cadastro == true){
+            
+            JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
+                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+                
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                + "Por favor, verifique e tente novamente."
+                ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
+            );
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }
+    }//GEN-LAST:event_salvarActionPerformed
+
+    private void salvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_salvarKeyPressed
+        
+        String primeiro = (primeiroNome.getText());
+        String segundo = (sobreNome.getText());
+        String nome = primeiro+" "+segundo;
+        
+        String nascimento = (cadastroNascimento.getText());
+        String celular = (cadastroCelular.getText());
+        String cpf = (cadastroCpf.getText());
+        String endereco = (cadastroEndereco.getText());
+        String numero = (cadastroEnderecoNumero.getText());
+        String email = (cadastroEmail.getText());
+        
+        boolean cadastro = cidadaoController.cadastrar(nome, nascimento, celular,
+            cpf, endereco, numero, email, false);
+        
+        if(cadastro == true){
+            
+            JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
+                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+                
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                + "Por favor, verifique e tente novamente."
+                ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
+            );
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }
+    }//GEN-LAST:event_salvarKeyPressed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+        idCodigo.setText("");
+        primeiroNome.setText("");
+        sobreNome.setText("");
+        cadastroNascimento.setText("");
+        cadastroCelular.setText("");
+        cadastroCpf.setText("");
+        cadastroEndereco.setText("");
+        cadastroEnderecoNumero.setText("");
+        cadastroEmail.setText("");
+    }//GEN-LAST:event_limparActionPerformed
+
+    private void limparKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_limparKeyPressed
+       idCodigo.setText("");
+       primeiroNome.setText("");
+       sobreNome.setText("");
+       cadastroNascimento.setText("");
+       cadastroCelular.setText("");
+       cadastroCpf.setText("");
+       cadastroEndereco.setText("");
+       cadastroEnderecoNumero.setText("");
+       cadastroEmail.setText("");
+    }//GEN-LAST:event_limparKeyPressed
+
+    private void consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaActionPerformed
+        
+    }//GEN-LAST:event_consultaActionPerformed
+
+    private void consultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaMouseClicked
+        consulta.setText("");
+    }//GEN-LAST:event_consultaMouseClicked
+
+    private void idCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idCodigoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idCodigoMouseClicked
+
+    private void primeiroNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_primeiroNomeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_primeiroNomeMouseClicked
+
+    private void sobreNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreNomeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sobreNomeMouseClicked
+
+    private void cadastroNascimentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroNascimentoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroNascimentoMouseClicked
+
+    private void cadastroCidadaoTelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCidadaoTelaMouseClicked
+        consulta.setText("Consultar...");
+    }//GEN-LAST:event_cadastroCidadaoTelaMouseClicked
+
+    private void cadastroCelularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCelularMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroCelularMouseClicked
+
+    private void cadastroCpfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCpfMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroCpfMouseClicked
+
+    private void cadastroEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEnderecoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroEnderecoMouseClicked
+
+    private void cadastroEnderecoNumeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEnderecoNumeroMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroEnderecoNumeroMouseClicked
+
+    private void cadastroEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEmailMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroEmailMouseClicked
+
+    private void consultaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaMouseEntered
+
+    }//GEN-LAST:event_consultaMouseEntered
+
+    private void consultaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultaKeyPressed
+        String pesquisaID = (consulta.getText());
+        int consultaID = Integer.parseInt(pesquisaID);
+
+        CidadaoModel resultCidadaoModel = cidadaoController.consultar(consultaID);
+
+        int id = resultCidadaoModel.getId();
+        String resultID = Integer.toString(id);
+        
+        String nome = resultCidadaoModel.getNome();
+        String[] resultado = nome.split(" ");
+        String primeiro = resultado[0];
+        String segundo = resultado[1];
+        
+        String nascimento = resultCidadaoModel.getNascimento();
+        String celular = resultCidadaoModel.getCelular();
+        String cpf = resultCidadaoModel.getCpf();
+        String endereco = resultCidadaoModel.getEndereco();
+        String numero = resultCidadaoModel.getNumero();
+        String email = resultCidadaoModel.getEmail();
+        
+        idCodigo.setText(resultID);
+        primeiroNome.setText(primeiro);
+        sobreNome.setText(segundo);
+        cadastroNascimento.setText(nascimento);
+        cadastroCelular.setText(celular);
+        cadastroCpf.setText(cpf);
+        cadastroEndereco.setText(endereco);
+        cadastroEnderecoNumero.setText(numero);
+        cadastroEmail.setText(email);
+    }//GEN-LAST:event_consultaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -707,14 +975,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JMenuItem btnTiposVacinas;
+    private javax.swing.JTextField cadastroCelular;
     private javax.swing.JPanel cadastroCidadaoTela;
+    private javax.swing.JTextField cadastroCpf;
+    private javax.swing.JTextField cadastroEmail;
+    private javax.swing.JTextField cadastroEndereco;
+    private javax.swing.JTextField cadastroEnderecoNumero;
+    private javax.swing.JTextField cadastroNascimento;
+    private javax.swing.JTextField consulta;
+    private javax.swing.JTextField idCodigo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
@@ -776,18 +1050,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton limpar;
+    private javax.swing.JTextField primeiroNome;
     private javax.swing.JMenuItem sair;
+    private javax.swing.JButton salvar;
+    private javax.swing.JTextField sobreNome;
     private javax.swing.JMenuItem trocarPerfil;
     private javax.swing.JLabel usuario;
     // End of variables declaration//GEN-END:variables
