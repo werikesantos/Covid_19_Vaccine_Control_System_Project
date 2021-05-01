@@ -85,7 +85,7 @@ public class Carregar extends javax.swing.JFrame {
                     carrega.setText(String.valueOf(i)+"%");
                     
                     try{
-                        sleep(60);//600
+                        sleep(300);//600
                     }catch (Exception e){
                         
                     }
