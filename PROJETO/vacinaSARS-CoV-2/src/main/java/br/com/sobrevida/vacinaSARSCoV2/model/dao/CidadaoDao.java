@@ -4,6 +4,9 @@ import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JTable;
+//BIBLIOTECA PARA PESQUISA AVANÇADA
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -86,5 +89,89 @@ public class CidadaoDao {
             e.printStackTrace();
         }
         return cidadao;
+    }
+    
+    public void pesquisa(JTable listaPacientes, String dado){
+
+        String sql = "SELECT * FROM bd_vacinasars_cov_2.cidadao WHERE nome LIKE ?";
+        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        
+        try(Connection conn = connectionFactory.connection()){
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, dado + "%");
+
+            ResultSet rs = ps.executeQuery();
+
+            listaPacientes.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public boolean alterar(CidadaoModel cidadaoModel, boolean resultado){
+         
+        boolean result = resultado;
+        
+        //nome, nascimento, celular,cpf, endereco, numero, email
+        
+        String sql = 
+            "UPDATE "
+                +"bd_vacinasars_cov_2.cidadao "
+            +"SET "
+                +"nome = ?, nascimento = ?, celular = ?, cpf = ?, endereco = ?, "
+                +"numero = ?, email = ? "
+            +"WHERE id = ?";
+        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try(Connection conn = connectionFactory.connection()){
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ps.setString(1, cidadaoModel.getNome());
+            ps.setString(2, cidadaoModel.getNascimento());
+            ps.setString(3, cidadaoModel.getCelular());
+            ps.setString(4, cidadaoModel.getCpf());
+            ps.setString(5, cidadaoModel.getEndereco());
+            ps.setString(6, cidadaoModel.getNumero());
+            ps.setString(7, cidadaoModel.getEmail());
+            ps.setInt(8, cidadaoModel.getId());
+            
+            ps.execute();
+            ps.close();
+            
+            return resultado = true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
+    public boolean deletar(CidadaoModel cidadaoModel, boolean resultado){
+         
+        boolean result = resultado;
+        
+        String sql = "DELETE FROM bd_vacinasars_cov_2.cidadao WHERE id = ?";
+        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try(Connection conn = connectionFactory.connection()){
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ps.setInt(1, cidadaoModel.getId());
+            
+            ps.execute();
+            ps.close();
+            
+            return resultado = true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
     }
 }

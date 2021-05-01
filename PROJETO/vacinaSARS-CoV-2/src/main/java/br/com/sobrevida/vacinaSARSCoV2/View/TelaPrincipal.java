@@ -9,10 +9,10 @@ import javax.swing.JOptionPane;
  *
  * @author WERIKE
  */
-
 public class TelaPrincipal extends javax.swing.JFrame {
     
     CidadaoController cidadaoController = new CidadaoController();
+    CidadaoModel cidadaoModel = new CidadaoModel();
             
     public TelaPrincipal() {
         initComponents();
@@ -26,7 +26,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         cadastroCidadaoTela.setVisible(false);
     }
-       
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,7 +59,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        pesquisa = new javax.swing.JTextField();
         consulta = new javax.swing.JTextField();
         cadastroEmail = new javax.swing.JTextField();
         cadastroEndereco = new javax.swing.JTextField();
@@ -80,11 +80,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         salvar = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        deletar = new javax.swing.JButton();
+        alterar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        listaPacientes = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jButton13 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -172,13 +172,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel38.setText("Lista de Paciêntes");
+        jLabel38.setText("Lista de Pacientes");
         cadastroCidadaoTela.add(jLabel38);
         jLabel38.setBounds(60, 364, 180, 30);
 
         jLabel13.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel13.setText("Cadastro de Paciêntes");
+        jLabel13.setText("Cadastro de Pacientes");
         cadastroCidadaoTela.add(jLabel13);
         jLabel13.setBounds(60, 32, 230, 30);
 
@@ -280,11 +280,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(jLabel15);
         jLabel15.setBounds(160, 140, 10, 15);
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField11.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField11.setText("Pesquisar");
-        cadastroCidadaoTela.add(jTextField11);
-        jTextField11.setBounds(622, 407, 280, 28);
+        pesquisa.setBackground(new java.awt.Color(255, 255, 255));
+        pesquisa.setForeground(new java.awt.Color(51, 51, 51));
+        pesquisa.setText("Pesquisar");
+        pesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pesquisaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                pesquisaKeyReleased(evt);
+            }
+        });
+        cadastroCidadaoTela.add(pesquisa);
+        pesquisa.setBounds(622, 407, 280, 28);
 
         consulta.setBackground(new java.awt.Color(255, 255, 255));
         consulta.setForeground(new java.awt.Color(51, 51, 51));
@@ -469,13 +477,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(salvar);
         salvar.setBounds(590, 334, 140, 30);
 
-        jButton16.setText("Deletar");
-        cadastroCidadaoTela.add(jButton16);
-        jButton16.setBounds(759, 640, 140, 30);
+        deletar.setText("Deletar");
+        deletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletarActionPerformed(evt);
+            }
+        });
+        cadastroCidadaoTela.add(deletar);
+        deletar.setBounds(762, 640, 140, 30);
 
-        jButton17.setText("Alterar");
-        cadastroCidadaoTela.add(jButton17);
-        jButton17.setBounds(590, 640, 140, 30);
+        alterar.setText("Alterar");
+        alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alterarActionPerformed(evt);
+            }
+        });
+        cadastroCidadaoTela.add(alterar);
+        alterar.setBounds(590, 640, 140, 30);
 
         limpar.setText("Limpar");
         limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -489,23 +507,54 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         cadastroCidadaoTela.add(limpar);
-        limpar.setBounds(759, 334, 140, 30);
+        limpar.setBounds(762, 334, 140, 30);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        listaPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nome", "Nascimento", "Celular", "CPF", "Endereço", "Nº", "E-mail"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        listaPacientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaPacientesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(listaPacientes);
+        if (listaPacientes.getColumnModel().getColumnCount() > 0) {
+            listaPacientes.getColumnModel().getColumn(0).setResizable(false);
+        }
 
         cadastroCidadaoTela.add(jScrollPane1);
-        jScrollPane1.setBounds(60, 440, 840, 190);
+        jScrollPane1.setBounds(60, 440, 842, 190);
 
         jDesktop.add(cadastroCidadaoTela);
         cadastroCidadaoTela.setBounds(0, 0, 1004, 730);
@@ -758,8 +807,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         if(cadastro == true){
             
-            JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
-                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Usuário cancelado com sucesso!"
+                ,"Deletar Usuário", JOptionPane.WARNING_MESSAGE);
                 
             primeiroNome.setText("");
             sobreNome.setText("");
@@ -938,6 +987,99 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroEmail.setText(email);
     }//GEN-LAST:event_consultaKeyPressed
 
+    private void pesquisaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaKeyPressed
+        
+    }//GEN-LAST:event_pesquisaKeyPressed
+
+    private void pesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaKeyReleased
+        String dado = pesquisa.getText();
+        cidadaoController.pesquisa(listaPacientes, dado);
+    }//GEN-LAST:event_pesquisaKeyReleased
+
+    private void listaPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPacientesMouseClicked
+    }//GEN-LAST:event_listaPacientesMouseClicked
+
+    private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
+        int linhaSelecionada = listaPacientes.getSelectedRow();
+        
+        int id = (int) listaPacientes.getModel().getValueAt(linhaSelecionada, 0);
+        String nome = listaPacientes.getModel().getValueAt(linhaSelecionada, 1).toString();        
+        String nascimento = listaPacientes.getModel().getValueAt(linhaSelecionada, 2).toString();
+        String celular = listaPacientes.getModel().getValueAt(linhaSelecionada, 3).toString();
+        String cpf = listaPacientes.getModel().getValueAt(linhaSelecionada, 4).toString();
+        String endereco = listaPacientes.getModel().getValueAt(linhaSelecionada, 5).toString();
+        String numero = listaPacientes.getModel().getValueAt(linhaSelecionada, 6).toString();
+        String email = listaPacientes.getModel().getValueAt(linhaSelecionada, 7).toString();
+        
+        boolean cadastro = cidadaoController.alterar(id, nome, nascimento, celular,
+            cpf, endereco, numero, email, false);
+        
+        if(cadastro == true){
+            
+            JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
+                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+                
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                + "Por favor, verifique e tente novamente."
+                ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
+            );
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }
+    }//GEN-LAST:event_alterarActionPerformed
+
+    private void deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarActionPerformed
+    int linhaSelecionada = listaPacientes.getSelectedRow();
+    String nome = listaPacientes.getModel().getValueAt(linhaSelecionada, 1).toString();
+        
+        int id = (int) listaPacientes.getModel().getValueAt(linhaSelecionada, 0);
+        
+        boolean cadastro = cidadaoController.deletar(id, nome, false);
+        
+        if(cadastro == true){
+            
+            JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
+                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
+                
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                + "Por favor, verifique e tente novamente."
+                ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
+            );
+            primeiroNome.setText("");
+            sobreNome.setText("");
+            cadastroNascimento.setText("");
+            cadastroCelular.setText("");
+            cadastroCpf.setText("");
+            cadastroEndereco.setText("");
+            cadastroEnderecoNumero.setText("");
+            cadastroEmail.setText("");
+        }
+    }//GEN-LAST:event_deletarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -973,6 +1115,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton alterar;
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JMenuItem btnTiposVacinas;
     private javax.swing.JTextField cadastroCelular;
@@ -983,14 +1126,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField cadastroEnderecoNumero;
     private javax.swing.JTextField cadastroNascimento;
     private javax.swing.JTextField consulta;
+    private javax.swing.JButton deletar;
     private javax.swing.JTextField idCodigo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1049,9 +1191,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JButton limpar;
+    private javax.swing.JTable listaPacientes;
+    private javax.swing.JTextField pesquisa;
     private javax.swing.JTextField primeiroNome;
     private javax.swing.JMenuItem sair;
     private javax.swing.JButton salvar;
