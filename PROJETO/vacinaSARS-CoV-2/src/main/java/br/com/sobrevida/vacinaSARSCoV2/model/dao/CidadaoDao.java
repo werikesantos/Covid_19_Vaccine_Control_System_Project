@@ -12,15 +12,19 @@ import net.proteanit.sql.DbUtils;
  *
  * @author WERIKE
  */
-public class CidadaoDao {
+public class CidadaoDao{
     
     CidadaoModel cidadao = new CidadaoModel();
     
-    public boolean cadastrar(CidadaoModel cidadaoModel, boolean resultado){
+    public boolean salvar(CidadaoModel cidadaoModel, boolean resultado){
          
         boolean result = resultado;
         
-        String sql = "INSERT INTO bd_vacinasars_cov_2.cidadao(nome, nascimento, celular, cpf, endereco, numero, email) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = 
+            "INSERT INTO "
+                +"bd_vacina_sars_cov_2.cidadao(nome, nascimento, celular, cpf, endereco, n, email) "
+            +"VALUES "
+                +"(?, ?, ?, ?, ?, ?, ?)";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
@@ -32,7 +36,7 @@ public class CidadaoDao {
             ps.setString(3, cidadaoModel.getCelular());
             ps.setString(4, cidadaoModel.getCpf());
             ps.setString(5, cidadaoModel.getEndereco());
-            ps.setString(6, cidadaoModel.getNumero());
+            ps.setString(6, cidadaoModel.getN());
             ps.setString(7, cidadaoModel.getEmail());
             
             ps.execute();
@@ -50,7 +54,11 @@ public class CidadaoDao {
 
         cidadao = cidadaoModel;
                 
-        String sql = "SELECT * FROM bd_vacinasars_cov_2.cidadao WHERE id = ?";
+        String sql = 
+            "SELECT * FROM "
+                +"bd_vacina_sars_cov_2.cidadao "
+            +"WHERE "
+                +"id = ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
@@ -68,7 +76,7 @@ public class CidadaoDao {
                 String celular = rs.getString("celular");
                 String cpf = rs.getString("cpf");
                 String endereco = rs.getString("endereco");
-                String numero = rs.getString("numero");
+                String n = rs.getString("n");
                 String email = rs.getString("email");
                 
                 cidadaoModel.setId(id);
@@ -77,12 +85,11 @@ public class CidadaoDao {
                 cidadaoModel.setCelular(celular);
                 cidadaoModel.setCpf(cpf);
                 cidadaoModel.setEndereco(endereco);
-                cidadaoModel.setNumero(numero);
+                cidadaoModel.setN(n);
                 cidadaoModel.setEmail(email);
                 
                 return cidadaoModel;
             }
-            
             ps.close();
         }
         catch(Exception e){
@@ -93,7 +100,11 @@ public class CidadaoDao {
     
     public void pesquisa(JTable listaPacientes, String dado){
 
-        String sql = "SELECT * FROM bd_vacinasars_cov_2.cidadao WHERE nome LIKE ?";
+        String sql = 
+            "SELECT * FROM "
+                +"bd_vacina_sars_cov_2.cidadao "
+            +"WHERE "
+                +"nome LIKE ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         
@@ -106,6 +117,8 @@ public class CidadaoDao {
             ResultSet rs = ps.executeQuery();
 
             listaPacientes.setModel(DbUtils.resultSetToTableModel(rs));
+            
+            ps.close();
         }
         catch(Exception e){
             e.printStackTrace();
@@ -115,15 +128,13 @@ public class CidadaoDao {
     public boolean alterar(CidadaoModel cidadaoModel, boolean resultado){
          
         boolean result = resultado;
-        
-        //nome, nascimento, celular,cpf, endereco, numero, email
-        
+
         String sql = 
             "UPDATE "
-                +"bd_vacinasars_cov_2.cidadao "
+                +"bd_vacina_sars_cov_2.cidadao "
             +"SET "
                 +"nome = ?, nascimento = ?, celular = ?, cpf = ?, endereco = ?, "
-                +"numero = ?, email = ? "
+                +"n = ?, email = ? "
             +"WHERE id = ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -136,7 +147,7 @@ public class CidadaoDao {
             ps.setString(3, cidadaoModel.getCelular());
             ps.setString(4, cidadaoModel.getCpf());
             ps.setString(5, cidadaoModel.getEndereco());
-            ps.setString(6, cidadaoModel.getNumero());
+            ps.setString(6, cidadaoModel.getN());
             ps.setString(7, cidadaoModel.getEmail());
             ps.setInt(8, cidadaoModel.getId());
             
@@ -155,7 +166,11 @@ public class CidadaoDao {
          
         boolean result = resultado;
         
-        String sql = "DELETE FROM bd_vacinasars_cov_2.cidadao WHERE id = ?";
+        String sql = 
+            "DELETE FROM "
+                +"bd_vacina_sars_cov_2.cidadao "
+            +"WHERE "
+                +"id = ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
