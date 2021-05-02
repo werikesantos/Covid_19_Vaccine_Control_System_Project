@@ -753,9 +753,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCidadaoCadastroActionPerformed
 
     private void btnTiposVacinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposVacinasActionPerformed
-        TipoVacinaCadastro tipoVacinaCadastro = new TipoVacinaCadastro();
-        jDesktop.add(tipoVacinaCadastro);
-        tipoVacinaCadastro.setVisible(true);
+        //TipoVacinaCadastro tipoVacinaCadastro = new TipoVacinaCadastro();
+        //jDesktop.add(tipoVacinaCadastro);
+        //tipoVacinaCadastro.setVisible(true);
     }//GEN-LAST:event_btnTiposVacinasActionPerformed
     private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
     }//GEN-LAST:event_trocarPerfilMouseClicked
