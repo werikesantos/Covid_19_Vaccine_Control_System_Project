@@ -14,13 +14,13 @@ public class CidadaoController {
     CidadaoModel cidadaoModel = new CidadaoModel();
     CidadaoDao cidadaoDao = new CidadaoDao();
             
-    public boolean cadastrar(String nome, String nascimento, String celular,
-        String cpf, String endereco, String numero, String email, boolean resultado){
+    public boolean salvar(String nome, String nascimento, String celular,
+        String cpf, String endereco, String n, String email, boolean resultado){
             
         boolean result = resultado;
         
         if((!"".equals(nome)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
-            && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(numero)) 
+            && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(n)) 
             && (!"".equals(email))){
             
             cidadaoModel.setNome(nome);
@@ -28,10 +28,10 @@ public class CidadaoController {
             cidadaoModel.setCelular(celular);
             cidadaoModel.setCpf(cpf);
             cidadaoModel.setEndereco(endereco);
-            cidadaoModel.setNumero(numero);
+            cidadaoModel.setN(n);
             cidadaoModel.setEmail(email);
             
-            resultado = cidadaoDao.cadastrar(cidadaoModel, false);
+            resultado = cidadaoDao.salvar(cidadaoModel, false);
                 
             if(resultado == true){
                 return resultado;
@@ -53,12 +53,12 @@ public class CidadaoController {
     }
     
     public boolean alterar(int id, String nome, String nascimento, String celular,
-        String cpf, String endereco, String numero, String email, boolean resultado){
+        String cpf, String endereco, String n, String email, boolean resultado){
             
         boolean result = resultado;
         
         if((!"".equals(id)) && (!"".equals(nome)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
-            && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(numero)) 
+            && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(n)) 
             && (!"".equals(email))){
             
             cidadaoModel.setId(id);
@@ -67,7 +67,7 @@ public class CidadaoController {
             cidadaoModel.setCelular(celular);
             cidadaoModel.setCpf(cpf);
             cidadaoModel.setEndereco(endereco);
-            cidadaoModel.setNumero(numero);
+            cidadaoModel.setN(n);
             cidadaoModel.setEmail(email);
             
             resultado = cidadaoDao.alterar(cidadaoModel, false);

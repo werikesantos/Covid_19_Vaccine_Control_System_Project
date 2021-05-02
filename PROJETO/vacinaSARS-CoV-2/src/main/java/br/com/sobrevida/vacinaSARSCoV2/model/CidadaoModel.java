@@ -12,7 +12,7 @@ public class CidadaoModel {
     private String celular;
     private String cpf;
     private String endereco;
-    private String numero;
+    private String n;
     private String email;
     
     /**
@@ -88,16 +88,16 @@ public class CidadaoModel {
         this.endereco = endereco;
     }
     /**
-     * @return the numero
+     * @return the n
      */
-    public String getNumero() {
-        return numero;
+    public String getN() {
+        return n;
     }
     /**
-     * @param numero the numero to set
+     * @param n the n to set
      */
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setN(String n) {
+        this.n = n;
     }
     /**
      * @return the email

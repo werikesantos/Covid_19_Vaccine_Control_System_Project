@@ -18,7 +18,7 @@ public class UsuarioDao{
         String email = usuarioModel.getEmail();
         String senha = usuarioModel.getSenha();
         
-        String sql = "SELECT email, senha FROM bd_vacinasars_cov_2.usuario";
+        String sql = "SELECT email, senha FROM bd_vacina_sars_cov_2.usuario";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         
@@ -48,7 +48,7 @@ public class UsuarioDao{
          
         boolean result = resultado;
         
-        String sql = "INSERT INTO bd_vacinasars_cov_2.usuario(idPerfil, email, senha) VALUES (3, ?, ?)";
+        String sql = "INSERT INTO bd_vacina_sars_cov_2.usuario(idPerfil, email, senha) VALUES (3, ?, ?)";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
@@ -72,7 +72,7 @@ public class UsuarioDao{
          
         boolean result = resultado;
         
-        String sql = "UPDATE bd_vacinasars_cov_2.usuario SET senha = ? WHERE (email = ?)";
+        String sql = "UPDATE bd_vacina_sars_cov_2.usuario SET senha = ? WHERE (email = ?)";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){

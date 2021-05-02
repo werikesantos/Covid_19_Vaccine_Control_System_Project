@@ -39,7 +39,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jDesktop = new javax.swing.JDesktopPane();
         cadastroCidadaoTela = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        closew = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel38 = new javax.swing.JLabel();
@@ -89,7 +89,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        botaoCadastroCidadao = new javax.swing.JButton();
         usuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -112,7 +112,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuCadastroCidadao = new javax.swing.JMenu();
         btnCidadaoCadastro = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -154,17 +154,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         cadastroCidadaoTela.setLayout(null);
 
-        jLabel12.setBackground(new java.awt.Color(153, 0, 0));
-        jLabel12.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel12.setText("  X");
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+        closew.setBackground(new java.awt.Color(153, 0, 0));
+        closew.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        closew.setForeground(new java.awt.Color(153, 0, 0));
+        closew.setText("  X");
+        closew.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
+                closewMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(jLabel12);
-        jLabel12.setBounds(962, 12, 38, 24);
+        cadastroCidadaoTela.add(closew);
+        closew.setBounds(962, 12, 38, 24);
         cadastroCidadaoTela.add(jSeparator2);
         jSeparator2.setBounds(60, 400, 842, 2);
         cadastroCidadaoTela.add(jSeparator1);
@@ -575,19 +575,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(jButton12);
         jButton12.setBounds(50, 180, 260, 70);
 
-        jButton10.setText("Cadastrar Cidadão");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastroCidadao.setText("Cadastrar Cidadão");
+        botaoCadastroCidadao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                botaoCadastroCidadaoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton10);
-        jButton10.setBounds(50, 60, 260, 70);
+        jPanel1.add(botaoCadastroCidadao);
+        botaoCadastroCidadao.setBounds(50, 60, 260, 70);
 
         usuario.setText("Seja bem vindo, werike!");
         usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jPanel1.add(usuario);
-        usuario.setBounds(210, 10, 200, 15);
+        usuario.setBounds(210, 10, 200, 16);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -664,7 +664,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.setMaximumSize(new java.awt.Dimension(1366, 768));
         jMenuBar1.setMinimumSize(new java.awt.Dimension(1280, 720));
 
-        jMenu1.setText("Cadastro");
+        menuCadastroCidadao.setText("Cadastro");
 
         btnCidadaoCadastro.setText("Cidadão");
         btnCidadaoCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -672,12 +672,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 btnCidadaoCadastroActionPerformed(evt);
             }
         });
-        jMenu1.add(btnCidadaoCadastro);
+        menuCadastroCidadao.add(btnCidadaoCadastro);
 
         jMenuItem1.setText("Vacinação");
-        jMenu1.add(jMenuItem1);
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuCadastroCidadao.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuCadastroCidadao);
 
         jMenu2.setText("Vacinas");
 
@@ -744,9 +749,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCidadaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCidadaoCadastroActionPerformed
-        CidadaoCadastro cidadaoCadastro = new CidadaoCadastro();
-        jDesktop.add(cidadaoCadastro);
-        cidadaoCadastro.setVisible(true);
+        cadastroCidadaoTela.setVisible(true);
     }//GEN-LAST:event_btnCidadaoCadastroActionPerformed
 
     private void btnTiposVacinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposVacinasActionPerformed
@@ -754,11 +757,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDesktop.add(tipoVacinaCadastro);
         tipoVacinaCadastro.setVisible(true);
     }//GEN-LAST:event_btnTiposVacinasActionPerformed
-
     private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
-        
     }//GEN-LAST:event_trocarPerfilMouseClicked
-
     private void trocarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trocarPerfilActionPerformed
         JOptionPane.showMessageDialog(null, "O programa será reiniciado!" 
             ,"Atenção", JOptionPane.WARNING_MESSAGE);
@@ -776,18 +776,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipal.this.dispose();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }//GEN-LAST:event_sairActionPerformed
-
     private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
-        
     }//GEN-LAST:event_sairMouseClicked
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void botaoCadastroCidadaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroCidadaoActionPerformed
         cadastroCidadaoTela.setVisible(true);
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_botaoCadastroCidadaoActionPerformed
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+    private void closewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closewMouseClicked
         cadastroCidadaoTela.setVisible(false);
-    }//GEN-LAST:event_jLabel12MouseClicked
+    }//GEN-LAST:event_closewMouseClicked
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
         
@@ -802,7 +799,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String numero = (cadastroEnderecoNumero.getText());
         String email = (cadastroEmail.getText());
         
-        boolean cadastro = cidadaoController.cadastrar(nome, nascimento, celular,
+        boolean cadastro = cidadaoController.salvar(nome, nascimento, celular,
             cpf, endereco, numero, email, false);
         
         if(cadastro == true){
@@ -847,7 +844,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String numero = (cadastroEnderecoNumero.getText());
         String email = (cadastroEmail.getText());
         
-        boolean cadastro = cidadaoController.cadastrar(nome, nascimento, celular,
+        boolean cadastro = cidadaoController.salvar(nome, nascimento, celular,
             cpf, endereco, numero, email, false);
         
         if(cadastro == true){
@@ -902,59 +899,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
        cadastroEnderecoNumero.setText("");
        cadastroEmail.setText("");
     }//GEN-LAST:event_limparKeyPressed
-
     private void consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaActionPerformed
-        
     }//GEN-LAST:event_consultaActionPerformed
-
     private void consultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaMouseClicked
         consulta.setText("");
     }//GEN-LAST:event_consultaMouseClicked
-
     private void idCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idCodigoMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_idCodigoMouseClicked
-
     private void primeiroNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_primeiroNomeMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_primeiroNomeMouseClicked
-
     private void sobreNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreNomeMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_sobreNomeMouseClicked
-
     private void cadastroNascimentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroNascimentoMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroNascimentoMouseClicked
-
     private void cadastroCidadaoTelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCidadaoTelaMouseClicked
         consulta.setText("Consultar...");
     }//GEN-LAST:event_cadastroCidadaoTelaMouseClicked
-
     private void cadastroCelularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCelularMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroCelularMouseClicked
-
     private void cadastroCpfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCpfMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroCpfMouseClicked
-
     private void cadastroEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEnderecoMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroEnderecoMouseClicked
-
     private void cadastroEnderecoNumeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEnderecoNumeroMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroEnderecoNumeroMouseClicked
-
     private void cadastroEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEmailMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroEmailMouseClicked
-
     private void consultaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaMouseEntered
-
     }//GEN-LAST:event_consultaMouseEntered
-
     private void consultaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultaKeyPressed
         String pesquisaID = (consulta.getText());
         int consultaID = Integer.parseInt(pesquisaID);
@@ -973,7 +945,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String celular = resultCidadaoModel.getCelular();
         String cpf = resultCidadaoModel.getCpf();
         String endereco = resultCidadaoModel.getEndereco();
-        String numero = resultCidadaoModel.getNumero();
+        String numero = resultCidadaoModel.getN();
         String email = resultCidadaoModel.getEmail();
         
         idCodigo.setText(resultID);
@@ -986,19 +958,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroEnderecoNumero.setText(numero);
         cadastroEmail.setText(email);
     }//GEN-LAST:event_consultaKeyPressed
-
     private void pesquisaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaKeyPressed
-        
     }//GEN-LAST:event_pesquisaKeyPressed
-
     private void pesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaKeyReleased
         String dado = pesquisa.getText();
         cidadaoController.pesquisa(listaPacientes, dado);
     }//GEN-LAST:event_pesquisaKeyReleased
-
     private void listaPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPacientesMouseClicked
     }//GEN-LAST:event_listaPacientesMouseClicked
-
     private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
         int linhaSelecionada = listaPacientes.getSelectedRow();
         
@@ -1080,6 +1047,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deletarActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1116,6 +1087,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alterar;
+    private javax.swing.JButton botaoCadastroCidadao;
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JMenuItem btnTiposVacinas;
     private javax.swing.JTextField cadastroCelular;
@@ -1125,11 +1097,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField cadastroEndereco;
     private javax.swing.JTextField cadastroEnderecoNumero;
     private javax.swing.JTextField cadastroNascimento;
+    private javax.swing.JLabel closew;
     private javax.swing.JTextField consulta;
     private javax.swing.JButton deletar;
     private javax.swing.JTextField idCodigo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
@@ -1145,7 +1117,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1180,7 +1151,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -1193,6 +1163,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton limpar;
     private javax.swing.JTable listaPacientes;
+    private javax.swing.JMenu menuCadastroCidadao;
     private javax.swing.JTextField pesquisa;
     private javax.swing.JTextField primeiroNome;
     private javax.swing.JMenuItem sair;
