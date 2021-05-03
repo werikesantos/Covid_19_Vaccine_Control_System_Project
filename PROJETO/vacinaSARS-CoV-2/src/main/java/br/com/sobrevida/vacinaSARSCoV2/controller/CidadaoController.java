@@ -2,8 +2,10 @@ package br.com.sobrevida.vacinaSARSCoV2.controller;
 
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.CidadaoDao;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -13,17 +15,29 @@ public class CidadaoController {
     
     CidadaoModel cidadaoModel = new CidadaoModel();
     CidadaoDao cidadaoDao = new CidadaoDao();
-            
-    public boolean salvar(String nome, String nascimento, String celular,
-        String cpf, String endereco, String n, String email, boolean resultado){
-            
-        boolean result = resultado;
+       
+    public void salvar(JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
+        JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
+        JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
+        JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
+        JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+          
+        String primeiroNome = (pacientePrimeiroNome.getText());
+        String segundoNome = (pacienteSobreNome.getText());
+        String nomeCompleto = primeiroNome+" "+segundoNome;
         
-        if((!"".equals(nome)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
+        String nascimento = (pacienteNascimento.getText());
+        String celular = (pacienteCelular.getText());
+        String cpf = (pacienteCpf.getText());
+        String endereco = (pacienteEndereco.getText());
+        String n = (pacienteEnderecoNumero.getText());
+        String email = (pacienteEmail.getText());
+        
+        if((!"".equals(nomeCompleto)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
             && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(n)) 
             && (!"".equals(email))){
             
-            cidadaoModel.setNome(nome);
+            cidadaoModel.setNome(nomeCompleto);
             cidadaoModel.setNascimento(nascimento);
             cidadaoModel.setCelular(celular);
             cidadaoModel.setCpf(cpf);
@@ -31,21 +45,95 @@ public class CidadaoController {
             cidadaoModel.setN(n);
             cidadaoModel.setEmail(email);
             
-            resultado = cidadaoDao.salvar(cidadaoModel, false);
-                
-            if(resultado == true){
-                return resultado;
-            }
-        }
-        return result;
-    } 
-    
-    public CidadaoModel consultar(int id){
+            boolean result = cidadaoDao.salvar(cidadaoModel, false);
             
-        cidadaoModel.setId(id);
-        CidadaoModel resultCidadaoModel = cidadaoDao.consultar(cidadaoModel); 
-        
-        return resultCidadaoModel;
+            if(result == true){
+                JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso!"
+                    ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE);
+                
+                avisoNome.setVisible(false);
+                avisoNascimento.setVisible(false);
+                avisoCelular.setVisible(false);
+                avisoCpf.setVisible(false);
+                avisoEndereco.setVisible(false);
+                avisoN.setVisible(false);
+                avisoEmail.setVisible(false);
+                
+                pacientePrimeiroNome.setText("");
+                pacienteSobreNome.setText("");
+                pacienteNascimento.setText("");
+                pacienteCelular.setText("");
+                pacienteCpf.setText("");
+                pacienteEndereco.setText("");
+                pacienteEnderecoNumero.setText("");
+                pacienteEmail.setText("");
+            }else{
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                    + "Por favor, verifique e tente novamente."
+                    ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
+                );
+                pacientePrimeiroNome.setText("");
+                pacienteSobreNome.setText("");
+                pacienteNascimento.setText("");
+                pacienteCelular.setText("");
+                pacienteCpf.setText("");
+                pacienteEndereco.setText("");
+                pacienteEnderecoNumero.setText("");
+                pacienteEmail.setText("");        
+            }       
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                + "Por favor, preencher todos os campos marcados."
+                ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
+             );
+            avisoNome.setVisible(true);
+            avisoNascimento.setVisible(true);
+            avisoCelular.setVisible(true);
+            avisoCpf.setVisible(true);
+            avisoEndereco.setVisible(true);
+            avisoN.setVisible(true);
+            avisoEmail.setVisible(true); 
+        }
+    } 
+
+    public void consulta(JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
+        JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
+        JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
+        JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+
+        String converterID = pacienteConsultar.getText();
+            
+        if(!"".equals(converterID) && !"Consultar...".equals(converterID)){
+                
+            int id = Integer.parseInt(converterID);
+            cidadaoModel.setId(id);
+            CidadaoModel result = cidadaoDao.consulta(cidadaoModel); 
+
+            id = result.getId();
+            String resultID = Integer.toString(id);
+
+            String nome = result.getNome();
+            String[] resultado = nome.split(" ");
+            String primeiro = resultado[0];
+            String segundo = resultado[1];
+
+            String nascimento = result.getNascimento();
+            String celular = result.getCelular();
+            String cpf = result.getCpf();
+            String endereco = result.getEndereco();
+            String numero = result.getN();
+            String email = result.getEmail();
+
+            pacienteIdCodigo.setText(resultID);
+            pacientePrimeiroNome.setText(primeiro);
+            pacienteSobreNome.setText(segundo);
+            pacienteNascimento.setText(nascimento);
+            pacienteCelular.setText(celular);
+            pacienteCpf.setText(cpf);
+            pacienteEndereco.setText(endereco);
+            pacienteEnderecoNumero.setText(numero);
+            pacienteEmail.setText(email);
+        }
     } 
     
     public void pesquisa(JTable listaPacientes, String dado){     
@@ -97,5 +185,30 @@ public class CidadaoController {
             }
         }
         return result;
+    }
+    
+    public void limpar(JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
+        JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
+        JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
+        JTextField pacienteNascimento, JTextField pacienteCelular, JTextField pacienteCpf, 
+        JTextField pacienteEndereco, JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+                    
+        pacienteIdCodigo.setText("");
+        pacientePrimeiroNome.setText("");
+        pacienteSobreNome.setText("");
+        pacienteNascimento.setText("");
+        pacienteCelular.setText("");
+        pacienteCpf.setText("");
+        pacienteEndereco.setText("");
+        pacienteEnderecoNumero.setText("");
+        pacienteEmail.setText("");
+        
+        avisoNome.setVisible(false);
+        avisoNascimento.setVisible(false);
+        avisoCelular.setVisible(false);
+        avisoCpf.setVisible(false);
+        avisoEndereco.setVisible(false);
+        avisoN.setVisible(false);
+        avisoEmail.setVisible(false);
     }
 }
