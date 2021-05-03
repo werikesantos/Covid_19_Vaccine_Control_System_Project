@@ -50,7 +50,7 @@ public class CidadaoDao{
         return result;
     }
     
-    public CidadaoModel consultar(CidadaoModel cidadaoModel){
+    public CidadaoModel consulta(CidadaoModel cidadaoModel){
 
         cidadao = cidadaoModel;
                 

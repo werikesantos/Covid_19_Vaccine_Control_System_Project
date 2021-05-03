@@ -25,6 +25,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         utilitario.inserirIcone(this);
         
         cadastroCidadaoTela.setVisible(false);
+        
+        avisoNome.setVisible(false);
+        avisoNascimento.setVisible(false);
+        avisoCelular.setVisible(false);
+        avisoCpf.setVisible(false);
+        avisoEndereco.setVisible(false);
+        avisoN.setVisible(false);
+        avisoEmail.setVisible(false);        
     }
     
     /**
@@ -52,24 +60,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        pesquisa = new javax.swing.JTextField();
-        consulta = new javax.swing.JTextField();
-        cadastroEmail = new javax.swing.JTextField();
-        cadastroEndereco = new javax.swing.JTextField();
-        sobreNome = new javax.swing.JTextField();
-        idCodigo = new javax.swing.JTextField();
-        cadastroCpf = new javax.swing.JTextField();
-        cadastroCelular = new javax.swing.JTextField();
-        cadastroEnderecoNumero = new javax.swing.JTextField();
-        cadastroNascimento = new javax.swing.JTextField();
-        primeiroNome = new javax.swing.JTextField();
+        avisoN = new javax.swing.JLabel();
+        avisoCpf = new javax.swing.JLabel();
+        avisoCelular = new javax.swing.JLabel();
+        avisoEmail = new javax.swing.JLabel();
+        avisoEndereco = new javax.swing.JLabel();
+        avisoNascimento = new javax.swing.JLabel();
+        avisoNome = new javax.swing.JLabel();
+        pacientePesquisar = new javax.swing.JTextField();
+        pacienteConsultar = new javax.swing.JTextField();
+        pacienteEmail = new javax.swing.JTextField();
+        pacienteEndereco = new javax.swing.JTextField();
+        pacienteSobreNome = new javax.swing.JTextField();
+        pacienteIdCodigo = new javax.swing.JTextField();
+        pacienteCpf = new javax.swing.JTextField();
+        pacienteCelular = new javax.swing.JTextField();
+        pacienteEnderecoNumero = new javax.swing.JTextField();
+        pacienteNascimento = new javax.swing.JTextField();
+        pacientePrimeiroNome = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -79,12 +87,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        salvar = new javax.swing.JButton();
-        deletar = new javax.swing.JButton();
-        alterar = new javax.swing.JButton();
-        limpar = new javax.swing.JButton();
+        pacienteBtnSalvar = new javax.swing.JButton();
+        pacienteBtnDeletar = new javax.swing.JButton();
+        pacienteBtnAlterar = new javax.swing.JButton();
+        pacienteBtnLimpar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaPacientes = new javax.swing.JTable();
+        pacienteLista = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jButton13 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -238,176 +246,176 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(jLabel14);
         jLabel14.setBounds(60, 140, 100, 16);
 
-        jLabel31.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel31.setText("*");
-        cadastroCidadaoTela.add(jLabel31);
-        jLabel31.setBounds(760, 240, 10, 15);
+        avisoN.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoN.setForeground(new java.awt.Color(255, 0, 0));
+        avisoN.setText("*");
+        cadastroCidadaoTela.add(avisoN);
+        avisoN.setBounds(760, 240, 10, 15);
 
-        jLabel25.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel25.setText("*");
-        cadastroCidadaoTela.add(jLabel25);
-        jLabel25.setBounds(692, 190, 10, 15);
+        avisoCpf.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoCpf.setForeground(new java.awt.Color(255, 0, 0));
+        avisoCpf.setText("*");
+        cadastroCidadaoTela.add(avisoCpf);
+        avisoCpf.setBounds(692, 190, 10, 15);
 
-        jLabel23.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel23.setText("*");
-        cadastroCidadaoTela.add(jLabel23);
-        jLabel23.setBounds(440, 190, 10, 15);
+        avisoCelular.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoCelular.setForeground(new java.awt.Color(255, 0, 0));
+        avisoCelular.setText("*");
+        cadastroCidadaoTela.add(avisoCelular);
+        avisoCelular.setBounds(440, 190, 10, 15);
 
-        jLabel33.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel33.setText("*");
-        cadastroCidadaoTela.add(jLabel33);
-        jLabel33.setBounds(100, 290, 10, 15);
+        avisoEmail.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoEmail.setForeground(new java.awt.Color(255, 0, 0));
+        avisoEmail.setText("*");
+        cadastroCidadaoTela.add(avisoEmail);
+        avisoEmail.setBounds(100, 290, 10, 15);
 
-        jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel29.setText("*");
-        cadastroCidadaoTela.add(jLabel29);
-        jLabel29.setBounds(122, 240, 10, 15);
+        avisoEndereco.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoEndereco.setForeground(new java.awt.Color(255, 0, 0));
+        avisoEndereco.setText("*");
+        cadastroCidadaoTela.add(avisoEndereco);
+        avisoEndereco.setBounds(122, 240, 10, 15);
 
-        jLabel20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel20.setText("*");
-        cadastroCidadaoTela.add(jLabel20);
-        jLabel20.setBounds(190, 190, 10, 15);
+        avisoNascimento.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoNascimento.setForeground(new java.awt.Color(255, 0, 0));
+        avisoNascimento.setText("*");
+        cadastroCidadaoTela.add(avisoNascimento);
+        avisoNascimento.setBounds(190, 190, 10, 15);
 
-        jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel15.setText("*");
-        cadastroCidadaoTela.add(jLabel15);
-        jLabel15.setBounds(160, 140, 10, 15);
+        avisoNome.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoNome.setForeground(new java.awt.Color(255, 0, 0));
+        avisoNome.setText("*");
+        cadastroCidadaoTela.add(avisoNome);
+        avisoNome.setBounds(160, 140, 10, 15);
 
-        pesquisa.setBackground(new java.awt.Color(255, 255, 255));
-        pesquisa.setForeground(new java.awt.Color(51, 51, 51));
-        pesquisa.setText("Pesquisar");
-        pesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
+        pacientePesquisar.setBackground(new java.awt.Color(255, 255, 255));
+        pacientePesquisar.setForeground(new java.awt.Color(51, 51, 51));
+        pacientePesquisar.setText("Pesquisar");
+        pacientePesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                pesquisaKeyPressed(evt);
+                pacientePesquisarKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                pesquisaKeyReleased(evt);
+                pacientePesquisarKeyReleased(evt);
             }
         });
-        cadastroCidadaoTela.add(pesquisa);
-        pesquisa.setBounds(622, 407, 280, 28);
+        cadastroCidadaoTela.add(pacientePesquisar);
+        pacientePesquisar.setBounds(622, 407, 280, 28);
 
-        consulta.setBackground(new java.awt.Color(255, 255, 255));
-        consulta.setForeground(new java.awt.Color(51, 51, 51));
-        consulta.setText("Consultar...");
-        consulta.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteConsultar.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteConsultar.setForeground(new java.awt.Color(51, 51, 51));
+        pacienteConsultar.setText("Consultar...");
+        pacienteConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                consultaMouseClicked(evt);
+                pacienteConsultarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                consultaMouseEntered(evt);
+                pacienteConsultarMouseEntered(evt);
             }
         });
-        consulta.addActionListener(new java.awt.event.ActionListener() {
+        pacienteConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultaActionPerformed(evt);
+                pacienteConsultarActionPerformed(evt);
             }
         });
-        consulta.addKeyListener(new java.awt.event.KeyAdapter() {
+        pacienteConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                consultaKeyPressed(evt);
+                pacienteConsultarKeyPressed(evt);
             }
         });
-        cadastroCidadaoTela.add(consulta);
-        consulta.setBounds(622, 32, 280, 28);
+        cadastroCidadaoTela.add(pacienteConsultar);
+        pacienteConsultar.setBounds(622, 32, 280, 28);
 
-        cadastroEmail.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteEmail.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteEmail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroEmailMouseClicked(evt);
+                pacienteEmailMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(cadastroEmail);
-        cadastroEmail.setBounds(230, 284, 390, 28);
+        cadastroCidadaoTela.add(pacienteEmail);
+        pacienteEmail.setBounds(230, 284, 390, 28);
 
-        cadastroEndereco.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroEndereco.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroEndereco.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteEndereco.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteEndereco.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteEndereco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroEnderecoMouseClicked(evt);
+                pacienteEnderecoMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(cadastroEndereco);
-        cadastroEndereco.setBounds(230, 234, 480, 28);
+        cadastroCidadaoTela.add(pacienteEndereco);
+        pacienteEndereco.setBounds(230, 234, 480, 28);
 
-        sobreNome.setBackground(new java.awt.Color(255, 255, 255));
-        sobreNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        sobreNome.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteSobreNome.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteSobreNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteSobreNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sobreNomeMouseClicked(evt);
+                pacienteSobreNomeMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(sobreNome);
-        sobreNome.setBounds(522, 134, 380, 28);
+        cadastroCidadaoTela.add(pacienteSobreNome);
+        pacienteSobreNome.setBounds(522, 134, 380, 28);
 
-        idCodigo.setEditable(false);
-        idCodigo.setBackground(new java.awt.Color(255, 255, 255));
-        idCodigo.setEnabled(false);
-        idCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteIdCodigo.setEditable(false);
+        pacienteIdCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteIdCodigo.setEnabled(false);
+        pacienteIdCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                idCodigoMouseClicked(evt);
+                pacienteIdCodigoMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(idCodigo);
-        idCodigo.setBounds(230, 86, 110, 28);
+        cadastroCidadaoTela.add(pacienteIdCodigo);
+        pacienteIdCodigo.setBounds(230, 86, 110, 28);
 
-        cadastroCpf.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCpf.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteCpf.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteCpf.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroCpfMouseClicked(evt);
+                pacienteCpfMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(cadastroCpf);
-        cadastroCpf.setBounds(722, 184, 180, 28);
+        cadastroCidadaoTela.add(pacienteCpf);
+        pacienteCpf.setBounds(722, 184, 180, 28);
 
-        cadastroCelular.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroCelular.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroCelular.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteCelular.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteCelular.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteCelular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroCelularMouseClicked(evt);
+                pacienteCelularMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(cadastroCelular);
-        cadastroCelular.setBounds(470, 184, 150, 28);
+        cadastroCidadaoTela.add(pacienteCelular);
+        pacienteCelular.setBounds(470, 184, 150, 28);
 
-        cadastroEnderecoNumero.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroEnderecoNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroEnderecoNumero.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteEnderecoNumero.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteEnderecoNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteEnderecoNumero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroEnderecoNumeroMouseClicked(evt);
+                pacienteEnderecoNumeroMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(cadastroEnderecoNumero);
-        cadastroEnderecoNumero.setBounds(782, 234, 120, 28);
+        cadastroCidadaoTela.add(pacienteEnderecoNumero);
+        pacienteEnderecoNumero.setBounds(782, 234, 120, 28);
 
-        cadastroNascimento.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroNascimento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        cadastroNascimento.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteNascimento.setBackground(new java.awt.Color(255, 255, 255));
+        pacienteNascimento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacienteNascimento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroNascimentoMouseClicked(evt);
+                pacienteNascimentoMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(cadastroNascimento);
-        cadastroNascimento.setBounds(230, 184, 120, 28);
+        cadastroCidadaoTela.add(pacienteNascimento);
+        pacienteNascimento.setBounds(230, 184, 120, 28);
 
-        primeiroNome.setBackground(new java.awt.Color(255, 255, 255));
-        primeiroNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        primeiroNome.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacientePrimeiroNome.setBackground(new java.awt.Color(255, 255, 255));
+        pacientePrimeiroNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        pacientePrimeiroNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                primeiroNomeMouseClicked(evt);
+                pacientePrimeiroNomeMouseClicked(evt);
             }
         });
-        cadastroCidadaoTela.add(primeiroNome);
-        primeiroNome.setBounds(230, 134, 270, 28);
+        cadastroCidadaoTela.add(pacientePrimeiroNome);
+        pacientePrimeiroNome.setBounds(230, 134, 270, 28);
 
         jLabel17.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(102, 102, 102));
@@ -463,53 +471,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCidadaoTela.add(jLabel16);
         jLabel16.setBounds(230, 163, 100, 15);
 
-        salvar.setText("Salvar");
-        salvar.addActionListener(new java.awt.event.ActionListener() {
+        pacienteBtnSalvar.setText("Salvar");
+        pacienteBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarActionPerformed(evt);
+                pacienteBtnSalvarActionPerformed(evt);
             }
         });
-        salvar.addKeyListener(new java.awt.event.KeyAdapter() {
+        pacienteBtnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                salvarKeyPressed(evt);
+                pacienteBtnSalvarKeyPressed(evt);
             }
         });
-        cadastroCidadaoTela.add(salvar);
-        salvar.setBounds(590, 334, 140, 30);
+        cadastroCidadaoTela.add(pacienteBtnSalvar);
+        pacienteBtnSalvar.setBounds(590, 334, 140, 30);
 
-        deletar.setText("Deletar");
-        deletar.addActionListener(new java.awt.event.ActionListener() {
+        pacienteBtnDeletar.setText("Deletar");
+        pacienteBtnDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletarActionPerformed(evt);
+                pacienteBtnDeletarActionPerformed(evt);
             }
         });
-        cadastroCidadaoTela.add(deletar);
-        deletar.setBounds(762, 640, 140, 30);
+        cadastroCidadaoTela.add(pacienteBtnDeletar);
+        pacienteBtnDeletar.setBounds(762, 640, 140, 30);
 
-        alterar.setText("Alterar");
-        alterar.addActionListener(new java.awt.event.ActionListener() {
+        pacienteBtnAlterar.setText("Alterar");
+        pacienteBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alterarActionPerformed(evt);
+                pacienteBtnAlterarActionPerformed(evt);
             }
         });
-        cadastroCidadaoTela.add(alterar);
-        alterar.setBounds(590, 640, 140, 30);
+        cadastroCidadaoTela.add(pacienteBtnAlterar);
+        pacienteBtnAlterar.setBounds(590, 640, 140, 30);
 
-        limpar.setText("Limpar");
-        limpar.addActionListener(new java.awt.event.ActionListener() {
+        pacienteBtnLimpar.setText("Limpar");
+        pacienteBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limparActionPerformed(evt);
+                pacienteBtnLimparActionPerformed(evt);
             }
         });
-        limpar.addKeyListener(new java.awt.event.KeyAdapter() {
+        pacienteBtnLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                limparKeyPressed(evt);
+                pacienteBtnLimparKeyPressed(evt);
             }
         });
-        cadastroCidadaoTela.add(limpar);
-        limpar.setBounds(762, 334, 140, 30);
+        cadastroCidadaoTela.add(pacienteBtnLimpar);
+        pacienteBtnLimpar.setBounds(762, 334, 140, 30);
 
-        listaPacientes.setModel(new javax.swing.table.DefaultTableModel(
+        pacienteLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -543,14 +551,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        listaPacientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        pacienteLista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listaPacientesMouseClicked(evt);
+                pacienteListaMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(listaPacientes);
-        if (listaPacientes.getColumnModel().getColumnCount() > 0) {
-            listaPacientes.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane1.setViewportView(pacienteLista);
+        if (pacienteLista.getColumnModel().getColumnCount() > 0) {
+            pacienteLista.getColumnModel().getColumn(0).setResizable(false);
         }
 
         cadastroCidadaoTela.add(jScrollPane1);
@@ -784,199 +792,86 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void closewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closewMouseClicked
         cadastroCidadaoTela.setVisible(false);
+        cidadaoController.limpar(avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
+            avisoN, avisoEmail, pacienteIdCodigo, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+            pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
     }//GEN-LAST:event_closewMouseClicked
 
-    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
-        
-        String primeiro = (primeiroNome.getText());
-        String segundo = (sobreNome.getText());
-        String nome = primeiro+" "+segundo;
-        
-        String nascimento = (cadastroNascimento.getText());
-        String celular = (cadastroCelular.getText());
-        String cpf = (cadastroCpf.getText());
-        String endereco = (cadastroEndereco.getText());
-        String numero = (cadastroEnderecoNumero.getText());
-        String email = (cadastroEmail.getText());
-        
-        boolean cadastro = cidadaoController.salvar(nome, nascimento, celular,
-            cpf, endereco, numero, email, false);
-        
-        if(cadastro == true){
-            
-            JOptionPane.showMessageDialog(null, "Usuário cancelado com sucesso!"
-                ,"Deletar Usuário", JOptionPane.WARNING_MESSAGE);
-                
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
-        }else{
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                + "Por favor, verifique e tente novamente."
-                ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
-            );
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
-        }
-    }//GEN-LAST:event_salvarActionPerformed
+    private void pacienteBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnSalvarActionPerformed
+        cidadaoController.salvar(avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
+            avisoN, avisoEmail, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+            pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
+    }//GEN-LAST:event_pacienteBtnSalvarActionPerformed
 
-    private void salvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_salvarKeyPressed
-        
-        String primeiro = (primeiroNome.getText());
-        String segundo = (sobreNome.getText());
-        String nome = primeiro+" "+segundo;
-        
-        String nascimento = (cadastroNascimento.getText());
-        String celular = (cadastroCelular.getText());
-        String cpf = (cadastroCpf.getText());
-        String endereco = (cadastroEndereco.getText());
-        String numero = (cadastroEnderecoNumero.getText());
-        String email = (cadastroEmail.getText());
-        
-        boolean cadastro = cidadaoController.salvar(nome, nascimento, celular,
-            cpf, endereco, numero, email, false);
-        
-        if(cadastro == true){
-            
-            JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
-                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-                
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
-        }else{
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                + "Por favor, verifique e tente novamente."
-                ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
-            );
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
-        }
-    }//GEN-LAST:event_salvarKeyPressed
+    private void pacienteBtnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pacienteBtnSalvarKeyPressed
+        cidadaoController.salvar(avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
+            avisoN, avisoEmail, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+            pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
+    }//GEN-LAST:event_pacienteBtnSalvarKeyPressed
 
-    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
-        idCodigo.setText("");
-        primeiroNome.setText("");
-        sobreNome.setText("");
-        cadastroNascimento.setText("");
-        cadastroCelular.setText("");
-        cadastroCpf.setText("");
-        cadastroEndereco.setText("");
-        cadastroEnderecoNumero.setText("");
-        cadastroEmail.setText("");
-    }//GEN-LAST:event_limparActionPerformed
+    private void pacienteBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnLimparActionPerformed
+        cidadaoController.limpar(avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
+            avisoN, avisoEmail, pacienteIdCodigo, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+            pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
+    }//GEN-LAST:event_pacienteBtnLimparActionPerformed
 
-    private void limparKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_limparKeyPressed
-       idCodigo.setText("");
-       primeiroNome.setText("");
-       sobreNome.setText("");
-       cadastroNascimento.setText("");
-       cadastroCelular.setText("");
-       cadastroCpf.setText("");
-       cadastroEndereco.setText("");
-       cadastroEnderecoNumero.setText("");
-       cadastroEmail.setText("");
-    }//GEN-LAST:event_limparKeyPressed
-    private void consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaActionPerformed
-    }//GEN-LAST:event_consultaActionPerformed
-    private void consultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaMouseClicked
-        consulta.setText("");
-    }//GEN-LAST:event_consultaMouseClicked
-    private void idCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idCodigoMouseClicked
-    }//GEN-LAST:event_idCodigoMouseClicked
-    private void primeiroNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_primeiroNomeMouseClicked
-    }//GEN-LAST:event_primeiroNomeMouseClicked
-    private void sobreNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreNomeMouseClicked
-    }//GEN-LAST:event_sobreNomeMouseClicked
-    private void cadastroNascimentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroNascimentoMouseClicked
-    }//GEN-LAST:event_cadastroNascimentoMouseClicked
+    private void pacienteBtnLimparKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pacienteBtnLimparKeyPressed
+        cidadaoController.limpar(avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
+            avisoN, avisoEmail, pacienteIdCodigo, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+            pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
+    }//GEN-LAST:event_pacienteBtnLimparKeyPressed
+    private void pacienteConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteConsultarActionPerformed
+    }//GEN-LAST:event_pacienteConsultarActionPerformed
+    private void pacienteConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteConsultarMouseClicked
+        pacienteConsultar.setText("");
+    }//GEN-LAST:event_pacienteConsultarMouseClicked
+    private void pacienteIdCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteIdCodigoMouseClicked
+    }//GEN-LAST:event_pacienteIdCodigoMouseClicked
+    private void pacientePrimeiroNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacientePrimeiroNomeMouseClicked
+    }//GEN-LAST:event_pacientePrimeiroNomeMouseClicked
+    private void pacienteSobreNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteSobreNomeMouseClicked
+    }//GEN-LAST:event_pacienteSobreNomeMouseClicked
+    private void pacienteNascimentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteNascimentoMouseClicked
+    }//GEN-LAST:event_pacienteNascimentoMouseClicked
     private void cadastroCidadaoTelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCidadaoTelaMouseClicked
-        consulta.setText("Consultar...");
+        pacienteConsultar.setText("Consultar...");
     }//GEN-LAST:event_cadastroCidadaoTelaMouseClicked
-    private void cadastroCelularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCelularMouseClicked
-    }//GEN-LAST:event_cadastroCelularMouseClicked
-    private void cadastroCpfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroCpfMouseClicked
-    }//GEN-LAST:event_cadastroCpfMouseClicked
-    private void cadastroEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEnderecoMouseClicked
-    }//GEN-LAST:event_cadastroEnderecoMouseClicked
-    private void cadastroEnderecoNumeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEnderecoNumeroMouseClicked
-    }//GEN-LAST:event_cadastroEnderecoNumeroMouseClicked
-    private void cadastroEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroEmailMouseClicked
-    }//GEN-LAST:event_cadastroEmailMouseClicked
-    private void consultaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaMouseEntered
-    }//GEN-LAST:event_consultaMouseEntered
-    private void consultaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultaKeyPressed
-        String pesquisaID = (consulta.getText());
-        int consultaID = Integer.parseInt(pesquisaID);
-
-        CidadaoModel resultCidadaoModel = cidadaoController.consultar(consultaID);
-
-        int id = resultCidadaoModel.getId();
-        String resultID = Integer.toString(id);
+    private void pacienteCelularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteCelularMouseClicked
+    }//GEN-LAST:event_pacienteCelularMouseClicked
+    private void pacienteCpfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteCpfMouseClicked
+    }//GEN-LAST:event_pacienteCpfMouseClicked
+    private void pacienteEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteEnderecoMouseClicked
+    }//GEN-LAST:event_pacienteEnderecoMouseClicked
+    private void pacienteEnderecoNumeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteEnderecoNumeroMouseClicked
+    }//GEN-LAST:event_pacienteEnderecoNumeroMouseClicked
+    private void pacienteEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteEmailMouseClicked
+    }//GEN-LAST:event_pacienteEmailMouseClicked
+    private void pacienteConsultarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteConsultarMouseEntered
+    }//GEN-LAST:event_pacienteConsultarMouseEntered
+    private void pacienteConsultarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pacienteConsultarKeyPressed
+        cidadaoController.consulta(pacienteConsultar, pacienteIdCodigo, pacientePrimeiroNome, 
+            pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, pacienteEndereco, 
+            pacienteEnderecoNumero, pacienteEmail);
+    }//GEN-LAST:event_pacienteConsultarKeyPressed
+    private void pacientePesquisarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pacientePesquisarKeyPressed
+    }//GEN-LAST:event_pacientePesquisarKeyPressed
+    private void pacientePesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pacientePesquisarKeyReleased
+        String dado = pacientePesquisar.getText();
+        cidadaoController.pesquisa(pacienteLista, dado);
+    }//GEN-LAST:event_pacientePesquisarKeyReleased
+    private void pacienteListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteListaMouseClicked
+    }//GEN-LAST:event_pacienteListaMouseClicked
+    private void pacienteBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnAlterarActionPerformed
+        int linhaSelecionada = pacienteLista.getSelectedRow();
         
-        String nome = resultCidadaoModel.getNome();
-        String[] resultado = nome.split(" ");
-        String primeiro = resultado[0];
-        String segundo = resultado[1];
-        
-        String nascimento = resultCidadaoModel.getNascimento();
-        String celular = resultCidadaoModel.getCelular();
-        String cpf = resultCidadaoModel.getCpf();
-        String endereco = resultCidadaoModel.getEndereco();
-        String numero = resultCidadaoModel.getN();
-        String email = resultCidadaoModel.getEmail();
-        
-        idCodigo.setText(resultID);
-        primeiroNome.setText(primeiro);
-        sobreNome.setText(segundo);
-        cadastroNascimento.setText(nascimento);
-        cadastroCelular.setText(celular);
-        cadastroCpf.setText(cpf);
-        cadastroEndereco.setText(endereco);
-        cadastroEnderecoNumero.setText(numero);
-        cadastroEmail.setText(email);
-    }//GEN-LAST:event_consultaKeyPressed
-    private void pesquisaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaKeyPressed
-    }//GEN-LAST:event_pesquisaKeyPressed
-    private void pesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaKeyReleased
-        String dado = pesquisa.getText();
-        cidadaoController.pesquisa(listaPacientes, dado);
-    }//GEN-LAST:event_pesquisaKeyReleased
-    private void listaPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPacientesMouseClicked
-    }//GEN-LAST:event_listaPacientesMouseClicked
-    private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
-        int linhaSelecionada = listaPacientes.getSelectedRow();
-        
-        int id = (int) listaPacientes.getModel().getValueAt(linhaSelecionada, 0);
-        String nome = listaPacientes.getModel().getValueAt(linhaSelecionada, 1).toString();        
-        String nascimento = listaPacientes.getModel().getValueAt(linhaSelecionada, 2).toString();
-        String celular = listaPacientes.getModel().getValueAt(linhaSelecionada, 3).toString();
-        String cpf = listaPacientes.getModel().getValueAt(linhaSelecionada, 4).toString();
-        String endereco = listaPacientes.getModel().getValueAt(linhaSelecionada, 5).toString();
-        String numero = listaPacientes.getModel().getValueAt(linhaSelecionada, 6).toString();
-        String email = listaPacientes.getModel().getValueAt(linhaSelecionada, 7).toString();
+        int id = (int) pacienteLista.getModel().getValueAt(linhaSelecionada, 0);
+        String nome = pacienteLista.getModel().getValueAt(linhaSelecionada, 1).toString();        
+        String nascimento = pacienteLista.getModel().getValueAt(linhaSelecionada, 2).toString();
+        String celular = pacienteLista.getModel().getValueAt(linhaSelecionada, 3).toString();
+        String cpf = pacienteLista.getModel().getValueAt(linhaSelecionada, 4).toString();
+        String endereco = pacienteLista.getModel().getValueAt(linhaSelecionada, 5).toString();
+        String numero = pacienteLista.getModel().getValueAt(linhaSelecionada, 6).toString();
+        String email = pacienteLista.getModel().getValueAt(linhaSelecionada, 7).toString();
         
         boolean cadastro = cidadaoController.alterar(id, nome, nascimento, celular,
             cpf, endereco, numero, email, false);
@@ -986,35 +881,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
                 ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
                 
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
+            pacientePrimeiroNome.setText("");
+            pacienteSobreNome.setText("");
+            pacienteNascimento.setText("");
+            pacienteCelular.setText("");
+            pacienteCpf.setText("");
+            pacienteEndereco.setText("");
+            pacienteEnderecoNumero.setText("");
+            pacienteEmail.setText("");
         }else{
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                 + "Por favor, verifique e tente novamente."
                 ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
             );
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
+            pacientePrimeiroNome.setText("");
+            pacienteSobreNome.setText("");
+            pacienteNascimento.setText("");
+            pacienteCelular.setText("");
+            pacienteCpf.setText("");
+            pacienteEndereco.setText("");
+            pacienteEnderecoNumero.setText("");
+            pacienteEmail.setText("");
         }
-    }//GEN-LAST:event_alterarActionPerformed
+    }//GEN-LAST:event_pacienteBtnAlterarActionPerformed
 
-    private void deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarActionPerformed
-    int linhaSelecionada = listaPacientes.getSelectedRow();
-    String nome = listaPacientes.getModel().getValueAt(linhaSelecionada, 1).toString();
+    private void pacienteBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnDeletarActionPerformed
+    int linhaSelecionada = pacienteLista.getSelectedRow();
+    String nome = pacienteLista.getModel().getValueAt(linhaSelecionada, 1).toString();
         
-        int id = (int) listaPacientes.getModel().getValueAt(linhaSelecionada, 0);
+        int id = (int) pacienteLista.getModel().getValueAt(linhaSelecionada, 0);
         
         boolean cadastro = cidadaoController.deletar(id, nome, false);
         
@@ -1023,29 +918,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Cidadão cadastrado com sucesso!"
                 ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
                 
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
+            pacientePrimeiroNome.setText("");
+            pacienteSobreNome.setText("");
+            pacienteNascimento.setText("");
+            pacienteCelular.setText("");
+            pacienteCpf.setText("");
+            pacienteEndereco.setText("");
+            pacienteEnderecoNumero.setText("");
+            pacienteEmail.setText("");
         }else{
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                 + "Por favor, verifique e tente novamente."
                 ,"Cadastro de Paciênte", JOptionPane.WARNING_MESSAGE
             );
-            primeiroNome.setText("");
-            sobreNome.setText("");
-            cadastroNascimento.setText("");
-            cadastroCelular.setText("");
-            cadastroCpf.setText("");
-            cadastroEndereco.setText("");
-            cadastroEnderecoNumero.setText("");
-            cadastroEmail.setText("");
+            pacientePrimeiroNome.setText("");
+            pacienteSobreNome.setText("");
+            pacienteNascimento.setText("");
+            pacienteCelular.setText("");
+            pacienteCpf.setText("");
+            pacienteEndereco.setText("");
+            pacienteEnderecoNumero.setText("");
+            pacienteEmail.setText("");
         }
-    }//GEN-LAST:event_deletarActionPerformed
+    }//GEN-LAST:event_pacienteBtnDeletarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
@@ -1086,21 +981,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton alterar;
+    private javax.swing.JLabel avisoCelular;
+    private javax.swing.JLabel avisoCpf;
+    private javax.swing.JLabel avisoEmail;
+    private javax.swing.JLabel avisoEndereco;
+    private javax.swing.JLabel avisoN;
+    private javax.swing.JLabel avisoNascimento;
+    private javax.swing.JLabel avisoNome;
     private javax.swing.JButton botaoCadastroCidadao;
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JMenuItem btnTiposVacinas;
-    private javax.swing.JTextField cadastroCelular;
     private javax.swing.JPanel cadastroCidadaoTela;
-    private javax.swing.JTextField cadastroCpf;
-    private javax.swing.JTextField cadastroEmail;
-    private javax.swing.JTextField cadastroEndereco;
-    private javax.swing.JTextField cadastroEnderecoNumero;
-    private javax.swing.JTextField cadastroNascimento;
     private javax.swing.JLabel closew;
-    private javax.swing.JTextField consulta;
-    private javax.swing.JButton deletar;
-    private javax.swing.JTextField idCodigo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -1119,27 +1011,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -1161,14 +1046,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JButton limpar;
-    private javax.swing.JTable listaPacientes;
     private javax.swing.JMenu menuCadastroCidadao;
-    private javax.swing.JTextField pesquisa;
-    private javax.swing.JTextField primeiroNome;
+    private javax.swing.JButton pacienteBtnAlterar;
+    private javax.swing.JButton pacienteBtnDeletar;
+    private javax.swing.JButton pacienteBtnLimpar;
+    private javax.swing.JButton pacienteBtnSalvar;
+    private javax.swing.JTextField pacienteCelular;
+    private javax.swing.JTextField pacienteConsultar;
+    private javax.swing.JTextField pacienteCpf;
+    private javax.swing.JTextField pacienteEmail;
+    private javax.swing.JTextField pacienteEndereco;
+    private javax.swing.JTextField pacienteEnderecoNumero;
+    private javax.swing.JTextField pacienteIdCodigo;
+    private javax.swing.JTable pacienteLista;
+    private javax.swing.JTextField pacienteNascimento;
+    private javax.swing.JTextField pacientePesquisar;
+    private javax.swing.JTextField pacientePrimeiroNome;
+    private javax.swing.JTextField pacienteSobreNome;
     private javax.swing.JMenuItem sair;
-    private javax.swing.JButton salvar;
-    private javax.swing.JTextField sobreNome;
     private javax.swing.JMenuItem trocarPerfil;
     private javax.swing.JLabel usuario;
     // End of variables declaration//GEN-END:variables
