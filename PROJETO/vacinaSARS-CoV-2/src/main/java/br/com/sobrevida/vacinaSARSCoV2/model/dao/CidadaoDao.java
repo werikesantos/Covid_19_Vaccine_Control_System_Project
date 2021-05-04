@@ -98,13 +98,13 @@ public class CidadaoDao{
         return cidadao;
     }
     
-    public void pesquisa(JTable listaPacientes, String dado){
+    public void pesquisa(JTable pacienteLista, String dado){
 
         String sql = 
             "SELECT * FROM "
                 +"bd_vacina_sars_cov_2.cidadao "
             +"WHERE "
-                +"nome LIKE ?";
+                +"cpf LIKE ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         
@@ -116,7 +116,7 @@ public class CidadaoDao{
 
             ResultSet rs = ps.executeQuery();
 
-            listaPacientes.setModel(DbUtils.resultSetToTableModel(rs));
+            pacienteLista.setModel(DbUtils.resultSetToTableModel(rs));
             
             ps.close();
         }
