@@ -136,8 +136,8 @@ public class CidadaoController {
         }
     } 
     
-    public void pesquisa(JTable listaPacientes, String dado){     
-        cidadaoDao.pesquisa(listaPacientes, dado);    
+    public void pesquisa(JTable pacienteLista, String dado){     
+        cidadaoDao.pesquisa(pacienteLista, dado);    
     }
     
     public boolean alterar(int id, String nome, String nascimento, String celular,
@@ -165,26 +165,93 @@ public class CidadaoController {
             }
         }
         return result;
-    }  
+    } 
     
-    public boolean deletar(int id, String nome, boolean resultado){
-            
-        boolean result = resultado;
+    public void alterar(JTable pacienteLista, JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, 
+        JTextField pacienteSobreNome, JTextField pacienteNascimento, JTextField pacienteCelular, 
+        JTextField pacienteCpf, JTextField pacienteEndereco, JTextField pacienteEnderecoNumero,
+        JTextField pacienteEmail){
         
-        JOptionPane.showMessageDialog(null, "O usuário será deletado.\nID: "+id+"\nNome: "+nome
-            ,"Atenção", JOptionPane.WARNING_MESSAGE);
+        int linhaSelecionada = pacienteLista.getSelectedRow();
+        
+        int id = (int) pacienteLista.getModel().getValueAt(linhaSelecionada, 0);
+        String nome = pacienteLista.getModel().getValueAt(linhaSelecionada, 1).toString();        
+        String nascimento = pacienteLista.getModel().getValueAt(linhaSelecionada, 2).toString();
+        String celular = pacienteLista.getModel().getValueAt(linhaSelecionada, 3).toString();
+        String cpf = pacienteLista.getModel().getValueAt(linhaSelecionada, 4).toString();
+        String endereco = pacienteLista.getModel().getValueAt(linhaSelecionada, 5).toString();
+        String n = pacienteLista.getModel().getValueAt(linhaSelecionada, 6).toString();
+        String email = pacienteLista.getModel().getValueAt(linhaSelecionada, 7).toString();
+
+        if((!"".equals(id)) && (!"".equals(nome)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
+            && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(n)) 
+            && (!"".equals(email))){
+            
+            cidadaoModel.setId(id);
+            cidadaoModel.setNome(nome);
+            cidadaoModel.setNascimento(nascimento);
+            cidadaoModel.setCelular(celular);
+            cidadaoModel.setCpf(cpf);
+            cidadaoModel.setEndereco(endereco);
+            cidadaoModel.setN(n);
+            cidadaoModel.setEmail(email);
+            
+            boolean result = cidadaoDao.alterar(cidadaoModel, false);
+            
+            if(result = true){
+                JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso.", 
+                    "Atualização", JOptionPane.WARNING_MESSAGE);
+                
+                pacientePrimeiroNome.setText("");
+                pacienteSobreNome.setText("");
+                pacienteNascimento.setText("");
+                pacienteCelular.setText("");
+                pacienteCpf.setText("");
+                pacienteEndereco.setText("");
+                pacienteEnderecoNumero.setText("");
+                pacienteEmail.setText("");               
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar.", 
+                "Erro", JOptionPane.WARNING_MESSAGE);
+            
+            pacientePrimeiroNome.setText("");
+            pacienteSobreNome.setText("");
+            pacienteNascimento.setText("");
+            pacienteCelular.setText("");
+            pacienteCpf.setText("");
+            pacienteEndereco.setText("");
+            pacienteEnderecoNumero.setText("");
+            pacienteEmail.setText("");
+        }
+    }
+
+    public void deletar(JTable pacienteLista, JTextField pacienteIdCodigo, 
+        JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
+        JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
+        JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+          
+        int linhaSelecionada = pacienteLista.getSelectedRow();
+        int id = (int) pacienteLista.getModel().getValueAt(linhaSelecionada, 0);
+        String nomeCompleto = pacienteLista.getModel().getValueAt(linhaSelecionada, 1).toString();
+        String cpf = pacienteLista.getModel().getValueAt(linhaSelecionada, 4).toString();
         
         if((!"".equals(id))){
             
             cidadaoModel.setId(id);
             
-            resultado = cidadaoDao.deletar(cidadaoModel, false);
-                
-            if(resultado == true){
-                return resultado;
+            JOptionPane.showMessageDialog(null, "O usuário será deletado:\nID: "+id+"\nNome: "+nomeCompleto+"\nCPF: "+cpf
+                ,"Atenção", JOptionPane.WARNING_MESSAGE);
+                    
+            boolean result = cidadaoDao.deletar(cidadaoModel, false); 
+            
+            if(result = true){
+                JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso:", "Deletado", JOptionPane.WARNING_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null, "Não foi possível deletar o usuário:\nID: "+id+"\nNome: "+nomeCompleto+"\nCPF: "+cpf
+                    ,"Erro", JOptionPane.WARNING_MESSAGE);
             }
-        }
-        return result;
+        }  
     }
     
     public void limpar(JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 

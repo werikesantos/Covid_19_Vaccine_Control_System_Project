@@ -181,9 +181,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel2.add(signUP);
         signUP.setBounds(165, 200, 90, 40);
 
-        loginSenha1.setBackground(new java.awt.Color(255, 255, 255));
         loginSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginSenha1.setForeground(new java.awt.Color(0, 0, 0));
         loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha1.setOpaque(false);
         loginSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -194,9 +192,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel2.add(loginSenha1);
         loginSenha1.setBounds(30, 160, 230, 30);
 
-        mostraSenha1.setBackground(new java.awt.Color(255, 255, 255));
         mostraSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        mostraSenha1.setForeground(new java.awt.Color(0, 0, 0));
         mostraSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         mostraSenha1.setOpaque(false);
         mostraSenha1.addActionListener(new java.awt.event.ActionListener() {
@@ -212,9 +208,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel2.add(mostraSenha1);
         mostraSenha1.setBounds(30, 160, 230, 30);
 
-        loginSenha.setBackground(new java.awt.Color(255, 255, 255));
         loginSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginSenha.setForeground(new java.awt.Color(0, 0, 0));
         loginSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha.setOpaque(false);
         loginSenha.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -225,9 +219,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         jPanel2.add(loginSenha);
         loginSenha.setBounds(30, 100, 230, 30);
 
-        mostraSenha.setBackground(new java.awt.Color(255, 255, 255));
         mostraSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        mostraSenha.setForeground(new java.awt.Color(0, 0, 0));
         mostraSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         mostraSenha.setOpaque(false);
         mostraSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -260,11 +252,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
             }
         });
         jPanel2.add(boxMostraSenha);
-        boxMostraSenha.setBounds(32, 200, 120, 26);
+        boxMostraSenha.setBounds(32, 200, 120, 27);
 
-        loginEmail.setBackground(new java.awt.Color(255, 255, 255));
         loginEmail.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginEmail.setForeground(new java.awt.Color(0, 0, 0));
         loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginEmail.setOpaque(false);
         loginEmail.addActionListener(new java.awt.event.ActionListener() {
