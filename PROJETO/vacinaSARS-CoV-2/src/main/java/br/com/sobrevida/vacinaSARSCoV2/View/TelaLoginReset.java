@@ -4,7 +4,6 @@ import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,10 +11,11 @@ import javax.swing.JOptionPane;
  */
 public class TelaLoginReset extends javax.swing.JFrame {
 
-    
+    AvisoTelaLoginCadastro avisoTelaLoginCadastro = new AvisoTelaLoginCadastro();
     UsuarioController usuarioController = new UsuarioController();
     Utilitario utilitario = new Utilitario();
     TelaLogin telaLogin = new TelaLogin();
+    AvisoTelaLoginReset AvisoTelaLoginReset = new AvisoTelaLoginReset();
     
     public TelaLoginReset() {
         initComponents();
@@ -24,8 +24,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
         //ALTERANDO O ICONE PADRAO DO JAVA
         utilitario.inserirIcone(this);
         
-        avisoSenha.setVisible(false);
+        avisoTelaLoginCadastro.setVisible(false);
         carga.setVisible(false);
+        avisoTelaLoginCadastro.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -38,12 +39,6 @@ public class TelaLoginReset extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        avisoSenha = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -72,78 +67,6 @@ public class TelaLoginReset extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(228, 229, 232));
         jPanel1.setLayout(null);
-
-        avisoSenha.setBackground(new java.awt.Color(178, 55, 55));
-        avisoSenha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                avisoSenhaMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setBackground(new java.awt.Color(51, 44, 52));
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("INSTRUÇÕES PARA TROCAR DE SENHA:");
-
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Utilizar somente letras e números.");
-
-        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Mínimo de oito e máximo de 16 caracteres.");
-
-        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("O sistema diferencia letras maiúsculas de minúsculas. ");
-
-        jLabel10.setBackground(new java.awt.Color(51, 44, 52));
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("X");
-        jLabel10.setPreferredSize(new java.awt.Dimension(17, 12));
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout avisoSenhaLayout = new javax.swing.GroupLayout(avisoSenha);
-        avisoSenha.setLayout(avisoSenhaLayout);
-        avisoSenhaLayout.setHorizontalGroup(
-            avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(avisoSenhaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(avisoSenhaLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(avisoSenhaLayout.createSequentialGroup()
-                        .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        avisoSenhaLayout.setVerticalGroup(
-            avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(avisoSenhaLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(avisoSenha);
-        avisoSenha.setBounds(320, 180, 380, 130);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(231, 214, 214), 1, true));
@@ -178,9 +101,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel2.add(signUP);
         signUP.setBounds(165, 200, 90, 40);
 
-        loginSenha1.setBackground(new java.awt.Color(255, 255, 255));
         loginSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginSenha1.setForeground(new java.awt.Color(0, 0, 0));
         loginSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha1.setOpaque(false);
         loginSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -191,9 +112,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel2.add(loginSenha1);
         loginSenha1.setBounds(30, 160, 230, 30);
 
-        mostraSenha1.setBackground(new java.awt.Color(255, 255, 255));
         mostraSenha1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        mostraSenha1.setForeground(new java.awt.Color(0, 0, 0));
         mostraSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         mostraSenha1.setOpaque(false);
         mostraSenha1.addActionListener(new java.awt.event.ActionListener() {
@@ -209,9 +128,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel2.add(mostraSenha1);
         mostraSenha1.setBounds(30, 160, 230, 30);
 
-        loginSenha.setBackground(new java.awt.Color(255, 255, 255));
         loginSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginSenha.setForeground(new java.awt.Color(0, 0, 0));
         loginSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginSenha.setOpaque(false);
         loginSenha.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -222,9 +139,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel2.add(loginSenha);
         loginSenha.setBounds(30, 100, 230, 30);
 
-        mostraSenha.setBackground(new java.awt.Color(255, 255, 255));
         mostraSenha.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        mostraSenha.setForeground(new java.awt.Color(0, 0, 0));
         mostraSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         mostraSenha.setOpaque(false);
         mostraSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -252,11 +167,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
             }
         });
         jPanel2.add(boxMostraSenha);
-        boxMostraSenha.setBounds(32, 200, 120, 26);
+        boxMostraSenha.setBounds(32, 200, 120, 27);
 
-        loginEmail.setBackground(new java.awt.Color(255, 255, 255));
         loginEmail.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        loginEmail.setForeground(new java.awt.Color(0, 0, 0));
         loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginEmail.setOpaque(false);
         loginEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -367,24 +280,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                                ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginReset.this.dispose();
-                            new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                                + "Por favor, verifique e tente novamente." 
-                                ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            AvisoTelaLoginReset.setVisible(true);
                         }
                     } 
                 }else{
@@ -394,7 +290,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                     loginSenha1.setText("");
                     mostraSenha.setText("");
                     mostraSenha1.setText("");
-                    avisoSenha.setVisible(true);
+                    avisoTelaLoginCadastro.setVisible(true);
                 }
             }
         }.start();
@@ -467,24 +363,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-
-                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                                TelaLoginReset.this.dispose();
-                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                telaLogin.setVisible(true);
-                            }else{
-                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                                    + "Por favor, verifique e tente novamente." 
-                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                                );
-
-                                loginEmail.setText("");
-                                loginSenha.setText("");
-                                loginSenha1.setText("");
-                                mostraSenha.setText("");
-                                mostraSenha1.setText("");
+                                AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -494,7 +373,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -537,24 +416,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-
-                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                                TelaLoginReset.this.dispose();
-                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                telaLogin.setVisible(true);
-                            }else{
-                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                                    + "Por favor, verifique e tente novamente." 
-                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                                );
-
-                                loginEmail.setText("");
-                                loginSenha.setText("");
-                                loginSenha1.setText("");
-                                mostraSenha.setText("");
-                                mostraSenha1.setText("");
+                                AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -564,7 +426,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -607,24 +469,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-
-                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                                TelaLoginReset.this.dispose();
-                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                telaLogin.setVisible(true);
-                            }else{
-                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                                    + "Por favor, verifique e tente novamente." 
-                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                                );
-
-                                loginEmail.setText("");
-                                loginSenha.setText("");
-                                loginSenha1.setText("");
-                                mostraSenha.setText("");
-                                mostraSenha1.setText("");
+                                AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -634,7 +479,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -677,24 +522,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-
-                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                                TelaLoginReset.this.dispose();
-                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                telaLogin.setVisible(true);
-                            }else{
-                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                                    + "Por favor, verifique e tente novamente." 
-                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                                );
-
-                                loginEmail.setText("");
-                                loginSenha.setText("");
-                                loginSenha1.setText("");
-                                mostraSenha.setText("");
-                                mostraSenha1.setText("");
+                                AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -704,7 +532,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -747,24 +575,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-
-                                JOptionPane.showMessageDialog(null, "Nova senha cadastrada com sucesso!" 
-                                    ,"Reset de Senha", JOptionPane.WARNING_MESSAGE);
-
-                                TelaLoginReset.this.dispose();
-                                new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                telaLogin.setVisible(true);
-                            }else{
-                                JOptionPane.showMessageDialog(null, "Erro ao resetar senha!\n"
-                                    + "Por favor, verifique e tente novamente." 
-                                    ,"Senha Inválido", JOptionPane.WARNING_MESSAGE
-                                );
-
-                                loginEmail.setText("");
-                                loginSenha.setText("");
-                                loginSenha1.setText("");
-                                mostraSenha.setText("");
-                                mostraSenha1.setText("");
+                                AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -774,20 +585,12 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
-
-    private void avisoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_avisoSenhaMouseClicked
-
-    }//GEN-LAST:event_avisoSenhaMouseClicked
-
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        avisoSenha.setVisible(false);
-    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -828,22 +631,16 @@ public class TelaLoginReset extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel avisoSenha;
     private javax.swing.JCheckBox boxMostraSenha;
     private javax.swing.JLabel carga;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField loginEmail;
@@ -853,5 +650,4 @@ public class TelaLoginReset extends javax.swing.JFrame {
     private javax.swing.JTextField mostraSenha1;
     private javax.swing.JButton signUP;
     // End of variables declaration//GEN-END:variables
-
 }

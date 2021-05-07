@@ -82,8 +82,8 @@ public class Carregar2 extends javax.swing.JFrame {
             
             Carregar2.this.dispose();
             new Carregar2().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            TelaLoginADM telaLoginADM = new TelaLoginADM();
-            telaLoginADM.setVisible(true);  
+            //TelaLoginADM telaLoginADM = new TelaLoginADM();
+            //telaLoginADM.setVisible(true);  
         }
         }.start();
         

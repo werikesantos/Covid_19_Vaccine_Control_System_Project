@@ -4,7 +4,6 @@ import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 
 /**
@@ -12,6 +11,8 @@ import javax.swing.JOptionPane;
  * @author WERIKE
  */
 public class TelaLogin extends javax.swing.JFrame {
+    
+    AvisoTelaLogin avisoTelaLogin = new AvisoTelaLogin();
     
     public TelaLogin() {
         initComponents();
@@ -22,6 +23,7 @@ public class TelaLogin extends javax.swing.JFrame {
         utilitario.inserirIcone(this);
         
         carga.setVisible(false);
+        avisoTelaLogin.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -212,12 +214,10 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2.setBounds(605, 465, 210, 15);
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
-        jLabel7.setText("jLabel7");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(100, 40, 600, 410);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\vacina.jpeg")); // NOI18N
-        jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(10, 10, 800, 510);
 
@@ -275,11 +275,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                            + "que você digitou não\n batem com nossos registros. "
-                            + "Por favor, verifique e\n tente novamente."
-                            ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                        );
+                        avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -325,11 +321,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                            + "que você digitou não\n batem com nossos registros. "
-                            + "Por favor, verifique e\n tente novamente."
-                            ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                        );
+                        avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -383,11 +375,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                            + "que você digitou não\n batem com nossos registros. "
-                            + "Por favor, verifique e\n tente novamente."
-                            ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                        );
+                        avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -433,11 +421,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                            + "que você digitou não\n batem com nossos registros. "
-                            + "Por favor, verifique e\n tente novamente."
-                            ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                        );
+                        avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -478,11 +462,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     carregar1.setVisible(true);
                 }else{
                     carga.setVisible(false);
-                    JOptionPane.showMessageDialog(null, "O nome de usuário e a senha "
-                        + "que você digitou não\n batem com nossos registros. "
-                        + "Por favor, verifique e\n tente novamente."
-                        ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                    );
+                    avisoTelaLogin.setVisible(true);
                     loginEmail.setText("");
                     loginSenha.setText("");
                     mostraSenha.setText("");

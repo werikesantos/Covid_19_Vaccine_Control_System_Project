@@ -37,6 +37,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         sublinhadoPaciente.setVisible(false);
         sublinhadoVacina.setVisible(false);
+        //sairTelaPrincipal.setVisible(false);
+    }
+    
+    public void sair(JFrame sairTelaPrincipal){
+        sairTelaPrincipal.dispose();
+        this.dispose();
+        Carregar carregar = new Carregar();
+        carregar.setVisible(true);               
     }
     
     /**
@@ -1309,21 +1317,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
     }//GEN-LAST:event_trocarPerfilMouseClicked
     private void trocarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trocarPerfilActionPerformed
-        JOptionPane.showMessageDialog(null, "O programa será reiniciado!" 
-            ,"Atenção", JOptionPane.WARNING_MESSAGE);
+        int sair = JOptionPane.showConfirmDialog(null, "O programa será reiniciado!" 
+            ,"Atenção",JOptionPane.YES_NO_OPTION);
         
-        TelaPrincipal.this.dispose();
-        new TelaPrincipal().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Carregar carregar = new Carregar();
-        carregar.setVisible(true);
+        if(sair == JOptionPane.YES_OPTION){
+            TelaPrincipal.this.dispose();
+            new TelaPrincipal().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            Carregar carregar = new Carregar();
+            carregar.setVisible(true);
+        }
     }//GEN-LAST:event_trocarPerfilActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
-        JOptionPane.showMessageDialog(null, "O programa será Finalizado!" 
-            ,"Atenção", JOptionPane.WARNING_MESSAGE);
+        int sair = JOptionPane.showConfirmDialog(null, "O programa será Finalizado!" 
+            ,"Atenção",JOptionPane.YES_NO_OPTION);
         
-        TelaPrincipal.this.dispose();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        if(sair == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
     }//GEN-LAST:event_sairActionPerformed
     private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
     }//GEN-LAST:event_sairMouseClicked
