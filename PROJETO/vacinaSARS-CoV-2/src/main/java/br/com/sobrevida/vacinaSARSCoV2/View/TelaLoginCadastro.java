@@ -3,20 +3,20 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author WERIKE
  */
-public class TelaLoginCadastro extends javax.swing.JFrame {
+public class TelaLoginCadastro extends javax.swing.JFrame{
 
     UsuarioController usuarioController = new UsuarioController();
     Utilitario utilitario = new Utilitario();
     TelaLogin telaLogin = new TelaLogin();
+    AvisoTelaLoginCadastro avisoTelaLoginCadastro = new AvisoTelaLoginCadastro();
+    AvisoTelaLoginCadastro1 avisoTelaLoginCadastro1 = new AvisoTelaLoginCadastro1();
     
-    public TelaLoginCadastro() {
+    public TelaLoginCadastro(){
         initComponents();
         setLocationRelativeTo(null);
         
@@ -24,8 +24,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         utilitario.inserirIcone(this);
         
         //TELA DE AVISOS
-        avisoSenha.setVisible(false);
         carga.setVisible(false);
+        avisoTelaLoginCadastro.setVisible(false);
+        avisoTelaLoginCadastro1.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -38,12 +39,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        avisoSenha = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -72,80 +67,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(228, 229, 232));
         jPanel1.setLayout(null);
-
-        avisoSenha.setBackground(new java.awt.Color(178, 55, 55));
-        avisoSenha.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        avisoSenha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                avisoSenhaMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setBackground(new java.awt.Color(51, 44, 52));
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("INSTRUÇÕES PARA SENHA:");
-
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Utilizar somente letras e números.");
-
-        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Mínimo de oito e máximo de 16 caracteres.");
-
-        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("O sistema diferencia letras maiúsculas de minúsculas. ");
-
-        jLabel10.setBackground(new java.awt.Color(51, 44, 52));
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("X");
-        jLabel10.setPreferredSize(new java.awt.Dimension(17, 12));
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout avisoSenhaLayout = new javax.swing.GroupLayout(avisoSenha);
-        avisoSenha.setLayout(avisoSenhaLayout);
-        avisoSenhaLayout.setHorizontalGroup(
-            avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(avisoSenhaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(avisoSenhaLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(avisoSenhaLayout.createSequentialGroup()
-                        .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addGap(0, 12, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        avisoSenhaLayout.setVerticalGroup(
-            avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(avisoSenhaLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(avisoSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(avisoSenha);
-        avisoSenha.setBounds(320, 190, 380, 130);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(231, 214, 214), 1, true));
@@ -326,17 +247,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void avisoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_avisoSenhaMouseClicked
-        
-    }//GEN-LAST:event_avisoSenhaMouseClicked
-
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        avisoSenha.setVisible(false);
-    }//GEN-LAST:event_jLabel10MouseClicked
-
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         TelaLoginCadastro.this.dispose();
-        new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        new TelaLoginCadastro().setDefaultCloseOperation(EXIT_ON_CLOSE);
         telaLogin.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
 
@@ -374,23 +287,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginCadastro.this.dispose();
-                            new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                + "Por favor, verifique e tente novamente."
-                                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            avisoTelaLoginCadastro1.setVisible(true);
                         }
                     }else{
                         carga.setVisible(false);
@@ -399,7 +296,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -443,23 +340,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginCadastro.this.dispose();
-                            new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                + "Por favor, verifique e tente novamente."
-                                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            avisoTelaLoginCadastro1.setVisible(true);
                         }
                     }else{
                         carga.setVisible(false);
@@ -468,7 +349,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -526,23 +407,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginCadastro.this.dispose();
-                            new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                + "Por favor, verifique e tente novamente."
-                                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            avisoTelaLoginCadastro1.setVisible(true);
                         }
                     }else{
                         carga.setVisible(false);
@@ -551,7 +416,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -559,7 +424,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_mostraSenhaKeyPressed
 
     private void mostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenhaActionPerformed
-        //nome.setText("");
     }//GEN-LAST:event_mostraSenhaActionPerformed
 
     private void loginSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenhaKeyPressed
@@ -595,23 +459,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginCadastro.this.dispose();
-                            new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                + "Por favor, verifique e tente novamente."
-                                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            avisoTelaLoginCadastro1.setVisible(true);
                         }
                     }else{
                         carga.setVisible(false);
@@ -620,7 +468,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -660,23 +508,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginCadastro.this.dispose();
-                            new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                + "Por favor, verifique e tente novamente."
-                                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            avisoTelaLoginCadastro1.setVisible(true);
                         }
                     }else{
                         carga.setVisible(false);
@@ -685,7 +517,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -729,23 +561,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-
-                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                                ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                            TelaLoginCadastro.this.dispose();
-                            new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            telaLogin.setVisible(true);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                + "Por favor, verifique e tente novamente."
-                                ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                            );
-                            loginEmail.setText("");
-                            loginSenha.setText("");
-                            loginSenha1.setText("");
-                            mostraSenha.setText("");
-                            mostraSenha1.setText("");
+                            avisoTelaLoginCadastro1.setVisible(true);
                         }
                     }else{
                         carga.setVisible(false);
@@ -754,7 +570,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoSenha.setVisible(true);
+                        avisoTelaLoginCadastro.setVisible(true);
                     }
                 }
             }.start();
@@ -793,23 +609,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-
-                        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!"
-                            ,"Cadastro de Usuário", JOptionPane.WARNING_MESSAGE);
-
-                        TelaLoginCadastro.this.dispose();
-                        new TelaLoginCadastro().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        telaLogin.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                            + "Por favor, verifique e tente novamente."
-                            ,"Login Inválido", JOptionPane.WARNING_MESSAGE
-                        );
-                        loginEmail.setText("");
-                        loginSenha.setText("");
-                        loginSenha1.setText("");
-                        mostraSenha.setText("");
-                        mostraSenha1.setText("");
+                        avisoTelaLoginCadastro1.setVisible(true);
                     }
                 }else{
                     carga.setVisible(false);
@@ -818,7 +618,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
                     loginSenha1.setText("");
                     mostraSenha.setText("");
                     mostraSenha1.setText("");
-                    avisoSenha.setVisible(true);
+                    avisoTelaLoginCadastro.setVisible(true);
                 }
             }
         }.start();
@@ -861,22 +661,16 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel avisoSenha;
     private javax.swing.JCheckBox boxMostraSenha;
     private javax.swing.JLabel carga;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField loginEmail;
@@ -886,5 +680,4 @@ public class TelaLoginCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField mostraSenha1;
     private javax.swing.JButton signUP;
     // End of variables declaration//GEN-END:variables
-
 }
