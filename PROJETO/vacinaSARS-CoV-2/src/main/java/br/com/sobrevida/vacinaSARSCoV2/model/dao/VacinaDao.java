@@ -72,6 +72,7 @@ public class VacinaDao{
             ps.setInt(4, vacinaModel.getQtd_Dose());
             ps.setString(5, vacinaModel.getPeriodo());
             ps.setString(6, vacinaModel.getDescicao());
+            ps.setInt(7, vacinaModel.getId());
             
             ps.execute();
             ps.close();

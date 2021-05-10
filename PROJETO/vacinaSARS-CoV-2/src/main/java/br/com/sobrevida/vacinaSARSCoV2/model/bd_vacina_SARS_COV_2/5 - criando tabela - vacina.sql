@@ -1,9 +1,9 @@
 # 1 - CRIANDO TABELA CADASTRO DE VACINA
-#drop table vacina;
+    
 CREATE TABLE vacina(
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     desenvolvedora VARCHAR(60) NOT NULL,
-    produtora VARCHAR(60) NOT NULL,
+    produtora VARCHAR(60) NOT NULL UNIQUE,
     parceira VARCHAR(60) NOT NULL,
     qtd_Dose INT(2) NOT NULL,
     periodo VARCHAR(12) NOT NULL,

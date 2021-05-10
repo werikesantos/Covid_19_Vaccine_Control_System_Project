@@ -91,9 +91,12 @@ public class VacinaController{
     
     public void limpar(JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
         JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
-        JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-        JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
-                    
+        JTextField vacinaConsultar, JTextField vacinaIdCodigo, JTextField vacinaDesenvolvedora, 
+        JTextField vacinaProdutora, JTextField vacinaParceira, JComboBox vacinaDoses, 
+        JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+           
+        vacinaConsultar.setText("Consultar...");
+        vacinaIdCodigo.setText("");
         vacinaDesenvolvedora.setText("");
         vacinaProdutora.setText("");
         vacinaParceira.setText("");
@@ -109,28 +112,28 @@ public class VacinaController{
         avisoDescricao.setVisible(false);
     }
     
-    public void alterar(JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
-        JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
-        JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-        JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+    public void alterar(JTable vacinaLista, JTextField vacinaIdCodigo, JTextField vacinaDesenvolvedora, 
+        JTextField vacinaProdutora, JTextField vacinaParceira, JComboBox vacinaDoses, 
+        JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
         
-        String desenvolvedora = (vacinaDesenvolvedora.getText());
-        String produtora = (vacinaProdutora.getText());
-        String parceira = (vacinaParceira.getText());  
-        String doses = (vacinaDoses.getSelectedItem().toString());
-        String periodo = (vacinaPeriodo.getSelectedItem().toString());
-        String descricao = (vacinaDescricao.getText());
+        int linhaSelecionada = vacinaLista.getSelectedRow();
         
-        if((!"".equals(desenvolvedora)) && (!"".equals(produtora)) && (!"".equals(parceira)) 
+        int id = (int) vacinaLista.getModel().getValueAt(linhaSelecionada, 0);
+        String desenvolvedora = vacinaLista.getModel().getValueAt(linhaSelecionada, 1).toString();        
+        String produtora = vacinaLista.getModel().getValueAt(linhaSelecionada, 2).toString();
+        String parceira = vacinaLista.getModel().getValueAt(linhaSelecionada, 3).toString();
+        int doses = (int) vacinaLista.getModel().getValueAt(linhaSelecionada, 4);
+        String periodo = vacinaLista.getModel().getValueAt(linhaSelecionada, 5).toString();
+        String descricao = vacinaLista.getModel().getValueAt(linhaSelecionada, 6).toString();
+        
+        if((!"".equals(id)) && (!"".equals(desenvolvedora)) && (!"".equals(produtora)) && (!"".equals(parceira)) 
             && (!"".equals(doses)) && (!"".equals(periodo)) && (!"".equals(descricao))){
             
+            vacinaModel.setId(id);
             vacinaModel.setDesenvolvedora(desenvolvedora);
             vacinaModel.setProdutora(produtora);
             vacinaModel.setParceira(parceira);
-            
-            int indiceDoses = vacinaDoses.getSelectedIndex();
-            vacinaModel.setQtd_Dose(indiceDoses);
-            
+            vacinaModel.setQtd_Dose(doses);
             vacinaModel.setPeriodo(periodo);
             vacinaModel.setDescicao(descricao);
             
@@ -177,7 +180,7 @@ public class VacinaController{
         JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
         JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
 
-        String converterID = vacinaIdCodigo.getText();
+        String converterID = vacinaConsultar.getText();
             
         if(!"".equals(converterID) && !"Consultar...".equals(converterID)){
                 
@@ -187,9 +190,6 @@ public class VacinaController{
 
             id = result.getId();
             String resultID = Integer.toString(id);
-            
-            int dose = result.getQtd_Dose();
-            String resultDose = Integer.toString(dose);
 
             String desenvolvedora = result.getDesenvolvedora();
             String produtora = result.getProdutora();
@@ -198,10 +198,41 @@ public class VacinaController{
             String periodo = result.getPeriodo();
             String descricao = result.getDescicao();
 
-            vacinaIdCodigo.setText(resultDose);
+            vacinaIdCodigo.setText(resultID);
             vacinaDesenvolvedora.setText(desenvolvedora);
             vacinaProdutora.setText(produtora);
             vacinaParceira.setText(parceira);
+            
+            if(doses == 1){
+                vacinaDoses.setSelectedIndex(1);
+            }else if(doses == 2){
+                vacinaDoses.setSelectedIndex(2);
+            }
+            
+            switch(doses){
+                case 1:
+                    vacinaDoses.setSelectedIndex(1);
+                    break;
+                case 2:
+                    vacinaDoses.setSelectedIndex(2);
+                    break;
+                default:
+                    break;
+            }
+            
+            switch(periodo){
+                case "14 a 28 dias":
+                    vacinaPeriodo.setSelectedIndex(1);
+                    break;
+                case "21 dias":
+                    vacinaPeriodo.setSelectedIndex(2);
+                    break;
+                case "03 meses":
+                    vacinaPeriodo.setSelectedIndex(3);
+                    break;
+                default:
+                    break;
+            }
             vacinaDescricao.setText(descricao);
         }
     }
