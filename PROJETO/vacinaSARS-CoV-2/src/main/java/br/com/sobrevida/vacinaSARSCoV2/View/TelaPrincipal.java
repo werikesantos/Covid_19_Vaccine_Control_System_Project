@@ -186,8 +186,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         usuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        sublinhadoAplicacao1 = new javax.swing.JLabel();
+        sublinhadoAplicacao = new javax.swing.JLabel();
         sublinhadoVacina = new javax.swing.JLabel();
         sublinhadoPaciente = new javax.swing.JLabel();
+        botaoRelatorio = new javax.swing.JLabel();
+        botaoCadastroAplicacao = new javax.swing.JLabel();
         botaoCadastroVacina = new javax.swing.JLabel();
         botaoCadastroPaciente = new javax.swing.JLabel();
         painel = new javax.swing.JLabel();
@@ -1113,20 +1117,60 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(160, 654, 210, 15);
 
+        sublinhadoAplicacao1.setBackground(new java.awt.Color(102, 102, 102));
+        sublinhadoAplicacao1.setOpaque(true);
+        jPanel1.add(sublinhadoAplicacao1);
+        sublinhadoAplicacao1.setBounds(126, 464, 94, 1);
+
+        sublinhadoAplicacao.setBackground(new java.awt.Color(102, 102, 102));
+        sublinhadoAplicacao.setOpaque(true);
+        jPanel1.add(sublinhadoAplicacao);
+        sublinhadoAplicacao.setBounds(76, 350, 216, 1);
+
         sublinhadoVacina.setBackground(new java.awt.Color(102, 102, 102));
         sublinhadoVacina.setOpaque(true);
         jPanel1.add(sublinhadoVacina);
-        sublinhadoVacina.setBounds(92, 238, 164, 1);
+        sublinhadoVacina.setBounds(97, 238, 164, 1);
 
         sublinhadoPaciente.setBackground(new java.awt.Color(102, 102, 102));
         sublinhadoPaciente.setOpaque(true);
         jPanel1.add(sublinhadoPaciente);
         sublinhadoPaciente.setBounds(87, 126, 183, 1);
 
+        botaoRelatorio.setBackground(new java.awt.Color(102, 102, 102));
+        botaoRelatorio.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        botaoRelatorio.setText("                        RELATÓRIO");
+        botaoRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMousePressed(evt);
+            }
+        });
+        jPanel1.add(botaoRelatorio);
+        botaoRelatorio.setBounds(6, 398, 360, 110);
+
+        botaoCadastroAplicacao.setBackground(new java.awt.Color(102, 102, 102));
+        botaoCadastroAplicacao.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
+        botaoCadastroAplicacao.setText("              CADASTRO DE APLICAÇÃO");
+        botaoCadastroAplicacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoCadastroAplicacaoMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botaoCadastroAplicacaoMousePressed(evt);
+            }
+        });
+        jPanel1.add(botaoCadastroAplicacao);
+        botaoCadastroAplicacao.setBounds(6, 284, 360, 110);
+
         botaoCadastroVacina.setBackground(new java.awt.Color(102, 102, 102));
         botaoCadastroVacina.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
-        botaoCadastroVacina.setText("                 CADASTRAR VACINA");
+        botaoCadastroVacina.setText("                  CADASTRAR VACINA");
         botaoCadastroVacina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botaoCadastroVacinaMouseClicked(evt);
@@ -1560,6 +1604,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
             vacinaPeriodo, vacinaDescricao);
     }//GEN-LAST:event_vacinaBtnDeletarKeyPressed
 
+    private void botaoCadastroAplicacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroAplicacaoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCadastroAplicacaoMouseClicked
+
+    private void botaoCadastroAplicacaoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroAplicacaoMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCadastroAplicacaoMousePressed
+
+    private void botaoRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoRelatorioMouseClicked
+
+    private void botaoRelatorioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoRelatorioMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -1617,8 +1677,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton b7;
     private javax.swing.JButton b8;
     private javax.swing.JButton b9;
+    private javax.swing.JLabel botaoCadastroAplicacao;
     private javax.swing.JLabel botaoCadastroPaciente;
     private javax.swing.JLabel botaoCadastroVacina;
+    private javax.swing.JLabel botaoRelatorio;
     private javax.swing.JMenuItem btnCidadaoCadastro;
     private javax.swing.JPanel cadastroCidadaoTela;
     private javax.swing.JPanel cadastroVacinaTela;
@@ -1703,6 +1765,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField pacienteSobreNome;
     private javax.swing.JLabel painel;
     private javax.swing.JMenuItem sair;
+    private javax.swing.JLabel sublinhadoAplicacao;
+    private javax.swing.JLabel sublinhadoAplicacao1;
     private javax.swing.JLabel sublinhadoPaciente;
     private javax.swing.JLabel sublinhadoVacina;
     private javax.swing.JLabel tb1;
