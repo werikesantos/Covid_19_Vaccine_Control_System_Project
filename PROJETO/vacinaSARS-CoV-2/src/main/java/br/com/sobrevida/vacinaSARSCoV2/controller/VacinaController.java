@@ -224,7 +224,7 @@ public class VacinaController{
                 case "14 a 28 dias":
                     vacinaPeriodo.setSelectedIndex(1);
                     break;
-                case "21 dias":
+                case "28 a 42 dias":
                     vacinaPeriodo.setSelectedIndex(2);
                     break;
                 case "03 meses":
