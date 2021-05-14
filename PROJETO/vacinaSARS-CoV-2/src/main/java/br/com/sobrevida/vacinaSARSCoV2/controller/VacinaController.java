@@ -19,9 +19,9 @@ public class VacinaController{
     VacinaDao vacinaDao = new VacinaDao();
        
     public void salvar(JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
-            JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
-            JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-            JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+        JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
+        JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
+        JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
           
         String desenvolvedora = (vacinaDesenvolvedora.getText());
         String produtora = (vacinaProdutora.getText());
