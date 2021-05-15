@@ -98,4 +98,8 @@ public class VacinaModel{
     public void setDescicao(String descicao) {
         this.descicao = descicao;
     }
+    @Override
+    public String toString() {
+        return getDesenvolvedora();
+    }
 }
