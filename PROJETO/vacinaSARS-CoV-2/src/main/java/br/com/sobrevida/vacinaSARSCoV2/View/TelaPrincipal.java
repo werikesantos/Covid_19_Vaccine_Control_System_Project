@@ -3,9 +3,7 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 import br.com.sobrevida.vacinaSARSCoV2.controller.AplicacaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.CidadaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.VacinaController;
-import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
-import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -20,7 +18,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     CidadaoModel cidadaoModel = new CidadaoModel();
     AplicacaoController aplicacaoController = new AplicacaoController();
             
-    public TelaPrincipal() {
+    public TelaPrincipal(){
+        
         initComponents();
         
         aplicacaoController.buscar(vacinasBuscar);
