@@ -1,5 +1,0 @@
-#CRIANDO BANCO DE DADOS
-CREATE DATABASE bd_vacina_sars_cov_2;
-
-#USANDO O BANCO DE DADOS
-USE bd_vacina_sars_cov_2;

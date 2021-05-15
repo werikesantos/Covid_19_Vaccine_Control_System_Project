@@ -1,6 +1,8 @@
 package br.com.sobrevida.vacinaSARSCoV2.controller;
 
+import br.com.sobrevida.vacinaSARSCoV2.model.dao.AplicacaoDao;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -8,46 +10,12 @@ import javax.swing.JCheckBox;
  */
 public class AplicacaoController {
 
-    public void vacinaAplicada(JCheckBox fiocruz, JCheckBox coronavac, 
-        JCheckBox pfizer, JCheckBox moderna, JCheckBox sputnik, JCheckBox janssen){
+    public void buscar(JComboBox vacinasBuscar){
+        AplicacaoDao aplicacaoDao = new AplicacaoDao();
         
-        if(janssen.isSelected()){
-            coronavac.setSelected(false);
-            pfizer.setSelected(false);
-            moderna.setSelected(false);
-            sputnik.setSelected(false);
-            janssen.setSelected(false);
-        }else if(coronavac.isSelected()){
-            fiocruz.setSelected(false);
-            pfizer.setSelected(false);
-            moderna.setSelected(false);
-            sputnik.setSelected(false);
-            janssen.setSelected(false);
-        }else if(pfizer.isSelected()){
-            coronavac.setSelected(false);
-            fiocruz.setSelected(false);
-            moderna.setSelected(false);
-            sputnik.setSelected(false);
-            janssen.setSelected(false);
-        }else if(moderna.isSelected()){
-            pfizer.setSelected(false);
-            coronavac.setSelected(false);
-            fiocruz.setSelected(false);
-            sputnik.setSelected(false);
-            janssen.setSelected(false);
-        }else if(sputnik.isSelected()){
-            moderna.setSelected(false);
-            pfizer.setSelected(false);
-            coronavac.setSelected(false);
-            fiocruz.setSelected(false);
-            janssen.setSelected(false);
-        }else if(janssen.isSelected()){
-            sputnik.setSelected(false);
-            moderna.setSelected(false);
-            pfizer.setSelected(false);
-            coronavac.setSelected(false);
-            fiocruz.setSelected(false);
-        }        
+        aplicacaoDao.buscar().forEach(vacinaModel -> {
+            vacinasBuscar.addItem(vacinaModel.toString());
+        });
     }
     
     public void tipoDose(JCheckBox unica, JCheckBox primeiraDose, JCheckBox segundaDose){

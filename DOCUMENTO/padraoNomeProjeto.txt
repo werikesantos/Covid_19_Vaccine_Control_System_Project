@@ -1,5 +1,0 @@
-br.com.sobrevida.vacinaSARSCoV2
-
-br.com.nomedaempresa.nomedoprojeto.subpacote
-br.com.nomedaempresa.nomedoprojeto.subpacote2
-br.com.nomedaempresa.nomedoprojeto.subpacote2.subpacote3

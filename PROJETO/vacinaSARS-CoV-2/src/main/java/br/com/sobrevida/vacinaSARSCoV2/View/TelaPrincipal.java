@@ -3,7 +3,9 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 import br.com.sobrevida.vacinaSARSCoV2.controller.AplicacaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.CidadaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.VacinaController;
+import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
+import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -21,6 +23,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         
+        aplicacaoController.buscar(vacinasBuscar);
+                
         //SE ALTO AJUSTA AO TAMANHO DO MONITOR
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
@@ -71,7 +75,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tb6.setVisible(false);
         tb7.setVisible(false);
     }
-    
+
     public void sair(JFrame sairTelaPrincipal){
         sairTelaPrincipal.dispose();
         this.dispose();
@@ -136,7 +140,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         unica = new javax.swing.JCheckBox();
         primeiraDose = new javax.swing.JCheckBox();
         vacinaParceira2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        vacinasBuscar = new javax.swing.JComboBox<>();
         cadastroVacinaTela = new javax.swing.JPanel();
         closeCadastroVacina = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -720,9 +724,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroAplicacaoTela.add(vacinaParceira2);
         vacinaParceira2.setBounds(640, 134, 260, 28);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cadastroAplicacaoTela.add(jComboBox1);
-        jComboBox1.setBounds(60, 220, 180, 22);
+        vacinasBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
+        vacinasBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinasBuscarActionPerformed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(vacinasBuscar);
+        vacinasBuscar.setBounds(60, 220, 180, 22);
 
         jDesktop.add(cadastroAplicacaoTela);
         cadastroAplicacaoTela.setBounds(0, 0, 1004, 730);
@@ -2238,6 +2247,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         aplicacaoController.tipoDose(unica, primeiraDose, segundaDose);
     }//GEN-LAST:event_segundaDoseActionPerformed
 
+    private void vacinasBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinasBuscarActionPerformed
+        //PEGANDO OQ FOI SELECIONADO PELO USUARIO
+        /*String vacina = (String) vacinasBuscar.getSelectedItem();
+        
+        System.out.println("VACINA: "+vacina);*/
+    }//GEN-LAST:event_vacinasBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2314,7 +2330,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel closeCadastroPaciente;
     private javax.swing.JLabel closeCadastroVacina;
     private javax.swing.JLabel closeCadastroVacina1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2458,5 +2473,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField vacinaPesquisar1;
     private javax.swing.JTextField vacinaProdutora;
     private javax.swing.JTextField vacinaProdutora1;
+    private javax.swing.JComboBox<String> vacinasBuscar;
     // End of variables declaration//GEN-END:variables
 }
