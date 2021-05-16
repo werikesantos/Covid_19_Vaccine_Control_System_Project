@@ -4,7 +4,7 @@ package br.com.sobrevida.vacinaSARSCoV2.model;
  *
  * @author WERIKE
  */
-public class AplicacaoModel{
+public class AplicacaoModel extends VacinaModel{
     
     private int id;
     private int idCidadao;
@@ -13,16 +13,18 @@ public class AplicacaoModel{
     private String unica;
     private String primeira;
     private String segunda;
-    
+
     /**
      * @return the id
      */
+    @Override
     public int getId() {
         return id;
     }
     /**
      * @param id the id to set
      */
+    @Override
     public void setId(int id) {
         this.id = id;
     }
