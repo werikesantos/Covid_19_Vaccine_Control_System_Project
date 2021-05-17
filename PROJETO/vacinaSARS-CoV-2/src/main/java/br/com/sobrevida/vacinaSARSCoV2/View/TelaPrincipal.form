@@ -341,11 +341,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Qual o tipo de dose?"/>
+                <Property name="text" type="java.lang.String" value="Qual dose ser&#xe1; aplicada?"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="380" y="198" width="140" height="-1"/>
+                  <AbsoluteConstraints x="380" y="198" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -450,7 +450,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="516" y="198" width="10" height="15"/>
+                  <AbsoluteConstraints x="550" y="198" width="10" height="15"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -914,14 +914,14 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&#xda;nica"/>
+                <Property name="text" type="java.lang.String" value="Aplica&#xe7;&#xe3;o &#xfa;nica"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aplicacaoVacinaUnicaActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="380" y="220" width="70" height="20"/>
+                  <AbsoluteConstraints x="380" y="220" width="120" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>

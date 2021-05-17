@@ -369,9 +369,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel57.setBackground(new java.awt.Color(51, 51, 51));
         jLabel57.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel57.setText("Qual o tipo de dose?");
+        jLabel57.setText("Qual dose será aplicada?");
         cadastroAplicacaoTela.add(jLabel57);
-        jLabel57.setBounds(380, 198, 140, 16);
+        jLabel57.setBounds(380, 198, 159, 16);
 
         jLabel58.setBackground(new java.awt.Color(51, 51, 51));
         jLabel58.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -410,7 +410,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         avisoDescricao1.setForeground(new java.awt.Color(255, 0, 0));
         avisoDescricao1.setText("*");
         cadastroAplicacaoTela.add(avisoDescricao1);
-        avisoDescricao1.setBounds(516, 198, 10, 15);
+        avisoDescricao1.setBounds(550, 198, 10, 15);
 
         avisoParceira1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         avisoParceira1.setForeground(new java.awt.Color(255, 0, 0));
@@ -696,14 +696,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         aplicacaoVacinaSegunda.setBounds(380, 276, 90, 23);
 
         aplicacaoVacinaUnica.setBackground(new java.awt.Color(255, 255, 255));
-        aplicacaoVacinaUnica.setText("Única");
+        aplicacaoVacinaUnica.setText("Aplicação única");
         aplicacaoVacinaUnica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aplicacaoVacinaUnicaActionPerformed(evt);
             }
         });
         cadastroAplicacaoTela.add(aplicacaoVacinaUnica);
-        aplicacaoVacinaUnica.setBounds(380, 220, 70, 20);
+        aplicacaoVacinaUnica.setBounds(380, 220, 120, 20);
 
         aplicacaoVacinaPrimeira.setBackground(new java.awt.Color(255, 255, 255));
         aplicacaoVacinaPrimeira.setText("1ª dose");
