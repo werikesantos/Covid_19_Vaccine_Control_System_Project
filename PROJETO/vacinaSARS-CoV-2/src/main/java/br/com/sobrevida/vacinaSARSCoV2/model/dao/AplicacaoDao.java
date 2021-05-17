@@ -54,7 +54,7 @@ public class AplicacaoDao{
         cidadao = cidadaoModel;
         
         String sql = 
-            "SELECT ci.id, ci.nome, ci.cpf, ci.email, va.desenvolvedora, va.qtd_Dose, ap.unica, ap.primeira, ap.segunda "
+            "SELECT ci.id, ci.nome, ci.cpf, ci.email, va.desenvolvedora, va.qtd_Dose, ap.dose, ap.unica, ap.primeira, ap.segunda "
             +"FROM aplicacao ap "
             +"INNER JOIN cidadao ci "
             +"ON ap.idCidadao = ci.id "
@@ -78,19 +78,60 @@ public class AplicacaoDao{
                 String email = rs.getString("email");
                 String desenvolvedora = rs.getString("desenvolvedora");
                 int qtd_Dose = rs.getInt("qtd_Dose");
+                int dose = rs.getInt("dose");
                 String unica = rs.getString("unica");
                 String primeira = rs.getString("primeira");
                 String segunda = rs.getString("segunda");
-                               
+                 
                 cidadaoModel.setId(id);
                 cidadaoModel.setNome(nome);
                 cidadaoModel.setCpf(cpf);
                 cidadaoModel.setEmail(email);
                 cidadaoModel.setDesenvolvedora(desenvolvedora);
                 cidadaoModel.setQtd_Dose(qtd_Dose);
+                cidadaoModel.setDose(dose);
                 cidadaoModel.setUnica(unica);
                 cidadaoModel.setPrimeira(primeira);
                 cidadaoModel.setSegunda(segunda);
+                
+                return cidadaoModel;
+            }
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return cidadao;
+    }
+    
+    public CidadaoModel buscar(CidadaoModel cidadaoModel){
+            
+        cidadao = cidadaoModel;
+        
+        String sql = 
+            "SELECT nome, cpf, email "
+            +"FROM bd_vacina_sars_cov_2.cidadao "
+            +"WHERE id = ?";
+               
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try(Connection conn = connectionFactory.connection()){
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+              
+            ps.setInt(1, cidadao.getId());
+            
+            ResultSet rs = ps.executeQuery();
+                     
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String cpf = rs.getString("cpf");
+                String email = rs.getString("email");
+                                 
+                cidadaoModel.setId(id);
+                cidadaoModel.setNome(nome);
+                cidadaoModel.setCpf(cpf);
+                cidadaoModel.setEmail(email);
                 
                 return cidadaoModel;
             }

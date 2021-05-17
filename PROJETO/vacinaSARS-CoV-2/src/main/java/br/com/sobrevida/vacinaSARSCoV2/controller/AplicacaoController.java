@@ -5,8 +5,8 @@ import br.com.sobrevida.vacinaSARSCoV2.model.dao.AplicacaoDao;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-import java.sql.Date; 
-import java.text.SimpleDateFormat;
+//import java.sql.Date; 
+//import java.text.SimpleDateFormat;
 
 /**
  *
@@ -43,9 +43,12 @@ public class AplicacaoController {
         JComboBox aplicacaoVacinaNome, JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira,
         JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
         
-        Date data = new Date(System.currentTimeMillis()); 
-        SimpleDateFormat formatarDate = new SimpleDateFormat("dd-MM-yyyy");
-        //System.out.println(formatarDate.format(data));
+        /** COMO PEGAR O DIA MÊS E ANO DO SISTEMA
+         *
+         *  Date data = new Date(System.currentTimeMillis()); 
+         *  SimpleDateFormat formatarDate = new SimpleDateFormat("dd-MM-yyyy");
+         *  System.out.println(formatarDate.format(data));
+        */
         
         int id = Integer.parseInt(aplicacaoConsultar.getText());
         cidadaoModel.setId(id);
@@ -57,7 +60,7 @@ public class AplicacaoController {
         String cpf = cidadao.getCpf();
         String email = cidadao.getEmail();
         String desenvolvedora = cidadao.getDesenvolvedora();
-        int qtd_Dose = cidadao.getQtd_Dose();
+        int dose = cidadao.getDose();
         String primeiraDose = cidadao.getPrimeira();
         String segundaDose = cidadao.getSegunda();
             
@@ -66,39 +69,206 @@ public class AplicacaoController {
         aplicacaoPacienteCpf.setText(cpf);
         aplicacaoPacienteEmail.setText(email);
         
-        switch(desenvolvedora){
-            case "Universidade Oxford":
-                if(null != primeiraDose){
-                    aplicacaoVacinaNome.setSelectedIndex(1);
-                    aplicacaoVacinaUnica.setEnabled(false);
-                    aplicacaoVacinaData.setText(primeiraDose);
-                    aplicacaoVacinaPrimeira.setSelected(true);
-                    aplicacaoVacinaDataRetorno.setText(segundaDose);
-                }
-                break;
-            case "Sinovac - CoronaVac":
-                aplicacaoVacinaNome.setSelectedIndex(2);
-                aplicacaoVacinaUnica.setEnabled(false);
-                break;
-            case "Pfizer":
-                aplicacaoVacinaNome.setSelectedIndex(3);
-                aplicacaoVacinaUnica.setEnabled(false);
-                break;
-            case "Moderna":
-                aplicacaoVacinaNome.setSelectedIndex(4);
-                aplicacaoVacinaUnica.setEnabled(false);
-                break;
-            case "Instituto Gamaleya - Sputnik V":
-                aplicacaoVacinaNome.setSelectedIndex(5);
-                aplicacaoVacinaUnica.setEnabled(false);
-                break;
-            case "Janssen":
-                aplicacaoVacinaNome.setSelectedIndex(6);
-                aplicacaoVacinaPrimeira.setEnabled(false);
-                aplicacaoVacinaSegunda.setEnabled(false);
-                break;
-            default:
-                break;
+        if(!desenvolvedora.equals("")){
+            switch(desenvolvedora){
+                case "Universidade Oxford":
+                    if(null != primeiraDose){
+                        aplicacaoVacinaNome.setSelectedIndex(1);
+                        aplicacaoVacinaUnica.setEnabled(false);
+                        aplicacaoVacinaData.setText(primeiraDose);
+                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+
+                        switch(dose){
+                            case 0:
+                                aplicacaoVacinaUnica.setEnabled(true);
+                                aplicacaoVacinaUnica.setSelected(true);
+                                aplicacaoVacinaPrimeira.setEnabled(false);
+                                aplicacaoVacinaSegunda.setEnabled(false);
+                                break;
+                            case 1:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(true);
+                                aplicacaoVacinaSegunda.setSelected(false);
+                                break;
+                            case 2:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(false);
+                                aplicacaoVacinaSegunda.setSelected(true);
+                                break;
+                            default:
+                                System.out.println("Entrar em contato com o suporte!");
+                                break;
+                        } 
+                    }
+                    break;
+                case "Sinovac - CoronaVac":
+                    if(null != primeiraDose){
+                        aplicacaoVacinaNome.setSelectedIndex(2);
+                        aplicacaoVacinaUnica.setEnabled(false);
+                        aplicacaoVacinaData.setText(primeiraDose);
+                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+
+                        switch(dose){
+                            case 0:
+                                aplicacaoVacinaUnica.setEnabled(true);
+                                aplicacaoVacinaUnica.setSelected(true);
+                                aplicacaoVacinaPrimeira.setEnabled(false);
+                                aplicacaoVacinaSegunda.setEnabled(false);
+                                break;
+                            case 1:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(true);
+                                aplicacaoVacinaSegunda.setSelected(false);
+                                break;
+                            case 2:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(false);
+                                aplicacaoVacinaSegunda.setSelected(true);
+                                break;
+                            default:
+                                System.out.println("Entrar em contato com o suporte!");
+                                break;
+                        }
+                    }
+                    break;
+                case "Pfizer":
+                    if(null != primeiraDose){
+                        aplicacaoVacinaNome.setSelectedIndex(3);
+                        aplicacaoVacinaUnica.setEnabled(false);
+                        aplicacaoVacinaData.setText(primeiraDose);
+                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+
+                        switch(dose){
+                            case 0:
+                                aplicacaoVacinaUnica.setEnabled(true);
+                                aplicacaoVacinaUnica.setSelected(true);
+                                aplicacaoVacinaPrimeira.setEnabled(false);
+                                aplicacaoVacinaSegunda.setEnabled(false);
+                                break;
+                            case 1:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(true);
+                                aplicacaoVacinaSegunda.setSelected(false);
+                                break;
+                            case 2:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(false);
+                                aplicacaoVacinaSegunda.setSelected(true);
+                                break;
+                            default:
+                                System.out.println("Entrar em contato com o suporte!");
+                                break;
+                        }  
+                    }
+                    break;
+                case "Moderna":
+                    if(null != primeiraDose){
+                        aplicacaoVacinaNome.setSelectedIndex(4);
+                        aplicacaoVacinaUnica.setEnabled(false);
+                        aplicacaoVacinaData.setText(primeiraDose);
+                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+
+                        switch(dose){
+                            case 0:
+                                aplicacaoVacinaUnica.setEnabled(true);
+                                aplicacaoVacinaUnica.setSelected(true);
+                                aplicacaoVacinaPrimeira.setEnabled(false);
+                                aplicacaoVacinaSegunda.setEnabled(false);
+                                break;
+                            case 1:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(true);
+                                aplicacaoVacinaSegunda.setSelected(false);
+                                break;
+                            case 2:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(false);
+                                aplicacaoVacinaSegunda.setSelected(true);
+                                break;
+                            default:
+                                System.out.println("Entrar em contato com o suporte!");
+                                break;
+                        }
+                    }
+                    break;
+                case "Instituto Gamaleya - Sputnik V":
+                    if(null != primeiraDose){
+                        aplicacaoVacinaNome.setSelectedIndex(5);
+                        aplicacaoVacinaUnica.setEnabled(false);
+                        aplicacaoVacinaData.setText(primeiraDose);
+                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+
+                        switch(dose){
+                            case 0:
+                                aplicacaoVacinaUnica.setEnabled(true);
+                                aplicacaoVacinaUnica.setSelected(true);
+                                aplicacaoVacinaPrimeira.setEnabled(false);
+                                aplicacaoVacinaSegunda.setEnabled(false);
+                                break;
+                            case 1:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(true);
+                                aplicacaoVacinaSegunda.setSelected(false);
+                                break;
+                            case 2:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(false);
+                                aplicacaoVacinaSegunda.setSelected(true);
+                                break;
+                            default:
+                                System.out.println("Entrar em contato com o suporte!");
+                                break;
+                        }
+                    }
+                    break;
+                case "Janssen":
+                    if(null != primeiraDose){
+                        aplicacaoVacinaNome.setSelectedIndex(6);
+                        aplicacaoVacinaPrimeira.setEnabled(false);
+                        aplicacaoVacinaSegunda.setEnabled(false);
+                        aplicacaoVacinaData.setText(primeiraDose);
+                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+
+                        switch(dose){
+                            case 0:
+                                aplicacaoVacinaUnica.setEnabled(true);
+                                aplicacaoVacinaUnica.setSelected(true);
+                                aplicacaoVacinaPrimeira.setEnabled(false);
+                                aplicacaoVacinaSegunda.setEnabled(false);
+                                break;
+                            case 1:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(true);
+                                aplicacaoVacinaSegunda.setSelected(false);
+                                break;
+                            case 2:
+                                aplicacaoVacinaUnica.setEnabled(false);
+                                aplicacaoVacinaUnica.setSelected(false);
+                                aplicacaoVacinaPrimeira.setSelected(false);
+                                aplicacaoVacinaSegunda.setSelected(true);
+                                break;
+                            default:
+                                System.out.println("Entrar em contato com o suporte!");
+                                break;
+                        } 
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }else{
+            System.out.println("Fora");
         }        
     }
 }
