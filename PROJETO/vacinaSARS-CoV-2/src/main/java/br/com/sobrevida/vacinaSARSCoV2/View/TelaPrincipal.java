@@ -130,7 +130,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         vacinaBtnSalvar1 = new javax.swing.JButton();
         vacinaBtnDeletar1 = new javax.swing.JButton();
         vacinaBtnAlterar1 = new javax.swing.JButton();
-        vacinaBtnLimpar1 = new javax.swing.JButton();
+        aplicacaoBtnLimpar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         vacinaLista1 = new javax.swing.JTable();
         jLabel68 = new javax.swing.JLabel();
@@ -604,19 +604,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroAplicacaoTela.add(vacinaBtnAlterar1);
         vacinaBtnAlterar1.setBounds(590, 636, 140, 30);
 
-        vacinaBtnLimpar1.setText("Limpar");
-        vacinaBtnLimpar1.addActionListener(new java.awt.event.ActionListener() {
+        aplicacaoBtnLimpar.setText("Limpar");
+        aplicacaoBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaBtnLimpar1ActionPerformed(evt);
+                aplicacaoBtnLimparActionPerformed(evt);
             }
         });
-        vacinaBtnLimpar1.addKeyListener(new java.awt.event.KeyAdapter() {
+        aplicacaoBtnLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaBtnLimpar1KeyPressed(evt);
+                aplicacaoBtnLimparKeyPressed(evt);
             }
         });
-        cadastroAplicacaoTela.add(vacinaBtnLimpar1);
-        vacinaBtnLimpar1.setBounds(762, 344, 140, 30);
+        cadastroAplicacaoTela.add(aplicacaoBtnLimpar);
+        aplicacaoBtnLimpar.setBounds(762, 344, 140, 30);
 
         vacinaLista1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2139,9 +2139,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_vacinaPesquisar1KeyReleased
 
     private void aplicacaoBtnConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoBtnConsultarMouseClicked
-        aplicacaoController.consultar(aplicacaoConsultar, aplicacaoIdCodigo, aplicacaoPacienteNome, 
+        boolean result = aplicacaoController.consultar(aplicacaoConsultar, aplicacaoIdCodigo, aplicacaoPacienteNome, 
             aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaUnica,
-            aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda, aplicacaoVacinaDataRetorno, aplicacaoVacinaData);
+            aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda, aplicacaoVacinaDataRetorno, aplicacaoVacinaData); 
+        
+        if(result == false){
+            aplicacaoController.buscar(aplicacaoConsultar, aplicacaoIdCodigo, aplicacaoPacienteNome, 
+                aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaUnica,
+                aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda, aplicacaoVacinaDataRetorno, aplicacaoVacinaData);             
+        }
     }//GEN-LAST:event_aplicacaoBtnConsultarMouseClicked
 
     private void aplicacaoConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoConsultarMouseClicked
@@ -2200,13 +2206,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_vacinaBtnAlterar1KeyPressed
 
-    private void vacinaBtnLimpar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnLimpar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vacinaBtnLimpar1ActionPerformed
+    private void aplicacaoBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnLimparActionPerformed
+        aplicacaoController.limpar(aplicacaoConsultar, aplicacaoIdCodigo, aplicacaoPacienteNome, 
+            aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaUnica,
+            aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda, aplicacaoVacinaDataRetorno, aplicacaoVacinaData);
+    }//GEN-LAST:event_aplicacaoBtnLimparActionPerformed
 
-    private void vacinaBtnLimpar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaBtnLimpar1KeyPressed
+    private void aplicacaoBtnLimparKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoBtnLimparKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_vacinaBtnLimpar1KeyPressed
+    }//GEN-LAST:event_aplicacaoBtnLimparKeyPressed
 
     private void vacinaLista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vacinaLista1MouseClicked
         // TODO add your handling code here:
@@ -2279,6 +2287,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aplicacaoBtnConsultar;
+    private javax.swing.JButton aplicacaoBtnLimpar;
     private javax.swing.JTextField aplicacaoConsultar;
     private javax.swing.JTextField aplicacaoIdCodigo;
     private javax.swing.JTextField aplicacaoPacienteCpf;
@@ -2448,7 +2457,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton vacinaBtnDeletar;
     private javax.swing.JButton vacinaBtnDeletar1;
     private javax.swing.JButton vacinaBtnLimpar;
-    private javax.swing.JButton vacinaBtnLimpar1;
     private javax.swing.JButton vacinaBtnSalvar;
     private javax.swing.JButton vacinaBtnSalvar1;
     private javax.swing.JTextField vacinaConsultar;

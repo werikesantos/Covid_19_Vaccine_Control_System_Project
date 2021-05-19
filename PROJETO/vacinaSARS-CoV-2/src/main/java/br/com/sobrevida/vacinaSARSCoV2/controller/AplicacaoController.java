@@ -38,10 +38,12 @@ public class AplicacaoController {
         }     
     }
     
-    public void consultar(JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, 
+    public boolean consultar(JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, 
         JTextField aplicacaoPacienteNome, JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail,
         JComboBox aplicacaoVacinaNome, JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira,
         JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+        
+        boolean result = true;
         
         /** COMO PEGAR O DIA MÊS E ANO DO SISTEMA
          *
@@ -49,27 +51,44 @@ public class AplicacaoController {
          *  SimpleDateFormat formatarDate = new SimpleDateFormat("dd-MM-yyyy");
          *  System.out.println(formatarDate.format(data));
         */
+          
+        aplicacaoIdCodigo.setText(null);
+        aplicacaoPacienteNome.setText(null);
+        aplicacaoPacienteCpf.setText(null);
+        aplicacaoPacienteEmail.setText(null);
+        aplicacaoVacinaNome.setSelectedIndex(0);
+        aplicacaoVacinaUnica.setSelected(false);
+        aplicacaoVacinaPrimeira.setSelected(false);
+        aplicacaoVacinaSegunda.setSelected(false);
+        aplicacaoVacinaDataRetorno.setText("");
+        aplicacaoVacinaData.setText("");
         
         int id = Integer.parseInt(aplicacaoConsultar.getText());
         cidadaoModel.setId(id);
         CidadaoModel cidadao = aplicacaoDao.consultar(cidadaoModel); 
-        
+                
         id = cidadao.getId();
         String resultID = Integer.toString(id);
         String nome = cidadao.getNome();
         String cpf = cidadao.getCpf();
         String email = cidadao.getEmail();
-        String desenvolvedora = cidadao.getDesenvolvedora();
-        int dose = cidadao.getDose();
-        String primeiraDose = cidadao.getPrimeira();
-        String segundaDose = cidadao.getSegunda();
-            
-        aplicacaoIdCodigo.setText(resultID);
-        aplicacaoPacienteNome.setText(nome);
-        aplicacaoPacienteCpf.setText(cpf);
-        aplicacaoPacienteEmail.setText(email);
         
-        if(!desenvolvedora.equals("")){
+        if((nome == null) && (cpf == null) && (email == null)){  
+            
+            result = false;
+            return result;
+            
+        }else{
+            String desenvolvedora = cidadao.getDesenvolvedora();
+            int dose = cidadao.getDose();
+            String primeiraDose = cidadao.getPrimeira();
+            String segundaDose = cidadao.getSegunda();
+
+            aplicacaoIdCodigo.setText(resultID);
+            aplicacaoPacienteNome.setText(nome);
+            aplicacaoPacienteCpf.setText(cpf);
+            aplicacaoPacienteEmail.setText(email);
+
             switch(desenvolvedora){
                 case "Universidade Oxford":
                     if(null != primeiraDose){
@@ -266,10 +285,61 @@ public class AplicacaoController {
                     break;
                 default:
                     break;
-            }
-        }else{
-            System.out.println("Fora");
-        }        
+            }            
+        }
+        return result;        
+    }
+    
+    public void limpar(JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
+        JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail, JComboBox aplicacaoVacinaNome, 
+        JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira, JCheckBox aplicacaoVacinaSegunda, 
+        JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+           
+        aplicacaoConsultar.setText("Consultar...");
+        aplicacaoIdCodigo.setText(null);
+        aplicacaoPacienteNome.setText(null);
+        aplicacaoPacienteCpf.setText(null);
+        aplicacaoPacienteEmail.setText(null);
+        aplicacaoVacinaNome.setSelectedIndex(0);
+        aplicacaoVacinaUnica.setEnabled(true);
+        aplicacaoVacinaUnica.setSelected(false);
+        aplicacaoVacinaPrimeira.setSelected(false);
+        aplicacaoVacinaSegunda.setSelected(false);
+        aplicacaoVacinaDataRetorno.setText(null);
+        aplicacaoVacinaData.setText(null);
+    }
+    
+    public void buscar(JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, 
+        JTextField aplicacaoPacienteNome, JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail,
+        JComboBox aplicacaoVacinaNome, JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira,
+        JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+        
+        aplicacaoIdCodigo.setText(null);
+        aplicacaoPacienteNome.setText(null);
+        aplicacaoPacienteCpf.setText(null);
+        aplicacaoPacienteEmail.setText(null);
+        aplicacaoVacinaNome.setSelectedIndex(0);
+        aplicacaoVacinaUnica.setSelected(false);
+        aplicacaoVacinaPrimeira.setSelected(false);
+        aplicacaoVacinaSegunda.setSelected(false);
+        aplicacaoVacinaDataRetorno.setText("");
+        aplicacaoVacinaData.setText("");   
+        
+        /*int id = Integer.parseInt(aplicacaoConsultar.getText());
+        cidadaoModel.setId(id);
+        CidadaoModel cidadao = aplicacaoDao.buscar(cidadaoModel);
+            
+        id = cidadao.getId();
+        String resultID = Integer.toString(id);
+        String nome = cidadao.getNome();
+        String cpf = cidadao.getCpf();
+        String email = cidadao.getEmail();
+            
+        aplicacaoIdCodigo.setText(resultID);
+        aplicacaoPacienteNome.setText(nome);
+        aplicacaoPacienteCpf.setText(cpf);
+        aplicacaoPacienteEmail.setText(email);*/        
     }
 }
+
 

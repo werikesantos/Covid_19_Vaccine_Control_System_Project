@@ -70,7 +70,7 @@ public class AplicacaoDao{
             ps.setInt(1, cidadao.getId());
             
             ResultSet rs = ps.executeQuery();
-                     
+                        
             while(rs.next()){
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
@@ -109,7 +109,7 @@ public class AplicacaoDao{
         cidadao = cidadaoModel;
         
         String sql = 
-            "SELECT nome, cpf, email "
+            "SELECT * "
             +"FROM bd_vacina_sars_cov_2.cidadao "
             +"WHERE id = ?";
                
