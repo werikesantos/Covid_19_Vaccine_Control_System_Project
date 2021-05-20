@@ -16,7 +16,7 @@ public class AplicacaoDao{
     
     CidadaoModel cidadao = new CidadaoModel();
         
-    public List<VacinaModel> buscar(){
+    public List<VacinaModel> buscarVacinaNome(){
 
         List<VacinaModel> vacinas = new ArrayList<>();
                 
@@ -67,7 +67,7 @@ public class AplicacaoDao{
             
             PreparedStatement ps = conn.prepareStatement(sql);
               
-            ps.setInt(1, cidadao.getId());
+            ps.setInt(1, cidadao.getIdCidadao());
             
             ResultSet rs = ps.executeQuery();
                         
@@ -101,6 +101,7 @@ public class AplicacaoDao{
         catch(Exception e){
             e.printStackTrace();
         }
+        cidadao.setIdCidadao(0);
         return cidadao;
     }
     
