@@ -7,6 +7,8 @@ import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JTable;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -176,5 +178,32 @@ public class AplicacaoDao{
             e.printStackTrace();
         }
         return result;
+    }
+    
+    public void pesquisar(JTable vacinaLista, String dado){
+
+        String sql = 
+            "SELECT * FROM "
+                +"bd_vacina_sars_cov_2.aplicacao "
+            +"WHERE "
+                +"id LIKE ?";
+        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        
+        try(Connection conn = connectionFactory.connection()){
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, dado + "%");
+
+            ResultSet rs = ps.executeQuery();
+
+            vacinaLista.setModel(DbUtils.resultSetToTableModel(rs));
+            
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

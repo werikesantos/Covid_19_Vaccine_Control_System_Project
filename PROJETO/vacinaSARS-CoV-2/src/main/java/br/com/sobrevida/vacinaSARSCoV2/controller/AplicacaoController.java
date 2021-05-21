@@ -6,6 +6,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 //import java.sql.Date; 
 //import java.text.SimpleDateFormat;
@@ -470,5 +471,9 @@ public class AplicacaoController {
             avisoAplicacaoVacinaDose.setVisible(true);
             avisoAplicacaoData.setVisible(true);
         }
+    }
+    
+    public void pesquisar(JTable aplicacaoLista, String dado){     
+        aplicacaoDao.pesquisar(aplicacaoLista, dado);    
     }
 }
