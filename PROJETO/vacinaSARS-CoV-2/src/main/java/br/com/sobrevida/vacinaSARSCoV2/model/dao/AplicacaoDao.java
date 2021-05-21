@@ -1,5 +1,6 @@
 package br.com.sobrevida.vacinaSARSCoV2.model.dao;
 
+import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import java.util.ArrayList;
@@ -180,13 +181,16 @@ public class AplicacaoDao{
         return result;
     }
     
-    public void pesquisar(JTable vacinaLista, String dado){
+    public void pesquisar(JTable aplicacaoLista, String dado){
 
         String sql = 
-            "SELECT * FROM "
-                +"bd_vacina_sars_cov_2.aplicacao "
-            +"WHERE "
-                +"id LIKE ?";
+            "SELECT ap.idCidadao AS CÓDIGO, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose AS APLICAÇÃO, ap.unica AS ÚNICA_DOSE, ap.primeira AS 1ª_DOSE, ap.segunda AS RETORNO "
+            +"FROM aplicacao ap "
+            +"INNER JOIN cidadao ci "
+            +"ON ap.idCidadao = ci.id "
+            +"INNER JOIN vacina va "
+            +"ON ap.idVacina = va.id "
+            +"WHERE idCidadao LIKE ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         
@@ -198,12 +202,73 @@ public class AplicacaoDao{
 
             ResultSet rs = ps.executeQuery();
 
-            vacinaLista.setModel(DbUtils.resultSetToTableModel(rs));
+            aplicacaoLista.setModel(DbUtils.resultSetToTableModel(rs));
             
             ps.close();
         }
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+    
+    public boolean alterar(AplicacaoModel aplicacaoModel, boolean resultado){
+         
+        boolean result = resultado;
+
+        String sql = 
+            "UPDATE "
+                +"bd_vacina_sars_cov_2.aplicacao "
+            +"SET "
+                +"dose = ?, unica = ?, primeira = ?, segunda = ? "
+            +"WHERE idCidadao = ?";
+                        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try(Connection conn = connectionFactory.connection()){
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ps.setInt(1, aplicacaoModel.getDose());
+            ps.setString(2, aplicacaoModel.getUnica());
+            ps.setString(3, aplicacaoModel.getPrimeira());
+            ps.setString(4, aplicacaoModel.getSegunda());
+            ps.setInt(5, aplicacaoModel.getIdCidadao());
+            
+            ps.execute();
+            ps.close();
+            
+            return resultado = true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
+    public boolean deletar(AplicacaoModel aplicacaoModel, boolean resultado){
+         
+        boolean result = resultado;
+        
+        String sql = 
+            "DELETE FROM "
+                +"bd_vacina_sars_cov_2.aplicacao "
+            +"WHERE "
+                +"idCidadao = ?";
+        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try(Connection conn = connectionFactory.connection()){
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ps.setInt(1, aplicacaoModel.getIdCidadao());
+            
+            ps.execute();
+            ps.close();
+            
+            return resultado = true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
     }
 }

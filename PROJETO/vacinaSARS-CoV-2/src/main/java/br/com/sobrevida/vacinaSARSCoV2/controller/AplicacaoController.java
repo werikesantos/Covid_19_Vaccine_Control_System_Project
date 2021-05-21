@@ -1,5 +1,6 @@
 package br.com.sobrevida.vacinaSARSCoV2.controller;
 
+import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.AplicacaoDao;
 import javax.swing.JCheckBox;
@@ -7,6 +8,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 //import java.sql.Date; 
 //import java.text.SimpleDateFormat;
@@ -19,7 +21,8 @@ public class AplicacaoController {
 
     AplicacaoDao aplicacaoDao = new AplicacaoDao();
     CidadaoModel cidadaoModel = new CidadaoModel();
-        
+    AplicacaoModel aplicacaoModel = new AplicacaoModel();
+    
     public void buscarVacinaNome(JComboBox vacinasBuscar){
 
         aplicacaoDao.buscarVacinaNome().forEach(vacinaModel -> {
@@ -475,5 +478,66 @@ public class AplicacaoController {
     
     public void pesquisar(JTable aplicacaoLista, String dado){     
         aplicacaoDao.pesquisar(aplicacaoLista, dado);    
+    }
+    
+    public void alterar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JCheckBox aplicacaoVacinaUnica,
+            JCheckBox aplicacaoVacinaPrimeira, JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaData, 
+            JTextField aplicacaoVacinaDataRetorno){
+        
+        int linhaSelecionada = aplicacaoLista.getSelectedRow();
+        
+        int idCidadao = (int) aplicacaoLista.getModel().getValueAt(linhaSelecionada, 0);
+        String dose = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 5).toString();
+        int qtd_Dose = Integer.parseInt(dose);       
+        String dataUnica = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 6).toString();
+        String dataPrimeira = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 7).toString();
+        String dataSegunda = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 8).toString();
+        
+        if((!"".equals(idCidadao)) && (!"".equals(dose)) && (!"".equals(dataUnica)) && (!"".equals(dataPrimeira)) 
+            && (!"".equals(dataSegunda))){
+            
+            aplicacaoModel.setIdCidadao(idCidadao);
+            aplicacaoModel.setDose(qtd_Dose);
+            aplicacaoModel.setUnica(dataUnica);
+            aplicacaoModel.setPrimeira(dataPrimeira);
+            aplicacaoModel.setSegunda(dataSegunda);
+            
+            boolean resultado = aplicacaoDao.alterar(aplicacaoModel, false);
+            
+            if(resultado == true){
+                JOptionPane.showMessageDialog(null, "Controle de aplicação alterada com sucesso!"
+                    ,"Controle de aplicação", JOptionPane.WARNING_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null, "Erro ao alterar dados da aplicação!"
+                    ,"Controle de aplicação", JOptionPane.WARNING_MESSAGE);
+            }  
+        }
+    }
+    
+    public void deletar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
+        JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail){
+          
+        int linhaSelecionada = aplicacaoLista.getSelectedRow();
+        int idCidadao = (int) aplicacaoLista.getModel().getValueAt(linhaSelecionada, 0);
+        String nome = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 1).toString();
+        String cpf = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 2).toString();
+        String email = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 3).toString();
+        
+        if((!"".equals(idCidadao))){
+            
+            aplicacaoModel.setIdCidadao(idCidadao);
+            
+            JOptionPane.showMessageDialog(null, "Esse registro será deletado:\nID: "+idCidadao+"\nPaciente: "+nome+"\nCPF: "+cpf+"\nE-Mail: "+email
+                ,"Atenção", JOptionPane.WARNING_MESSAGE);
+                    
+            boolean result = aplicacaoDao.deletar(aplicacaoModel, false); 
+            
+            if(result = true){
+                JOptionPane.showMessageDialog(null, "Registro de aplicação deletado com sucesso", "Deletado", JOptionPane.WARNING_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null, "Não foi possível deletar o registro de aplicação\nID: "+idCidadao+"\nDesenvolvedora: "+nome+"\nProdutora: "+cpf+"\nParceira: "+email
+                    ,"Erro", JOptionPane.WARNING_MESSAGE);
+            }
+        }  
     }
 }
