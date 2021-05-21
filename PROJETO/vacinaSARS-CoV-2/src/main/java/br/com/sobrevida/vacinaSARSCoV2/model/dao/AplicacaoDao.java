@@ -143,4 +143,38 @@ public class AplicacaoDao{
         }
         return cidadao;
     }
+    
+    public boolean salvar(CidadaoModel cidadaoModel, boolean resultado){
+         
+        boolean result = resultado;
+        
+        String sql = 
+            "INSERT INTO "
+                +"bd_vacina_sars_cov_2.aplicacao(idCidadao, idVacina, dose, unica, primeira, segunda) "
+            +"VALUES "
+                +"(?, ?, ?, ?, ?, ?)";
+        
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        
+        try(Connection conn = connectionFactory.connection()){
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ps.setInt(1, cidadaoModel.getIdCidadao());
+            ps.setInt(2, cidadaoModel.getIdVacina());
+            ps.setInt(3, cidadaoModel.getDose());
+            ps.setString(4, cidadaoModel.getUnica());
+            ps.setString(5, cidadaoModel.getPrimeira());
+            ps.setString(6, cidadaoModel.getSegunda());
+            
+            ps.execute();
+            ps.close();
+            
+            return resultado = true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

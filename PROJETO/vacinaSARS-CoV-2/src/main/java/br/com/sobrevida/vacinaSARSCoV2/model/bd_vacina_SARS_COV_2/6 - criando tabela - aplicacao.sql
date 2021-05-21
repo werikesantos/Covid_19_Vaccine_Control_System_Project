@@ -1,14 +1,14 @@
 # 1 - CRIANDO TABELA APLICAÇÃO
 CREATE TABLE aplicacao(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    idCidadao INT NOT NULL,
+    idCidadao INT NOT NULL UNIQUE,
     idVacina INT NOT NULL,
     dose INT(1) NOT NULL,
     unica VARCHAR(10),
     primeira VARCHAR(10),
     segunda VARCHAR(10),
-    FOREIGN KEY (idCidadao) REFERENCES perfil(id),
-    FOREIGN KEY (idVacina) REFERENCES perfil(id)
+    FOREIGN KEY (idCidadao) REFERENCES cidadao(id),
+    FOREIGN KEY (idVacina) REFERENCES vacina(id)
 );
 
 # 2 - INSERIR DADOS NA TABELA
