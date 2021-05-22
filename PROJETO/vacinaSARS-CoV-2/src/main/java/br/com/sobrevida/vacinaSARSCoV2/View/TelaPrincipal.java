@@ -1923,9 +1923,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sublinhadoPaciente.setVisible(false);
         botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
         cadastroCidadaoTela.setVisible(false);
-        cidadaoController.limpar(avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
-            avisoN, avisoEmail, pacienteIdCodigo, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
-            pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
     }//GEN-LAST:event_closeCadastroPacienteMouseClicked
 
     private void pacienteBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnSalvarActionPerformed
@@ -2319,22 +2316,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_aplicacaoVacinaDataMouseClicked
 
     private void aplicacaoVacinaUnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoVacinaUnicaActionPerformed
-        aplicacaoController.tipoDose(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda);
+        aplicacaoController.tipoDose(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, 
+            aplicacaoVacinaSegunda);
     }//GEN-LAST:event_aplicacaoVacinaUnicaActionPerformed
 
     private void aplicacaoVacinaPrimeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoVacinaPrimeiraActionPerformed
-        aplicacaoController.tipoDose(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda);
+        aplicacaoController.tipoDose(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, 
+            aplicacaoVacinaSegunda);
     }//GEN-LAST:event_aplicacaoVacinaPrimeiraActionPerformed
 
     private void aplicacaoVacinaSegundaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoVacinaSegundaActionPerformed
-        aplicacaoController.tipoDose(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, aplicacaoVacinaSegunda);
+        aplicacaoController.tipoDose(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, 
+            aplicacaoVacinaSegunda);
     }//GEN-LAST:event_aplicacaoVacinaSegundaActionPerformed
 
     private void aplicacaoVacinaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoVacinaNomeActionPerformed
-        //PEGANDO OQ FOI SELECIONADO PELO USUARIO
-        /*String vacina = (String) vacinasBuscar.getSelectedItem();
-        
-        System.out.println("VACINA: "+vacina);*/
+        aplicacaoController.validarVacina(aplicacaoVacinaUnica, aplicacaoVacinaPrimeira, 
+            aplicacaoVacinaSegunda, aplicacaoVacinaNome);
     }//GEN-LAST:event_aplicacaoVacinaNomeActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed

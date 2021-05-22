@@ -190,7 +190,7 @@ public class AplicacaoDao{
             +"ON ap.idCidadao = ci.id "
             +"INNER JOIN vacina va "
             +"ON ap.idVacina = va.id "
-            +"WHERE idCidadao LIKE ?";
+            +"WHERE ci.cpf LIKE ?";
         
         ConnectionFactory connectionFactory = new ConnectionFactory();
         
