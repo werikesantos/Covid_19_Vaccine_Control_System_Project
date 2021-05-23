@@ -8,7 +8,6 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 //import java.sql.Date; 
 //import java.text.SimpleDateFormat;
@@ -387,7 +386,7 @@ public class AplicacaoController {
         JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, 
         JTextField aplicacaoVacinaData){
           
-        int idCidadao = Integer.parseInt(aplicacaoConsultar.getText());
+        int idCidadao = Integer.parseInt(aplicacaoIdCodigo.getText());
         String nome = (aplicacaoPacienteNome.getText());
         String cpf = (aplicacaoPacienteCpf.getText());
         String email = (aplicacaoPacienteEmail.getText());  
@@ -470,6 +469,7 @@ public class AplicacaoController {
                 avisoAplicacaoData.setVisible(false);
                 
                 aplicacaoConsultar.setText("Consultar...");
+                aplicacaoPacienteNome.setText("");
                 aplicacaoIdCodigo.setText("");
                 aplicacaoPacienteCpf.setText("");
                 aplicacaoPacienteEmail.setText("");

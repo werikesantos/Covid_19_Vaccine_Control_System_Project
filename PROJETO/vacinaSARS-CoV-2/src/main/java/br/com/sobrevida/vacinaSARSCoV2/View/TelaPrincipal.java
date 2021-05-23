@@ -7,6 +7,9 @@ import br.com.sobrevida.vacinaSARSCoV2.controller.VacinaController;
 import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -2172,7 +2175,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastroAplicacaoMousePressed
 
     private void botaoRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseClicked
-        relatorioController.teste();
+        try {
+            relatorioController.teste();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botaoRelatorioMouseClicked
 
     private void botaoRelatorioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMousePressed

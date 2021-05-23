@@ -17,6 +17,9 @@ import net.proteanit.sql.DbUtils;
  */
 public class AplicacaoDao{
     
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    PreparedStatement ps; 
+    ResultSet result;
     CidadaoModel cidadao = new CidadaoModel();
         
     public List<VacinaModel> buscarVacinaNome(){
@@ -29,18 +32,17 @@ public class AplicacaoDao{
             +"FROM "
                 +"bd_vacina_sars_cov_2.vacina";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
             
-            while(rs.next()){
+            while(result.next()){
                 
                 VacinaModel vacinaModel = new VacinaModel();
 
-                vacinaModel.setDesenvolvedora(rs.getString("desenvolvedora"));
+                vacinaModel.setDesenvolvedora(result.getString("desenvolvedora"));
                 
                 vacinas.add(vacinaModel);
             }
@@ -65,26 +67,25 @@ public class AplicacaoDao{
             +"ON ap.idVacina = va.id "
             +"WHERE ci.id = ?";
                
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
               
             ps.setInt(1, cidadao.getIdCidadao());
             
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
                         
-            while(rs.next()){
-                int id = rs.getInt("id");
-                String nome = rs.getString("nome");
-                String cpf = rs.getString("cpf");
-                String email = rs.getString("email");
-                String desenvolvedora = rs.getString("desenvolvedora");
-                int qtd_Dose = rs.getInt("qtd_Dose");
-                int dose = rs.getInt("dose");
-                String unica = rs.getString("unica");
-                String primeira = rs.getString("primeira");
-                String segunda = rs.getString("segunda");
+            while(result.next()){
+                int id = result.getInt("id");
+                String nome = result.getString("nome");
+                String cpf = result.getString("cpf");
+                String email = result.getString("email");
+                String desenvolvedora = result.getString("desenvolvedora");
+                int qtd_Dose = result.getInt("qtd_Dose");
+                int dose = result.getInt("dose");
+                String unica = result.getString("unica");
+                String primeira = result.getString("primeira");
+                String segunda = result.getString("segunda");
                  
                 cidadaoModel.setId(id);
                 cidadaoModel.setNome(nome);
@@ -117,20 +118,19 @@ public class AplicacaoDao{
             +"FROM bd_vacina_sars_cov_2.cidadao "
             +"WHERE id = ?";
                
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
               
             ps.setInt(1, cidadao.getId());
             
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
                      
-            while(rs.next()){
-                int id = rs.getInt("id");
-                String nome = rs.getString("nome");
-                String cpf = rs.getString("cpf");
-                String email = rs.getString("email");
+            while(result.next()){
+                int id = result.getInt("id");
+                String nome = result.getString("nome");
+                String cpf = result.getString("cpf");
+                String email = result.getString("email");
                                  
                 cidadaoModel.setId(id);
                 cidadaoModel.setNome(nome);
@@ -157,11 +157,9 @@ public class AplicacaoDao{
             +"VALUES "
                 +"(?, ?, ?, ?, ?, ?)";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setInt(1, cidadaoModel.getIdCidadao());
             ps.setInt(2, cidadaoModel.getIdVacina());
@@ -192,17 +190,15 @@ public class AplicacaoDao{
             +"ON ap.idVacina = va.id "
             +"WHERE ci.cpf LIKE ?";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        
         try(Connection conn = connectionFactory.connection()){
 
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
 
             ps.setString(1, dado + "%");
 
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
 
-            aplicacaoLista.setModel(DbUtils.resultSetToTableModel(rs));
+            aplicacaoLista.setModel(DbUtils.resultSetToTableModel(result));
             
             ps.close();
         }
@@ -222,10 +218,9 @@ public class AplicacaoDao{
                 +"dose = ?, unica = ?, primeira = ?, segunda = ? "
             +"WHERE idCidadao = ?";
                         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setInt(1, aplicacaoModel.getDose());
             ps.setString(2, aplicacaoModel.getUnica());
@@ -254,10 +249,9 @@ public class AplicacaoDao{
             +"WHERE "
                 +"idCidadao = ?";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setInt(1, aplicacaoModel.getIdCidadao());
             

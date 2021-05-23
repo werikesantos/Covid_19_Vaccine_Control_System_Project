@@ -14,6 +14,9 @@ import net.proteanit.sql.DbUtils;
  */
 public class CidadaoDao{
     
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    PreparedStatement ps; 
+    ResultSet result;
     CidadaoModel cidadao = new CidadaoModel();
     
     public boolean salvar(CidadaoModel cidadaoModel, boolean resultado){
@@ -26,10 +29,9 @@ public class CidadaoDao{
             +"VALUES "
                 +"(?, ?, ?, ?, ?, ?, ?)";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setString(1, cidadaoModel.getNome());
             ps.setString(2, cidadaoModel.getNascimento());
@@ -60,24 +62,23 @@ public class CidadaoDao{
             +"WHERE "
                 +"id = ?";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
               
             ps.setInt(1, cidadao.getId());
             
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
             
-            while(rs.next()){
-                int id = rs.getInt("id");
-                String nome = rs.getString("nome");
-                String nascimento = rs.getString("nascimento");
-                String celular = rs.getString("celular");
-                String cpf = rs.getString("cpf");
-                String endereco = rs.getString("endereco");
-                String n = rs.getString("n");
-                String email = rs.getString("email");
+            while(result.next()){
+                int id = result.getInt("id");
+                String nome = result.getString("nome");
+                String nascimento = result.getString("nascimento");
+                String celular = result.getString("celular");
+                String cpf = result.getString("cpf");
+                String endereco = result.getString("endereco");
+                String n = result.getString("n");
+                String email = result.getString("email");
                 
                 cidadaoModel.setId(id);
                 cidadaoModel.setNome(nome);
@@ -106,17 +107,15 @@ public class CidadaoDao{
             +"WHERE "
                 +"cpf LIKE ?";
         
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        
         try(Connection conn = connectionFactory.connection()){
 
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
 
             ps.setString(1, dado + "%");
 
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
 
-            pacienteLista.setModel(DbUtils.resultSetToTableModel(rs));
+            pacienteLista.setModel(DbUtils.resultSetToTableModel(result));
             
             ps.close();
         }
@@ -136,11 +135,10 @@ public class CidadaoDao{
                 +"nome = ?, nascimento = ?, celular = ?, cpf = ?, endereco = ?, "
                 +"n = ?, email = ? "
             +"WHERE id = ?";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
+
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setString(1, cidadaoModel.getNome());
             ps.setString(2, cidadaoModel.getNascimento());
@@ -171,11 +169,10 @@ public class CidadaoDao{
                 +"bd_vacina_sars_cov_2.cidadao "
             +"WHERE "
                 +"id = ?";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
+
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setInt(1, cidadaoModel.getId());
             
