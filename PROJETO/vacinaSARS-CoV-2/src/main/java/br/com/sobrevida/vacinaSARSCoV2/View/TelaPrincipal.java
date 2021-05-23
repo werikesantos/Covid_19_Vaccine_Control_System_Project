@@ -2,6 +2,7 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.AplicacaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.CidadaoController;
+import br.com.sobrevida.vacinaSARSCoV2.controller.RelatorioController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.VacinaController;
 import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
@@ -19,6 +20,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     VacinaController vacinaController = new VacinaController();
     CidadaoModel cidadaoModel = new CidadaoModel();
     AplicacaoController aplicacaoController = new AplicacaoController();
+    RelatorioController relatorioController = new RelatorioController();
             
     public TelaPrincipal() {
         initComponents();
@@ -2170,7 +2172,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastroAplicacaoMousePressed
 
     private void botaoRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseClicked
-        // TODO add your handling code here:
+        relatorioController.teste();
     }//GEN-LAST:event_botaoRelatorioMouseClicked
 
     private void botaoRelatorioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMousePressed
