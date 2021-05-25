@@ -2,6 +2,7 @@ package br.com.sobrevida.vacinaSARSCoV2.controller;
 
 import br.com.sobrevida.vacinaSARSCoV2.model.UsuarioModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.UsuarioDao;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,14 +37,25 @@ public class UsuarioController{
         
         if((!"".equals(email)) && (!"".equals(senha))){
             
-            usuarioModel.setEmail(email);
-            usuarioModel.setSenha(senha);
+            int contador = email.length();
             
-            resultado = usuarioDao.cadastrar(usuarioModel, false);
-                
-            if(resultado == true){
-                return resultado;
+            for(int i=0; i < contador; i++){
+                if(email.charAt(i) == '@'){
+                    usuarioModel.setEmail(email);
+                }  
             }
+            
+            if((usuarioModel.getEmail()) != null){
+                usuarioModel.setSenha(senha);
+                resultado = usuarioDao.cadastrar(usuarioModel, false);
+                
+                if(resultado == true){
+                    return resultado;
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Este não é um E-mail válido!", "Atenção", JOptionPane.ERROR_MESSAGE);
+
+            }  
         }
         return result;
     }
