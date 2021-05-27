@@ -4,6 +4,7 @@ import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,7 +12,6 @@ import javax.swing.JFrame;
  */
 public class TelaLoginReset extends javax.swing.JFrame {
 
-    AvisoTelaLoginCadastro avisoTelaLoginCadastro = new AvisoTelaLoginCadastro();
     UsuarioController usuarioController = new UsuarioController();
     Utilitario utilitario = new Utilitario();
     TelaLogin telaLogin = new TelaLogin();
@@ -23,10 +23,8 @@ public class TelaLoginReset extends javax.swing.JFrame {
         
         //ALTERANDO O ICONE PADRAO DO JAVA
         utilitario.inserirIcone(this);
-        
-        avisoTelaLoginCadastro.setVisible(false);
+
         carga.setVisible(false);
-        avisoTelaLoginCadastro.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -290,7 +288,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
                     loginSenha1.setText("");
                     mostraSenha.setText("");
                     mostraSenha1.setText("");
-                    avisoTelaLoginCadastro.setVisible(true);
+                    JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                        +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                        +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
                 }
             }
         }.start();
@@ -373,7 +375,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -426,7 +432,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -479,7 +489,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -532,7 +546,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -585,7 +603,11 @@ public class TelaLoginReset extends javax.swing.JFrame {
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();

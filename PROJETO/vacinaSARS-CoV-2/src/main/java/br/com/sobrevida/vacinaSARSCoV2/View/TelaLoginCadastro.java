@@ -3,6 +3,7 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,8 +14,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
     UsuarioController usuarioController = new UsuarioController();
     Utilitario utilitario = new Utilitario();
     TelaLogin telaLogin = new TelaLogin();
-    AvisoTelaLoginCadastro avisoTelaLoginCadastro = new AvisoTelaLoginCadastro();
-    AvisoTelaLoginCadastro1 avisoTelaLoginCadastro1 = new AvisoTelaLoginCadastro1();
     
     public TelaLoginCadastro(){
         initComponents();
@@ -25,8 +24,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         
         //TELA DE AVISOS
         carga.setVisible(false);
-        avisoTelaLoginCadastro.setVisible(false);
-        avisoTelaLoginCadastro1.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -278,7 +275,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                     if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                        boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                        boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, 
+                            loginSenha, loginSenha1, mostraSenha, mostraSenha1);
 
                         if(cadastro == true){
                             carga.setVisible(false);
@@ -287,7 +285,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            avisoTelaLoginCadastro1.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                                JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     }else{
                         carga.setVisible(false);
@@ -296,7 +296,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -331,7 +335,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                     if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                        boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                        boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, 
+                            loginSenha, loginSenha1, mostraSenha, mostraSenha1);
 
                         if(cadastro == true){
                             carga.setVisible(false);
@@ -340,7 +345,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            avisoTelaLoginCadastro1.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                                JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     }else{
                         carga.setVisible(false);
@@ -349,7 +356,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -398,7 +409,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                     if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                        boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                        boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, 
+                            loginSenha, loginSenha1, mostraSenha, mostraSenha1);
 
                         if(cadastro == true){
                             carga.setVisible(false);
@@ -407,7 +419,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            avisoTelaLoginCadastro1.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                                JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     }else{
                         carga.setVisible(false);
@@ -416,7 +430,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -450,7 +468,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                     if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                        boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                        boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, 
+                            loginSenha, loginSenha1, mostraSenha, mostraSenha1);
 
                         if(cadastro == true){
                             carga.setVisible(false);
@@ -459,7 +478,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            avisoTelaLoginCadastro1.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                                JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     }else{
                         carga.setVisible(false);
@@ -468,7 +489,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -499,7 +524,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                     if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                        boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                        boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, 
+                            loginSenha, loginSenha1, mostraSenha, mostraSenha1);
 
                         if(cadastro == true){
                             carga.setVisible(false);
@@ -508,7 +534,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            avisoTelaLoginCadastro1.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                                JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     }else{
                         carga.setVisible(false);
@@ -517,7 +545,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -552,7 +584,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                     if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                        boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                        boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, 
+                            loginSenha, loginSenha1, mostraSenha, mostraSenha1);
 
                         if(cadastro == true){
                             carga.setVisible(false);
@@ -561,7 +594,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            avisoTelaLoginCadastro1.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                                JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     }else{
                         carga.setVisible(false);
@@ -570,7 +605,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                            +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                            +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             }.start();
@@ -600,7 +639,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
 
                 if((senha.equals(senhaConfirmar)) && ((senha.length() >= 8) && (senha.length() <= 16))){
 
-                    boolean cadastro = usuarioController.cadastrar(email, senha, false);
+                    boolean cadastro = usuarioController.cadastrar(email, senha, false, carga, loginEmail, loginSenha,
+                        loginSenha1, mostraSenha, mostraSenha1);
 
                     if(cadastro == true){
                         carga.setVisible(false);
@@ -609,7 +649,9 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        avisoTelaLoginCadastro1.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Cadastro de usuário", 
+                            JOptionPane.PLAIN_MESSAGE
+                        );
                     }
                 }else{
                     carga.setVisible(false);
@@ -618,7 +660,11 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                     loginSenha1.setText("");
                     mostraSenha.setText("");
                     mostraSenha1.setText("");
-                    avisoTelaLoginCadastro.setVisible(true);
+                    JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
+                        +"Mínimo de oito e máximo de dezesseis caracteres.\n"
+                        +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
                 }
             }
         }.start();
