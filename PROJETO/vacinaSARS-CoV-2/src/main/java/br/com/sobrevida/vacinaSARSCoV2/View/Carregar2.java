@@ -27,8 +27,10 @@ public class Carregar2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         carrega = new javax.swing.JLabel();
-        icoCarrega = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -43,19 +45,27 @@ public class Carregar2 extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\logo1.png")); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(-60, 40, 420, 80);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carregar1.gif")); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(350, 150, 70, 70);
+
         carrega.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        carrega.setForeground(new java.awt.Color(255, 255, 255));
+        carrega.setForeground(new java.awt.Color(153, 0, 0));
         carrega.setText("0%");
         jPanel1.add(carrega);
-        carrega.setBounds(370, 210, 70, 47);
+        carrega.setBounds(360, 230, 70, 47);
 
-        icoCarrega.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\b.gif")); // NOI18N
-        jPanel1.add(icoCarrega);
-        icoCarrega.setBounds(360, 120, 70, 70);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(-20, -20, 820, 400);
 
-        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\a.jpg")); // NOI18N
+        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\painel2.jpg")); // NOI18N
         jPanel1.add(imageFundo);
-        imageFundo.setBounds(-1090, -530, 1920, 1080);
+        imageFundo.setBounds(-1130, -720, 1920, 1080);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 770, 350);
@@ -72,21 +82,20 @@ public class Carregar2 extends javax.swing.JFrame {
             public void run(){
                 while(i<=100){
                     carrega.setText(String.valueOf(i)+"%");
-                    i = i+5;           
+                    i = i+5;   
+                    
                 try{
                     sleep(150);
                 }catch (Exception e){    
                 }
-                
             }
             
             Carregar2.this.dispose();
             new Carregar2().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //TelaLoginADM telaLoginADM = new TelaLoginADM();
-            //telaLoginADM.setVisible(true);  
+            TelaLogin telaLogin = new TelaLogin();
+            telaLogin.setVisible(true);  
         }
-        }.start();
-        
+        }.start(); 
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -118,6 +127,18 @@ public class Carregar2 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -129,8 +150,10 @@ public class Carregar2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel carrega;
-    private javax.swing.JLabel icoCarrega;
     private javax.swing.JLabel imageFundo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
