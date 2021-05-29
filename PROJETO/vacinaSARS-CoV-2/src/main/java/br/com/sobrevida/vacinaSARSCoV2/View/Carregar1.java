@@ -2,13 +2,12 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 /**
  *
  * @author WERIKE
  */
 public class Carregar1 extends javax.swing.JFrame {
-
+    
     TelaPrincipal telaPrincipal = new TelaPrincipal();
     
     public Carregar1() {

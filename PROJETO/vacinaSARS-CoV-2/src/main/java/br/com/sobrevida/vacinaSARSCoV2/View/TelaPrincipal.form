@@ -2747,14 +2747,24 @@
             <Property name="useNullLayout" type="boolean" value="true"/>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JLabel" name="nomeUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="abcdefghij"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="300" y="10" width="52" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
             <Component class="javax.swing.JLabel" name="usuario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Seja bem vindo, werike!"/>
+                <Property name="text" type="java.lang.String" value="Seja bem vindo(a),"/>
                 <Property name="horizontalTextPosition" type="int" value="4"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="210" y="10" width="200" height="-1"/>
+                  <AbsoluteConstraints x="190" y="10" width="110" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

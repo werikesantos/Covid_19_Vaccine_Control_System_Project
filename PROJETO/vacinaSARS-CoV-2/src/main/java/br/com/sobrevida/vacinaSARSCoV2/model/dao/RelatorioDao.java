@@ -16,7 +16,7 @@ public class RelatorioDao{
     ConnectionFactory connectionFactory = new ConnectionFactory();
     PreparedStatement ps; 
     ResultSet result;
-    
+            
     public List<CidadaoModel> gerarPDF(){
 
         List<CidadaoModel> relatorioAplicacao = new ArrayList<>();

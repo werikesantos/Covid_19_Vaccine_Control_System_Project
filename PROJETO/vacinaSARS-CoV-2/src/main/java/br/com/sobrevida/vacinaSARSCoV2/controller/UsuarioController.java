@@ -33,12 +33,14 @@ public class UsuarioController{
         return result;
     } 
     
-    public boolean cadastrar(String email, String senha, boolean resultado, JLabel carga, JTextField loginEmail, 
-        JTextField loginSenha, JTextField loginSenha1, JTextField mostraSenha, JTextField mostraSenha1){
+    public boolean cadastrar(String email, String senha, String nomeUsuario, String apelidoUsuario, String cpfUsuario, 
+        boolean resultado, JLabel carga, JTextField loginEmail, JTextField loginSenha, JTextField loginSenha1, 
+        JTextField mostraSenha, JTextField mostraSenha1){
             
         boolean result = resultado;
         
-        if((!"".equals(email)) && (!"".equals(senha))){
+        if((!"".equals(email)) && (!"".equals(nomeUsuario)) && (!"".equals(apelidoUsuario)) && (!"".equals(cpfUsuario)) 
+            && (!"".equals(senha))){
             
             int contador = email.length();
             
@@ -48,13 +50,18 @@ public class UsuarioController{
                 }  
             }
             
-            if((usuarioModel.getEmail()) != null){
-                usuarioModel.setSenha(senha);
-                resultado = usuarioDao.cadastrar(usuarioModel, false);
+            if((usuarioModel.getEmail()) != null){                
                 
-                if(resultado == true){
-                    return resultado;
-                }
+                usuarioModel.setSenha(senha);
+                usuarioModel.setNomeCompleto(nomeUsuario);
+                usuarioModel.setApelido(apelidoUsuario);
+                usuarioModel.setCpfUsuario(cpfUsuario);
+
+                    resultado = usuarioDao.cadastrar(usuarioModel, false);
+                
+                    if(resultado == true){
+                        return resultado;
+                    }
             }else{
                 carga.setVisible(false);
                 loginEmail.setText("");

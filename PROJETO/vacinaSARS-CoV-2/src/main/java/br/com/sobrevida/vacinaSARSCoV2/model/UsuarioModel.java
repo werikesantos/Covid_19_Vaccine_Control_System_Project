@@ -8,6 +8,9 @@ public class UsuarioModel{
     
     private int id;
     private int idPerfil;
+    private String nomeCompleto;
+    private String apelido;
+    private String cpfUsuario;
     private String email;
     private String senha;
     
@@ -28,6 +31,42 @@ public class UsuarioModel{
      */
     public void setIdPerfil(int idPerfil) {
         this.idPerfil = idPerfil;
+    }
+    /**
+     * @return the nome
+     */
+    public String getNomeCompleto() {
+        return nomeCompleto;
+    }
+    /**
+     * @param nomeCompleto the nome to set
+     */
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+    /**
+     * @return the apelido
+     */
+    public String getApelido() {
+        return apelido;
+    }
+    /**
+     * @param apelido the apelido to set
+     */
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
+    }
+    /**
+     * @return the cpf
+     */
+    public String getCpfUsuario() {
+        return cpfUsuario;
+    }
+    /**
+     * @param cpfUsuario the cpf to set
+     */
+    public void setCpfUsuario(String cpfUsuario) {
+        this.cpfUsuario = cpfUsuario;
     }
     /**
      * @return the email

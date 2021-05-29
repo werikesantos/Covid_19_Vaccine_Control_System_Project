@@ -4,9 +4,8 @@ import br.com.sobrevida.vacinaSARSCoV2.controller.AplicacaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.CidadaoController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.RelatorioController;
 import br.com.sobrevida.vacinaSARSCoV2.controller.VacinaController;
-import br.com.sobrevida.vacinaSARSCoV2.model.AplicacaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
-import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
+import br.com.sobrevida.vacinaSARSCoV2.model.dao.UsuarioDao;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +26,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
     public TelaPrincipal() {
         initComponents();
+        
+        String usuario = UsuarioDao.apelido;
+        String apelidoUsuario = usuario+"!";
+        nomeUsuario.setText(apelidoUsuario);
         
         aplicacaoController.buscarVacinaNome(aplicacaoVacinaNome);
                 
@@ -87,7 +90,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tb6.setVisible(false);
         tb7.setVisible(false);
     }
-
+    
     public void sair(JFrame sairTelaPrincipal){
         sairTelaPrincipal.dispose();
         this.dispose();
@@ -255,6 +258,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         vacinaDescricao = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        nomeUsuario = new javax.swing.JLabel();
         usuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         sublinhadoRelatorio = new javax.swing.JLabel();
@@ -1636,10 +1640,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(null);
 
-        usuario.setText("Seja bem vindo, werike!");
+        nomeUsuario.setText("abcdefghij");
+        jPanel1.add(nomeUsuario);
+        nomeUsuario.setBounds(300, 10, 52, 14);
+
+        usuario.setText("Seja bem vindo(a),");
         usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jPanel1.add(usuario);
-        usuario.setBounds(210, 10, 200, 14);
+        usuario.setBounds(190, 10, 110, 14);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -2531,6 +2539,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JMenu menuCadastroCidadao;
+    private javax.swing.JLabel nomeUsuario;
     private javax.swing.JButton pacienteBtnAlterar;
     private javax.swing.JButton pacienteBtnDeletar;
     private javax.swing.JButton pacienteBtnLimpar;
