@@ -12,8 +12,6 @@ import javax.swing.JFrame;
  */
 public class TelaLogin extends javax.swing.JFrame {
     
-    AvisoTelaLogin avisoTelaLogin = new AvisoTelaLogin();
-    
     public TelaLogin() {
         initComponents();
         setLocationRelativeTo(null);
@@ -23,7 +21,6 @@ public class TelaLogin extends javax.swing.JFrame {
         utilitario.inserirIcone(this);
         
         carga.setVisible(false);
-        avisoTelaLogin.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -275,7 +272,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        avisoTelaLogin.setVisible(true);
+                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -321,7 +318,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        avisoTelaLogin.setVisible(true);
+                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -375,7 +372,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        avisoTelaLogin.setVisible(true);
+                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -421,7 +418,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        avisoTelaLogin.setVisible(true);
+                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -462,7 +459,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     carregar1.setVisible(true);
                 }else{
                     carga.setVisible(false);
-                    avisoTelaLogin.setVisible(true);
+                    //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
                     loginEmail.setText("");
                     loginSenha.setText("");
                     mostraSenha.setText("");

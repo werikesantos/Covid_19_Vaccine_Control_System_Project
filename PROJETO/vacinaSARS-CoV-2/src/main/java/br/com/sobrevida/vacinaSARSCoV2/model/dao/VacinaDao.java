@@ -13,6 +13,9 @@ import net.proteanit.sql.DbUtils;
  */
 public class VacinaDao{
     
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    PreparedStatement ps; 
+    ResultSet result;
     VacinaModel vacina = new VacinaModel();
     
     public boolean salvar(VacinaModel vacinaModel, boolean resultado){
@@ -24,12 +27,10 @@ public class VacinaDao{
                 +"bd_vacina_sars_cov_2.vacina(desenvolvedora, produtora, parceira, qtd_Dose, periodo, descricao) "
             +"VALUES "
                 +"(?, ?, ?, ?, ?, ?)";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        
+
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setString(1, vacinaModel.getDesenvolvedora());
             ps.setString(2, vacinaModel.getProdutora());
@@ -60,11 +61,10 @@ public class VacinaDao{
                 +"desenvolvedora = ?, produtora = ?, parceira = ?, qtd_Dose = ?, periodo = ?, "
                 +"descricao = ? "
             +"WHERE id = ?";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
+
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setString(1, vacinaModel.getDesenvolvedora());
             ps.setString(2, vacinaModel.getProdutora());
@@ -94,11 +94,10 @@ public class VacinaDao{
                 +"bd_vacina_sars_cov_2.vacina "
             +"WHERE "
                 +"id = ?";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
+
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             
             ps.setInt(1, vacinaModel.getId());
             
@@ -122,24 +121,23 @@ public class VacinaDao{
                 +"bd_vacina_sars_cov_2.vacina "
             +"WHERE "
                 +"id = ?";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
+
         try(Connection conn = connectionFactory.connection()){
             
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
               
             ps.setInt(1, vacina.getId());
             
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
             
-            while(rs.next()){
-                int id = rs.getInt("id");
-                String desenvolvedora = rs.getString("desenvolvedora");
-                String produtora = rs.getString("produtora");
-                String parceira = rs.getString("parceira");
-                int qtd_dose = rs.getInt("qtd_dose");
-                String periodo = rs.getString("periodo");
-                String descricao = rs.getString("descricao");
+            while(result.next()){
+                int id = result.getInt("id");
+                String desenvolvedora = result.getString("desenvolvedora");
+                String produtora = result.getString("produtora");
+                String parceira = result.getString("parceira");
+                int qtd_dose = result.getInt("qtd_dose");
+                String periodo = result.getString("periodo");
+                String descricao = result.getString("descricao");
                 
                 vacinaModel.setId(id);
                 vacinaModel.setDesenvolvedora(desenvolvedora);
@@ -162,22 +160,20 @@ public class VacinaDao{
     public void pesquisar(JTable vacinaLista, String dado){
 
         String sql = 
-            "SELECT * FROM "
+            "SELECT id AS CÓDIGO, desenvolvedora AS DESENVOLVEDOR, produtora AS PRODUTORA, parceira AS PARCEIRA, qtd_Dose AS QTD_DOSE, periodo AS PERÍODO, descricao AS DESCRIÇÃO FROM "
                 +"bd_vacina_sars_cov_2.vacina "
             +"WHERE "
                 +"id LIKE ?";
-        
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        
+
         try(Connection conn = connectionFactory.connection()){
 
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
 
             ps.setString(1, dado + "%");
 
-            ResultSet rs = ps.executeQuery();
+            result = ps.executeQuery();
 
-            vacinaLista.setModel(DbUtils.resultSetToTableModel(rs));
+            vacinaLista.setModel(DbUtils.resultSetToTableModel(result));
             
             ps.close();
         }

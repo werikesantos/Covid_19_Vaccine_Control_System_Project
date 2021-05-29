@@ -8,7 +8,6 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 //import java.sql.Date; 
 //import java.text.SimpleDateFormat;
@@ -30,18 +29,38 @@ public class AplicacaoController {
         });
     }
     
-    public void tipoDose(JCheckBox unica, JCheckBox primeiraDose, JCheckBox segundaDose){
-        
-        if(unica.isSelected()){
-            primeiraDose.setSelected(false);
-            segundaDose.setSelected(false);
-        }else if(primeiraDose.isSelected()){
-            segundaDose.setSelected(false);
-            unica.setSelected(false);
-        }else if(segundaDose.isSelected()){
-            unica.setSelected(false);
-            primeiraDose.setSelected(false);
+    public void tipoDose(JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira, 
+        JCheckBox aplicacaoVacinaSegunda){
+                
+        if(aplicacaoVacinaUnica.isSelected()){
+            aplicacaoVacinaPrimeira.setSelected(false);
+            aplicacaoVacinaSegunda.setSelected(false);
+        }else if(aplicacaoVacinaPrimeira.isSelected()){
+            aplicacaoVacinaSegunda.setSelected(false);
+            aplicacaoVacinaUnica.setSelected(false);
+        }else if(aplicacaoVacinaSegunda.isSelected()){
+            aplicacaoVacinaUnica.setSelected(false);
+            aplicacaoVacinaPrimeira.setSelected(false);
         }     
+    }
+    
+    public void validarVacina(JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira, 
+        JCheckBox aplicacaoVacinaSegunda, JComboBox aplicacaoVacinaNome){
+        
+        String vacina = (aplicacaoVacinaNome.getSelectedItem().toString());
+        
+        if(vacina.equals("Universidade Oxford") || vacina.equals("Sinovac - CoronaVac") 
+            || vacina.equals("Pfizer") || vacina.equals("Moderna") || vacina.equals("Instituto Gamaleya - Sputnik V")){
+            aplicacaoVacinaUnica.setEnabled(false);
+        }else if(vacina.equals("-")){
+            aplicacaoVacinaUnica.setEnabled(true);
+            aplicacaoVacinaPrimeira.setEnabled(true);
+            aplicacaoVacinaSegunda.setEnabled(true);
+        }else{
+            aplicacaoVacinaUnica.setEnabled(true);
+            aplicacaoVacinaPrimeira.setEnabled(false);
+            aplicacaoVacinaSegunda.setEnabled(false);
+        }    
     }
     
     public boolean consultar(JLabel avisoAplicacaoPacienteNome, JLabel avisoAplicacaoPacienteCpf, 
@@ -98,7 +117,12 @@ public class AplicacaoController {
             int dose = cidadao.getDose();
             String primeiraDose = cidadao.getPrimeira();
             String segundaDose = cidadao.getSegunda();
-
+            
+            if(primeiraDose.equals("null") && segundaDose.equals("null")){
+                primeiraDose = cidadao.getUnica();
+                segundaDose = "SEM RETORNO";
+            }
+            
             aplicacaoIdCodigo.setText(resultID);
             aplicacaoPacienteNome.setText(nome);
             aplicacaoPacienteCpf.setText(cpf);
@@ -362,7 +386,7 @@ public class AplicacaoController {
         JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, 
         JTextField aplicacaoVacinaData){
           
-        int idCidadao = Integer.parseInt(aplicacaoConsultar.getText());
+        int idCidadao = Integer.parseInt(aplicacaoIdCodigo.getText());
         String nome = (aplicacaoPacienteNome.getText());
         String cpf = (aplicacaoPacienteCpf.getText());
         String email = (aplicacaoPacienteEmail.getText());  
@@ -417,8 +441,8 @@ public class AplicacaoController {
             dataSegunda = "31/05/2021";
         }
         
-        System.out.println(idCidadao + "\n" + nome + "\n" + cpf + "\n" + email
-            + "\n" + idVacina + "\n" + dose + "\n" + dataUnica + "\n" + dataPrimeira + "\n" + dataSegunda);
+        /*System.out.println(idCidadao + "\n" + nome + "\n" + cpf + "\n" + email
+            + "\n" + idVacina + "\n" + dose + "\n" + dataUnica + "\n" + dataPrimeira + "\n" + dataSegunda);*/
         
         if((!"".equals(nome)) && (!"".equals(cpf)) && (!"".equals(email)) && (!"".equals(idCidadao)) 
             && (!"".equals(idVacina)) && (!"".equals(dose)) && (!"".equals(dataUnica)) 
@@ -445,6 +469,7 @@ public class AplicacaoController {
                 avisoAplicacaoData.setVisible(false);
                 
                 aplicacaoConsultar.setText("Consultar...");
+                aplicacaoPacienteNome.setText("");
                 aplicacaoIdCodigo.setText("");
                 aplicacaoPacienteCpf.setText("");
                 aplicacaoPacienteEmail.setText("");
