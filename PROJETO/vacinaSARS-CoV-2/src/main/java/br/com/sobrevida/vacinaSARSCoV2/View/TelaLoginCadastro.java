@@ -45,7 +45,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         loginSenha = new javax.swing.JPasswordField();
         mostraSenha = new javax.swing.JTextField();
         boxMostraSenha = new javax.swing.JCheckBox();
-        cpf = new javax.swing.JTextField();
         loginEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -54,6 +53,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         apelido = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        cpf = new javax.swing.JFormattedTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         carga = new javax.swing.JLabel();
@@ -179,22 +179,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         jPanel2.add(boxMostraSenha);
         boxMostraSenha.setBounds(288, 200, 120, 27);
 
-        cpf.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        cpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        cpf.setOpaque(false);
-        cpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cpfActionPerformed(evt);
-            }
-        });
-        cpf.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                cpfKeyPressed(evt);
-            }
-        });
-        jPanel2.add(cpf);
-        cpf.setBounds(20, 160, 110, 30);
-
         loginEmail.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         loginEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         loginEmail.setOpaque(false);
@@ -276,6 +260,16 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         jLabel10.setText("what's your nickname?");
         jPanel2.add(jLabel10);
         jLabel10.setBounds(20, 80, 160, 16);
+
+        cpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        try {
+            cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cpf.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jPanel2.add(cpf);
+        cpf.setBounds(20, 160, 110, 30);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(150, 150, 522, 260);
@@ -904,14 +898,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         }.start();
     }//GEN-LAST:event_signUPActionPerformed
 
-    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpfActionPerformed
-
-    private void cpfKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cpfKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpfKeyPressed
-
     private void nomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCompletoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeCompletoActionPerformed
@@ -968,7 +954,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
     private javax.swing.JTextField apelido;
     private javax.swing.JCheckBox boxMostraSenha;
     private javax.swing.JLabel carga;
-    private javax.swing.JTextField cpf;
+    private javax.swing.JFormattedTextField cpf;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
