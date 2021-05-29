@@ -102,7 +102,7 @@ public class CidadaoDao{
     public void pesquisa(JTable pacienteLista, String dado){
 
         String sql = 
-            "SELECT * FROM "
+            "SELECT id AS CÓDIGO, nome AS NOME, nascimento AS NASCIMENTO, celular AS CELULAR, cpf AS CPF, endereco AS ENDEREÇO, n AS NÚMERO, email AS E_MAIL FROM "
                 +"bd_vacina_sars_cov_2.cidadao "
             +"WHERE "
                 +"cpf LIKE ?";
