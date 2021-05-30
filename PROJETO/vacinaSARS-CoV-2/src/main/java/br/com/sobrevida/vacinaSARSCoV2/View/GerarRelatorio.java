@@ -34,7 +34,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         linhaSeparador1 = new javax.swing.JSeparator();
         jLabel69 = new javax.swing.JLabel();
-        impresora = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobrevida - Controle de Aplicações");
@@ -79,14 +79,14 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoSenha.add(jLabel69);
         jLabel69.setBounds(22, 18, 30, 30);
 
-        impresora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/relatorio.png"))); // NOI18N
-        impresora.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/relatorio.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                impresoraMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        avisoSenha.add(impresora);
-        impresora.setBounds(680, 60, 30, 60);
+        avisoSenha.add(jButton1);
+        jButton1.setBounds(680, 70, 40, 40);
 
         getContentPane().add(avisoSenha);
         avisoSenha.setBounds(0, 0, 770, 360);
@@ -99,7 +99,13 @@ public class GerarRelatorio extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
     }//GEN-LAST:event_formWindowOpened
 
-    private void impresoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_impresoraMouseClicked
+    private void avisoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_avisoSenhaMouseClicked
+    }//GEN-LAST:event_avisoSenhaMouseClicked
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+    }//GEN-LAST:event_formWindowClosed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         RelatorioController relatorioController = new RelatorioController();
 
         int sair = JOptionPane.showConfirmDialog(null, "Relatório de controle de segunda dose será gerado.\n Deseja continuar?"
@@ -112,14 +118,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
                 Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_impresoraMouseClicked
-
-    private void avisoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_avisoSenhaMouseClicked
-
-    }//GEN-LAST:event_avisoSenhaMouseClicked
-
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-    }//GEN-LAST:event_formWindowClosed
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,7 +188,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel avisoSenha;
-    private javax.swing.JLabel impresora;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel69;
