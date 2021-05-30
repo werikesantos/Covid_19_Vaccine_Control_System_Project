@@ -1638,18 +1638,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 102, 0));
         jLabel3.setText("0");
         painelPrincipal.add(jLabel3);
-        jLabel3.setBounds(140, 0, 40, 14);
+        jLabel3.setBounds(160, 0, 40, 14);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/email2.png"))); // NOI18N
         painelPrincipal.add(jLabel1);
-        jLabel1.setBounds(110, 10, 30, 20);
+        jLabel1.setBounds(130, 10, 30, 20);
 
         nomeUsuario.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
-        nomeUsuario.setText("abcdefghij");
+        nomeUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        nomeUsuario.setText("abcdefghij!");
         painelPrincipal.add(nomeUsuario);
-        nomeUsuario.setBounds(286, 10, 70, 18);
+        nomeUsuario.setBounds(282, 10, 70, 18);
 
         usuario.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
+        usuario.setForeground(new java.awt.Color(102, 102, 102));
         usuario.setText("Seja bem vindo(a),");
         usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         painelPrincipal.add(usuario);
@@ -1675,12 +1677,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sublinhadoVacina.setBackground(new java.awt.Color(102, 102, 102));
         sublinhadoVacina.setOpaque(true);
         painelPrincipal.add(sublinhadoVacina);
-        sublinhadoVacina.setBounds(136, 238, 94, 1);
+        sublinhadoVacina.setBounds(134, 238, 94, 1);
 
         sublinhadoPaciente.setBackground(new java.awt.Color(102, 102, 102));
         sublinhadoPaciente.setOpaque(true);
         painelPrincipal.add(sublinhadoPaciente);
-        sublinhadoPaciente.setBounds(122, 126, 120, 1);
+        sublinhadoPaciente.setBounds(119, 126, 120, 1);
 
         botaoRelatorio.setBackground(new java.awt.Color(102, 102, 102));
         botaoRelatorio.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -1725,12 +1727,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         painelPrincipal.add(botaoCadastroVacina);
-        botaoCadastroVacina.setBounds(11, 172, 360, 110);
+        botaoCadastroVacina.setBounds(9, 172, 360, 110);
 
         botaoCadastroPaciente.setBackground(new java.awt.Color(102, 102, 102));
         botaoCadastroPaciente.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
-        botaoCadastroPaciente.setText("                          PACIENTES");
+        botaoCadastroPaciente.setText("                         PACIENTES");
         botaoCadastroPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botaoCadastroPacienteMouseClicked(evt);
@@ -1740,7 +1742,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         painelPrincipal.add(botaoCadastroPaciente);
-        botaoCadastroPaciente.setBounds(6, 60, 360, 110);
+        botaoCadastroPaciente.setBounds(9, 60, 360, 110);
 
         painel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
         painel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 0));
@@ -1767,6 +1769,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imagemFundoPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
         imagemFundoPrincipal.setName(""); // NOI18N
         imagemFundoPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
+        imagemFundoPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imagemFundoPrincipalMouseClicked(evt);
+            }
+        });
         desktopSobrevida.add(imagemFundoPrincipal);
         imagemFundoPrincipal.setBounds(-250, -20, 1920, 870);
 
@@ -1774,6 +1781,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
 
         menuCadastroCidadao.setText("Cadastrar");
+        menuCadastroCidadao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCadastroCidadaoMouseClicked(evt);
+            }
+        });
+        menuCadastroCidadao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroCidadaoActionPerformed(evt);
+            }
+        });
 
         btnCidadaoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/adicionar.png"))); // NOI18N
         btnCidadaoCadastro.setText("Pacientes");
@@ -1805,6 +1822,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPrincipal.add(menuCadastroCidadao);
 
         menuRelatorios.setText("Relatórios");
+        menuRelatorios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuRelatoriosMouseClicked(evt);
+            }
+        });
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/relatorio.png"))); // NOI18N
         jMenuItem1.setText("Gerar relatório");
@@ -1818,6 +1840,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPrincipal.add(menuRelatorios);
 
         menuSistema.setText("Sistema");
+        menuSistema.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuSistemaMouseClicked(evt);
+            }
+        });
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/informacao.png"))); // NOI18N
         jMenuItem2.setText("Informações");
@@ -1826,6 +1853,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPrincipal.add(menuSistema);
 
         menuSair.setText("Sair");
+        menuSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuSairMouseClicked(evt);
+            }
+        });
 
         trocarPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reiniciar.png"))); // NOI18N
         trocarPerfil.setText("Trocar perfil");
@@ -1879,11 +1911,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCidadaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCidadaoCadastroActionPerformed
+        gerarRelatorio.setVisible(false);
+        cadastroVacinaTela.setVisible(false);
         botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoVacina.setVisible(false);
         cadastroCidadaoTela.setVisible(true);
         sublinhadoPaciente.setVisible(true);
         botaoCadastroPaciente.setForeground(new java.awt.Color(0, 0, 0));
+        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoAplicacao.setVisible(false);
+        cadastroAplicacaoTela.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoRelatorio.setVisible(false);
     }//GEN-LAST:event_btnCidadaoCadastroActionPerformed
 
     private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
@@ -1986,6 +2025,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pacienteBtnDeletarActionPerformed
 
     private void btnVacinaCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVacinaCadastroActionPerformed
+        gerarRelatorio.setVisible(false);
         cadastroVacinaTela.setVisible(true);
         cadastroCidadaoTela.setVisible(false);
         botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
@@ -1995,6 +2035,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoAplicacao.setVisible(false);
         cadastroAplicacaoTela.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoRelatorio.setVisible(false);
     }//GEN-LAST:event_btnVacinaCadastroActionPerformed
 
     private void pacienteBtnPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteBtnPesquisarMouseClicked
@@ -2358,6 +2400,45 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sublinhadoRelatorio.setVisible(true);
         gerarRelatorio.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void imagemFundoPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imagemFundoPrincipalMouseClicked
+        sublinhadoAplicacao.setVisible(false);
+        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoPaciente.setVisible(false);
+        botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoVacina.setVisible(false);
+        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoRelatorio.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        gerarRelatorio.setVisible(false);
+    }//GEN-LAST:event_imagemFundoPrincipalMouseClicked
+
+    private void menuCadastroCidadaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroCidadaoActionPerformed
+    }//GEN-LAST:event_menuCadastroCidadaoActionPerformed
+
+    private void menuCadastroCidadaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCadastroCidadaoMouseClicked
+        sublinhadoRelatorio.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        gerarRelatorio.setVisible(false);
+    }//GEN-LAST:event_menuCadastroCidadaoMouseClicked
+
+    private void menuRelatoriosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRelatoriosMouseClicked
+        sublinhadoRelatorio.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        gerarRelatorio.setVisible(false);
+    }//GEN-LAST:event_menuRelatoriosMouseClicked
+
+    private void menuSistemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSistemaMouseClicked
+        sublinhadoRelatorio.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        gerarRelatorio.setVisible(false);
+    }//GEN-LAST:event_menuSistemaMouseClicked
+
+    private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
+        sublinhadoRelatorio.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        gerarRelatorio.setVisible(false);
+    }//GEN-LAST:event_menuSairMouseClicked
 
     /**
      * @param args the command line arguments
