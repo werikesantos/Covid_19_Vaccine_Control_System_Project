@@ -14,7 +14,7 @@ public class Carregar1 extends javax.swing.JFrame {
         initComponents();
         
         //ALTERANDO O ICONE PADRAO DO JAVA
-        Utilitario utilitario = new Utilitario();
+        IconeSistema utilitario = new IconeSistema();
         utilitario.inserirIcone(this);
     }
 

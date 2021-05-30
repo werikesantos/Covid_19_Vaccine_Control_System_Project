@@ -13,9 +13,8 @@ import javax.swing.JOptionPane;
 public class TelaLoginReset extends javax.swing.JFrame {
 
     UsuarioController usuarioController = new UsuarioController();
-    Utilitario utilitario = new Utilitario();
+    IconeSistema utilitario = new IconeSistema();
     TelaLogin telaLogin = new TelaLogin();
-    AvisoTelaLoginReset AvisoTelaLoginReset = new AvisoTelaLoginReset();
     
     public TelaLoginReset() {
         initComponents();
@@ -276,7 +275,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            AvisoTelaLoginReset.setVisible(true);
+                            //AvisoTelaLoginReset.setVisible(true);
                         }
                     } 
                 }else{
@@ -363,7 +362,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                AvisoTelaLoginReset.setVisible(true);
+                                //AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -420,7 +419,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                AvisoTelaLoginReset.setVisible(true);
+                                //AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -477,7 +476,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                AvisoTelaLoginReset.setVisible(true);
+                                //AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -534,7 +533,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                AvisoTelaLoginReset.setVisible(true);
+                                //AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
@@ -591,7 +590,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                AvisoTelaLoginReset.setVisible(true);
+                                //AvisoTelaLoginReset.setVisible(true);
                             }
                         } 
                     }else{
