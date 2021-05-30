@@ -35,6 +35,7 @@ public class Carregar1 extends javax.swing.JFrame {
         imageFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Sobrevida - Soluções Médicas");
         setMinimumSize(new java.awt.Dimension(763, 352));
         setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -52,24 +53,26 @@ public class Carregar1 extends javax.swing.JFrame {
         jPanel1.add(carrega);
         carrega.setBounds(360, 230, 70, 47);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carregar1.gif")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carregar1.gif"))); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(350, 150, 70, 70);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\logo1.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo1.png"))); // NOI18N
         jPanel1.add(jLabel2);
         jLabel2.setBounds(-60, 40, 420, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(-20, -20, 820, 400);
 
-        imageFundo.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\painel2.jpg")); // NOI18N
+        imageFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/painel2.jpg"))); // NOI18N
         jPanel1.add(imageFundo);
         imageFundo.setBounds(-1130, -720, 1920, 1080);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 770, 350);
+
+        getAccessibleContext().setAccessibleDescription("Sobrevida - Soluções Médicas");
 
         pack();
         setLocationRelativeTo(null);

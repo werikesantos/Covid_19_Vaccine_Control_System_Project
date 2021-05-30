@@ -33,6 +33,7 @@ public class Carregar extends javax.swing.JFrame {
         imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Sobrevida - Soluções Médicas");
         setMinimumSize(new java.awt.Dimension(763, 352));
         setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -49,6 +50,8 @@ public class Carregar extends javax.swing.JFrame {
         carrega.setText("0%");
         jPanel1.add(carrega);
         carrega.setBounds(360, 230, 70, 47);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carregar1.gif"))); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(350, 150, 70, 70);
 
@@ -66,6 +69,8 @@ public class Carregar extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 770, 350);
+
+        getAccessibleContext().setAccessibleDescription("Sobrevida - Soluções Médicas");
 
         pack();
         setLocationRelativeTo(null);

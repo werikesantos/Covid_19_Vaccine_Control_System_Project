@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Sign up"/>
+    <Property name="title" type="java.lang.String" value="Sobrevida - Sign up"/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[800, 510]"/>
     </Property>
@@ -16,7 +16,7 @@
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <AccessibilityProperties>
-    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Login"/>
+    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Sobrevida - Sign up"/>
   </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -472,7 +472,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="110" width="140" height="40"/>
+              <AbsoluteConstraints x="150" y="110" width="140" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -498,7 +498,7 @@
         <Component class="javax.swing.JLabel" name="carga">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevida\vacinaSARSCoV2\view\image\carga1.gif"/>
+              <Image iconType="3" name="/image/carga1.gif"/>
             </Property>
           </Properties>
           <Constraints>
@@ -510,7 +510,7 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevida\vacinaSARSCoV2\view\image\logo1.png"/>
+              <Image iconType="3" name="/image/logo1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -522,9 +522,8 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevida\vacinaSARSCoV2\view\image\transparente.png"/>
+              <Image iconType="3" name="/image/transparente.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel7"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -535,9 +534,8 @@
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevida\vacinaSARSCoV2\view\image\vacina.jpeg"/>
+              <Image iconType="3" name="/image/vacina.jpeg"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
