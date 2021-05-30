@@ -51,7 +51,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Sobrevida - Login");
         setMaximumSize(new java.awt.Dimension(800, 510));
         setMinimumSize(new java.awt.Dimension(800, 510));
         setPreferredSize(new java.awt.Dimension(800, 510));
@@ -61,7 +61,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        carga.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carga1.gif")); // NOI18N
+        carga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carga1.gif"))); // NOI18N
         jPanel1.add(carga);
         carga.setBounds(635, 60, 40, 40);
 
@@ -199,7 +199,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(250, 140, 120, 40);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\logo1.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo1.png"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(28, 52, 450, 90);
 
@@ -210,18 +210,18 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(605, 465, 210, 15);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
         jPanel1.add(jLabel7);
         jLabel7.setBounds(100, 40, 600, 410);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\vacina.jpeg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/vacina.jpeg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(10, 10, 800, 510);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(-10, -10, 810, 530);
 
-        getAccessibleContext().setAccessibleDescription("Login");
+        getAccessibleContext().setAccessibleDescription("Sobrevida - Login");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -56,7 +56,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Reset Password");
+        setTitle("Sobrevida - Reset Password");
         setMaximumSize(new java.awt.Dimension(800, 510));
         setMinimumSize(new java.awt.Dimension(800, 510));
         setPreferredSize(new java.awt.Dimension(800, 510));
@@ -213,28 +213,26 @@ public class TelaLoginReset extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(280, 410, 130, 40);
 
-        carga.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\carga1.gif")); // NOI18N
+        carga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carga1.gif"))); // NOI18N
         jPanel1.add(carga);
         carga.setBounds(635, 34, 40, 40);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\logo1.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo1.png"))); // NOI18N
         jPanel1.add(jLabel12);
         jLabel12.setBounds(28, 21, 450, 90);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\transparente.png")); // NOI18N
-        jLabel13.setText("jLabel7");
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
         jPanel1.add(jLabel13);
         jLabel13.setBounds(110, 15, 600, 440);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\java\\br\\com\\sobrevida\\vacinaSARSCoV2\\view\\image\\vacina.jpeg")); // NOI18N
-        jLabel14.setText("jLabel1");
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/vacina.jpeg"))); // NOI18N
         jPanel1.add(jLabel14);
         jLabel14.setBounds(0, 0, 810, 510);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 500);
 
-        getAccessibleContext().setAccessibleDescription("Login");
+        getAccessibleContext().setAccessibleDescription("Sobrevida - Reset Password");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
