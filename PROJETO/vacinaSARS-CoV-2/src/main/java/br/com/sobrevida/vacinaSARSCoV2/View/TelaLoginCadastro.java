@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class TelaLoginCadastro extends javax.swing.JFrame{
 
     UsuarioController usuarioController = new UsuarioController();
-    Utilitario utilitario = new Utilitario();
+    IconeSistema utilitario = new IconeSistema();
     TelaLogin telaLogin = new TelaLogin();
     
     public TelaLoginCadastro(){

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
  *
  * @author WERIKE
  */
-public class Utilitario {
+public class IconeSistema{
     
     public void inserirIcone(JFrame frm){
         try{
