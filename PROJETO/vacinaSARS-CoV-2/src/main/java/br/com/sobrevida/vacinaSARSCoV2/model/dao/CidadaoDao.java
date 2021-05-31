@@ -4,6 +4,7 @@ import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 //BIBLIOTECA PARA PESQUISA AVANÇADA
 import net.proteanit.sql.DbUtils;
@@ -52,7 +53,7 @@ public class CidadaoDao{
         return result;
     }
     
-    public CidadaoModel consulta(CidadaoModel cidadaoModel){
+    public CidadaoModel consulta(CidadaoModel cidadaoModel, JLabel carregarPrincipal1){
 
         cidadao = cidadaoModel;
                 
@@ -89,6 +90,8 @@ public class CidadaoDao{
                 cidadaoModel.setN(n);
                 cidadaoModel.setEmail(email);
                 
+                carregarPrincipal1.setVisible(false);
+                
                 return cidadaoModel;
             }
             ps.close();
@@ -106,7 +109,7 @@ public class CidadaoDao{
                 +"bd_vacina_sars_cov_2.cidadao "
             +"WHERE "
                 +"cpf LIKE ?";
-        
+               
         try(Connection conn = connectionFactory.connection()){
 
             ps = conn.prepareStatement(sql);
@@ -116,7 +119,7 @@ public class CidadaoDao{
             result = ps.executeQuery();
 
             pacienteLista.setModel(DbUtils.resultSetToTableModel(result));
-            
+                        
             ps.close();
         }
         catch(Exception e){
