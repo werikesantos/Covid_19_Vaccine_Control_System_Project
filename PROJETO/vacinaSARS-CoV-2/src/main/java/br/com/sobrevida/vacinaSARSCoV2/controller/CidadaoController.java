@@ -2,6 +2,7 @@ package br.com.sobrevida.vacinaSARSCoV2.controller;
 
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.CidadaoDao;
+import static java.lang.Thread.sleep;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -16,7 +17,7 @@ public class CidadaoController {
     CidadaoModel cidadaoModel = new CidadaoModel();
     CidadaoDao cidadaoDao = new CidadaoDao();
        
-    public void salvar(JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
+    public void salvar(JLabel carregarPrincipal1, JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
         JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
         JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
         JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
@@ -48,9 +49,11 @@ public class CidadaoController {
             boolean result = cidadaoDao.salvar(cidadaoModel, false);
             
             if(result == true){
-                JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso!"
-                    ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE);
+                carregarPrincipal1.setVisible(false);
                 
+                JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso!"
+                    ,"Cadastro de Paciente", JOptionPane.PLAIN_MESSAGE);
+                                
                 avisoNome.setVisible(false);
                 avisoNascimento.setVisible(false);
                 avisoCelular.setVisible(false);
@@ -68,6 +71,8 @@ public class CidadaoController {
                 pacienteEnderecoNumero.setText("");
                 pacienteEmail.setText("");
             }else{
+                carregarPrincipal1.setVisible(false);
+                
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                     + "Por favor, verifique e tente novamente."
                     ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
@@ -82,6 +87,8 @@ public class CidadaoController {
                 pacienteEmail.setText("");        
             }       
         }else{
+            carregarPrincipal1.setVisible(false);
+            
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                 + "Por favor, preencher todos os campos marcados."
                 ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
@@ -96,7 +103,7 @@ public class CidadaoController {
         }
     } 
 
-    public void consulta(JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
+    public void consulta(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
         JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
         JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
         JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
@@ -107,16 +114,98 @@ public class CidadaoController {
                 
             int id = Integer.parseInt(converterID);
             cidadaoModel.setId(id);
-            CidadaoModel result = cidadaoDao.consulta(cidadaoModel); 
+            CidadaoModel result = cidadaoDao.consulta(cidadaoModel, carregarPrincipal1); 
 
             id = result.getId();
             String resultID = Integer.toString(id);
-
+              
+            String primeiro = "";
+            String segundo = "";
+                    
             String nome = result.getNome();
             String[] resultado = nome.split(" ");
-            String primeiro = resultado[0];
-            String segundo = resultado[1];
-
+            
+            switch (resultado.length) {
+                case 2:
+                    primeiro = resultado[0];
+                    segundo = resultado[1];
+                    break;
+                case 3:
+                    {
+                        primeiro = resultado[0];
+                        String p1 = resultado[1];
+                        String p2 = resultado[2];
+                        segundo = p1+" "+p2;
+                        break;
+                    }
+                case 4:
+                    {
+                        primeiro = resultado[0];
+                        String p1 = resultado[1];
+                        String p2 = resultado[2];
+                        String p3 = resultado[3];
+                        segundo = p1+" "+p2+" "+p3;
+                        break;
+                    }
+                case 5:
+                    {
+                        primeiro = resultado[0];
+                        String p1 = resultado[1];
+                        String p2 = resultado[2];
+                        String p3 = resultado[3];
+                        String p4 = resultado[4];
+                        segundo = p1+" "+p2+" "+p3+" "+p4;
+                        break;
+                    }
+                case 6:
+                    {
+                        primeiro = resultado[0];
+                        String p1 = resultado[1];
+                        String p2 = resultado[2];
+                        String p3 = resultado[3];
+                        String p4 = resultado[4];
+                        String p5 = resultado[5];
+                        segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5;
+                        break;
+                    }
+                case 7:
+                    {
+                        primeiro = resultado[0];
+                        String p1 = resultado[1];
+                        String p2 = resultado[2];
+                        String p3 = resultado[3];
+                        String p4 = resultado[4];
+                        String p5 = resultado[5];
+                        String p6 = resultado[6];
+                        segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5+" "+p6;
+                        break;
+                    }
+                    case 8:
+                    {
+                        primeiro = resultado[0];
+                        String p1 = resultado[1];
+                        String p2 = resultado[2];
+                        String p3 = resultado[3];
+                        String p4 = resultado[4];
+                        String p5 = resultado[5];
+                        String p6 = resultado[6];
+                        String p7 = resultado[7];
+                        segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5+" "+p6+" "+p7;
+                        break;
+                    }
+                default:
+                    primeiro = resultado[0];
+                    String p1 = resultado[1];
+                    String p2 = resultado[2];
+                    String p3 = resultado[3];
+                    String p4 = resultado[4];
+                    String p5 = resultado[5];
+                    String p6 = resultado[6];
+                    String p7 = resultado[7];
+                    segundo = p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5 + " " + p6 + " " + p7;
+                    break;
+            }
+            
             String nascimento = result.getNascimento();
             String celular = result.getCelular();
             String cpf = result.getCpf();
@@ -167,7 +256,7 @@ public class CidadaoController {
         return result;
     } 
     
-    public void alterar(JTable pacienteLista, JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, 
+    public void alterar(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTable pacienteLista, JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, 
         JTextField pacienteSobreNome, JTextField pacienteNascimento, JTextField pacienteCelular, 
         JTextField pacienteCpf, JTextField pacienteEndereco, JTextField pacienteEnderecoNumero,
         JTextField pacienteEmail){
@@ -199,9 +288,13 @@ public class CidadaoController {
             boolean result = cidadaoDao.alterar(cidadaoModel, false);
             
             if(result = true){
-                JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso.", 
-                    "Atualização", JOptionPane.WARNING_MESSAGE);
+                carregarPrincipal1.setVisible(false);
                 
+                JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso.", 
+                    "Atualização", JOptionPane.PLAIN_MESSAGE);
+                
+                pacienteIdCodigo.setText("");
+                pacienteConsultar.setText("Consultar...");
                 pacientePrimeiroNome.setText("");
                 pacienteSobreNome.setText("");
                 pacienteNascimento.setText("");
@@ -212,9 +305,12 @@ public class CidadaoController {
                 pacienteEmail.setText("");               
             }
         }else{
+            carregarPrincipal1.setVisible(false);
+            
             JOptionPane.showMessageDialog(null, "Erro ao atualizar.", 
                 "Erro", JOptionPane.WARNING_MESSAGE);
             
+            pacienteIdCodigo.setText("");
             pacientePrimeiroNome.setText("");
             pacienteSobreNome.setText("");
             pacienteNascimento.setText("");
@@ -226,35 +322,57 @@ public class CidadaoController {
         }
     }
 
-    public void deletar(JTable pacienteLista, JTextField pacienteIdCodigo, 
+    public void deletar(JLabel carregarPrincipal1, JTable pacienteLista, JTextField pacienteIdCodigo, 
         JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
         JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
         JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
-          
+                  
         int linhaSelecionada = pacienteLista.getSelectedRow();
         int id = (int) pacienteLista.getModel().getValueAt(linhaSelecionada, 0);
         String nomeCompleto = pacienteLista.getModel().getValueAt(linhaSelecionada, 1).toString();
         String cpf = pacienteLista.getModel().getValueAt(linhaSelecionada, 4).toString();
         
         if((!"".equals(id))){
-            
-            cidadaoModel.setId(id);
-            
-            JOptionPane.showMessageDialog(null, "O usuário será deletado:\nID: "+id+"\nNome: "+nomeCompleto+"\nCPF: "+cpf
-                ,"Atenção", JOptionPane.WARNING_MESSAGE);
-                    
-            boolean result = cidadaoDao.deletar(cidadaoModel, false); 
-            
-            if(result = true){
-                JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso:", "Deletado", JOptionPane.WARNING_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(null, "Não foi possível deletar o usuário:\nID: "+id+"\nNome: "+nomeCompleto+"\nCPF: "+cpf
-                    ,"Erro", JOptionPane.WARNING_MESSAGE);
+ 
+            Object[] opcao = {"Sim", "Não"};
+            int respostaUsuario = JOptionPane.showOptionDialog(null, "Deseja excluir esse usuário?\nCódigo: "+id+"\nNome: "+nomeCompleto+"\nCPF: "+cpf
+                ,"Exclusão de usuário", JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE, null, opcao, opcao[0]);
+ 
+            if(respostaUsuario == JOptionPane.YES_OPTION){
+                
+                carregarPrincipal1.setVisible(true);
+                
+                new Thread() {
+                    int i = 0;
+                    public void run() {
+                        while (i < 100) {
+                            i = i + 5;
+                            try {
+                                sleep(100);
+                            } catch (Exception e) {
+                            }
+                        }
+                        cidadaoModel.setId(id);
+                        boolean result = cidadaoDao.deletar(cidadaoModel, false);
+                        
+                        if (result = true) {
+                            carregarPrincipal1.setVisible(false);
+
+                            JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso:", "Deletado", JOptionPane.PLAIN_MESSAGE);
+                        } else {
+                            carregarPrincipal1.setVisible(false);
+
+                            JOptionPane.showMessageDialog(null, "Não foi possível deletar o usuário:\nID: " + id + "\nNome: " + nomeCompleto + "\nCPF: " + cpf,
+                                "Erro", JOptionPane.WARNING_MESSAGE);
+                        }
+                    }
+                }.start();
             }
         }  
     }
     
-    public void limpar(JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
+    public void limpar(JLabel carregarPrincipal1, JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
         JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
         JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
         JTextField pacienteNascimento, JTextField pacienteCelular, JTextField pacienteCpf, 
@@ -277,5 +395,7 @@ public class CidadaoController {
         avisoEndereco.setVisible(false);
         avisoN.setVisible(false);
         avisoEmail.setVisible(false);
+        
+        carregarPrincipal1.setVisible(false);
     }
 }
