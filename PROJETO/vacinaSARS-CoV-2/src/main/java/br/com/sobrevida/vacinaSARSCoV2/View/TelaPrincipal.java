@@ -96,6 +96,43 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         desktopSobrevida = new javax.swing.JDesktopPane();
+        ajuda = new javax.swing.JPanel();
+        closeCadastroVacina3 = new javax.swing.JLabel();
+        linhaSeparador10 = new javax.swing.JSeparator();
+        txtCadastroVacinas4 = new javax.swing.JLabel();
+        iconeCadastroVacina2 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        painelPrincipal = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        linkOutl = new javax.swing.JLabel();
+        linkInsta = new javax.swing.JLabel();
+        linkFace = new javax.swing.JLabel();
+        linkSky = new javax.swing.JLabel();
+        linkWhats = new javax.swing.JLabel();
+        imagem = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        linkGma = new javax.swing.JLabel();
+        nomeUsuario = new javax.swing.JLabel();
+        usuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        sublinhadoRelatorio = new javax.swing.JLabel();
+        sublinhadoAplicacao = new javax.swing.JLabel();
+        sublinhadoVacina = new javax.swing.JLabel();
+        sublinhadoPaciente = new javax.swing.JLabel();
+        botaoRelatorio = new javax.swing.JLabel();
+        botaoCadastroAplicacao = new javax.swing.JLabel();
+        botaoCadastroVacina = new javax.swing.JLabel();
+        botaoCadastroPaciente = new javax.swing.JLabel();
+        painel = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        imagemFundoPrincipal = new javax.swing.JLabel();
         sobreSistemaTela = new javax.swing.JPanel();
         txtCadastroVacinas2 = new javax.swing.JLabel();
         closeCadastroVacina2 = new javax.swing.JLabel();
@@ -325,30 +362,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         aplicacaoVacinaDataRetorno = new javax.swing.JFormattedTextField();
         aplicacaoVacinaData = new javax.swing.JFormattedTextField();
         carregarPrincipal = new javax.swing.JLabel();
-        painelPrincipal = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        linkOutl = new javax.swing.JLabel();
-        linkInsta = new javax.swing.JLabel();
-        linkFace = new javax.swing.JLabel();
-        linkSky = new javax.swing.JLabel();
-        linkWhats = new javax.swing.JLabel();
-        imagem = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        linkGma = new javax.swing.JLabel();
-        nomeUsuario = new javax.swing.JLabel();
-        usuario = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        sublinhadoRelatorio = new javax.swing.JLabel();
-        sublinhadoAplicacao = new javax.swing.JLabel();
-        sublinhadoVacina = new javax.swing.JLabel();
-        sublinhadoPaciente = new javax.swing.JLabel();
-        botaoRelatorio = new javax.swing.JLabel();
-        botaoCadastroAplicacao = new javax.swing.JLabel();
-        botaoCadastroVacina = new javax.swing.JLabel();
-        botaoCadastroPaciente = new javax.swing.JLabel();
-        painel = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        imagemFundoPrincipal = new javax.swing.JLabel();
         menuPrincipal = new javax.swing.JMenuBar();
         menuCadastroCidadao = new javax.swing.JMenu();
         btnCidadaoCadastro = new javax.swing.JMenuItem();
@@ -358,6 +371,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         menuSistema = new javax.swing.JMenu();
         sobreMenu = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
         trocarPerfil = new javax.swing.JMenuItem();
         sair = new javax.swing.JMenuItem();
@@ -384,6 +398,293 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktopSobrevida.setMaximumSize(new java.awt.Dimension(1366, 768));
         desktopSobrevida.setMinimumSize(new java.awt.Dimension(1280, 720));
         desktopSobrevida.setPreferredSize(new java.awt.Dimension(1366, 768));
+
+        ajuda.setBackground(new java.awt.Color(255, 255, 255));
+        ajuda.setForeground(new java.awt.Color(255, 255, 255));
+        ajuda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ajudaMouseClicked(evt);
+            }
+        });
+        ajuda.setLayout(null);
+
+        closeCadastroVacina3.setBackground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        closeCadastroVacina3.setForeground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
+        closeCadastroVacina3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeCadastroVacina3MouseClicked(evt);
+            }
+        });
+        ajuda.add(closeCadastroVacina3);
+        closeCadastroVacina3.setBounds(964, 12, 30, 30);
+        ajuda.add(linhaSeparador10);
+        linhaSeparador10.setBounds(20, 40, 370, 2);
+
+        txtCadastroVacinas4.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        txtCadastroVacinas4.setForeground(new java.awt.Color(102, 102, 102));
+        txtCadastroVacinas4.setText("Tutorial - Sobrevida");
+        ajuda.add(txtCadastroVacinas4);
+        txtCadastroVacinas4.setBounds(60, 10, 190, 30);
+
+        iconeCadastroVacina2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/informacao.png"))); // NOI18N
+        ajuda.add(iconeCadastroVacina2);
+        iconeCadastroVacina2.setBounds(20, 9, 30, 30);
+
+        jLabel91.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel91.setText("Seja bem-vindo(a) ao Tutorial do Sistema!");
+        ajuda.add(jLabel91);
+        jLabel91.setBounds(30, 50, 340, 17);
+
+        jLabel92.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel92.setText("Vidah");
+        ajuda.add(jLabel92);
+        jLabel92.setBounds(50, 170, 40, 16);
+
+        jLabel93.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel93.setText("Vamos lá?");
+        ajuda.add(jLabel93);
+        jLabel93.setBounds(160, 160, 230, 16);
+
+        jLabel94.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel94.setText("Tudo bem?");
+        ajuda.add(jLabel94);
+        jLabel94.setBounds(160, 100, 179, 16);
+
+        jLabel95.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel95.setText("Eu vou te acompanhar nessa longa");
+        ajuda.add(jLabel95);
+        jLabel95.setBounds(160, 120, 230, 16);
+
+        jLabel96.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel96.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel96.setText("jornada de exploração ao sistema!");
+        ajuda.add(jLabel96);
+        jLabel96.setBounds(160, 140, 230, 16);
+
+        jLabel97.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel97.setText("Olá, meu nome é Vidah!");
+        ajuda.add(jLabel97);
+        jLabel97.setBounds(160, 80, 230, 16);
+
+        jButton1.setText("OK");
+        ajuda.add(jButton1);
+        jButton1.setBounds(320, 183, 70, 30);
+
+        desktopSobrevida.add(ajuda);
+        ajuda.setBounds(280, 150, 410, 230);
+
+        painelPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
+        painelPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
+        painelPrincipal.setLayout(null);
+
+        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel11.setText("2");
+        painelPrincipal.add(jLabel11);
+        jLabel11.setBounds(104, 10, 40, 14);
+
+        linkOutl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/emailN2.png"))); // NOI18N
+        linkOutl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkOutlMouseClicked(evt);
+            }
+        });
+        painelPrincipal.add(linkOutl);
+        linkOutl.setBounds(74, 14, 30, 30);
+
+        linkInsta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/i.png"))); // NOI18N
+        linkInsta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkInstaMouseClicked(evt);
+            }
+        });
+        painelPrincipal.add(linkInsta);
+        linkInsta.setBounds(100, 550, 30, 30);
+
+        linkFace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/f.png"))); // NOI18N
+        linkFace.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkFaceMouseClicked(evt);
+            }
+        });
+        painelPrincipal.add(linkFace);
+        linkFace.setBounds(150, 550, 30, 30);
+
+        linkSky.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/s.png"))); // NOI18N
+        linkSky.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkSkyMouseClicked(evt);
+            }
+        });
+        painelPrincipal.add(linkSky);
+        linkSky.setBounds(200, 550, 30, 30);
+
+        linkWhats.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/w.png"))); // NOI18N
+        linkWhats.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkWhatsMouseClicked(evt);
+            }
+        });
+        painelPrincipal.add(linkWhats);
+        linkWhats.setBounds(250, 550, 30, 30);
+
+        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/usuarioLogado.png"))); // NOI18N
+        painelPrincipal.add(imagem);
+        imagem.setBounds(290, 3, 60, 50);
+
+        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel3.setText("1");
+        painelPrincipal.add(jLabel3);
+        jLabel3.setBounds(53, 10, 40, 14);
+
+        linkGma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/email2.png"))); // NOI18N
+        linkGma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                linkGmaMouseClicked(evt);
+            }
+        });
+        painelPrincipal.add(linkGma);
+        linkGma.setBounds(26, 20, 30, 20);
+
+        nomeUsuario.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
+        nomeUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        nomeUsuario.setText("abcdefghij!");
+        painelPrincipal.add(nomeUsuario);
+        nomeUsuario.setBounds(230, 20, 70, 18);
+
+        usuario.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
+        usuario.setForeground(new java.awt.Color(102, 102, 102));
+        usuario.setText("Seja bem vindo(a),");
+        usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        painelPrincipal.add(usuario);
+        usuario.setBounds(128, 20, 110, 18);
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(48, 47, 61));
+        jLabel2.setText("Powered by Group Seven LTDA ® ");
+        painelPrincipal.add(jLabel2);
+        jLabel2.setBounds(160, 654, 210, 15);
+
+        sublinhadoRelatorio.setBackground(new java.awt.Color(102, 102, 102));
+        sublinhadoRelatorio.setOpaque(true);
+        painelPrincipal.add(sublinhadoRelatorio);
+        sublinhadoRelatorio.setBounds(118, 474, 130, 1);
+
+        sublinhadoAplicacao.setBackground(new java.awt.Color(102, 102, 102));
+        sublinhadoAplicacao.setOpaque(true);
+        painelPrincipal.add(sublinhadoAplicacao);
+        sublinhadoAplicacao.setBounds(119, 360, 130, 1);
+
+        sublinhadoVacina.setBackground(new java.awt.Color(102, 102, 102));
+        sublinhadoVacina.setOpaque(true);
+        painelPrincipal.add(sublinhadoVacina);
+        sublinhadoVacina.setBounds(134, 248, 94, 1);
+
+        sublinhadoPaciente.setBackground(new java.awt.Color(102, 102, 102));
+        sublinhadoPaciente.setOpaque(true);
+        painelPrincipal.add(sublinhadoPaciente);
+        sublinhadoPaciente.setBounds(119, 136, 120, 1);
+
+        botaoRelatorio.setBackground(new java.awt.Color(102, 102, 102));
+        botaoRelatorio.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        botaoRelatorio.setText("                         RELATÓRIOS");
+        botaoRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMousePressed(evt);
+            }
+        });
+        painelPrincipal.add(botaoRelatorio);
+        botaoRelatorio.setBounds(6, 408, 360, 110);
+
+        botaoCadastroAplicacao.setBackground(new java.awt.Color(102, 102, 102));
+        botaoCadastroAplicacao.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
+        botaoCadastroAplicacao.setText("                         APLICAÇÕES");
+        botaoCadastroAplicacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoCadastroAplicacaoMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botaoCadastroAplicacaoMousePressed(evt);
+            }
+        });
+        painelPrincipal.add(botaoCadastroAplicacao);
+        botaoCadastroAplicacao.setBounds(6, 294, 360, 110);
+
+        botaoCadastroVacina.setBackground(new java.awt.Color(102, 102, 102));
+        botaoCadastroVacina.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
+        botaoCadastroVacina.setText("                           VACINAS");
+        botaoCadastroVacina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoCadastroVacinaMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botaoCadastroVacinaMousePressed(evt);
+            }
+        });
+        painelPrincipal.add(botaoCadastroVacina);
+        botaoCadastroVacina.setBounds(9, 182, 360, 110);
+
+        botaoCadastroPaciente.setBackground(new java.awt.Color(102, 102, 102));
+        botaoCadastroPaciente.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
+        botaoCadastroPaciente.setText("                         PACIENTES");
+        botaoCadastroPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoCadastroPacienteMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botaoCadastroPacienteMousePressed(evt);
+            }
+        });
+        painelPrincipal.add(botaoCadastroPaciente);
+        botaoCadastroPaciente.setBounds(7, 70, 360, 110);
+
+        painel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
+        painel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 0));
+        painel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                painelMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                painelMousePressed(evt);
+            }
+        });
+        painelPrincipal.add(painel);
+        painel.setBounds(0, -10, 370, 810);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/painel1.jpg"))); // NOI18N
+        painelPrincipal.add(jLabel10);
+        jLabel10.setBounds(-1250, -20, 1660, 870);
+
+        desktopSobrevida.add(painelPrincipal);
+        painelPrincipal.setBounds(1000, 0, 370, 780);
+
+        imagemFundoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/painel1.jpg"))); // NOI18N
+        imagemFundoPrincipal.setMaximumSize(new java.awt.Dimension(1366, 768));
+        imagemFundoPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
+        imagemFundoPrincipal.setName(""); // NOI18N
+        imagemFundoPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
+        imagemFundoPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imagemFundoPrincipalMouseClicked(evt);
+            }
+        });
+        desktopSobrevida.add(imagemFundoPrincipal);
+        imagemFundoPrincipal.setBounds(-250, -20, 1920, 870);
 
         sobreSistemaTela.setBackground(new java.awt.Color(255, 255, 255));
         sobreSistemaTela.setForeground(new java.awt.Color(255, 255, 255));
@@ -993,10 +1294,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel25))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel20)
+                        .addComponent(jLabel25)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
@@ -2396,211 +2698,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktopSobrevida.add(cadastroAplicacaoTela);
         cadastroAplicacaoTela.setBounds(0, 0, 1004, 730);
 
-        painelPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
-        painelPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
-        painelPrincipal.setLayout(null);
-
-        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel11.setText("2");
-        painelPrincipal.add(jLabel11);
-        jLabel11.setBounds(104, 10, 40, 14);
-
-        linkOutl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/emailN2.png"))); // NOI18N
-        linkOutl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkOutlMouseClicked(evt);
-            }
-        });
-        painelPrincipal.add(linkOutl);
-        linkOutl.setBounds(74, 14, 30, 30);
-
-        linkInsta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/i.png"))); // NOI18N
-        linkInsta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkInstaMouseClicked(evt);
-            }
-        });
-        painelPrincipal.add(linkInsta);
-        linkInsta.setBounds(100, 550, 30, 30);
-
-        linkFace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/f.png"))); // NOI18N
-        linkFace.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkFaceMouseClicked(evt);
-            }
-        });
-        painelPrincipal.add(linkFace);
-        linkFace.setBounds(150, 550, 30, 30);
-
-        linkSky.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/s.png"))); // NOI18N
-        linkSky.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkSkyMouseClicked(evt);
-            }
-        });
-        painelPrincipal.add(linkSky);
-        linkSky.setBounds(200, 550, 30, 30);
-
-        linkWhats.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/w.png"))); // NOI18N
-        linkWhats.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkWhatsMouseClicked(evt);
-            }
-        });
-        painelPrincipal.add(linkWhats);
-        linkWhats.setBounds(250, 550, 30, 30);
-
-        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/usuarioLogado.png"))); // NOI18N
-        painelPrincipal.add(imagem);
-        imagem.setBounds(290, 3, 60, 50);
-
-        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel3.setText("1");
-        painelPrincipal.add(jLabel3);
-        jLabel3.setBounds(53, 10, 40, 14);
-
-        linkGma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/email2.png"))); // NOI18N
-        linkGma.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkGmaMouseClicked(evt);
-            }
-        });
-        painelPrincipal.add(linkGma);
-        linkGma.setBounds(26, 20, 30, 20);
-
-        nomeUsuario.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
-        nomeUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        nomeUsuario.setText("abcdefghij!");
-        painelPrincipal.add(nomeUsuario);
-        nomeUsuario.setBounds(230, 20, 70, 18);
-
-        usuario.setFont(new java.awt.Font("Serif", 0, 13)); // NOI18N
-        usuario.setForeground(new java.awt.Color(102, 102, 102));
-        usuario.setText("Seja bem vindo(a),");
-        usuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        painelPrincipal.add(usuario);
-        usuario.setBounds(128, 20, 110, 18);
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(48, 47, 61));
-        jLabel2.setText("Powered by Group Seven LTDA ® ");
-        painelPrincipal.add(jLabel2);
-        jLabel2.setBounds(160, 654, 210, 15);
-
-        sublinhadoRelatorio.setBackground(new java.awt.Color(102, 102, 102));
-        sublinhadoRelatorio.setOpaque(true);
-        painelPrincipal.add(sublinhadoRelatorio);
-        sublinhadoRelatorio.setBounds(118, 474, 130, 1);
-
-        sublinhadoAplicacao.setBackground(new java.awt.Color(102, 102, 102));
-        sublinhadoAplicacao.setOpaque(true);
-        painelPrincipal.add(sublinhadoAplicacao);
-        sublinhadoAplicacao.setBounds(119, 360, 130, 1);
-
-        sublinhadoVacina.setBackground(new java.awt.Color(102, 102, 102));
-        sublinhadoVacina.setOpaque(true);
-        painelPrincipal.add(sublinhadoVacina);
-        sublinhadoVacina.setBounds(134, 248, 94, 1);
-
-        sublinhadoPaciente.setBackground(new java.awt.Color(102, 102, 102));
-        sublinhadoPaciente.setOpaque(true);
-        painelPrincipal.add(sublinhadoPaciente);
-        sublinhadoPaciente.setBounds(119, 136, 120, 1);
-
-        botaoRelatorio.setBackground(new java.awt.Color(102, 102, 102));
-        botaoRelatorio.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
-        botaoRelatorio.setText("                         RELATÓRIOS");
-        botaoRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoRelatorioMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botaoRelatorioMousePressed(evt);
-            }
-        });
-        painelPrincipal.add(botaoRelatorio);
-        botaoRelatorio.setBounds(6, 408, 360, 110);
-
-        botaoCadastroAplicacao.setBackground(new java.awt.Color(102, 102, 102));
-        botaoCadastroAplicacao.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
-        botaoCadastroAplicacao.setText("                         APLICAÇÕES");
-        botaoCadastroAplicacao.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoCadastroAplicacaoMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botaoCadastroAplicacaoMousePressed(evt);
-            }
-        });
-        painelPrincipal.add(botaoCadastroAplicacao);
-        botaoCadastroAplicacao.setBounds(6, 294, 360, 110);
-
-        botaoCadastroVacina.setBackground(new java.awt.Color(102, 102, 102));
-        botaoCadastroVacina.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
-        botaoCadastroVacina.setText("                           VACINAS");
-        botaoCadastroVacina.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoCadastroVacinaMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botaoCadastroVacinaMousePressed(evt);
-            }
-        });
-        painelPrincipal.add(botaoCadastroVacina);
-        botaoCadastroVacina.setBounds(9, 182, 360, 110);
-
-        botaoCadastroPaciente.setBackground(new java.awt.Color(102, 102, 102));
-        botaoCadastroPaciente.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
-        botaoCadastroPaciente.setText("                         PACIENTES");
-        botaoCadastroPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoCadastroPacienteMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botaoCadastroPacienteMousePressed(evt);
-            }
-        });
-        painelPrincipal.add(botaoCadastroPaciente);
-        botaoCadastroPaciente.setBounds(7, 70, 360, 110);
-
-        painel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
-        painel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 0));
-        painel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                painelMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                painelMousePressed(evt);
-            }
-        });
-        painelPrincipal.add(painel);
-        painel.setBounds(0, -10, 370, 810);
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/painel1.jpg"))); // NOI18N
-        painelPrincipal.add(jLabel10);
-        jLabel10.setBounds(-1250, -20, 1660, 870);
-
-        desktopSobrevida.add(painelPrincipal);
-        painelPrincipal.setBounds(1000, 0, 370, 780);
-
-        imagemFundoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/painel1.jpg"))); // NOI18N
-        imagemFundoPrincipal.setMaximumSize(new java.awt.Dimension(1366, 768));
-        imagemFundoPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
-        imagemFundoPrincipal.setName(""); // NOI18N
-        imagemFundoPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
-        imagemFundoPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imagemFundoPrincipalMouseClicked(evt);
-            }
-        });
-        desktopSobrevida.add(imagemFundoPrincipal);
-        imagemFundoPrincipal.setBounds(-250, -20, 1920, 870);
-
         menuPrincipal.setMaximumSize(new java.awt.Dimension(1366, 768));
         menuPrincipal.setMinimumSize(new java.awt.Dimension(1280, 720));
 
@@ -2678,6 +2775,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         menuSistema.add(sobreMenu);
+
+        jMenuItem2.setText("Ajuda");
+        menuSistema.add(jMenuItem2);
 
         menuPrincipal.add(menuSistema);
 
@@ -3377,6 +3477,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAplicacoesCadastroActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        sobreSistemaTela.setVisible(false);
         cadastroAplicacaoTela.setVisible(false);
         cadastroCidadaoTela.setVisible(false);
         cadastroVacinaTela.setVisible(false);
@@ -3481,6 +3582,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void closeCadastroVacina2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina2MouseClicked
         sobreSistemaTela.setVisible(false);
+        botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoRelatorio.setVisible(false);
+        gerarRelatorio.setVisible(false);
     }//GEN-LAST:event_closeCadastroVacina2MouseClicked
 
     private void sobreSistemaTelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreSistemaTelaMouseClicked
@@ -3502,6 +3606,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         gerarRelatorio.setVisible(false);
         sobreSistemaTela.setVisible(true);
     }//GEN-LAST:event_sobreMenuActionPerformed
+
+    private void closeCadastroVacina3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_closeCadastroVacina3MouseClicked
+
+    private void ajudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajudaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ajudaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -3538,6 +3650,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ajuda;
     private javax.swing.JLabel ajudaCelular;
     private javax.swing.JLabel ajudaCodigo;
     private javax.swing.JLabel ajudaCodigoPaciente;
@@ -3608,14 +3721,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel closeCadastroVacina;
     private javax.swing.JLabel closeCadastroVacina1;
     private javax.swing.JLabel closeCadastroVacina2;
+    private javax.swing.JLabel closeCadastroVacina3;
     private javax.swing.JDesktopPane desktopSobrevida;
     private javax.swing.JLabel iconeCadastroPaciente;
     private javax.swing.JLabel iconeCadastroVacina;
     private javax.swing.JLabel iconeCadastroVacina1;
+    private javax.swing.JLabel iconeCadastroVacina2;
     private javax.swing.JLabel iconeListaPaciente;
     private javax.swing.JLabel iconeListaVacina1;
     private javax.swing.JLabel imagem;
     private javax.swing.JLabel imagemFundoPrincipal;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3706,7 +3822,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -3716,6 +3840,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator linhaSeparador1;
+    private javax.swing.JSeparator linhaSeparador10;
     private javax.swing.JSeparator linhaSeparador2;
     private javax.swing.JSeparator linhaSeparador3;
     private javax.swing.JSeparator linhaSeparador4;
@@ -3770,6 +3895,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel txtCadastroVacinas;
     private javax.swing.JLabel txtCadastroVacinas1;
     private javax.swing.JLabel txtCadastroVacinas2;
+    private javax.swing.JLabel txtCadastroVacinas4;
     private javax.swing.JLabel txtCelular;
     private javax.swing.JLabel txtCodigo;
     private javax.swing.JLabel txtCodigoPaciente;
