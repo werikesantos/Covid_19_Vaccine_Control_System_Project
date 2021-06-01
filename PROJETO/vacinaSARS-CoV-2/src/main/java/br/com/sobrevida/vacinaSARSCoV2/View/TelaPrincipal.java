@@ -107,22 +107,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         desktopSobrevida = new javax.swing.JDesktopPane();
-        linkSistema = new javax.swing.JPanel();
-        closeCadastroVacina12 = new javax.swing.JLabel();
-        linhaSeparador19 = new javax.swing.JSeparator();
-        txtCadastroVacinas13 = new javax.swing.JLabel();
-        iconeCadastroVacina11 = new javax.swing.JLabel();
-        jLabel172 = new javax.swing.JLabel();
-        jLabel178 = new javax.swing.JLabel();
-        ajudaBtn10 = new javax.swing.JButton();
-        fecha10 = new javax.swing.JLabel();
-        jLabel179 = new javax.swing.JLabel();
-        jLabel180 = new javax.swing.JLabel();
-        jLabel181 = new javax.swing.JLabel();
-        jLabel182 = new javax.swing.JLabel();
-        ajudaBtn11 = new javax.swing.JButton();
-        jLabel183 = new javax.swing.JLabel();
-        jLabel184 = new javax.swing.JLabel();
         ajuda9 = new javax.swing.JPanel();
         closeCadastroVacina11 = new javax.swing.JLabel();
         linhaSeparador18 = new javax.swing.JSeparator();
@@ -265,56 +249,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ajudaBtn1 = new javax.swing.JButton();
         jLabel98 = new javax.swing.JLabel();
         fecha1 = new javax.swing.JLabel();
-        cadastroAplicacaoTela = new javax.swing.JPanel();
-        closeCadastroVacina1 = new javax.swing.JLabel();
-        linhaSeparador6 = new javax.swing.JSeparator();
-        linhaSeparador5 = new javax.swing.JSeparator();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        avisoAplicacaoVacinaNome = new javax.swing.JLabel();
-        avisoAplicacaoData = new javax.swing.JLabel();
-        avisoAplicacaoVacinaDose = new javax.swing.JLabel();
-        avisoAplicacaoPacienteEmail = new javax.swing.JLabel();
-        avisoAplicacaoPacienteCpf = new javax.swing.JLabel();
-        avisoAplicacaoPacienteNome = new javax.swing.JLabel();
-        pacienteBtnPesquisar3 = new javax.swing.JLabel();
-        aplicacaoPesquisar = new javax.swing.JTextField();
-        aplicacaoBtnConsultar = new javax.swing.JLabel();
-        aplicacaoConsultar = new javax.swing.JTextField();
-        aplicacaoIdCodigo = new javax.swing.JTextField();
-        aplicacaoPacienteNome = new javax.swing.JTextField();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        aplicacaoBtnSalvar = new javax.swing.JButton();
-        aplicacaoBtnDeletar = new javax.swing.JButton();
-        aplicacaoBtnAlterar = new javax.swing.JButton();
-        aplicacaoBtnLimpar = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        aplicacaoLista = new javax.swing.JTable();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        aplicacaoVacinaSegunda = new javax.swing.JCheckBox();
-        aplicacaoVacinaUnica = new javax.swing.JCheckBox();
-        aplicacaoVacinaPrimeira = new javax.swing.JCheckBox();
-        aplicacaoPacienteEmail = new javax.swing.JTextField();
-        aplicacaoVacinaNome = new javax.swing.JComboBox<>();
-        aplicacaoPacienteCpf = new javax.swing.JFormattedTextField();
-        aplicacaoVacinaDataRetorno = new javax.swing.JFormattedTextField();
-        aplicacaoVacinaData = new javax.swing.JFormattedTextField();
-        carregarPrincipal = new javax.swing.JLabel();
+        linkSistema = new javax.swing.JPanel();
+        closeCadastroVacina12 = new javax.swing.JLabel();
+        linhaSeparador19 = new javax.swing.JSeparator();
+        txtCadastroVacinas13 = new javax.swing.JLabel();
+        iconeCadastroVacina11 = new javax.swing.JLabel();
+        jLabel172 = new javax.swing.JLabel();
+        jLabel178 = new javax.swing.JLabel();
+        ajudaBtn10 = new javax.swing.JButton();
+        fecha10 = new javax.swing.JLabel();
+        jLabel179 = new javax.swing.JLabel();
+        jLabel180 = new javax.swing.JLabel();
+        jLabel181 = new javax.swing.JLabel();
+        jLabel182 = new javax.swing.JLabel();
+        ajudaBtn11 = new javax.swing.JButton();
+        jLabel183 = new javax.swing.JLabel();
+        jLabel184 = new javax.swing.JLabel();
         sobreSistemaTela = new javax.swing.JPanel();
         txtCadastroVacinas2 = new javax.swing.JLabel();
         closeCadastroVacina2 = new javax.swing.JLabel();
@@ -397,6 +347,56 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         iconeCadastroVacina1 = new javax.swing.JLabel();
+        cadastroAplicacaoTela = new javax.swing.JPanel();
+        closeCadastroVacina1 = new javax.swing.JLabel();
+        linhaSeparador6 = new javax.swing.JSeparator();
+        linhaSeparador5 = new javax.swing.JSeparator();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        avisoAplicacaoVacinaNome = new javax.swing.JLabel();
+        avisoAplicacaoData = new javax.swing.JLabel();
+        avisoAplicacaoVacinaDose = new javax.swing.JLabel();
+        avisoAplicacaoPacienteEmail = new javax.swing.JLabel();
+        avisoAplicacaoPacienteCpf = new javax.swing.JLabel();
+        avisoAplicacaoPacienteNome = new javax.swing.JLabel();
+        pacienteBtnPesquisar3 = new javax.swing.JLabel();
+        aplicacaoPesquisar = new javax.swing.JTextField();
+        aplicacaoBtnConsultar = new javax.swing.JLabel();
+        aplicacaoConsultar = new javax.swing.JTextField();
+        aplicacaoIdCodigo = new javax.swing.JTextField();
+        aplicacaoPacienteNome = new javax.swing.JTextField();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        aplicacaoBtnSalvar = new javax.swing.JButton();
+        aplicacaoBtnDeletar = new javax.swing.JButton();
+        aplicacaoBtnAlterar = new javax.swing.JButton();
+        aplicacaoBtnLimpar = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        aplicacaoLista = new javax.swing.JTable();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        aplicacaoVacinaSegunda = new javax.swing.JCheckBox();
+        aplicacaoVacinaUnica = new javax.swing.JCheckBox();
+        aplicacaoVacinaPrimeira = new javax.swing.JCheckBox();
+        aplicacaoPacienteEmail = new javax.swing.JTextField();
+        aplicacaoVacinaNome = new javax.swing.JComboBox<>();
+        aplicacaoPacienteCpf = new javax.swing.JFormattedTextField();
+        aplicacaoVacinaDataRetorno = new javax.swing.JFormattedTextField();
+        aplicacaoVacinaData = new javax.swing.JFormattedTextField();
+        carregarPrincipal = new javax.swing.JLabel();
         cadastroVacinaTela = new javax.swing.JPanel();
         closeCadastroVacina = new javax.swing.JLabel();
         linhaSeparador4 = new javax.swing.JSeparator();
@@ -558,117 +558,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktopSobrevida.setMaximumSize(new java.awt.Dimension(1366, 768));
         desktopSobrevida.setMinimumSize(new java.awt.Dimension(1280, 720));
         desktopSobrevida.setPreferredSize(new java.awt.Dimension(1366, 768));
-
-        linkSistema.setBackground(new java.awt.Color(255, 255, 255));
-        linkSistema.setForeground(new java.awt.Color(255, 255, 255));
-        linkSistema.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                linkSistemaMouseClicked(evt);
-            }
-        });
-        linkSistema.setLayout(null);
-
-        closeCadastroVacina12.setBackground(new java.awt.Color(153, 0, 0));
-        closeCadastroVacina12.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        closeCadastroVacina12.setForeground(new java.awt.Color(153, 0, 0));
-        closeCadastroVacina12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
-        closeCadastroVacina12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeCadastroVacina12MouseClicked(evt);
-            }
-        });
-        linkSistema.add(closeCadastroVacina12);
-        closeCadastroVacina12.setBounds(964, 12, 30, 30);
-        linkSistema.add(linhaSeparador19);
-        linhaSeparador19.setBounds(50, 40, 710, 2);
-
-        txtCadastroVacinas13.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        txtCadastroVacinas13.setForeground(new java.awt.Color(102, 102, 102));
-        txtCadastroVacinas13.setText("Links");
-        linkSistema.add(txtCadastroVacinas13);
-        txtCadastroVacinas13.setBounds(90, 10, 100, 30);
-
-        iconeCadastroVacina11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/link.png"))); // NOI18N
-        linkSistema.add(iconeCadastroVacina11);
-        iconeCadastroVacina11.setBounds(50, 10, 30, 30);
-
-        jLabel172.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
-        jLabel172.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel172.setText("Baixar Software - Sobrevida soluções médicas");
-        linkSistema.add(jLabel172);
-        jLabel172.setBounds(50, 60, 340, 17);
-
-        jLabel178.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel178.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel178.setText("comportamento do sistema.");
-        linkSistema.add(jLabel178);
-        jLabel178.setBounds(50, 210, 380, 16);
-
-        ajudaBtn10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/down.jpg"))); // NOI18N
-        ajudaBtn10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ajudaBtn10MouseClicked(evt);
-            }
-        });
-        linkSistema.add(ajudaBtn10);
-        ajudaBtn10.setBounds(630, 170, 40, 40);
-
-        fecha10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
-        fecha10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fecha10MouseClicked(evt);
-            }
-        });
-        linkSistema.add(fecha10);
-        fecha10.setBounds(800, 10, 30, 24);
-
-        jLabel179.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        jLabel179.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel179.setText("Sem o banco de dados integrado.");
-        linkSistema.add(jLabel179);
-        jLabel179.setBounds(550, 210, 200, 14);
-
-        jLabel180.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel180.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel180.setText("para utilizar o sistema corretamente.");
-        linkSistema.add(jLabel180);
-        jLabel180.setBounds(50, 120, 390, 16);
-
-        jLabel181.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel181.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel181.setText("Versão sem o banco de dados integrado, apenas disponível");
-        linkSistema.add(jLabel181);
-        jLabel181.setBounds(50, 170, 390, 16);
-
-        jLabel182.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel182.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel182.setText("para teste, onde é possível analisar e/ou verificar o ");
-        linkSistema.add(jLabel182);
-        jLabel182.setBounds(50, 190, 390, 16);
-
-        ajudaBtn11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/down.jpg"))); // NOI18N
-        ajudaBtn11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ajudaBtn11MouseClicked(evt);
-            }
-        });
-        linkSistema.add(ajudaBtn11);
-        ajudaBtn11.setBounds(630, 80, 40, 40);
-
-        jLabel183.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel183.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel183.setText("Versão onde é necessário a instalação do banco de dados,");
-        linkSistema.add(jLabel183);
-        jLabel183.setBounds(50, 100, 410, 16);
-
-        jLabel184.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        jLabel184.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel184.setText("Necessário banco de dados integrado.");
-        linkSistema.add(jLabel184);
-        jLabel184.setBounds(540, 120, 230, 16);
-
-        desktopSobrevida.add(linkSistema);
-        linkSistema.setBounds(78, 50, 840, 330);
 
         ajuda9.setBackground(new java.awt.Color(255, 255, 255));
         ajuda9.setForeground(new java.awt.Color(255, 255, 255));
@@ -1611,466 +1500,116 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktopSobrevida.add(ajuda1);
         ajuda1.setBounds(280, 150, 410, 230);
 
-        cadastroAplicacaoTela.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroAplicacaoTela.setForeground(new java.awt.Color(255, 255, 255));
-        cadastroAplicacaoTela.addMouseListener(new java.awt.event.MouseAdapter() {
+        linkSistema.setBackground(new java.awt.Color(255, 255, 255));
+        linkSistema.setForeground(new java.awt.Color(255, 255, 255));
+        linkSistema.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroAplicacaoTelaMouseClicked(evt);
+                linkSistemaMouseClicked(evt);
             }
         });
-        cadastroAplicacaoTela.setLayout(null);
+        linkSistema.setLayout(null);
 
-        closeCadastroVacina1.setBackground(new java.awt.Color(153, 0, 0));
-        closeCadastroVacina1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        closeCadastroVacina1.setForeground(new java.awt.Color(153, 0, 0));
-        closeCadastroVacina1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
-        closeCadastroVacina1.addMouseListener(new java.awt.event.MouseAdapter() {
+        closeCadastroVacina12.setBackground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina12.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        closeCadastroVacina12.setForeground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
+        closeCadastroVacina12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeCadastroVacina1MouseClicked(evt);
+                closeCadastroVacina12MouseClicked(evt);
             }
         });
-        cadastroAplicacaoTela.add(closeCadastroVacina1);
-        closeCadastroVacina1.setBounds(964, 12, 30, 30);
-        cadastroAplicacaoTela.add(linhaSeparador6);
-        linhaSeparador6.setBounds(60, 400, 842, 2);
-        cadastroAplicacaoTela.add(linhaSeparador5);
-        linhaSeparador5.setBounds(60, 68, 842, 2);
+        linkSistema.add(closeCadastroVacina12);
+        closeCadastroVacina12.setBounds(964, 12, 30, 30);
+        linkSistema.add(linhaSeparador19);
+        linhaSeparador19.setBounds(50, 40, 710, 2);
 
-        jLabel40.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel40.setText("Lista de aplicações");
-        cadastroAplicacaoTela.add(jLabel40);
-        jLabel40.setBounds(98, 370, 180, 30);
+        txtCadastroVacinas13.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        txtCadastroVacinas13.setForeground(new java.awt.Color(102, 102, 102));
+        txtCadastroVacinas13.setText("Links");
+        linkSistema.add(txtCadastroVacinas13);
+        txtCadastroVacinas13.setBounds(90, 10, 100, 30);
 
-        jLabel33.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel33.setText("Controle de aplicações");
-        cadastroAplicacaoTela.add(jLabel33);
-        jLabel33.setBounds(101, 38, 240, 30);
+        iconeCadastroVacina11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/link.png"))); // NOI18N
+        linkSistema.add(iconeCadastroVacina11);
+        iconeCadastroVacina11.setBounds(50, 10, 30, 30);
 
-        jLabel48.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel48.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel48.setText("Código");
-        cadastroAplicacaoTela.add(jLabel48);
-        jLabel48.setBounds(60, 90, 50, 16);
+        jLabel172.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel172.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel172.setText("Baixar Software - Sobrevida soluções médicas");
+        linkSistema.add(jLabel172);
+        jLabel172.setBounds(50, 60, 340, 17);
 
-        jLabel49.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel49.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel49.setText("Data do retorno");
-        cadastroAplicacaoTela.add(jLabel49);
-        jLabel49.setBounds(640, 200, 101, 16);
+        jLabel178.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel178.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel178.setText("comportamento do sistema.");
+        linkSistema.add(jLabel178);
+        jLabel178.setBounds(50, 210, 380, 16);
 
-        jLabel56.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel56.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel56.setText("Qual vacina será aplicada?");
-        cadastroAplicacaoTela.add(jLabel56);
-        jLabel56.setBounds(60, 198, 170, 16);
-
-        jLabel61.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel61.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel61.setText("Qual a data da aplicação?");
-        cadastroAplicacaoTela.add(jLabel61);
-        jLabel61.setBounds(60, 270, 170, 16);
-
-        jLabel57.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel57.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel57.setText("Qual dose será aplicada?");
-        cadastroAplicacaoTela.add(jLabel57);
-        jLabel57.setBounds(380, 198, 159, 16);
-
-        jLabel58.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel58.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel58.setText("E-mail");
-        cadastroAplicacaoTela.add(jLabel58);
-        jLabel58.setBounds(575, 140, 40, 16);
-
-        jLabel59.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel59.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel59.setText("CPF");
-        cadastroAplicacaoTela.add(jLabel59);
-        jLabel59.setBounds(380, 140, 30, 16);
-
-        jLabel60.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel60.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel60.setText("Paciente");
-        cadastroAplicacaoTela.add(jLabel60);
-        jLabel60.setBounds(60, 140, 60, 16);
-
-        avisoAplicacaoVacinaNome.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoVacinaNome.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoVacinaNome.setText("*");
-        cadastroAplicacaoTela.add(avisoAplicacaoVacinaNome);
-        avisoAplicacaoVacinaNome.setBounds(234, 198, 10, 15);
-
-        avisoAplicacaoData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoData.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoData.setText("*");
-        cadastroAplicacaoTela.add(avisoAplicacaoData);
-        avisoAplicacaoData.setBounds(230, 270, 10, 15);
-
-        avisoAplicacaoVacinaDose.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoVacinaDose.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoVacinaDose.setText("*");
-        cadastroAplicacaoTela.add(avisoAplicacaoVacinaDose);
-        avisoAplicacaoVacinaDose.setBounds(545, 198, 10, 15);
-
-        avisoAplicacaoPacienteEmail.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoPacienteEmail.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoPacienteEmail.setText("*");
-        cadastroAplicacaoTela.add(avisoAplicacaoPacienteEmail);
-        avisoAplicacaoPacienteEmail.setBounds(620, 140, 10, 15);
-
-        avisoAplicacaoPacienteCpf.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoPacienteCpf.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoPacienteCpf.setText("*");
-        cadastroAplicacaoTela.add(avisoAplicacaoPacienteCpf);
-        avisoAplicacaoPacienteCpf.setBounds(410, 140, 10, 15);
-
-        avisoAplicacaoPacienteNome.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoPacienteNome.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoPacienteNome.setText("*");
-        cadastroAplicacaoTela.add(avisoAplicacaoPacienteNome);
-        avisoAplicacaoPacienteNome.setBounds(118, 140, 10, 15);
-
-        pacienteBtnPesquisar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pesquisar.png"))); // NOI18N
-        pacienteBtnPesquisar3.addMouseListener(new java.awt.event.MouseAdapter() {
+        ajudaBtn10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/down.jpg"))); // NOI18N
+        ajudaBtn10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pacienteBtnPesquisar3MouseClicked(evt);
+                ajudaBtn10MouseClicked(evt);
             }
         });
-        cadastroAplicacaoTela.add(pacienteBtnPesquisar3);
-        pacienteBtnPesquisar3.setBounds(875, 410, 24, 22);
+        linkSistema.add(ajudaBtn10);
+        ajudaBtn10.setBounds(630, 170, 40, 40);
 
-        aplicacaoPesquisar.setForeground(new java.awt.Color(51, 51, 51));
-        aplicacaoPesquisar.setText("Pesquisar...");
-        aplicacaoPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+        fecha10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
+        fecha10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoPesquisarMouseClicked(evt);
+                fecha10MouseClicked(evt);
             }
         });
-        aplicacaoPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aplicacaoPesquisarKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                aplicacaoPesquisarKeyReleased(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoPesquisar);
-        aplicacaoPesquisar.setBounds(693, 407, 210, 28);
+        linkSistema.add(fecha10);
+        fecha10.setBounds(800, 10, 30, 24);
 
-        aplicacaoBtnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pesquisar.png"))); // NOI18N
-        aplicacaoBtnConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel179.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jLabel179.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel179.setText("Sem o banco de dados integrado.");
+        linkSistema.add(jLabel179);
+        jLabel179.setBounds(550, 210, 200, 14);
+
+        jLabel180.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel180.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel180.setText("para utilizar o sistema corretamente.");
+        linkSistema.add(jLabel180);
+        jLabel180.setBounds(50, 120, 390, 16);
+
+        jLabel181.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel181.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel181.setText("Versão sem o banco de dados integrado, apenas disponível");
+        linkSistema.add(jLabel181);
+        jLabel181.setBounds(50, 170, 390, 16);
+
+        jLabel182.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel182.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel182.setText("para teste, onde é possível analisar e/ou verificar o ");
+        linkSistema.add(jLabel182);
+        jLabel182.setBounds(50, 190, 390, 16);
+
+        ajudaBtn11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/down.jpg"))); // NOI18N
+        ajudaBtn11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoBtnConsultarMouseClicked(evt);
+                ajudaBtn11MouseClicked(evt);
             }
         });
-        cadastroAplicacaoTela.add(aplicacaoBtnConsultar);
-        aplicacaoBtnConsultar.setBounds(874, 36, 24, 22);
+        linkSistema.add(ajudaBtn11);
+        ajudaBtn11.setBounds(630, 80, 40, 40);
 
-        aplicacaoConsultar.setForeground(new java.awt.Color(51, 51, 51));
-        aplicacaoConsultar.setText("Consultar...");
-        aplicacaoConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoConsultarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                aplicacaoConsultarMouseEntered(evt);
-            }
-        });
-        aplicacaoConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoConsultarActionPerformed(evt);
-            }
-        });
-        aplicacaoConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aplicacaoConsultarKeyPressed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoConsultar);
-        aplicacaoConsultar.setBounds(662, 34, 210, 28);
+        jLabel183.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel183.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel183.setText("Versão onde é necessário a instalação do banco de dados,");
+        linkSistema.add(jLabel183);
+        jLabel183.setBounds(50, 100, 410, 16);
 
-        aplicacaoIdCodigo.setEditable(false);
-        aplicacaoIdCodigo.setBackground(new java.awt.Color(255, 255, 255));
-        aplicacaoIdCodigo.setEnabled(false);
-        aplicacaoIdCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoIdCodigoMouseClicked(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoIdCodigo);
-        aplicacaoIdCodigo.setBounds(140, 86, 110, 28);
+        jLabel184.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jLabel184.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel184.setText("Necessário banco de dados integrado.");
+        linkSistema.add(jLabel184);
+        jLabel184.setBounds(540, 120, 230, 16);
 
-        aplicacaoPacienteNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        aplicacaoPacienteNome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoPacienteNomeMouseClicked(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoPacienteNome);
-        aplicacaoPacienteNome.setBounds(140, 134, 220, 28);
-
-        jLabel64.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel64.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel64.setText("CPF do paciente");
-        cadastroAplicacaoTela.add(jLabel64);
-        jLabel64.setBounds(430, 163, 130, 15);
-
-        jLabel72.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel72.setText("Informar a vacina aplicada");
-        cadastroAplicacaoTela.add(jLabel72);
-        jLabel72.setBounds(60, 242, 170, 15);
-
-        jLabel71.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel71.setText("Dia da aplicação da vacina");
-        cadastroAplicacaoTela.add(jLabel71);
-        jLabel71.setBounds(60, 319, 170, 15);
-
-        jLabel70.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel70.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel70.setText("Retorno da próxima dose");
-        cadastroAplicacaoTela.add(jLabel70);
-        jLabel70.setBounds(640, 249, 170, 15);
-
-        jLabel65.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel65.setText("E-mail do paciente");
-        cadastroAplicacaoTela.add(jLabel65);
-        jLabel65.setBounds(640, 163, 110, 15);
-
-        jLabel66.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel66.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel66.setText("Código do paciente");
-        cadastroAplicacaoTela.add(jLabel66);
-        jLabel66.setBounds(140, 115, 110, 15);
-
-        jLabel67.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel67.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel67.setText("Nome do paciente");
-        cadastroAplicacaoTela.add(jLabel67);
-        jLabel67.setBounds(140, 163, 170, 15);
-
-        aplicacaoBtnSalvar.setText("Salvar");
-        aplicacaoBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoBtnSalvarActionPerformed(evt);
-            }
-        });
-        aplicacaoBtnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aplicacaoBtnSalvarKeyPressed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoBtnSalvar);
-        aplicacaoBtnSalvar.setBounds(590, 344, 140, 30);
-
-        aplicacaoBtnDeletar.setText("Deletar");
-        aplicacaoBtnDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoBtnDeletarActionPerformed(evt);
-            }
-        });
-        aplicacaoBtnDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aplicacaoBtnDeletarKeyPressed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoBtnDeletar);
-        aplicacaoBtnDeletar.setBounds(762, 636, 140, 30);
-
-        aplicacaoBtnAlterar.setText("Alterar");
-        aplicacaoBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoBtnAlterarActionPerformed(evt);
-            }
-        });
-        aplicacaoBtnAlterar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aplicacaoBtnAlterarKeyPressed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoBtnAlterar);
-        aplicacaoBtnAlterar.setBounds(590, 636, 140, 30);
-
-        aplicacaoBtnLimpar.setText("Limpar");
-        aplicacaoBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoBtnLimparActionPerformed(evt);
-            }
-        });
-        aplicacaoBtnLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aplicacaoBtnLimparKeyPressed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoBtnLimpar);
-        aplicacaoBtnLimpar.setBounds(762, 344, 140, 30);
-
-        aplicacaoLista.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "CÓDIGO", "NOME", "CPF", "E_MAIL", "VACINA", "APLICAÇÃO", "ÚNICA_DOSE", "1ª_DOSE", "RETORNO"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        aplicacaoLista.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoListaMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(aplicacaoLista);
-        if (aplicacaoLista.getColumnModel().getColumnCount() > 0) {
-            aplicacaoLista.getColumnModel().getColumn(0).setResizable(false);
-        }
-
-        cadastroAplicacaoTela.add(jScrollPane4);
-        jScrollPane4.setBounds(60, 440, 842, 190);
-
-        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/aplicacoes.png"))); // NOI18N
-        cadastroAplicacaoTela.add(jLabel68);
-        jLabel68.setBounds(60, 36, 30, 30);
-
-        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lista.png"))); // NOI18N
-        cadastroAplicacaoTela.add(jLabel69);
-        jLabel69.setBounds(60, 370, 30, 30);
-
-        aplicacaoVacinaSegunda.setBackground(new java.awt.Color(255, 255, 255));
-        aplicacaoVacinaSegunda.setText("2ª dose");
-        aplicacaoVacinaSegunda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoVacinaSegundaActionPerformed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoVacinaSegunda);
-        aplicacaoVacinaSegunda.setBounds(380, 276, 90, 23);
-
-        aplicacaoVacinaUnica.setBackground(new java.awt.Color(255, 255, 255));
-        aplicacaoVacinaUnica.setText("Aplicação única");
-        aplicacaoVacinaUnica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoVacinaUnicaActionPerformed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoVacinaUnica);
-        aplicacaoVacinaUnica.setBounds(380, 220, 120, 20);
-
-        aplicacaoVacinaPrimeira.setBackground(new java.awt.Color(255, 255, 255));
-        aplicacaoVacinaPrimeira.setText("1ª dose");
-        aplicacaoVacinaPrimeira.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoVacinaPrimeiraActionPerformed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoVacinaPrimeira);
-        aplicacaoVacinaPrimeira.setBounds(380, 248, 80, 23);
-
-        aplicacaoPacienteEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        aplicacaoPacienteEmail.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aplicacaoPacienteEmailMouseClicked(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoPacienteEmail);
-        aplicacaoPacienteEmail.setBounds(640, 134, 260, 28);
-
-        aplicacaoVacinaNome.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
-        aplicacaoVacinaNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacaoVacinaNomeActionPerformed(evt);
-            }
-        });
-        cadastroAplicacaoTela.add(aplicacaoVacinaNome);
-        aplicacaoVacinaNome.setBounds(60, 220, 180, 22);
-
-        aplicacaoPacienteCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        try {
-            aplicacaoPacienteCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        aplicacaoPacienteCpf.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        cadastroAplicacaoTela.add(aplicacaoPacienteCpf);
-        aplicacaoPacienteCpf.setBounds(430, 134, 120, 28);
-
-        aplicacaoVacinaDataRetorno.setEditable(false);
-        aplicacaoVacinaDataRetorno.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        aplicacaoVacinaDataRetorno.setForeground(new java.awt.Color(255, 0, 0));
-        try {
-            aplicacaoVacinaDataRetorno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        aplicacaoVacinaDataRetorno.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        cadastroAplicacaoTela.add(aplicacaoVacinaDataRetorno);
-        aplicacaoVacinaDataRetorno.setBounds(640, 220, 100, 28);
-
-        aplicacaoVacinaData.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        try {
-            aplicacaoVacinaData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        aplicacaoVacinaData.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        cadastroAplicacaoTela.add(aplicacaoVacinaData);
-        aplicacaoVacinaData.setBounds(60, 290, 100, 28);
-
-        carregarPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carregarPrincipal.gif"))); // NOI18N
-        cadastroAplicacaoTela.add(carregarPrincipal);
-        carregarPrincipal.setBounds(8, 12, 40, 60);
-
-        desktopSobrevida.add(cadastroAplicacaoTela);
-        cadastroAplicacaoTela.setBounds(0, 0, 1004, 730);
+        desktopSobrevida.add(linkSistema);
+        linkSistema.setBounds(78, 50, 840, 330);
 
         sobreSistemaTela.setBackground(new java.awt.Color(255, 255, 255));
         sobreSistemaTela.setForeground(new java.awt.Color(255, 255, 255));
@@ -2748,6 +2287,467 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         desktopSobrevida.add(sobreSistemaTela);
         sobreSistemaTela.setBounds(0, 0, 1004, 730);
+
+        cadastroAplicacaoTela.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroAplicacaoTela.setForeground(new java.awt.Color(255, 255, 255));
+        cadastroAplicacaoTela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroAplicacaoTelaMouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.setLayout(null);
+
+        closeCadastroVacina1.setBackground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        closeCadastroVacina1.setForeground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
+        closeCadastroVacina1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeCadastroVacina1MouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(closeCadastroVacina1);
+        closeCadastroVacina1.setBounds(964, 12, 30, 30);
+        cadastroAplicacaoTela.add(linhaSeparador6);
+        linhaSeparador6.setBounds(60, 400, 842, 2);
+        cadastroAplicacaoTela.add(linhaSeparador5);
+        linhaSeparador5.setBounds(60, 68, 842, 2);
+
+        jLabel40.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel40.setText("Lista de aplicações");
+        cadastroAplicacaoTela.add(jLabel40);
+        jLabel40.setBounds(98, 370, 180, 30);
+
+        jLabel33.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel33.setText("Controle de aplicações");
+        cadastroAplicacaoTela.add(jLabel33);
+        jLabel33.setBounds(101, 38, 240, 30);
+
+        jLabel48.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel48.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel48.setText("Código");
+        cadastroAplicacaoTela.add(jLabel48);
+        jLabel48.setBounds(60, 90, 50, 16);
+
+        jLabel49.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel49.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel49.setText("Data do retorno");
+        cadastroAplicacaoTela.add(jLabel49);
+        jLabel49.setBounds(640, 200, 101, 16);
+
+        jLabel56.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel56.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel56.setText("Qual vacina será aplicada?");
+        cadastroAplicacaoTela.add(jLabel56);
+        jLabel56.setBounds(60, 198, 170, 16);
+
+        jLabel61.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel61.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel61.setText("Qual a data da aplicação?");
+        cadastroAplicacaoTela.add(jLabel61);
+        jLabel61.setBounds(60, 270, 170, 16);
+
+        jLabel57.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel57.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel57.setText("Qual dose será aplicada?");
+        cadastroAplicacaoTela.add(jLabel57);
+        jLabel57.setBounds(380, 198, 159, 16);
+
+        jLabel58.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel58.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel58.setText("E-mail");
+        cadastroAplicacaoTela.add(jLabel58);
+        jLabel58.setBounds(575, 140, 40, 16);
+
+        jLabel59.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel59.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel59.setText("CPF");
+        cadastroAplicacaoTela.add(jLabel59);
+        jLabel59.setBounds(380, 140, 30, 16);
+
+        jLabel60.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel60.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel60.setText("Paciente");
+        cadastroAplicacaoTela.add(jLabel60);
+        jLabel60.setBounds(60, 140, 60, 16);
+
+        avisoAplicacaoVacinaNome.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoVacinaNome.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoVacinaNome.setText("*");
+        cadastroAplicacaoTela.add(avisoAplicacaoVacinaNome);
+        avisoAplicacaoVacinaNome.setBounds(234, 198, 10, 15);
+
+        avisoAplicacaoData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoData.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoData.setText("*");
+        cadastroAplicacaoTela.add(avisoAplicacaoData);
+        avisoAplicacaoData.setBounds(230, 270, 10, 15);
+
+        avisoAplicacaoVacinaDose.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoVacinaDose.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoVacinaDose.setText("*");
+        cadastroAplicacaoTela.add(avisoAplicacaoVacinaDose);
+        avisoAplicacaoVacinaDose.setBounds(545, 198, 10, 15);
+
+        avisoAplicacaoPacienteEmail.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoPacienteEmail.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoPacienteEmail.setText("*");
+        cadastroAplicacaoTela.add(avisoAplicacaoPacienteEmail);
+        avisoAplicacaoPacienteEmail.setBounds(620, 140, 10, 15);
+
+        avisoAplicacaoPacienteCpf.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoPacienteCpf.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoPacienteCpf.setText("*");
+        cadastroAplicacaoTela.add(avisoAplicacaoPacienteCpf);
+        avisoAplicacaoPacienteCpf.setBounds(410, 140, 10, 15);
+
+        avisoAplicacaoPacienteNome.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoPacienteNome.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoPacienteNome.setText("*");
+        cadastroAplicacaoTela.add(avisoAplicacaoPacienteNome);
+        avisoAplicacaoPacienteNome.setBounds(118, 140, 10, 15);
+
+        pacienteBtnPesquisar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pesquisar.png"))); // NOI18N
+        pacienteBtnPesquisar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pacienteBtnPesquisar3MouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(pacienteBtnPesquisar3);
+        pacienteBtnPesquisar3.setBounds(875, 410, 24, 22);
+
+        aplicacaoPesquisar.setForeground(new java.awt.Color(51, 51, 51));
+        aplicacaoPesquisar.setText("Pesquisar...");
+        aplicacaoPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoPesquisarMouseClicked(evt);
+            }
+        });
+        aplicacaoPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aplicacaoPesquisarKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                aplicacaoPesquisarKeyReleased(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoPesquisar);
+        aplicacaoPesquisar.setBounds(693, 407, 210, 28);
+
+        aplicacaoBtnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pesquisar.png"))); // NOI18N
+        aplicacaoBtnConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoBtnConsultarMouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoBtnConsultar);
+        aplicacaoBtnConsultar.setBounds(874, 36, 24, 22);
+
+        aplicacaoConsultar.setForeground(new java.awt.Color(51, 51, 51));
+        aplicacaoConsultar.setText("Consultar...");
+        aplicacaoConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoConsultarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aplicacaoConsultarMouseEntered(evt);
+            }
+        });
+        aplicacaoConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoConsultarActionPerformed(evt);
+            }
+        });
+        aplicacaoConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aplicacaoConsultarKeyPressed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoConsultar);
+        aplicacaoConsultar.setBounds(662, 34, 210, 28);
+
+        aplicacaoIdCodigo.setEditable(false);
+        aplicacaoIdCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        aplicacaoIdCodigo.setEnabled(false);
+        aplicacaoIdCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoIdCodigoMouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoIdCodigo);
+        aplicacaoIdCodigo.setBounds(140, 86, 110, 28);
+
+        aplicacaoPacienteNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        aplicacaoPacienteNome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoPacienteNomeMouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoPacienteNome);
+        aplicacaoPacienteNome.setBounds(140, 134, 220, 28);
+
+        jLabel64.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel64.setText("CPF do paciente");
+        cadastroAplicacaoTela.add(jLabel64);
+        jLabel64.setBounds(430, 163, 130, 15);
+
+        jLabel72.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel72.setText("Informar a vacina aplicada");
+        cadastroAplicacaoTela.add(jLabel72);
+        jLabel72.setBounds(60, 242, 170, 15);
+
+        jLabel71.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel71.setText("Dia da aplicação da vacina");
+        cadastroAplicacaoTela.add(jLabel71);
+        jLabel71.setBounds(60, 319, 170, 15);
+
+        jLabel70.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel70.setText("Retorno da próxima dose");
+        cadastroAplicacaoTela.add(jLabel70);
+        jLabel70.setBounds(640, 249, 170, 15);
+
+        jLabel65.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel65.setText("E-mail do paciente");
+        cadastroAplicacaoTela.add(jLabel65);
+        jLabel65.setBounds(640, 163, 110, 15);
+
+        jLabel66.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel66.setText("Código do paciente");
+        cadastroAplicacaoTela.add(jLabel66);
+        jLabel66.setBounds(140, 115, 110, 15);
+
+        jLabel67.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel67.setText("Nome do paciente");
+        cadastroAplicacaoTela.add(jLabel67);
+        jLabel67.setBounds(140, 163, 170, 15);
+
+        aplicacaoBtnSalvar.setText("Salvar");
+        aplicacaoBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoBtnSalvarActionPerformed(evt);
+            }
+        });
+        aplicacaoBtnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aplicacaoBtnSalvarKeyPressed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoBtnSalvar);
+        aplicacaoBtnSalvar.setBounds(590, 344, 140, 30);
+
+        aplicacaoBtnDeletar.setText("Deletar");
+        aplicacaoBtnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoBtnDeletarActionPerformed(evt);
+            }
+        });
+        aplicacaoBtnDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aplicacaoBtnDeletarKeyPressed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoBtnDeletar);
+        aplicacaoBtnDeletar.setBounds(762, 636, 140, 30);
+
+        aplicacaoBtnAlterar.setText("Alterar");
+        aplicacaoBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoBtnAlterarActionPerformed(evt);
+            }
+        });
+        aplicacaoBtnAlterar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aplicacaoBtnAlterarKeyPressed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoBtnAlterar);
+        aplicacaoBtnAlterar.setBounds(590, 636, 140, 30);
+
+        aplicacaoBtnLimpar.setText("Limpar");
+        aplicacaoBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoBtnLimparActionPerformed(evt);
+            }
+        });
+        aplicacaoBtnLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aplicacaoBtnLimparKeyPressed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoBtnLimpar);
+        aplicacaoBtnLimpar.setBounds(762, 344, 140, 30);
+
+        aplicacaoLista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "CÓDIGO", "NOME", "CPF", "E_MAIL", "VACINA", "APLICAÇÃO", "ÚNICA_DOSE", "1ª_DOSE", "RETORNO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        aplicacaoLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoListaMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(aplicacaoLista);
+        if (aplicacaoLista.getColumnModel().getColumnCount() > 0) {
+            aplicacaoLista.getColumnModel().getColumn(0).setResizable(false);
+        }
+
+        cadastroAplicacaoTela.add(jScrollPane4);
+        jScrollPane4.setBounds(60, 440, 842, 190);
+
+        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/aplicacoes.png"))); // NOI18N
+        cadastroAplicacaoTela.add(jLabel68);
+        jLabel68.setBounds(60, 36, 30, 30);
+
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lista.png"))); // NOI18N
+        cadastroAplicacaoTela.add(jLabel69);
+        jLabel69.setBounds(60, 370, 30, 30);
+
+        aplicacaoVacinaSegunda.setBackground(new java.awt.Color(255, 255, 255));
+        aplicacaoVacinaSegunda.setText("2ª dose");
+        aplicacaoVacinaSegunda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoVacinaSegundaActionPerformed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoVacinaSegunda);
+        aplicacaoVacinaSegunda.setBounds(380, 276, 90, 23);
+
+        aplicacaoVacinaUnica.setBackground(new java.awt.Color(255, 255, 255));
+        aplicacaoVacinaUnica.setText("Aplicação única");
+        aplicacaoVacinaUnica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoVacinaUnicaActionPerformed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoVacinaUnica);
+        aplicacaoVacinaUnica.setBounds(380, 220, 120, 20);
+
+        aplicacaoVacinaPrimeira.setBackground(new java.awt.Color(255, 255, 255));
+        aplicacaoVacinaPrimeira.setText("1ª dose");
+        aplicacaoVacinaPrimeira.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoVacinaPrimeiraActionPerformed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoVacinaPrimeira);
+        aplicacaoVacinaPrimeira.setBounds(380, 248, 80, 23);
+
+        aplicacaoPacienteEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        aplicacaoPacienteEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aplicacaoPacienteEmailMouseClicked(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoPacienteEmail);
+        aplicacaoPacienteEmail.setBounds(640, 134, 260, 28);
+
+        aplicacaoVacinaNome.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
+        aplicacaoVacinaNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoVacinaNomeActionPerformed(evt);
+            }
+        });
+        cadastroAplicacaoTela.add(aplicacaoVacinaNome);
+        aplicacaoVacinaNome.setBounds(60, 220, 180, 22);
+
+        aplicacaoPacienteCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        try {
+            aplicacaoPacienteCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        aplicacaoPacienteCpf.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        cadastroAplicacaoTela.add(aplicacaoPacienteCpf);
+        aplicacaoPacienteCpf.setBounds(430, 134, 120, 28);
+
+        aplicacaoVacinaDataRetorno.setEditable(false);
+        aplicacaoVacinaDataRetorno.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        aplicacaoVacinaDataRetorno.setForeground(new java.awt.Color(255, 0, 0));
+        try {
+            aplicacaoVacinaDataRetorno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        aplicacaoVacinaDataRetorno.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        cadastroAplicacaoTela.add(aplicacaoVacinaDataRetorno);
+        aplicacaoVacinaDataRetorno.setBounds(640, 220, 100, 28);
+
+        aplicacaoVacinaData.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        try {
+            aplicacaoVacinaData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        aplicacaoVacinaData.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        cadastroAplicacaoTela.add(aplicacaoVacinaData);
+        aplicacaoVacinaData.setBounds(60, 290, 100, 28);
+
+        carregarPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carregarPrincipal.gif"))); // NOI18N
+        cadastroAplicacaoTela.add(carregarPrincipal);
+        carregarPrincipal.setBounds(8, 12, 40, 60);
+
+        desktopSobrevida.add(cadastroAplicacaoTela);
+        cadastroAplicacaoTela.setBounds(0, 0, 1004, 730);
 
         cadastroVacinaTela.setBackground(new java.awt.Color(255, 255, 255));
         cadastroVacinaTela.setForeground(new java.awt.Color(255, 255, 255));
