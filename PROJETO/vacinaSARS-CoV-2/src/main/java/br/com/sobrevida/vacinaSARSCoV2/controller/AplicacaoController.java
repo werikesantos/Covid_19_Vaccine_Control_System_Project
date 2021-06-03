@@ -7,6 +7,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 //import java.sql.Date; 
@@ -44,22 +45,21 @@ public class AplicacaoController {
         }     
     }
     
-    public void validarVacina(JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira, 
-        JCheckBox aplicacaoVacinaSegunda, JComboBox aplicacaoVacinaNome){
+    public void validarVacina(JSpinner aplicacaoVacinaDose, JComboBox aplicacaoVacinaNome){
         
         String vacina = (aplicacaoVacinaNome.getSelectedItem().toString());
         
         if(vacina.equals("Universidade Oxford") || vacina.equals("Sinovac - CoronaVac") 
             || vacina.equals("Pfizer") || vacina.equals("Moderna") || vacina.equals("Instituto Gamaleya - Sputnik V")){
-            aplicacaoVacinaUnica.setEnabled(false);
+            //aplicacaoVacinaUnica.setEnabled(false);
         }else if(vacina.equals("-")){
-            aplicacaoVacinaUnica.setEnabled(true);
-            aplicacaoVacinaPrimeira.setEnabled(true);
-            aplicacaoVacinaSegunda.setEnabled(true);
+            //aplicacaoVacinaUnica.setEnabled(true);
+            //aplicacaoVacinaPrimeira.setEnabled(true);
+            //aplicacaoVacinaSegunda.setEnabled(true);
         }else{
-            aplicacaoVacinaUnica.setEnabled(true);
-            aplicacaoVacinaPrimeira.setEnabled(false);
-            aplicacaoVacinaSegunda.setEnabled(false);
+            //aplicacaoVacinaUnica.setEnabled(true);
+            //aplicacaoVacinaPrimeira.setEnabled(false);
+            //aplicacaoVacinaSegunda.setEnabled(false);
         }    
     }
     
@@ -67,8 +67,7 @@ public class AplicacaoController {
         JLabel avisoAplicacaoPacienteEmail, JLabel avisoAplicacaoVacinaNome, JLabel avisoAplicacaoVacinaDose, 
         JLabel avisoAplicacaoData, JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, 
         JTextField aplicacaoPacienteNome, JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail,
-        JComboBox aplicacaoVacinaNome, JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira,
-        JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+        JComboBox aplicacaoVacinaNome, JSpinner aplicacaoVacinaDose, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
 
         avisoAplicacaoPacienteNome.setVisible(false);
         avisoAplicacaoPacienteCpf.setVisible(false);
@@ -97,10 +96,10 @@ public class AplicacaoController {
            aplicacaoPacienteCpf.setText(null);
            aplicacaoPacienteEmail.setText(null);
            aplicacaoVacinaNome.setSelectedIndex(0);
-           aplicacaoVacinaUnica.setEnabled(true);
-           aplicacaoVacinaUnica.setSelected(false);
-           aplicacaoVacinaPrimeira.setSelected(false);
-           aplicacaoVacinaSegunda.setSelected(false);
+           //aplicacaoVacinaUnica.setEnabled(true);
+           //aplicacaoVacinaUnica.setSelected(false);
+           //aplicacaoVacinaPrimeira.setSelected(false);
+           //aplicacaoVacinaSegunda.setSelected(false);
            aplicacaoVacinaDataRetorno.setText("");
            aplicacaoVacinaData.setText("");
            
@@ -115,13 +114,13 @@ public class AplicacaoController {
         
             String desenvolvedora = cidadao.getDesenvolvedora();
             int dose = cidadao.getDose();
-            String primeiraDose = cidadao.getPrimeira();
-            String segundaDose = cidadao.getSegunda();
+            //String primeiraDose = cidadao.getPrimeira();
+            //String segundaDose = cidadao.getSegunda();
             
-            if(primeiraDose.equals("null") && segundaDose.equals("null")){
-                primeiraDose = cidadao.getUnica();
-                segundaDose = "SEM RETORNO";
-            }
+            //if(primeiraDose.equals("null") && segundaDose.equals("null")){
+            //    primeiraDose = cidadao.getUnica();
+            //    segundaDose = "SEM RETORNO";
+            //}
             
             aplicacaoIdCodigo.setText(resultID);
             aplicacaoPacienteNome.setText(nome);
@@ -130,56 +129,57 @@ public class AplicacaoController {
 
             switch(desenvolvedora){
                 case "Universidade Oxford":
-                    if(null != primeiraDose){
-                        aplicacaoVacinaNome.setSelectedIndex(1);
-                        aplicacaoVacinaUnica.setEnabled(false);
-                        aplicacaoVacinaData.setText(primeiraDose);
-                        aplicacaoVacinaDataRetorno.setText(segundaDose);
+                    //if(null != primeiraDose){
+                        //aplicacaoVacinaNome.setSelectedIndex(1);
+                        //aplicacaoVacinaUnica.setEnabled(false);
+                        //aplicacaoVacinaData.setText(primeiraDose);
+                        //aplicacaoVacinaDataRetorno.setText(segundaDose);
 
-                        switch(dose){
+                        /*switch(dose){
                             case 0:
-                                aplicacaoVacinaUnica.setEnabled(true);
-                                aplicacaoVacinaUnica.setSelected(true);
-                                aplicacaoVacinaPrimeira.setEnabled(false);
-                                aplicacaoVacinaSegunda.setEnabled(false);
+                               // aplicacaoVacinaUnica.setEnabled(true);
+                                //aplicacaoVacinaUnica.setSelected(true);
+                                //aplicacaoVacinaPrimeira.setEnabled(false);
+                                //aplicacaoVacinaSegunda.setEnabled(false);
                                 break;
                             case 1:
-                                aplicacaoVacinaUnica.setEnabled(false);
-                                aplicacaoVacinaUnica.setSelected(false);
-                                aplicacaoVacinaPrimeira.setSelected(true);
-                                aplicacaoVacinaSegunda.setSelected(false);
+                                System.out.println("Entrar em contato com o suporte!");
+                                //aplicacaoVacinaUnica.setEnabled(false);
+                                //aplicacaoVacinaUnica.setSelected(false);
+                               // aplicacaoVacinaPrimeira.setSelected(true);
+                                //aplicacaoVacinaSegunda.setSelected(false);
                                 break;
                             case 2:
-                                aplicacaoVacinaUnica.setEnabled(false);
-                                aplicacaoVacinaUnica.setSelected(false);
-                                aplicacaoVacinaPrimeira.setSelected(false);
-                                aplicacaoVacinaSegunda.setSelected(true);
+                                //aplicacaoVacinaUnica.setEnabled(false);
+                                //aplicacaoVacinaUnica.setSelected(false);
+                                //aplicacaoVacinaPrimeira.setSelected(false);
+                                //aplicacaoVacinaSegunda.setSelected(true);
                                 break;
                             default:
                                 System.out.println("Entrar em contato com o suporte!");
                                 break;
                         } 
-                    }
+                    }*/
                     break;
-                case "Sinovac - CoronaVac":
-                    if(null != primeiraDose){
+                case "":
+                    /*if(null != primeiraDose){
                         aplicacaoVacinaNome.setSelectedIndex(2);
-                        aplicacaoVacinaUnica.setEnabled(false);
+                        //aplicacaoVacinaUnica.setEnabled(false);
                         aplicacaoVacinaData.setText(primeiraDose);
                         aplicacaoVacinaDataRetorno.setText(segundaDose);
 
-                        switch(dose){
+                        /*switch(dose){
                             case 0:
-                                aplicacaoVacinaUnica.setEnabled(true);
-                                aplicacaoVacinaUnica.setSelected(true);
-                                aplicacaoVacinaPrimeira.setEnabled(false);
-                                aplicacaoVacinaSegunda.setEnabled(false);
+                                //aplicacaoVacinaUnica.setEnabled(true);
+                                //aplicacaoVacinaUnica.setSelected(true);
+                                //aplicacaoVacinaPrimeira.setEnabled(false);
+                                //aplicacaoVacinaSegunda.setEnabled(false);
                                 break;
                             case 1:
-                                aplicacaoVacinaUnica.setEnabled(false);
-                                aplicacaoVacinaUnica.setSelected(false);
-                                aplicacaoVacinaPrimeira.setSelected(true);
-                                aplicacaoVacinaSegunda.setSelected(false);
+                                //aplicacaoVacinaUnica.setEnabled(false);
+                                //aplicacaoVacinaUnica.setSelected(false);
+                                //aplicacaoVacinaPrimeira.setSelected(true);
+                                //aplicacaoVacinaSegunda.setSelected(false);
                                 break;
                             case 2:
                                 aplicacaoVacinaUnica.setEnabled(false);
@@ -192,9 +192,9 @@ public class AplicacaoController {
                                 break;
                         }
                     }
-                    break;
+                    break;*/
                 case "Pfizer":
-                    if(null != primeiraDose){
+                    /*if(null != primeiraDose){
                         aplicacaoVacinaNome.setSelectedIndex(3);
                         aplicacaoVacinaUnica.setEnabled(false);
                         aplicacaoVacinaData.setText(primeiraDose);
@@ -224,9 +224,9 @@ public class AplicacaoController {
                                 break;
                         }  
                     }
-                    break;
+                    break;*/
                 case "Moderna":
-                    if(null != primeiraDose){
+                    /*if(null != primeiraDose){
                         aplicacaoVacinaNome.setSelectedIndex(4);
                         aplicacaoVacinaUnica.setEnabled(false);
                         aplicacaoVacinaData.setText(primeiraDose);
@@ -256,9 +256,9 @@ public class AplicacaoController {
                                 break;
                         }
                     }
-                    break;
+                    break;*/
                 case "Instituto Gamaleya - Sputnik V":
-                    if(null != primeiraDose){
+                    /*if(null != primeiraDose){
                         aplicacaoVacinaNome.setSelectedIndex(5);
                         aplicacaoVacinaUnica.setEnabled(false);
                         aplicacaoVacinaData.setText(primeiraDose);
@@ -288,9 +288,9 @@ public class AplicacaoController {
                                 break;
                         }
                     }
-                    break;
+                    break;*/
                 case "Janssen":
-                    if(null != primeiraDose){
+                   /* if(null != primeiraDose){
                         aplicacaoVacinaNome.setSelectedIndex(6);
                         aplicacaoVacinaPrimeira.setEnabled(false);
                         aplicacaoVacinaSegunda.setEnabled(false);
@@ -320,7 +320,7 @@ public class AplicacaoController {
                                 System.out.println("Entrar em contato com o suporte!");
                                 break;
                         } 
-                    }
+                    }*/
                     break;
                 default:
                     break;
@@ -331,8 +331,7 @@ public class AplicacaoController {
     
     public void limpar(JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
         JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail, JComboBox aplicacaoVacinaNome, 
-        JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira, JCheckBox aplicacaoVacinaSegunda, 
-        JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+        JSpinner aplicacaoVacinaDose, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
            
         aplicacaoConsultar.setText("Consultar...");
         aplicacaoIdCodigo.setText(null);
@@ -340,10 +339,7 @@ public class AplicacaoController {
         aplicacaoPacienteCpf.setText(null);
         aplicacaoPacienteEmail.setText(null);
         aplicacaoVacinaNome.setSelectedIndex(0);
-        aplicacaoVacinaUnica.setEnabled(true);
-        aplicacaoVacinaUnica.setSelected(false);
-        aplicacaoVacinaPrimeira.setSelected(false);
-        aplicacaoVacinaSegunda.setSelected(false);
+        aplicacaoVacinaDose.setValue("0");
         aplicacaoVacinaDataRetorno.setText(null);
         aplicacaoVacinaData.setText(null);
     }
@@ -352,8 +348,7 @@ public class AplicacaoController {
         JLabel avisoAplicacaoPacienteEmail, JLabel avisoAplicacaoVacinaNome, JLabel avisoAplicacaoVacinaDose, 
         JLabel avisoAplicacaoData, JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, 
         JTextField aplicacaoPacienteNome, JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail,
-        JComboBox aplicacaoVacinaNome, JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira,
-        JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+        JComboBox aplicacaoVacinaNome, JSpinner aplicacaoVacinaDose, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
         
         avisoAplicacaoPacienteNome.setVisible(false);
         avisoAplicacaoPacienteCpf.setVisible(false);
@@ -382,8 +377,7 @@ public class AplicacaoController {
         JLabel avisoAplicacaoPacienteEmail, JLabel avisoAplicacaoVacinaNome, JLabel avisoAplicacaoVacinaDose, 
         JLabel avisoAplicacaoData, JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, 
         JTextField aplicacaoPacienteNome, JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail, 
-        JComboBox aplicacaoVacinaNome, JCheckBox aplicacaoVacinaUnica, JCheckBox aplicacaoVacinaPrimeira, 
-        JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaDataRetorno, 
+        JComboBox aplicacaoVacinaNome, JSpinner aplicacaoVacinaDose, JTextField aplicacaoVacinaDataRetorno, 
         JTextField aplicacaoVacinaData){
           
         int idCidadao = Integer.parseInt(aplicacaoIdCodigo.getText());
@@ -392,16 +386,16 @@ public class AplicacaoController {
         String email = (aplicacaoPacienteEmail.getText());  
         
         String vacina = (aplicacaoVacinaNome.getSelectedItem().toString());
-        boolean unica = aplicacaoVacinaUnica.isSelected();
-        boolean primeira = aplicacaoVacinaPrimeira.isSelected();
-        boolean segunda = aplicacaoVacinaSegunda.isSelected();
+        //boolean unica = aplicacaoVacinaUnica.isSelected();
+        //boolean primeira = aplicacaoVacinaPrimeira.isSelected();
+        //boolean segunda = aplicacaoVacinaSegunda.isSelected();
 
         int idVacina = 0;
         int dose = 0;
-        String dataUnica = "null";
-        String dataPrimeira = "null";
-        String dataSegunda = "31/05/2021"; 
-        aplicacaoVacinaDataRetorno.setText(dataSegunda);   
+        //String dataUnica = "null";
+        //String dataPrimeira = "null";
+        //String dataSegunda = "31/05/2021"; 
+        //aplicacaoVacinaDataRetorno.setText(dataSegunda);   
         
         switch(vacina){
             case "Universidade Oxford":
@@ -424,7 +418,7 @@ public class AplicacaoController {
             break;
         }
         
-        if(unica == true){
+        /*if(unica == true){
             dose = 0;
             dataUnica = (aplicacaoVacinaData.getText());
             dataPrimeira = "null";
@@ -439,21 +433,20 @@ public class AplicacaoController {
             dataUnica = "null";
             dataPrimeira = (aplicacaoVacinaData.getText());
             dataSegunda = "31/05/2021";
-        }
+        }*/
         
         /*System.out.println(idCidadao + "\n" + nome + "\n" + cpf + "\n" + email
             + "\n" + idVacina + "\n" + dose + "\n" + dataUnica + "\n" + dataPrimeira + "\n" + dataSegunda);*/
         
         if((!"".equals(nome)) && (!"".equals(cpf)) && (!"".equals(email)) && (!"".equals(idCidadao)) 
-            && (!"".equals(idVacina)) && (!"".equals(dose)) && (!"".equals(dataUnica)) 
-            && (!"".equals(dataPrimeira)) && (!"".equals(dataSegunda))){
+            && (!"".equals(idVacina)) && (!"".equals(dose)) ){
             
             cidadaoModel.setIdCidadao(idCidadao);
             cidadaoModel.setIdVacina(idVacina);
             cidadaoModel.setDose(dose);
-            cidadaoModel.setUnica(dataUnica);
-            cidadaoModel.setPrimeira(dataPrimeira);
-            cidadaoModel.setSegunda(dataSegunda);
+            //cidadaoModel.setUnica(dataUnica);
+            //cidadaoModel.setPrimeira(dataPrimeira);
+            //cidadaoModel.setSegunda(dataSegunda);
             
             boolean result = aplicacaoDao.salvar(cidadaoModel, false);
             
@@ -474,9 +467,9 @@ public class AplicacaoController {
                 aplicacaoPacienteCpf.setText("");
                 aplicacaoPacienteEmail.setText("");
                 aplicacaoVacinaNome.setSelectedIndex(0);
-                aplicacaoVacinaUnica.setSelected(false);
-                aplicacaoVacinaPrimeira.setSelected(false);
-                aplicacaoVacinaSegunda.setSelected(false);
+                //aplicacaoVacinaUnica.setSelected(false);
+                //aplicacaoVacinaPrimeira.setSelected(false);
+                //aplicacaoVacinaSegunda.setSelected(false);
                 aplicacaoVacinaData.setText("");
                 aplicacaoVacinaDataRetorno.setText("");
             }else{
@@ -505,27 +498,19 @@ public class AplicacaoController {
         aplicacaoDao.pesquisar(aplicacaoLista, dado);    
     }
     
-    public void alterar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JCheckBox aplicacaoVacinaUnica,
-            JCheckBox aplicacaoVacinaPrimeira, JCheckBox aplicacaoVacinaSegunda, JTextField aplicacaoVacinaData, 
-            JTextField aplicacaoVacinaDataRetorno){
+    public void alterar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JSpinner aplicacaoVacinaDose, 
+            JTextField aplicacaoVacinaData, JTextField aplicacaoVacinaDataRetorno){
         
         int linhaSelecionada = aplicacaoLista.getSelectedRow();
         
         int idCidadao = (int) aplicacaoLista.getModel().getValueAt(linhaSelecionada, 0);
         String dose = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 5).toString();
-        int qtd_Dose = Integer.parseInt(dose);       
-        String dataUnica = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 6).toString();
-        String dataPrimeira = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 7).toString();
-        String dataSegunda = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 8).toString();
+        int qtd_Dose = Integer.parseInt(dose);
         
-        if((!"".equals(idCidadao)) && (!"".equals(dose)) && (!"".equals(dataUnica)) && (!"".equals(dataPrimeira)) 
-            && (!"".equals(dataSegunda))){
+        if((!"".equals(idCidadao)) && (!"".equals(dose))){
             
             aplicacaoModel.setIdCidadao(idCidadao);
             aplicacaoModel.setDose(qtd_Dose);
-            aplicacaoModel.setUnica(dataUnica);
-            aplicacaoModel.setPrimeira(dataPrimeira);
-            aplicacaoModel.setSegunda(dataSegunda);
             
             boolean resultado = aplicacaoDao.alterar(aplicacaoModel, false);
             

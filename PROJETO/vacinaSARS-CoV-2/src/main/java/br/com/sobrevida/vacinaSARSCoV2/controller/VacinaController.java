@@ -5,6 +5,7 @@ import br.com.sobrevida.vacinaSARSCoV2.model.dao.VacinaDao;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -21,14 +22,14 @@ public class VacinaController{
     public void salvar(JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
         JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
         JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-        JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+        JComboBox vacinaDoses, JSpinner vacinaPeriodo, JTextArea vacinaDescricaoAreaTexto){
           
         String desenvolvedora = (vacinaDesenvolvedora.getText());
         String produtora = (vacinaProdutora.getText());
         String parceira = (vacinaParceira.getText());  
         String doses = (vacinaDoses.getSelectedItem().toString());
-        String periodo = (vacinaPeriodo.getSelectedItem().toString());
-        String descricao = (vacinaDescricao.getText());
+        String periodo = (String) (vacinaPeriodo.getValue());
+        String descricao = (vacinaDescricaoAreaTexto.getText());
         
         if((!"".equals(desenvolvedora)) && (!"".equals(produtora)) && (!"".equals(parceira)) 
             && (!"".equals(doses)) && (!"".equals(periodo)) && (!"".equals(descricao))){
@@ -60,8 +61,8 @@ public class VacinaController{
                 vacinaProdutora.setText("");
                 vacinaParceira.setText("");
                 vacinaDoses.setSelectedIndex(0);
-                vacinaPeriodo.setSelectedIndex(0);
-                vacinaDescricao.setText("");
+                vacinaPeriodo.setValue("0");
+                vacinaDescricaoAreaTexto.setText("");
             }else{
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                     + "Por favor, verifique e tente novamente."
@@ -71,8 +72,8 @@ public class VacinaController{
                 vacinaProdutora.setText("");
                 vacinaParceira.setText("");
                 vacinaDoses.setSelectedIndex(0);
-                vacinaPeriodo.setSelectedIndex(0);
-                vacinaDescricao.setText("");        
+                vacinaPeriodo.setValue("0");
+                vacinaDescricaoAreaTexto.setText("");        
             }       
         }else{
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
@@ -89,11 +90,11 @@ public class VacinaController{
         }
     }
     
-    public void limpar(JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
+    public void limpar(JLabel carregarPrincipal2, JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
         JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
         JTextField vacinaConsultar, JTextField vacinaIdCodigo, JTextField vacinaDesenvolvedora, 
         JTextField vacinaProdutora, JTextField vacinaParceira, JComboBox vacinaDoses, 
-        JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+        JSpinner vacinaPeriodo, JTextArea vacinaDescricaoAreaTexto){
            
         vacinaConsultar.setText("Consultar...");
         vacinaIdCodigo.setText("");
@@ -101,8 +102,8 @@ public class VacinaController{
         vacinaProdutora.setText("");
         vacinaParceira.setText("");
         vacinaDoses.setSelectedIndex(0);
-        vacinaPeriodo.setSelectedIndex(0);
-        vacinaDescricao.setText("");
+        vacinaPeriodo.setValue(0);
+        vacinaDescricaoAreaTexto.setText("");
 
         avisoDesenvolvedora.setVisible(false);
         avisoProdutora.setVisible(false);
@@ -110,11 +111,13 @@ public class VacinaController{
         avisoDoses.setVisible(false);
         avisoPeriodo.setVisible(false);
         avisoDescricao.setVisible(false);
+        
+        carregarPrincipal2.setVisible(false);
     }
     
     public void alterar(JTable vacinaLista, JTextField vacinaIdCodigo, JTextField vacinaDesenvolvedora, 
         JTextField vacinaProdutora, JTextField vacinaParceira, JComboBox vacinaDoses, 
-        JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+        JSpinner vacinaPeriodo, JTextArea vacinaDescricao){
         
         int linhaSelecionada = vacinaLista.getSelectedRow();
         
@@ -149,7 +152,7 @@ public class VacinaController{
     public void deletar(JTable vacinaLista, JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
         JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
         JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-        JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+        JComboBox vacinaDoses, JSpinner vacinaPeriodo, JTextArea vacinaDescricao){
           
         int linhaSelecionada = vacinaLista.getSelectedRow();
         int id = (int) vacinaLista.getModel().getValueAt(linhaSelecionada, 0);
@@ -178,7 +181,7 @@ public class VacinaController{
     public void consultar(JTextField vacinaConsultar, JTextField vacinaIdCodigo, JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
         JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
         JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-        JComboBox vacinaDoses, JComboBox vacinaPeriodo, JTextArea vacinaDescricao){
+        JComboBox vacinaDoses, JSpinner vacinaPeriodo, JTextArea vacinaDescricao){
 
         String converterID = vacinaConsultar.getText();
             
@@ -220,7 +223,7 @@ public class VacinaController{
                     break;
             }
             
-            switch(periodo){
+            /*switch(periodo){
                 case "14 a 28 dias":
                     vacinaPeriodo.setSelectedIndex(1);
                     break;
@@ -232,7 +235,7 @@ public class VacinaController{
                     break;
                 default:
                     break;
-            }
+            }*/
             vacinaDescricao.setText(descricao);
         }
     }
