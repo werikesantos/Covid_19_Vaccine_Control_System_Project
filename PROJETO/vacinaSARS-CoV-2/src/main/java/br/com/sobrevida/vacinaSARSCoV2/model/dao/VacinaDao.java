@@ -157,7 +157,7 @@ public class VacinaDao{
         return vacina;
     }
     
-    public void pesquisar(JTable vacinaLista, String dado){
+    public void pesquisar(JTable vacinaListaTabela, String dado){
 
         String sql = 
             "SELECT id AS CÓDIGO, desenvolvedora AS DESENVOLVEDOR, produtora AS PRODUTORA, parceira AS PARCEIRA, qtd_Dose AS QTD_DOSE, periodo AS PERÍODO, descricao AS DESCRIÇÃO FROM "
@@ -173,7 +173,28 @@ public class VacinaDao{
 
             result = ps.executeQuery();
 
-            vacinaLista.setModel(DbUtils.resultSetToTableModel(result));
+            vacinaListaTabela.setModel(DbUtils.resultSetToTableModel(result));
+            
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void pesquisar(JTable vacinaListaTabela){
+
+        String sql = 
+            "SELECT id AS CÓDIGO, desenvolvedora AS DESENVOLVEDOR, produtora AS PRODUTORA, parceira AS PARCEIRA, qtd_Dose AS QTD_DOSE, periodo AS PERÍODO, descricao AS DESCRIÇÃO FROM "
+                +"bd_vacina_sars_cov_2.vacina";
+
+        try(Connection conn = connectionFactory.connection()){
+
+            ps = conn.prepareStatement(sql);
+
+            result = ps.executeQuery();
+
+            vacinaListaTabela.setModel(DbUtils.resultSetToTableModel(result));
             
             ps.close();
         }

@@ -229,6 +229,10 @@ public class CidadaoController {
         cidadaoDao.pesquisa(pacienteLista, dado);    
     }
     
+    public void pesquisa(JTable pacienteLista){     
+        cidadaoDao.pesquisa(pacienteLista);    
+    }
+    
     public boolean alterar(int id, String nome, String nascimento, String celular,
         String cpf, String endereco, String n, String email, boolean resultado){
             

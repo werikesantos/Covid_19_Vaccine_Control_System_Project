@@ -127,6 +127,27 @@ public class CidadaoDao{
         }
     }
     
+    public void pesquisa(JTable pacienteLista){
+
+        String sql = 
+            "SELECT id AS CÓDIGO, nome AS NOME, nascimento AS NASCIMENTO, celular AS CELULAR, cpf AS CPF, endereco AS ENDEREÇO, n AS NÚMERO, email AS E_MAIL FROM "
+                +"bd_vacina_sars_cov_2.cidadao";
+               
+        try(Connection conn = connectionFactory.connection()){
+
+            ps = conn.prepareStatement(sql);
+
+            result = ps.executeQuery();
+
+            pacienteLista.setModel(DbUtils.resultSetToTableModel(result));
+                        
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     public boolean alterar(CidadaoModel cidadaoModel, boolean resultado){
          
         boolean result = resultado;

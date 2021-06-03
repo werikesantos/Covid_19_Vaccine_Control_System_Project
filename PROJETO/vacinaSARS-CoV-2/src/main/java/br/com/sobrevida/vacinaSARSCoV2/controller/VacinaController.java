@@ -282,7 +282,11 @@ public class VacinaController{
         }
     }
     
-    public void pesquisar(JTable vacinaLista, String dado){     
-        vacinaDao.pesquisar(vacinaLista, dado);    
+    public void pesquisar(JTable vacinaListaTabela, String dado){     
+        vacinaDao.pesquisar(vacinaListaTabela, dado);    
+    }
+    
+    public void pesquisar(JTable vacinaListaTabela){     
+        vacinaDao.pesquisar(vacinaListaTabela);    
     }
 }
