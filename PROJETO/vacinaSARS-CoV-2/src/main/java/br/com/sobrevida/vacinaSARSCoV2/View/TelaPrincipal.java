@@ -154,6 +154,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         vacinaDescricaoAreaTexto = new javax.swing.JTextArea();
         carregarPrincipal2 = new javax.swing.JLabel();
         vacinaPeriodo = new javax.swing.JSpinner();
+        contadorCaracter = new javax.swing.JLabel();
         cadastroCidadaoTela = new javax.swing.JPanel();
         closeCadastroPaciente = new javax.swing.JLabel();
         linhaSeparador2 = new javax.swing.JSeparator();
@@ -961,6 +962,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         vacinaDescricaoAreaTexto.setColumns(20);
         vacinaDescricaoAreaTexto.setRows(5);
+        vacinaDescricaoAreaTexto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                vacinaDescricaoAreaTextoKeyReleased(evt);
+            }
+        });
         vacinaDescricaoPainel.setViewportView(vacinaDescricaoAreaTexto);
 
         cadastroVacinaTela.add(vacinaDescricaoPainel);
@@ -971,6 +977,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         carregarPrincipal2.setBounds(8, 12, 40, 60);
         cadastroVacinaTela.add(vacinaPeriodo);
         vacinaPeriodo.setBounds(770, 184, 120, 28);
+
+        contadorCaracter.setForeground(new java.awt.Color(102, 102, 102));
+        contadorCaracter.setText("0/4000");
+        cadastroVacinaTela.add(contadorCaracter);
+        contadorCaracter.setBounds(510, 330, 60, 14);
 
         desktopSobrevida.add(cadastroVacinaTela);
         cadastroVacinaTela.setBounds(0, 0, 1004, 730);
@@ -4349,6 +4360,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_vacinaDesenvolvedoraMouseClicked
     private void vacinaBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnSalvarActionPerformed
         carregarPrincipal2.setVisible(true);
+        vacinaConsultar.setText("Consultar...");
+        vacinaPesquisar.setText("Pesquisar...");
         new Thread(){
             int i=0;
             public void run(){
@@ -4360,16 +4373,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }
                 }
                 carregarPrincipal2.setVisible(false);
-                vacinaController.salvar(avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
-                avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
-                vacinaPeriodo, vacinaDescricaoAreaTexto); 
+                vacinaController.salvar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, 
+                    avisoDoses, avisoPeriodo, avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, 
+                    vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto); 
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnSalvarActionPerformed
     private void vacinaBtnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaBtnSalvarKeyPressed
-        vacinaController.salvar(avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
-            avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
-            vacinaPeriodo, vacinaDescricaoAreaTexto);
+        carregarPrincipal2.setVisible(true);
+        vacinaConsultar.setText("Consultar...");
+        vacinaPesquisar.setText("Pesquisar...");
+        new Thread(){
+            int i=0;
+            public void run(){
+                while(i<100){
+                    i = i+5;
+                    try{
+                        sleep(200);//600
+                    }catch (Exception e){  
+                    }
+                }
+                carregarPrincipal2.setVisible(false);
+                vacinaController.salvar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, 
+                    avisoDoses, avisoPeriodo, avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, 
+                    vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto); 
+            }
+        }.start();
     }//GEN-LAST:event_vacinaBtnSalvarKeyPressed
     private void vacinaBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnDeletarActionPerformed
         vacinaController.deletar(vacinaListaTabela, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
@@ -4394,7 +4423,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){  
                     }
                 }
-                vacinaController.limpar(carregarPrincipal2, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
+                vacinaController.limpar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
                     avisoDescricao, vacinaConsultar, vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, 
                     vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
             }
@@ -4414,7 +4443,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){  
                     }
                 }
-                vacinaController.limpar(carregarPrincipal2, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
+                vacinaController.limpar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
                     avisoDescricao, vacinaConsultar, vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, 
                     vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
             }
@@ -5002,6 +5031,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_aplicacaoBtnAlterar2KeyPressed
 
+    private void vacinaDescricaoAreaTextoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaDescricaoAreaTextoKeyReleased
+       String contaTexto = vacinaDescricaoAreaTexto.getText();
+       String total = Integer.toString(contaTexto.length());
+       contadorCaracter.setText(total+"/4000");
+    }//GEN-LAST:event_vacinaDescricaoAreaTextoKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -5137,6 +5172,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel closeCadastroVacina7;
     private javax.swing.JLabel closeCadastroVacina8;
     private javax.swing.JLabel closeCadastroVacina9;
+    private javax.swing.JLabel contadorCaracter;
     private javax.swing.JDesktopPane desktopSobrevida;
     private javax.swing.JLabel fecha1;
     private javax.swing.JLabel fecha10;
