@@ -17,7 +17,7 @@ public class CidadaoController {
     CidadaoModel cidadaoModel = new CidadaoModel();
     CidadaoDao cidadaoDao = new CidadaoDao();
        
-    public void salvar(JLabel carregarPrincipal1, JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
+    public void salvar(JLabel carregarPrincipal1, JTextField pacienteIdCodigo, JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
         JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
         JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
         JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
@@ -62,6 +62,7 @@ public class CidadaoController {
                 avisoN.setVisible(false);
                 avisoEmail.setVisible(false);
                 
+                pacienteIdCodigo.setText("");
                 pacientePrimeiroNome.setText("");
                 pacienteSobreNome.setText("");
                 pacienteNascimento.setText("");
@@ -74,9 +75,10 @@ public class CidadaoController {
                 carregarPrincipal1.setVisible(false);
                 
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                    + "Por favor, verifique e tente novamente."
+                    + "Usuário já possuí um cadastro."
                     ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
                 );
+                pacienteIdCodigo.setText("");
                 pacientePrimeiroNome.setText("");
                 pacienteSobreNome.setText("");
                 pacienteNascimento.setText("");
@@ -115,73 +117,87 @@ public class CidadaoController {
             int id = Integer.parseInt(converterID);
             cidadaoModel.setId(id);
             CidadaoModel result = cidadaoDao.consulta(cidadaoModel, carregarPrincipal1); 
-
-            id = result.getId();
-            String resultID = Integer.toString(id);
-              
-            String primeiro = "";
-            String segundo = "";
-                    
-            String nome = result.getNome();
-            String[] resultado = nome.split(" ");
             
-            switch (resultado.length) {
-                case 2:
-                    primeiro = resultado[0];
-                    segundo = resultado[1];
-                    break;
-                case 3:
-                    {
+            if((result.getNome()) != null){
+                
+                id = result.getId();
+                String resultID = Integer.toString(id);
+
+                String primeiro = "";
+                String segundo = "";
+
+                String nome = result.getNome();
+                String[] resultado = nome.split(" ");
+
+                switch (resultado.length) {
+                    case 2:
                         primeiro = resultado[0];
-                        String p1 = resultado[1];
-                        String p2 = resultado[2];
-                        segundo = p1+" "+p2;
+                        segundo = resultado[1];
                         break;
-                    }
-                case 4:
-                    {
-                        primeiro = resultado[0];
-                        String p1 = resultado[1];
-                        String p2 = resultado[2];
-                        String p3 = resultado[3];
-                        segundo = p1+" "+p2+" "+p3;
-                        break;
-                    }
-                case 5:
-                    {
-                        primeiro = resultado[0];
-                        String p1 = resultado[1];
-                        String p2 = resultado[2];
-                        String p3 = resultado[3];
-                        String p4 = resultado[4];
-                        segundo = p1+" "+p2+" "+p3+" "+p4;
-                        break;
-                    }
-                case 6:
-                    {
-                        primeiro = resultado[0];
-                        String p1 = resultado[1];
-                        String p2 = resultado[2];
-                        String p3 = resultado[3];
-                        String p4 = resultado[4];
-                        String p5 = resultado[5];
-                        segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5;
-                        break;
-                    }
-                case 7:
-                    {
-                        primeiro = resultado[0];
-                        String p1 = resultado[1];
-                        String p2 = resultado[2];
-                        String p3 = resultado[3];
-                        String p4 = resultado[4];
-                        String p5 = resultado[5];
-                        String p6 = resultado[6];
-                        segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5+" "+p6;
-                        break;
-                    }
-                    case 8:
-                    {
+                    case 3:
+                        {
+                            primeiro = resultado[0];
+                            String p1 = resultado[1];
+                            String p2 = resultado[2];
+                            segundo = p1+" "+p2;
+                            break;
+                        }
+                    case 4:
+                        {
+                            primeiro = resultado[0];
+                            String p1 = resultado[1];
+                            String p2 = resultado[2];
+                            String p3 = resultado[3];
+                            segundo = p1+" "+p2+" "+p3;
+                            break;
+                        }
+                    case 5:
+                        {
+                            primeiro = resultado[0];
+                            String p1 = resultado[1];
+                            String p2 = resultado[2];
+                            String p3 = resultado[3];
+                            String p4 = resultado[4];
+                            segundo = p1+" "+p2+" "+p3+" "+p4;
+                            break;
+                        }
+                    case 6:
+                        {
+                            primeiro = resultado[0];
+                            String p1 = resultado[1];
+                            String p2 = resultado[2];
+                            String p3 = resultado[3];
+                            String p4 = resultado[4];
+                            String p5 = resultado[5];
+                            segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5;
+                            break;
+                        }
+                    case 7:
+                        {
+                            primeiro = resultado[0];
+                            String p1 = resultado[1];
+                            String p2 = resultado[2];
+                            String p3 = resultado[3];
+                            String p4 = resultado[4];
+                            String p5 = resultado[5];
+                            String p6 = resultado[6];
+                            segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5+" "+p6;
+                            break;
+                        }
+                        case 8:
+                        {
+                            primeiro = resultado[0];
+                            String p1 = resultado[1];
+                            String p2 = resultado[2];
+                            String p3 = resultado[3];
+                            String p4 = resultado[4];
+                            String p5 = resultado[5];
+                            String p6 = resultado[6];
+                            String p7 = resultado[7];
+                            segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5+" "+p6+" "+p7;
+                            break;
+                        }
+                    default:
                         primeiro = resultado[0];
                         String p1 = resultado[1];
                         String p2 = resultado[2];
@@ -190,38 +206,32 @@ public class CidadaoController {
                         String p5 = resultado[5];
                         String p6 = resultado[6];
                         String p7 = resultado[7];
-                        segundo = p1+" "+p2+" "+p3+" "+p4+" "+p5+" "+p6+" "+p7;
+                        segundo = p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5 + " " + p6 + " " + p7;
                         break;
-                    }
-                default:
-                    primeiro = resultado[0];
-                    String p1 = resultado[1];
-                    String p2 = resultado[2];
-                    String p3 = resultado[3];
-                    String p4 = resultado[4];
-                    String p5 = resultado[5];
-                    String p6 = resultado[6];
-                    String p7 = resultado[7];
-                    segundo = p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5 + " " + p6 + " " + p7;
-                    break;
-            }
-            
-            String nascimento = result.getNascimento();
-            String celular = result.getCelular();
-            String cpf = result.getCpf();
-            String endereco = result.getEndereco();
-            String numero = result.getN();
-            String email = result.getEmail();
+                }
 
-            pacienteIdCodigo.setText(resultID);
-            pacientePrimeiroNome.setText(primeiro);
-            pacienteSobreNome.setText(segundo);
-            pacienteNascimento.setText(nascimento);
-            pacienteCelular.setText(celular);
-            pacienteCpf.setText(cpf);
-            pacienteEndereco.setText(endereco);
-            pacienteEnderecoNumero.setText(numero);
-            pacienteEmail.setText(email);
+                String nascimento = result.getNascimento();
+                String celular = result.getCelular();
+                String cpf = result.getCpf();
+                String endereco = result.getEndereco();
+                String numero = result.getN();
+                String email = result.getEmail();
+
+                pacienteIdCodigo.setText(resultID);
+                pacientePrimeiroNome.setText(primeiro);
+                pacienteSobreNome.setText(segundo);
+                pacienteNascimento.setText(nascimento);
+                pacienteCelular.setText(celular);
+                pacienteCpf.setText(cpf);
+                pacienteEndereco.setText(endereco);
+                pacienteEnderecoNumero.setText(numero);
+                pacienteEmail.setText(email);
+            }else{
+                pacienteConsultar.setText("Consultar...");
+                carregarPrincipal1.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Código de usuário não localzado!", 
+                    "Consultar", JOptionPane.ERROR_MESSAGE);
+            }
         }
     } 
     
@@ -260,21 +270,22 @@ public class CidadaoController {
         return result;
     } 
     
-    public void alterar(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTable pacienteLista, JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, 
+    public void alterar(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTable pacienteListaTabela, JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, 
         JTextField pacienteSobreNome, JTextField pacienteNascimento, JTextField pacienteCelular, 
         JTextField pacienteCpf, JTextField pacienteEndereco, JTextField pacienteEnderecoNumero,
         JTextField pacienteEmail){
         
-        int linhaSelecionada = pacienteLista.getSelectedRow();
-        
-        int id = (int) pacienteLista.getModel().getValueAt(linhaSelecionada, 0);
-        String nome = pacienteLista.getModel().getValueAt(linhaSelecionada, 1).toString();        
-        String nascimento = pacienteLista.getModel().getValueAt(linhaSelecionada, 2).toString();
-        String celular = pacienteLista.getModel().getValueAt(linhaSelecionada, 3).toString();
-        String cpf = pacienteLista.getModel().getValueAt(linhaSelecionada, 4).toString();
-        String endereco = pacienteLista.getModel().getValueAt(linhaSelecionada, 5).toString();
-        String n = pacienteLista.getModel().getValueAt(linhaSelecionada, 6).toString();
-        String email = pacienteLista.getModel().getValueAt(linhaSelecionada, 7).toString();
+        //ATUALIZANDO PELA TABELA
+            int linhaSelecionada = pacienteListaTabela.getSelectedRow();
+
+            int id = (int) pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 0);
+            String nome = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 1).toString();        
+            String nascimento = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 2).toString();
+            String celular = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 3).toString();
+            String cpf = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 4).toString();
+            String endereco = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 5).toString();
+            String n = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 6).toString();
+            String email = pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 7).toString();
 
         if((!"".equals(id)) && (!"".equals(nome)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
             && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(n)) 
@@ -323,6 +334,81 @@ public class CidadaoController {
             pacienteEndereco.setText("");
             pacienteEnderecoNumero.setText("");
             pacienteEmail.setText("");
+        }
+    }
+    
+    public void alterar(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
+        JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
+        JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
+        JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+            
+        String pegaId = pacienteIdCodigo.getText();
+        if(!"".equals(pegaId)){
+            int id = Integer.parseInt(pegaId); 
+               
+            String primeiroNome = (pacientePrimeiroNome.getText());
+            String segundoNome = (pacienteSobreNome.getText());
+            String nomeCompleto = primeiroNome+" "+segundoNome;
+
+            String nascimento = (pacienteNascimento.getText());
+            String celular = (pacienteCelular.getText());
+            String cpf = (pacienteCpf.getText());
+            String endereco = (pacienteEndereco.getText());
+            String n = (pacienteEnderecoNumero.getText());
+            String email = (pacienteEmail.getText());
+                
+            if((!"".equals(id)) && (!"".equals(nomeCompleto)) && (!"".equals(nascimento)) && (!"".equals(celular)) 
+                && (!"".equals(cpf)) && (!"".equals(endereco)) && (!"".equals(n)) 
+                && (!"".equals(email))){
+
+                cidadaoModel.setId(id);
+                cidadaoModel.setNome(nomeCompleto);
+                cidadaoModel.setNascimento(nascimento);
+                cidadaoModel.setCelular(celular);
+                cidadaoModel.setCpf(cpf);
+                cidadaoModel.setEndereco(endereco);
+                cidadaoModel.setN(n);
+                cidadaoModel.setEmail(email);
+
+                boolean result = cidadaoDao.alterar(cidadaoModel, false);
+
+                if(result = true){
+                    carregarPrincipal1.setVisible(false);
+
+                    JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso.", 
+                        "Atualização", JOptionPane.PLAIN_MESSAGE);
+
+                    pacienteIdCodigo.setText("");
+                    pacienteConsultar.setText("Consultar...");
+                    pacientePrimeiroNome.setText("");
+                    pacienteSobreNome.setText("");
+                    pacienteNascimento.setText("");
+                    pacienteCelular.setText("");
+                    pacienteCpf.setText("");
+                    pacienteEndereco.setText("");
+                    pacienteEnderecoNumero.setText("");
+                    pacienteEmail.setText("");               
+                }
+            }else{
+                carregarPrincipal1.setVisible(false);
+
+                JOptionPane.showMessageDialog(null, "Erro ao atualizar.", 
+                    "Erro", JOptionPane.WARNING_MESSAGE);
+
+                pacienteIdCodigo.setText("");
+                pacientePrimeiroNome.setText("");
+                pacienteSobreNome.setText("");
+                pacienteNascimento.setText("");
+                pacienteCelular.setText("");
+                pacienteCpf.setText("");
+                pacienteEndereco.setText("");
+                pacienteEnderecoNumero.setText("");
+                pacienteEmail.setText("");
+            }
+        }else{
+            carregarPrincipal1.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Código de usuário não localizado.", 
+                "Atualização", JOptionPane.ERROR_MESSAGE);
         }
     }
 
