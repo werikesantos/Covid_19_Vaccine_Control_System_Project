@@ -4,6 +4,7 @@ import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import net.proteanit.sql.DbUtils;
 
@@ -112,7 +113,7 @@ public class VacinaDao{
         return result;
     }
     
-    public VacinaModel consultar(VacinaModel vacinaModel){
+    public VacinaModel consultar(VacinaModel vacinaModel, JLabel carregarPrincipal2){
 
         vacina = vacinaModel;
                 
@@ -146,6 +147,8 @@ public class VacinaDao{
                 vacinaModel.setQtd_Dose(qtd_dose);
                 vacinaModel.setPeriodo(periodo);
                 vacinaModel.setDescicao(descricao);
+                
+                carregarPrincipal2.setVisible(false);
                 
                 return vacinaModel;
             }

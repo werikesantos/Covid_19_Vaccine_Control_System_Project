@@ -220,10 +220,11 @@ public class VacinaController{
         }  
     }
     
-    public void consultar(JTextField vacinaConsultar, JTextField vacinaIdCodigo, JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, 
-        JLabel avisoDoses, JLabel avisoPeriodo, JLabel avisoDescricao, 
-        JTextField vacinaDesenvolvedora, JTextField vacinaProdutora, JTextField vacinaParceira, 
-        JComboBox vacinaDoses, JSpinner vacinaPeriodo, JTextArea vacinaDescricao){
+    public void consultar(JLabel carregarPrincipal2, JTextField vacinaConsultar, JTextField vacinaIdCodigo, 
+        JLabel avisoDesenvolvedora, JLabel avisoProdutora, JLabel avisoParceira, JLabel avisoDoses, 
+        JLabel avisoPeriodo, JLabel avisoDescricao, JTextField vacinaDesenvolvedora, 
+        JTextField vacinaProdutora, JTextField vacinaParceira, JComboBox vacinaDoses, JSpinner vacinaPeriodo, 
+        JTextArea vacinaDescricaoAreaTexto){
 
         String converterID = vacinaConsultar.getText();
             
@@ -231,54 +232,67 @@ public class VacinaController{
                 
             int id = Integer.parseInt(converterID);
             vacinaModel.setId(id);
-            VacinaModel result = vacinaDao.consultar(vacinaModel); 
+            VacinaModel result = vacinaDao.consultar(vacinaModel, carregarPrincipal2); 
 
-            id = result.getId();
-            String resultID = Integer.toString(id);
+            if(((result.getDesenvolvedora()) != null) && ((result.getProdutora()) != null) && 
+                ((result.getParceira()) != null)){
+                
+                id = result.getId();
+                String resultID = Integer.toString(id);
+                String desenvolvedora = result.getDesenvolvedora();
+                String produtora = result.getProdutora();
+                String parceira = result.getParceira();
+                int doses = result.getQtd_Dose();//é inteiro
+                String periodo = result.getPeriodo();// é uma string
+                //int periodos = Integer.parseInt(periodo);
+                String descricao = result.getDescicao();
 
-            String desenvolvedora = result.getDesenvolvedora();
-            String produtora = result.getProdutora();
-            String parceira = result.getParceira();
-            int doses = result.getQtd_Dose();
-            String periodo = result.getPeriodo();
-            String descricao = result.getDescicao();
-
-            vacinaIdCodigo.setText(resultID);
-            vacinaDesenvolvedora.setText(desenvolvedora);
-            vacinaProdutora.setText(produtora);
-            vacinaParceira.setText(parceira);
-            
-            if(doses == 1){
-                vacinaDoses.setSelectedIndex(1);
-            }else if(doses == 2){
-                vacinaDoses.setSelectedIndex(2);
+                vacinaIdCodigo.setText(resultID);
+                vacinaDesenvolvedora.setText(desenvolvedora);
+                vacinaProdutora.setText(produtora);
+                vacinaParceira.setText(parceira);
+                switch(doses){
+                    case 1:
+                        vacinaDoses.setSelectedIndex(1);
+                        break;
+                    case 2:
+                        vacinaDoses.setSelectedIndex(2);
+                        break;
+                    case 3:
+                        vacinaDoses.setSelectedIndex(3);
+                        break;
+                    case 4:
+                        vacinaDoses.setSelectedIndex(4);
+                        break;
+                    case 5:
+                        vacinaDoses.setSelectedIndex(5);
+                        break;
+                    case 6:
+                        vacinaDoses.setSelectedIndex(6);
+                        break;
+                    case 7:
+                        vacinaDoses.setSelectedIndex(7);
+                        break;
+                    case 8:
+                        vacinaDoses.setSelectedIndex(8);
+                        break;
+                    case 9:
+                        vacinaDoses.setSelectedIndex(9);
+                        break;
+                    case 10:
+                        vacinaDoses.setSelectedIndex(10);
+                        break;
+                    default:
+                        break;
+                }
+                vacinaPeriodo.setValue(Integer.valueOf(periodo));
+                vacinaDescricaoAreaTexto.setText(descricao); 
+            }else{
+                vacinaConsultar.setText("Consultar...");
+                carregarPrincipal2.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Código da vacina não localzada!", 
+                    "Consultar", JOptionPane.ERROR_MESSAGE);
             }
-            
-            switch(doses){
-                case 1:
-                    vacinaDoses.setSelectedIndex(1);
-                    break;
-                case 2:
-                    vacinaDoses.setSelectedIndex(2);
-                    break;
-                default:
-                    break;
-            }
-            
-            /*switch(periodo){
-                case "14 a 28 dias":
-                    vacinaPeriodo.setSelectedIndex(1);
-                    break;
-                case "28 a 42 dias":
-                    vacinaPeriodo.setSelectedIndex(2);
-                    break;
-                case "03 meses":
-                    vacinaPeriodo.setSelectedIndex(3);
-                    break;
-                default:
-                    break;
-            }*/
-            vacinaDescricao.setText(descricao);
         }
     }
     
