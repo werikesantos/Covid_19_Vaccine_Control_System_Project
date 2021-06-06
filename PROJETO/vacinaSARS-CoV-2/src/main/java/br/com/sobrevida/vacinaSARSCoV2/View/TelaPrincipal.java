@@ -24,7 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     RelatorioController relatorioController = new RelatorioController();
     GerarRelatorio gerarRelatorio = new GerarRelatorio();
             
-    public TelaPrincipal() {
+    public TelaPrincipal(){
         initComponents();
         
         cidadaoController.pesquisa(pacienteListaTabela);
@@ -110,54 +110,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         desktopSobrevida = new javax.swing.JDesktopPane();
-        cadastroVacinaTela = new javax.swing.JPanel();
-        closeCadastroVacina = new javax.swing.JLabel();
-        linhaSeparador4 = new javax.swing.JSeparator();
-        linhaSeparador3 = new javax.swing.JSeparator();
-        txtListaVacinas = new javax.swing.JLabel();
-        txtCadastroVacinas = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JLabel();
-        txtPeriodo = new javax.swing.JLabel();
-        txtDoses = new javax.swing.JLabel();
-        txtDescricao = new javax.swing.JLabel();
-        txtParceira = new javax.swing.JLabel();
-        txtProdutora = new javax.swing.JLabel();
-        txtDesenvolvedora = new javax.swing.JLabel();
-        avisoPeriodo = new javax.swing.JLabel();
-        avisoDoses = new javax.swing.JLabel();
-        avisoDescricao = new javax.swing.JLabel();
-        avisoParceira = new javax.swing.JLabel();
-        avisoProdutora = new javax.swing.JLabel();
-        avisoDesenvolvedora = new javax.swing.JLabel();
-        vacinaPesquisar = new javax.swing.JTextField();
-        vacinaConsultar = new javax.swing.JTextField();
-        vacinaProdutora = new javax.swing.JTextField();
-        vacinaIdCodigo = new javax.swing.JTextField();
-        vacinaParceira = new javax.swing.JTextField();
-        vacinaDesenvolvedora = new javax.swing.JTextField();
-        ajudaDescricao = new javax.swing.JLabel();
-        ajudaPeriodo = new javax.swing.JLabel();
-        ajudaDoses = new javax.swing.JLabel();
-        ajudaProdutora = new javax.swing.JLabel();
-        ajudaParceira = new javax.swing.JLabel();
-        ajudaCodigo = new javax.swing.JLabel();
-        ajudaDesenvolvedora = new javax.swing.JLabel();
-        vacinaBtnSalvar = new javax.swing.JButton();
-        vacinaBtnDeletar = new javax.swing.JButton();
-        vacinaBtnAlterar = new javax.swing.JButton();
-        vacinaBtnLimpar = new javax.swing.JButton();
-        vacinaListaPainel = new javax.swing.JScrollPane();
-        vacinaListaTabela = new javax.swing.JTable();
-        iconeCadastroVacina = new javax.swing.JLabel();
-        iconeListaVacina1 = new javax.swing.JLabel();
-        vacinaDoses = new javax.swing.JComboBox<>();
-        vacinaDescricaoPainel = new javax.swing.JScrollPane();
-        vacinaDescricaoAreaTexto = new javax.swing.JTextArea();
-        carregarPrincipal2 = new javax.swing.JLabel();
-        vacinaPeriodo = new javax.swing.JSpinner();
-        contadorCaracter = new javax.swing.JLabel();
-        atualizarBtnVacina = new javax.swing.JToggleButton();
-        vacinaBtnConsultar = new javax.swing.JToggleButton();
         cadastroCidadaoTela = new javax.swing.JPanel();
         closeCadastroPaciente = new javax.swing.JLabel();
         linhaSeparador2 = new javax.swing.JSeparator();
@@ -210,6 +162,54 @@ public class TelaPrincipal extends javax.swing.JFrame {
         carregarPrincipal1 = new javax.swing.JLabel();
         atualizarBtnPaciente = new javax.swing.JToggleButton();
         pacienteBtnPesquisar = new javax.swing.JToggleButton();
+        cadastroVacinaTela = new javax.swing.JPanel();
+        closeCadastroVacina = new javax.swing.JLabel();
+        linhaSeparador4 = new javax.swing.JSeparator();
+        linhaSeparador3 = new javax.swing.JSeparator();
+        txtListaVacinas = new javax.swing.JLabel();
+        txtCadastroVacinas = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JLabel();
+        txtPeriodo = new javax.swing.JLabel();
+        txtDoses = new javax.swing.JLabel();
+        txtDescricao = new javax.swing.JLabel();
+        txtParceira = new javax.swing.JLabel();
+        txtProdutora = new javax.swing.JLabel();
+        txtDesenvolvedora = new javax.swing.JLabel();
+        avisoPeriodo = new javax.swing.JLabel();
+        avisoDoses = new javax.swing.JLabel();
+        avisoDescricao = new javax.swing.JLabel();
+        avisoParceira = new javax.swing.JLabel();
+        avisoProdutora = new javax.swing.JLabel();
+        avisoDesenvolvedora = new javax.swing.JLabel();
+        vacinaPesquisar = new javax.swing.JTextField();
+        vacinaConsultar = new javax.swing.JTextField();
+        vacinaProdutora = new javax.swing.JTextField();
+        vacinaIdCodigo = new javax.swing.JTextField();
+        vacinaParceira = new javax.swing.JTextField();
+        vacinaDesenvolvedora = new javax.swing.JTextField();
+        ajudaDescricao = new javax.swing.JLabel();
+        ajudaPeriodo = new javax.swing.JLabel();
+        ajudaDoses = new javax.swing.JLabel();
+        ajudaProdutora = new javax.swing.JLabel();
+        ajudaParceira = new javax.swing.JLabel();
+        ajudaCodigo = new javax.swing.JLabel();
+        ajudaDesenvolvedora = new javax.swing.JLabel();
+        vacinaBtnSalvar = new javax.swing.JButton();
+        vacinaBtnDeletar = new javax.swing.JButton();
+        vacinaBtnAlterar = new javax.swing.JButton();
+        vacinaBtnLimpar = new javax.swing.JButton();
+        vacinaListaPainel = new javax.swing.JScrollPane();
+        vacinaListaTabela = new javax.swing.JTable();
+        iconeCadastroVacina = new javax.swing.JLabel();
+        iconeListaVacina1 = new javax.swing.JLabel();
+        vacinaDoses = new javax.swing.JComboBox<>();
+        vacinaDescricaoPainel = new javax.swing.JScrollPane();
+        vacinaDescricaoAreaTexto = new javax.swing.JTextArea();
+        carregarPrincipal2 = new javax.swing.JLabel();
+        vacinaPeriodo = new javax.swing.JSpinner();
+        contadorCaracter = new javax.swing.JLabel();
+        atualizarBtnVacina = new javax.swing.JToggleButton();
+        vacinaBtnConsultar = new javax.swing.JToggleButton();
         cadastroAplicacaoTela = new javax.swing.JPanel();
         closeCadastroVacina1 = new javax.swing.JLabel();
         linhaSeparador6 = new javax.swing.JSeparator();
@@ -563,437 +563,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktopSobrevida.setMinimumSize(new java.awt.Dimension(1280, 720));
         desktopSobrevida.setPreferredSize(new java.awt.Dimension(1366, 768));
 
-        cadastroVacinaTela.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroVacinaTela.setForeground(new java.awt.Color(255, 255, 255));
-        cadastroVacinaTela.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadastroVacinaTelaMouseClicked(evt);
-            }
-        });
-        cadastroVacinaTela.setLayout(null);
-
-        closeCadastroVacina.setBackground(new java.awt.Color(153, 0, 0));
-        closeCadastroVacina.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        closeCadastroVacina.setForeground(new java.awt.Color(153, 0, 0));
-        closeCadastroVacina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
-        closeCadastroVacina.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeCadastroVacinaMouseClicked(evt);
-            }
-        });
-        cadastroVacinaTela.add(closeCadastroVacina);
-        closeCadastroVacina.setBounds(964, 12, 30, 30);
-        cadastroVacinaTela.add(linhaSeparador4);
-        linhaSeparador4.setBounds(60, 400, 842, 2);
-        cadastroVacinaTela.add(linhaSeparador3);
-        linhaSeparador3.setBounds(60, 68, 842, 2);
-
-        txtListaVacinas.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        txtListaVacinas.setForeground(new java.awt.Color(102, 102, 102));
-        txtListaVacinas.setText("Lista de Vacinas");
-        cadastroVacinaTela.add(txtListaVacinas);
-        txtListaVacinas.setBounds(98, 370, 180, 30);
-
-        txtCadastroVacinas.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        txtCadastroVacinas.setForeground(new java.awt.Color(102, 102, 102));
-        txtCadastroVacinas.setText("Cadastro de Vacinas");
-        cadastroVacinaTela.add(txtCadastroVacinas);
-        txtCadastroVacinas.setBounds(92, 38, 230, 30);
-
-        txtCodigo.setBackground(new java.awt.Color(51, 51, 51));
-        txtCodigo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtCodigo.setForeground(new java.awt.Color(51, 51, 51));
-        txtCodigo.setText("Código");
-        cadastroVacinaTela.add(txtCodigo);
-        txtCodigo.setBounds(60, 90, 100, 16);
-
-        txtPeriodo.setBackground(new java.awt.Color(51, 51, 51));
-        txtPeriodo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtPeriodo.setForeground(new java.awt.Color(51, 51, 51));
-        txtPeriodo.setText("Período");
-        cadastroVacinaTela.add(txtPeriodo);
-        txtPeriodo.setBounds(694, 190, 48, 16);
-
-        txtDoses.setBackground(new java.awt.Color(51, 51, 51));
-        txtDoses.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtDoses.setForeground(new java.awt.Color(51, 51, 51));
-        txtDoses.setText("Doses");
-        cadastroVacinaTela.add(txtDoses);
-        txtDoses.setBounds(520, 190, 40, 16);
-
-        txtDescricao.setBackground(new java.awt.Color(51, 51, 51));
-        txtDescricao.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtDescricao.setForeground(new java.awt.Color(51, 51, 51));
-        txtDescricao.setText("Descrição");
-        cadastroVacinaTela.add(txtDescricao);
-        txtDescricao.setBounds(60, 245, 60, 16);
-
-        txtParceira.setBackground(new java.awt.Color(51, 51, 51));
-        txtParceira.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtParceira.setForeground(new java.awt.Color(51, 51, 51));
-        txtParceira.setText("Parceira");
-        cadastroVacinaTela.add(txtParceira);
-        txtParceira.setBounds(60, 190, 60, 16);
-
-        txtProdutora.setBackground(new java.awt.Color(51, 51, 51));
-        txtProdutora.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtProdutora.setForeground(new java.awt.Color(51, 51, 51));
-        txtProdutora.setText("Produtora");
-        cadastroVacinaTela.add(txtProdutora);
-        txtProdutora.setBounds(530, 140, 70, 16);
-
-        txtDesenvolvedora.setBackground(new java.awt.Color(51, 51, 51));
-        txtDesenvolvedora.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtDesenvolvedora.setForeground(new java.awt.Color(51, 51, 51));
-        txtDesenvolvedora.setText("Desenvolvedora");
-        cadastroVacinaTela.add(txtDesenvolvedora);
-        txtDesenvolvedora.setBounds(60, 140, 110, 16);
-
-        avisoPeriodo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoPeriodo.setForeground(new java.awt.Color(255, 0, 0));
-        avisoPeriodo.setText("*");
-        cadastroVacinaTela.add(avisoPeriodo);
-        avisoPeriodo.setBounds(748, 190, 10, 15);
-
-        avisoDoses.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoDoses.setForeground(new java.awt.Color(255, 0, 0));
-        avisoDoses.setText("*");
-        cadastroVacinaTela.add(avisoDoses);
-        avisoDoses.setBounds(564, 190, 10, 15);
-
-        avisoDescricao.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoDescricao.setForeground(new java.awt.Color(255, 0, 0));
-        avisoDescricao.setText("*");
-        cadastroVacinaTela.add(avisoDescricao);
-        avisoDescricao.setBounds(122, 245, 10, 15);
-
-        avisoParceira.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoParceira.setForeground(new java.awt.Color(255, 0, 0));
-        avisoParceira.setText("*");
-        cadastroVacinaTela.add(avisoParceira);
-        avisoParceira.setBounds(114, 190, 10, 15);
-
-        avisoProdutora.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoProdutora.setForeground(new java.awt.Color(255, 0, 0));
-        avisoProdutora.setText("*");
-        cadastroVacinaTela.add(avisoProdutora);
-        avisoProdutora.setBounds(600, 140, 10, 15);
-
-        avisoDesenvolvedora.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoDesenvolvedora.setForeground(new java.awt.Color(255, 0, 0));
-        avisoDesenvolvedora.setText("*");
-        cadastroVacinaTela.add(avisoDesenvolvedora);
-        avisoDesenvolvedora.setBounds(166, 140, 10, 15);
-
-        vacinaPesquisar.setForeground(new java.awt.Color(51, 51, 51));
-        vacinaPesquisar.setText("Pesquisar...");
-        vacinaPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaPesquisarMouseClicked(evt);
-            }
-        });
-        vacinaPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaPesquisarKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                vacinaPesquisarKeyReleased(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaPesquisar);
-        vacinaPesquisar.setBounds(693, 407, 210, 28);
-
-        vacinaConsultar.setForeground(new java.awt.Color(51, 51, 51));
-        vacinaConsultar.setText("Consultar...");
-        vacinaConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaConsultarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                vacinaConsultarMouseEntered(evt);
-            }
-        });
-        vacinaConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaConsultarActionPerformed(evt);
-            }
-        });
-        vacinaConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaConsultarKeyPressed(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaConsultar);
-        vacinaConsultar.setBounds(662, 34, 210, 28);
-
-        vacinaProdutora.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        vacinaProdutora.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaProdutoraMouseClicked(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaProdutora);
-        vacinaProdutora.setBounds(622, 134, 280, 28);
-
-        vacinaIdCodigo.setEditable(false);
-        vacinaIdCodigo.setBackground(new java.awt.Color(255, 255, 255));
-        vacinaIdCodigo.setEnabled(false);
-        vacinaIdCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaIdCodigoMouseClicked(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaIdCodigo);
-        vacinaIdCodigo.setBounds(200, 86, 110, 28);
-
-        vacinaParceira.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        vacinaParceira.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaParceiraMouseClicked(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaParceira);
-        vacinaParceira.setBounds(200, 184, 280, 28);
-
-        vacinaDesenvolvedora.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        vacinaDesenvolvedora.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaDesenvolvedoraMouseClicked(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaDesenvolvedora);
-        vacinaDesenvolvedora.setBounds(200, 134, 280, 28);
-
-        ajudaDescricao.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaDescricao.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaDescricao.setText("Descrição sobre a vacina");
-        cadastroVacinaTela.add(ajudaDescricao);
-        ajudaDescricao.setBounds(200, 330, 210, 15);
-
-        ajudaPeriodo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaPeriodo.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaPeriodo.setText("Intervalo de vacinação");
-        cadastroVacinaTela.add(ajudaPeriodo);
-        ajudaPeriodo.setBounds(770, 213, 140, 15);
-
-        ajudaDoses.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaDoses.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaDoses.setText("Qtd. doses ");
-        cadastroVacinaTela.add(ajudaDoses);
-        ajudaDoses.setBounds(590, 213, 70, 15);
-
-        ajudaProdutora.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaProdutora.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaProdutora.setText("Produtora da vacina");
-        cadastroVacinaTela.add(ajudaProdutora);
-        ajudaProdutora.setBounds(622, 163, 130, 15);
-
-        ajudaParceira.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaParceira.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaParceira.setText("Parceira de produção ou distribuição");
-        cadastroVacinaTela.add(ajudaParceira);
-        ajudaParceira.setBounds(200, 213, 210, 15);
-
-        ajudaCodigo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaCodigo.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaCodigo.setText("Código da vacina");
-        cadastroVacinaTela.add(ajudaCodigo);
-        ajudaCodigo.setBounds(200, 115, 110, 15);
-
-        ajudaDesenvolvedora.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        ajudaDesenvolvedora.setForeground(new java.awt.Color(102, 102, 102));
-        ajudaDesenvolvedora.setText("Desenvolvedora da vacina");
-        cadastroVacinaTela.add(ajudaDesenvolvedora);
-        ajudaDesenvolvedora.setBounds(200, 163, 170, 15);
-
-        vacinaBtnSalvar.setText("Salvar");
-        vacinaBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaBtnSalvarActionPerformed(evt);
-            }
-        });
-        vacinaBtnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaBtnSalvarKeyPressed(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaBtnSalvar);
-        vacinaBtnSalvar.setBounds(724, 344, 80, 34);
-
-        vacinaBtnDeletar.setText("Deletar");
-        vacinaBtnDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaBtnDeletarActionPerformed(evt);
-            }
-        });
-        vacinaBtnDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaBtnDeletarKeyPressed(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaBtnDeletar);
-        vacinaBtnDeletar.setBounds(824, 636, 80, 34);
-
-        vacinaBtnAlterar.setText("Alterar");
-        vacinaBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaBtnAlterarActionPerformed(evt);
-            }
-        });
-        vacinaBtnAlterar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaBtnAlterarKeyPressed(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaBtnAlterar);
-        vacinaBtnAlterar.setBounds(620, 344, 80, 34);
-
-        vacinaBtnLimpar.setText("Limpar");
-        vacinaBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaBtnLimparActionPerformed(evt);
-            }
-        });
-        vacinaBtnLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                vacinaBtnLimparKeyPressed(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaBtnLimpar);
-        vacinaBtnLimpar.setBounds(824, 344, 80, 34);
-
-        vacinaListaTabela.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "CÓDIGO", "DESENVOLVEDOR", "PRODUTORA", "PARCEIRA", "QTD_DOSES", "PERÍODO", "DESCRIÇÃO"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        vacinaListaTabela.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vacinaListaTabelaMouseClicked(evt);
-            }
-        });
-        vacinaListaPainel.setViewportView(vacinaListaTabela);
-        if (vacinaListaTabela.getColumnModel().getColumnCount() > 0) {
-            vacinaListaTabela.getColumnModel().getColumn(0).setResizable(false);
-        }
-
-        cadastroVacinaTela.add(vacinaListaPainel);
-        vacinaListaPainel.setBounds(60, 440, 842, 190);
-
-        iconeCadastroVacina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/siringa.png"))); // NOI18N
-        cadastroVacinaTela.add(iconeCadastroVacina);
-        iconeCadastroVacina.setBounds(60, 38, 30, 30);
-
-        iconeListaVacina1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lista.png"))); // NOI18N
-        cadastroVacinaTela.add(iconeListaVacina1);
-        iconeListaVacina1.setBounds(60, 370, 30, 30);
-
-        vacinaDoses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " -", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10" }));
-        vacinaDoses.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        cadastroVacinaTela.add(vacinaDoses);
-        vacinaDoses.setBounds(590, 184, 70, 28);
-
-        vacinaDescricaoAreaTexto.setColumns(20);
-        vacinaDescricaoAreaTexto.setRows(5);
-        vacinaDescricaoAreaTexto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                vacinaDescricaoAreaTextoKeyReleased(evt);
-            }
-        });
-        vacinaDescricaoPainel.setViewportView(vacinaDescricaoAreaTexto);
-
-        cadastroVacinaTela.add(vacinaDescricaoPainel);
-        vacinaDescricaoPainel.setBounds(200, 240, 370, 90);
-
-        carregarPrincipal2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carregarPrincipal.gif"))); // NOI18N
-        cadastroVacinaTela.add(carregarPrincipal2);
-        carregarPrincipal2.setBounds(8, 12, 40, 60);
-        cadastroVacinaTela.add(vacinaPeriodo);
-        vacinaPeriodo.setBounds(770, 184, 120, 28);
-
-        contadorCaracter.setForeground(new java.awt.Color(102, 102, 102));
-        contadorCaracter.setText("0/4000");
-        cadastroVacinaTela.add(contadorCaracter);
-        contadorCaracter.setBounds(510, 330, 60, 14);
-
-        atualizarBtnVacina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reiniciar1.png"))); // NOI18N
-        atualizarBtnVacina.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                atualizarBtnVacinaMouseClicked(evt);
-            }
-        });
-        atualizarBtnVacina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarBtnVacinaActionPerformed(evt);
-            }
-        });
-        cadastroVacinaTela.add(atualizarBtnVacina);
-        atualizarBtnVacina.setBounds(660, 407, 30, 28);
-
-        vacinaBtnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pesquisar.png"))); // NOI18N
-        vacinaBtnConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vacinaBtnConsultarActionPerformed(evt);
-            }
-        });
-        cadastroVacinaTela.add(vacinaBtnConsultar);
-        vacinaBtnConsultar.setBounds(872, 32, 30, 29);
-
-        desktopSobrevida.add(cadastroVacinaTela);
-        cadastroVacinaTela.setBounds(0, 0, 1004, 730);
-
         cadastroCidadaoTela.setBackground(new java.awt.Color(255, 255, 255));
         cadastroCidadaoTela.setForeground(new java.awt.Color(255, 255, 255));
         cadastroCidadaoTela.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1292,7 +861,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         cadastroCidadaoTela.add(pacienteBtnSalvar);
-        pacienteBtnSalvar.setBounds(724, 334, 80, 34);
+        pacienteBtnSalvar.setBounds(620, 334, 80, 34);
 
         pacienteBtnDeletar.setText("Deletar");
         pacienteBtnDeletar.addActionListener(new java.awt.event.ActionListener() {
@@ -1325,7 +894,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         cadastroCidadaoTela.add(pacienteBtnAlterarForm);
-        pacienteBtnAlterarForm.setBounds(620, 334, 80, 34);
+        pacienteBtnAlterarForm.setBounds(724, 334, 80, 34);
 
         pacienteBtnLimpar.setText("Limpar");
         pacienteBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -1473,6 +1042,437 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         desktopSobrevida.add(cadastroCidadaoTela);
         cadastroCidadaoTela.setBounds(0, 0, 1004, 730);
+
+        cadastroVacinaTela.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroVacinaTela.setForeground(new java.awt.Color(255, 255, 255));
+        cadastroVacinaTela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastroVacinaTelaMouseClicked(evt);
+            }
+        });
+        cadastroVacinaTela.setLayout(null);
+
+        closeCadastroVacina.setBackground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        closeCadastroVacina.setForeground(new java.awt.Color(153, 0, 0));
+        closeCadastroVacina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/closeCadastroPaciente.png"))); // NOI18N
+        closeCadastroVacina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeCadastroVacinaMouseClicked(evt);
+            }
+        });
+        cadastroVacinaTela.add(closeCadastroVacina);
+        closeCadastroVacina.setBounds(964, 12, 30, 30);
+        cadastroVacinaTela.add(linhaSeparador4);
+        linhaSeparador4.setBounds(60, 400, 842, 2);
+        cadastroVacinaTela.add(linhaSeparador3);
+        linhaSeparador3.setBounds(60, 68, 842, 2);
+
+        txtListaVacinas.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        txtListaVacinas.setForeground(new java.awt.Color(102, 102, 102));
+        txtListaVacinas.setText("Lista de Vacinas");
+        cadastroVacinaTela.add(txtListaVacinas);
+        txtListaVacinas.setBounds(98, 370, 180, 30);
+
+        txtCadastroVacinas.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        txtCadastroVacinas.setForeground(new java.awt.Color(102, 102, 102));
+        txtCadastroVacinas.setText("Cadastro de Vacinas");
+        cadastroVacinaTela.add(txtCadastroVacinas);
+        txtCadastroVacinas.setBounds(92, 38, 230, 30);
+
+        txtCodigo.setBackground(new java.awt.Color(51, 51, 51));
+        txtCodigo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(51, 51, 51));
+        txtCodigo.setText("Código");
+        cadastroVacinaTela.add(txtCodigo);
+        txtCodigo.setBounds(60, 90, 100, 16);
+
+        txtPeriodo.setBackground(new java.awt.Color(51, 51, 51));
+        txtPeriodo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtPeriodo.setForeground(new java.awt.Color(51, 51, 51));
+        txtPeriodo.setText("Período");
+        cadastroVacinaTela.add(txtPeriodo);
+        txtPeriodo.setBounds(694, 190, 48, 16);
+
+        txtDoses.setBackground(new java.awt.Color(51, 51, 51));
+        txtDoses.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDoses.setForeground(new java.awt.Color(51, 51, 51));
+        txtDoses.setText("Doses");
+        cadastroVacinaTela.add(txtDoses);
+        txtDoses.setBounds(520, 190, 40, 16);
+
+        txtDescricao.setBackground(new java.awt.Color(51, 51, 51));
+        txtDescricao.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDescricao.setForeground(new java.awt.Color(51, 51, 51));
+        txtDescricao.setText("Descrição");
+        cadastroVacinaTela.add(txtDescricao);
+        txtDescricao.setBounds(60, 245, 60, 16);
+
+        txtParceira.setBackground(new java.awt.Color(51, 51, 51));
+        txtParceira.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtParceira.setForeground(new java.awt.Color(51, 51, 51));
+        txtParceira.setText("Parceira");
+        cadastroVacinaTela.add(txtParceira);
+        txtParceira.setBounds(60, 190, 60, 16);
+
+        txtProdutora.setBackground(new java.awt.Color(51, 51, 51));
+        txtProdutora.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtProdutora.setForeground(new java.awt.Color(51, 51, 51));
+        txtProdutora.setText("Produtora");
+        cadastroVacinaTela.add(txtProdutora);
+        txtProdutora.setBounds(530, 140, 70, 16);
+
+        txtDesenvolvedora.setBackground(new java.awt.Color(51, 51, 51));
+        txtDesenvolvedora.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDesenvolvedora.setForeground(new java.awt.Color(51, 51, 51));
+        txtDesenvolvedora.setText("Desenvolvedora");
+        cadastroVacinaTela.add(txtDesenvolvedora);
+        txtDesenvolvedora.setBounds(60, 140, 110, 16);
+
+        avisoPeriodo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoPeriodo.setForeground(new java.awt.Color(255, 0, 0));
+        avisoPeriodo.setText("*");
+        cadastroVacinaTela.add(avisoPeriodo);
+        avisoPeriodo.setBounds(748, 190, 10, 15);
+
+        avisoDoses.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoDoses.setForeground(new java.awt.Color(255, 0, 0));
+        avisoDoses.setText("*");
+        cadastroVacinaTela.add(avisoDoses);
+        avisoDoses.setBounds(564, 190, 10, 15);
+
+        avisoDescricao.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoDescricao.setForeground(new java.awt.Color(255, 0, 0));
+        avisoDescricao.setText("*");
+        cadastroVacinaTela.add(avisoDescricao);
+        avisoDescricao.setBounds(122, 245, 10, 15);
+
+        avisoParceira.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoParceira.setForeground(new java.awt.Color(255, 0, 0));
+        avisoParceira.setText("*");
+        cadastroVacinaTela.add(avisoParceira);
+        avisoParceira.setBounds(114, 190, 10, 15);
+
+        avisoProdutora.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoProdutora.setForeground(new java.awt.Color(255, 0, 0));
+        avisoProdutora.setText("*");
+        cadastroVacinaTela.add(avisoProdutora);
+        avisoProdutora.setBounds(600, 140, 10, 15);
+
+        avisoDesenvolvedora.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoDesenvolvedora.setForeground(new java.awt.Color(255, 0, 0));
+        avisoDesenvolvedora.setText("*");
+        cadastroVacinaTela.add(avisoDesenvolvedora);
+        avisoDesenvolvedora.setBounds(166, 140, 10, 15);
+
+        vacinaPesquisar.setForeground(new java.awt.Color(51, 51, 51));
+        vacinaPesquisar.setText("Pesquisar...");
+        vacinaPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaPesquisarMouseClicked(evt);
+            }
+        });
+        vacinaPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vacinaPesquisarKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                vacinaPesquisarKeyReleased(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaPesquisar);
+        vacinaPesquisar.setBounds(693, 407, 210, 28);
+
+        vacinaConsultar.setForeground(new java.awt.Color(51, 51, 51));
+        vacinaConsultar.setText("Consultar...");
+        vacinaConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaConsultarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                vacinaConsultarMouseEntered(evt);
+            }
+        });
+        vacinaConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinaConsultarActionPerformed(evt);
+            }
+        });
+        vacinaConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vacinaConsultarKeyPressed(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaConsultar);
+        vacinaConsultar.setBounds(662, 34, 210, 28);
+
+        vacinaProdutora.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        vacinaProdutora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaProdutoraMouseClicked(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaProdutora);
+        vacinaProdutora.setBounds(622, 134, 280, 28);
+
+        vacinaIdCodigo.setEditable(false);
+        vacinaIdCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        vacinaIdCodigo.setEnabled(false);
+        vacinaIdCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaIdCodigoMouseClicked(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaIdCodigo);
+        vacinaIdCodigo.setBounds(200, 86, 110, 28);
+
+        vacinaParceira.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        vacinaParceira.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaParceiraMouseClicked(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaParceira);
+        vacinaParceira.setBounds(200, 184, 280, 28);
+
+        vacinaDesenvolvedora.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        vacinaDesenvolvedora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaDesenvolvedoraMouseClicked(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaDesenvolvedora);
+        vacinaDesenvolvedora.setBounds(200, 134, 280, 28);
+
+        ajudaDescricao.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaDescricao.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaDescricao.setText("Descrição sobre a vacina");
+        cadastroVacinaTela.add(ajudaDescricao);
+        ajudaDescricao.setBounds(200, 330, 210, 15);
+
+        ajudaPeriodo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaPeriodo.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaPeriodo.setText("Intervalo de vacinação");
+        cadastroVacinaTela.add(ajudaPeriodo);
+        ajudaPeriodo.setBounds(770, 213, 140, 15);
+
+        ajudaDoses.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaDoses.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaDoses.setText("Qtd. doses ");
+        cadastroVacinaTela.add(ajudaDoses);
+        ajudaDoses.setBounds(590, 213, 70, 15);
+
+        ajudaProdutora.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaProdutora.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaProdutora.setText("Produtora da vacina");
+        cadastroVacinaTela.add(ajudaProdutora);
+        ajudaProdutora.setBounds(622, 163, 130, 15);
+
+        ajudaParceira.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaParceira.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaParceira.setText("Parceira de produção ou distribuição");
+        cadastroVacinaTela.add(ajudaParceira);
+        ajudaParceira.setBounds(200, 213, 210, 15);
+
+        ajudaCodigo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaCodigo.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaCodigo.setText("Código da vacina");
+        cadastroVacinaTela.add(ajudaCodigo);
+        ajudaCodigo.setBounds(200, 115, 110, 15);
+
+        ajudaDesenvolvedora.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        ajudaDesenvolvedora.setForeground(new java.awt.Color(102, 102, 102));
+        ajudaDesenvolvedora.setText("Desenvolvedora da vacina");
+        cadastroVacinaTela.add(ajudaDesenvolvedora);
+        ajudaDesenvolvedora.setBounds(200, 163, 170, 15);
+
+        vacinaBtnSalvar.setText("Salvar");
+        vacinaBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinaBtnSalvarActionPerformed(evt);
+            }
+        });
+        vacinaBtnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vacinaBtnSalvarKeyPressed(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaBtnSalvar);
+        vacinaBtnSalvar.setBounds(620, 344, 80, 34);
+
+        vacinaBtnDeletar.setText("Deletar");
+        vacinaBtnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinaBtnDeletarActionPerformed(evt);
+            }
+        });
+        vacinaBtnDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vacinaBtnDeletarKeyPressed(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaBtnDeletar);
+        vacinaBtnDeletar.setBounds(824, 636, 80, 34);
+
+        vacinaBtnAlterar.setText("Alterar");
+        vacinaBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinaBtnAlterarActionPerformed(evt);
+            }
+        });
+        vacinaBtnAlterar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vacinaBtnAlterarKeyPressed(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaBtnAlterar);
+        vacinaBtnAlterar.setBounds(724, 344, 80, 34);
+
+        vacinaBtnLimpar.setText("Limpar");
+        vacinaBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinaBtnLimparActionPerformed(evt);
+            }
+        });
+        vacinaBtnLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vacinaBtnLimparKeyPressed(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaBtnLimpar);
+        vacinaBtnLimpar.setBounds(824, 344, 80, 34);
+
+        vacinaListaTabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "CÓDIGO", "DESENVOLVEDOR", "PRODUTORA", "PARCEIRA", "QTD_DOSES", "PERÍODO", "DESCRIÇÃO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        vacinaListaTabela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacinaListaTabelaMouseClicked(evt);
+            }
+        });
+        vacinaListaPainel.setViewportView(vacinaListaTabela);
+        if (vacinaListaTabela.getColumnModel().getColumnCount() > 0) {
+            vacinaListaTabela.getColumnModel().getColumn(0).setResizable(false);
+        }
+
+        cadastroVacinaTela.add(vacinaListaPainel);
+        vacinaListaPainel.setBounds(60, 440, 842, 190);
+
+        iconeCadastroVacina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/siringa.png"))); // NOI18N
+        cadastroVacinaTela.add(iconeCadastroVacina);
+        iconeCadastroVacina.setBounds(60, 38, 30, 30);
+
+        iconeListaVacina1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lista.png"))); // NOI18N
+        cadastroVacinaTela.add(iconeListaVacina1);
+        iconeListaVacina1.setBounds(60, 370, 30, 30);
+
+        vacinaDoses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " -", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10" }));
+        vacinaDoses.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cadastroVacinaTela.add(vacinaDoses);
+        vacinaDoses.setBounds(590, 184, 70, 28);
+
+        vacinaDescricaoAreaTexto.setColumns(20);
+        vacinaDescricaoAreaTexto.setRows(5);
+        vacinaDescricaoAreaTexto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                vacinaDescricaoAreaTextoKeyReleased(evt);
+            }
+        });
+        vacinaDescricaoPainel.setViewportView(vacinaDescricaoAreaTexto);
+
+        cadastroVacinaTela.add(vacinaDescricaoPainel);
+        vacinaDescricaoPainel.setBounds(200, 240, 370, 90);
+
+        carregarPrincipal2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/carregarPrincipal.gif"))); // NOI18N
+        cadastroVacinaTela.add(carregarPrincipal2);
+        carregarPrincipal2.setBounds(8, 12, 40, 60);
+        cadastroVacinaTela.add(vacinaPeriodo);
+        vacinaPeriodo.setBounds(770, 184, 120, 28);
+
+        contadorCaracter.setForeground(new java.awt.Color(102, 102, 102));
+        contadorCaracter.setText("0/4000");
+        cadastroVacinaTela.add(contadorCaracter);
+        contadorCaracter.setBounds(510, 330, 60, 14);
+
+        atualizarBtnVacina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reiniciar1.png"))); // NOI18N
+        atualizarBtnVacina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                atualizarBtnVacinaMouseClicked(evt);
+            }
+        });
+        atualizarBtnVacina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarBtnVacinaActionPerformed(evt);
+            }
+        });
+        cadastroVacinaTela.add(atualizarBtnVacina);
+        atualizarBtnVacina.setBounds(660, 407, 30, 28);
+
+        vacinaBtnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pesquisar.png"))); // NOI18N
+        vacinaBtnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacinaBtnConsultarActionPerformed(evt);
+            }
+        });
+        cadastroVacinaTela.add(vacinaBtnConsultar);
+        vacinaBtnConsultar.setBounds(872, 32, 30, 29);
+
+        desktopSobrevida.add(cadastroVacinaTela);
+        cadastroVacinaTela.setBounds(0, 0, 1004, 730);
 
         cadastroAplicacaoTela.setBackground(new java.awt.Color(255, 255, 255));
         cadastroAplicacaoTela.setForeground(new java.awt.Color(255, 255, 255));
@@ -4085,9 +4085,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){  
                     }
                 }
-                cidadaoController.salvar(carregarPrincipal1, pacienteIdCodigo, avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
-                    avisoN, avisoEmail, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
-                    pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
+                cidadaoController.salvar(carregarPrincipal1, pacienteIdCodigo, pacienteListaTabela, 
+                    avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, avisoN, avisoEmail, 
+                    pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, 
+                    pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
             }
         }.start();
     }//GEN-LAST:event_pacienteBtnSalvarActionPerformed
@@ -4104,7 +4105,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){  
                     }
                 }
-                cidadaoController.salvar(carregarPrincipal1, pacienteIdCodigo, avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
+                cidadaoController.salvar(carregarPrincipal1, pacienteIdCodigo, pacienteListaTabela, avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
                     avisoN, avisoEmail, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
                     pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
             }
@@ -4126,7 +4127,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }
                 }
                 cidadaoController.limpar(carregarPrincipal1, avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
-                    avisoN, avisoEmail, pacienteIdCodigo, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+                    avisoN, avisoEmail, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
                     pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
             }
         }.start();
@@ -4147,7 +4148,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }
                 }
                 cidadaoController.limpar(carregarPrincipal1, avisoNome, avisoNascimento, avisoCelular, avisoCpf, avisoEndereco, 
-                    avisoN, avisoEmail, pacienteIdCodigo, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
+                    avisoN, avisoEmail, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome, pacienteSobreNome, pacienteNascimento, 
                     pacienteCelular, pacienteCpf, pacienteEndereco, pacienteEnderecoNumero, pacienteEmail);
             }
         }.start();
@@ -4225,7 +4226,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pacienteListaTabelaMouseClicked
 
     private void pacienteBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnDeletarActionPerformed
-        cidadaoController.deletar(carregarPrincipal1, pacienteListaTabela, pacienteIdCodigo, pacientePrimeiroNome,
+        cidadaoController.deletar(carregarPrincipal1, pacienteListaTabela, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome,
             pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, pacienteEndereco,
             pacienteEnderecoNumero, pacienteEmail);   
     }//GEN-LAST:event_pacienteBtnDeletarActionPerformed
@@ -4362,9 +4363,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }
                 }
                 carregarPrincipal2.setVisible(false);
-                vacinaController.salvar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, 
-                    avisoDoses, avisoPeriodo, avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, 
-                    vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto); 
+                vacinaController.salvar(carregarPrincipal2, vacinaListaTabela, contadorCaracter, 
+                    avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, avisoDescricao, 
+                    vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, 
+                    vacinaDescricaoAreaTexto); 
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnSalvarActionPerformed
@@ -4383,20 +4385,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }
                 }
                 carregarPrincipal2.setVisible(false);
-                vacinaController.salvar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, 
-                    avisoDoses, avisoPeriodo, avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, 
-                    vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto); 
+                vacinaController.salvar(carregarPrincipal2, vacinaListaTabela, contadorCaracter, avisoDesenvolvedora, 
+                    avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, avisoDescricao, vacinaDesenvolvedora, 
+                    vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto); 
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnSalvarKeyPressed
     private void vacinaBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnDeletarActionPerformed
-        vacinaController.deletar(vacinaListaTabela, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
-            avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
-            vacinaPeriodo, vacinaDescricaoAreaTexto);
+        vacinaController.deletar(carregarPrincipal2, vacinaListaTabela, vacinaIdCodigo, contadorCaracter, 
+            vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
     }//GEN-LAST:event_vacinaBtnDeletarActionPerformed
     private void vacinaBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnAlterarActionPerformed
-        vacinaController.alterar(vacinaListaTabela, vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
-            vacinaPeriodo, vacinaDescricaoAreaTexto);
+        carregarPrincipal2.setVisible(true);
+        new Thread(){
+            int i=0;
+            public void run(){
+                while(i<100){
+                    i = i+5;
+                    try{
+                        sleep(100);
+                    }catch (Exception e){
+                    }
+                }
+                    vacinaController.alterar(carregarPrincipal2, vacinaListaTabela, vacinaConsultar, avisoDesenvolvedora, 
+                        avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, avisoDescricao, vacinaIdCodigo, 
+                        vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, 
+                        vacinaDescricaoAreaTexto
+                    );
+                }
+        }.start();
     }//GEN-LAST:event_vacinaBtnAlterarActionPerformed
     private void vacinaBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnLimparActionPerformed
         carregarPrincipal2.setVisible(true);
@@ -4412,9 +4429,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){  
                     }
                 }
-                vacinaController.limpar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
-                    avisoDescricao, vacinaConsultar, vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, 
-                    vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
+                vacinaController.limpar(carregarPrincipal2, vacinaListaTabela, contadorCaracter, avisoDesenvolvedora, 
+                    avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, avisoDescricao, vacinaConsultar, 
+                    vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
+                    vacinaPeriodo, vacinaDescricaoAreaTexto);
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnLimparActionPerformed
@@ -4432,9 +4450,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){  
                     }
                 }
-                vacinaController.limpar(carregarPrincipal2, contadorCaracter, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
-                    avisoDescricao, vacinaConsultar, vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, 
-                    vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
+                vacinaController.limpar(carregarPrincipal2, vacinaListaTabela, contadorCaracter, avisoDesenvolvedora, 
+                    avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, avisoDescricao, vacinaConsultar, 
+                    vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, 
+                    vacinaDescricaoAreaTexto);
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnLimparKeyPressed
@@ -4446,20 +4465,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroVacinaTelaMouseClicked
 
     private void pacienteBtnDeletarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pacienteBtnDeletarKeyPressed
-        cidadaoController.deletar(carregarPrincipal1, pacienteListaTabela, pacienteIdCodigo, pacientePrimeiroNome,
+        cidadaoController.deletar(carregarPrincipal1, pacienteListaTabela, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome,
             pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, pacienteEndereco,
             pacienteEnderecoNumero, pacienteEmail);           
     }//GEN-LAST:event_pacienteBtnDeletarKeyPressed
 
     private void vacinaBtnAlterarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaBtnAlterarKeyPressed
-        vacinaController.alterar(vacinaListaTabela, vacinaIdCodigo, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
-            vacinaPeriodo, vacinaDescricaoAreaTexto); 
+        carregarPrincipal2.setVisible(true);
+        new Thread(){
+            int i=0;
+            public void run(){
+                while(i<100){
+                    i = i+5;
+                    try{
+                        sleep(100);
+                    }catch (Exception e){
+                    }
+                }
+                    vacinaController.alterar(carregarPrincipal2, vacinaListaTabela, vacinaConsultar, avisoDesenvolvedora, 
+                        avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, avisoDescricao, vacinaIdCodigo, 
+                        vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, 
+                        vacinaDescricaoAreaTexto
+                    );
+                }
+        }.start(); 
     }//GEN-LAST:event_vacinaBtnAlterarKeyPressed
 
     private void vacinaBtnDeletarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaBtnDeletarKeyPressed
-        vacinaController.deletar(vacinaListaTabela, avisoDesenvolvedora, avisoProdutora, avisoParceira, avisoDoses, avisoPeriodo, 
-            avisoDescricao, vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, 
-            vacinaPeriodo, vacinaDescricaoAreaTexto);
+        vacinaController.deletar(carregarPrincipal2, vacinaListaTabela, vacinaIdCodigo, contadorCaracter, 
+            vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
     }//GEN-LAST:event_vacinaBtnDeletarKeyPressed
 
     private void botaoRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseClicked
@@ -5113,7 +5147,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){
                     }
                 }
-                cidadaoController.alterar(carregarPrincipal1, pacienteConsultar, pacienteIdCodigo, pacientePrimeiroNome,
+                cidadaoController.alterar(carregarPrincipal1, pacienteConsultar, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome,
                     pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, pacienteEndereco,
                     pacienteEnderecoNumero, pacienteEmail);
             }
@@ -5132,7 +5166,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     }catch (Exception e){
                     }
                 }
-                cidadaoController.alterar(carregarPrincipal1, pacienteConsultar, pacienteIdCodigo, pacientePrimeiroNome,
+                cidadaoController.alterar(carregarPrincipal1, pacienteConsultar, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome,
                     pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, pacienteEndereco,
                     pacienteEnderecoNumero, pacienteEmail);
             }

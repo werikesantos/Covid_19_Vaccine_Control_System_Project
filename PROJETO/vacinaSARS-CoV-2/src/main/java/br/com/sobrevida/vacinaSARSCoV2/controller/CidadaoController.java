@@ -17,11 +17,11 @@ public class CidadaoController {
     CidadaoModel cidadaoModel = new CidadaoModel();
     CidadaoDao cidadaoDao = new CidadaoDao();
        
-    public void salvar(JLabel carregarPrincipal1, JTextField pacienteIdCodigo, JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
-        JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
-        JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
-        JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
-        JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+    public void salvar(JLabel carregarPrincipal1, JTextField pacienteIdCodigo, JTable pacienteListaTabela, 
+        JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, JLabel avisoCpf, JLabel avisoEndereco, 
+        JLabel avisoN, JLabel avisoEmail, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
+        JTextField pacienteNascimento, JTextField pacienteCelular, JTextField pacienteCpf, 
+        JTextField pacienteEndereco, JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
           
         String primeiroNome = (pacientePrimeiroNome.getText());
         String segundoNome = (pacienteSobreNome.getText());
@@ -53,7 +53,8 @@ public class CidadaoController {
                 
                 JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso!"
                     ,"Cadastro de Paciente", JOptionPane.PLAIN_MESSAGE);
-                                
+                
+                pesquisa(pacienteListaTabela);                
                 avisoNome.setVisible(false);
                 avisoNascimento.setVisible(false);
                 avisoCelular.setVisible(false);
@@ -62,15 +63,15 @@ public class CidadaoController {
                 avisoN.setVisible(false);
                 avisoEmail.setVisible(false);
                 
-                pacienteIdCodigo.setText("");
-                pacientePrimeiroNome.setText("");
-                pacienteSobreNome.setText("");
-                pacienteNascimento.setText("");
-                pacienteCelular.setText("");
-                pacienteCpf.setText("");
-                pacienteEndereco.setText("");
-                pacienteEnderecoNumero.setText("");
-                pacienteEmail.setText("");
+                //pacienteIdCodigo.setText("");
+                //pacientePrimeiroNome.setText("");
+                //pacienteSobreNome.setText("");
+                //pacienteNascimento.setText("");
+                //pacienteCelular.setText("");
+                //pacienteCpf.setText("");
+                //pacienteEndereco.setText("");
+                //pacienteEnderecoNumero.setText("");
+                //pacienteEmail.setText("");
             }else{
                 carregarPrincipal1.setVisible(false);
                 
@@ -78,15 +79,15 @@ public class CidadaoController {
                     + "Usuário já possuí um cadastro."
                     ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
                 );
-                pacienteIdCodigo.setText("");
-                pacientePrimeiroNome.setText("");
-                pacienteSobreNome.setText("");
-                pacienteNascimento.setText("");
-                pacienteCelular.setText("");
-                pacienteCpf.setText("");
-                pacienteEndereco.setText("");
-                pacienteEnderecoNumero.setText("");
-                pacienteEmail.setText("");        
+                //pacienteIdCodigo.setText("");
+                //pacientePrimeiroNome.setText("");
+                //pacienteSobreNome.setText("");
+                //pacienteNascimento.setText("");
+                //pacienteCelular.setText("");
+                //pacienteCpf.setText("");
+                //pacienteEndereco.setText("");
+                //pacienteEnderecoNumero.setText("");
+                //pacienteEmail.setText("");        
             }       
         }else{
             carregarPrincipal1.setVisible(false);
@@ -275,7 +276,7 @@ public class CidadaoController {
         JTextField pacienteCpf, JTextField pacienteEndereco, JTextField pacienteEnderecoNumero,
         JTextField pacienteEmail){
         
-        //ATUALIZANDO PELA TABELA
+            //ATUALIZANDO PELA TABELA
             int linhaSelecionada = pacienteListaTabela.getSelectedRow();
 
             int id = (int) pacienteListaTabela.getModel().getValueAt(linhaSelecionada, 0);
@@ -338,9 +339,9 @@ public class CidadaoController {
     }
     
     public void alterar(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
-        JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
-        JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
-        JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
+        JTable pacienteListaTabela, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
+        JTextField pacienteNascimento, JTextField pacienteCelular, JTextField pacienteCpf, 
+        JTextField pacienteEndereco, JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
             
         String pegaId = pacienteIdCodigo.getText();
         if(!"".equals(pegaId)){
@@ -377,17 +378,18 @@ public class CidadaoController {
 
                     JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso.", 
                         "Atualização", JOptionPane.PLAIN_MESSAGE);
-
-                    pacienteIdCodigo.setText("");
+                    
+                    pesquisa(pacienteListaTabela);
+                    //pacienteIdCodigo.setText("");
                     pacienteConsultar.setText("Consultar...");
-                    pacientePrimeiroNome.setText("");
-                    pacienteSobreNome.setText("");
-                    pacienteNascimento.setText("");
-                    pacienteCelular.setText("");
-                    pacienteCpf.setText("");
-                    pacienteEndereco.setText("");
-                    pacienteEnderecoNumero.setText("");
-                    pacienteEmail.setText("");               
+                    //pacientePrimeiroNome.setText("");
+                    //pacienteSobreNome.setText("");
+                    //pacienteNascimento.setText("");
+                    //pacienteCelular.setText("");
+                    //pacienteCpf.setText("");
+                    //pacienteEndereco.setText("");
+                    //pacienteEnderecoNumero.setText("");
+                    //pacienteEmail.setText("");               
                 }
             }else{
                 carregarPrincipal1.setVisible(false);
@@ -412,7 +414,7 @@ public class CidadaoController {
         }
     }
 
-    public void deletar(JLabel carregarPrincipal1, JTable pacienteLista, JTextField pacienteIdCodigo, 
+    public void deletar(JLabel carregarPrincipal1, JTable pacienteLista, JTextField pacienteIdCodigo, JTable pacienteListaTabela,
         JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, JTextField pacienteNascimento, 
         JTextField pacienteCelular, JTextField pacienteCpf, JTextField pacienteEndereco, 
         JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
@@ -448,9 +450,21 @@ public class CidadaoController {
                         
                         if (result = true) {
                             carregarPrincipal1.setVisible(false);
-
-                            JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso:", "Deletado", JOptionPane.PLAIN_MESSAGE);
-                        } else {
+                            
+                            pacienteIdCodigo.setText("");
+                            pacientePrimeiroNome.setText("");
+                            pacienteSobreNome.setText("");
+                            pacienteNascimento.setText("");
+                            pacienteCelular.setText("");
+                            pacienteCpf.setText("");
+                            pacienteEndereco.setText("");
+                            pacienteEnderecoNumero.setText("");
+                            pacienteEmail.setText("");
+                            
+                            pesquisa(pacienteListaTabela);
+                            
+                            JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso.", "Deletar", JOptionPane.PLAIN_MESSAGE);
+                        }else{
                             carregarPrincipal1.setVisible(false);
 
                             JOptionPane.showMessageDialog(null, "Não foi possível deletar o usuário:\nID: " + id + "\nNome: " + nomeCompleto + "\nCPF: " + cpf,
@@ -464,10 +478,11 @@ public class CidadaoController {
     
     public void limpar(JLabel carregarPrincipal1, JLabel avisoNome, JLabel avisoNascimento, JLabel avisoCelular, 
         JLabel avisoCpf, JLabel avisoEndereco, JLabel avisoN, JLabel avisoEmail, 
-        JTextField pacienteIdCodigo, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
+        JTextField pacienteIdCodigo, JTable pacienteListaTabela, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
         JTextField pacienteNascimento, JTextField pacienteCelular, JTextField pacienteCpf, 
         JTextField pacienteEndereco, JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
-                    
+         
+        pesquisa(pacienteListaTabela);
         pacienteIdCodigo.setText("");
         pacientePrimeiroNome.setText("");
         pacienteSobreNome.setText("");

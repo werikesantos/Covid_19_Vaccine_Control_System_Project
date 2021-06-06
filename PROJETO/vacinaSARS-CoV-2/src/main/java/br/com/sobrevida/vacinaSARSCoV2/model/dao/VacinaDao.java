@@ -166,7 +166,7 @@ public class VacinaDao{
             "SELECT id AS CÓDIGO, desenvolvedora AS DESENVOLVEDOR, produtora AS PRODUTORA, parceira AS PARCEIRA, qtd_Dose AS QTD_DOSE, periodo AS PERÍODO, descricao AS DESCRIÇÃO FROM "
                 +"bd_vacina_sars_cov_2.vacina "
             +"WHERE "
-                +"id LIKE ?";
+                +"desenvolvedora LIKE ?";
 
         try(Connection conn = connectionFactory.connection()){
 
