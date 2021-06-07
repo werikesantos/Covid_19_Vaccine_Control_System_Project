@@ -4,6 +4,7 @@ import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import net.proteanit.sql.DbUtils;
 
@@ -112,7 +113,7 @@ public class VacinaDao{
         return result;
     }
     
-    public VacinaModel consultar(VacinaModel vacinaModel){
+    public VacinaModel consultar(VacinaModel vacinaModel, JLabel carregarPrincipal2){
 
         vacina = vacinaModel;
                 
@@ -147,6 +148,8 @@ public class VacinaDao{
                 vacinaModel.setPeriodo(periodo);
                 vacinaModel.setDescicao(descricao);
                 
+                carregarPrincipal2.setVisible(false);
+                
                 return vacinaModel;
             }
             ps.close();
@@ -157,13 +160,13 @@ public class VacinaDao{
         return vacina;
     }
     
-    public void pesquisar(JTable vacinaLista, String dado){
+    public void pesquisar(JTable vacinaListaTabela, String dado){
 
         String sql = 
             "SELECT id AS CÓDIGO, desenvolvedora AS DESENVOLVEDOR, produtora AS PRODUTORA, parceira AS PARCEIRA, qtd_Dose AS QTD_DOSE, periodo AS PERÍODO, descricao AS DESCRIÇÃO FROM "
                 +"bd_vacina_sars_cov_2.vacina "
             +"WHERE "
-                +"id LIKE ?";
+                +"desenvolvedora LIKE ?";
 
         try(Connection conn = connectionFactory.connection()){
 
@@ -173,7 +176,28 @@ public class VacinaDao{
 
             result = ps.executeQuery();
 
-            vacinaLista.setModel(DbUtils.resultSetToTableModel(result));
+            vacinaListaTabela.setModel(DbUtils.resultSetToTableModel(result));
+            
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void pesquisar(JTable vacinaListaTabela){
+
+        String sql = 
+            "SELECT id AS CÓDIGO, desenvolvedora AS DESENVOLVEDOR, produtora AS PRODUTORA, parceira AS PARCEIRA, qtd_Dose AS QTD_DOSE, periodo AS PERÍODO, descricao AS DESCRIÇÃO FROM "
+                +"bd_vacina_sars_cov_2.vacina";
+
+        try(Connection conn = connectionFactory.connection()){
+
+            ps = conn.prepareStatement(sql);
+
+            result = ps.executeQuery();
+
+            vacinaListaTabela.setModel(DbUtils.resultSetToTableModel(result));
             
             ps.close();
         }
