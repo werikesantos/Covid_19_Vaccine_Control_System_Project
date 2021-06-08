@@ -329,19 +329,32 @@ public class AplicacaoController {
         return result;        
     }
     
-    public void limpar(JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
-        JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail, JComboBox aplicacaoVacinaNome, 
-        JSpinner aplicacaoVacinaDose, JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
-           
+    public void limpar(JLabel carregarPrincipal, JTable aplicacaoListaTabela, JTextField aplicacaoConsultar, 
+        JTextField aplicacaoIdCodigo, JLabel avisoAplicacaoPacienteNome, JLabel avisoAplicacaoPacienteCpf, 
+        JLabel avisoAplicacaoPacienteEmail, JLabel avisoAplicacaoVacinaNome, JLabel avisoAplicacaoVacinaDose, 
+        JLabel avisoAplicacaoData, JTextField aplicacaoPacienteNome, JTextField aplicacaoPacienteCpf, 
+        JTextField aplicacaoPacienteEmail, JComboBox aplicacaoVacinaNome, JSpinner aplicacaoVacinaDose, 
+        JTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoVacinaData){
+ 
+        pesquisar(aplicacaoListaTabela);
         aplicacaoConsultar.setText("Consultar...");
         aplicacaoIdCodigo.setText(null);
         aplicacaoPacienteNome.setText(null);
         aplicacaoPacienteCpf.setText(null);
         aplicacaoPacienteEmail.setText(null);
         aplicacaoVacinaNome.setSelectedIndex(0);
-        aplicacaoVacinaDose.setValue("0");
+        aplicacaoVacinaDose.setValue(0);
         aplicacaoVacinaDataRetorno.setText(null);
         aplicacaoVacinaData.setText(null);
+        
+        avisoAplicacaoPacienteNome.setVisible(false);
+        avisoAplicacaoPacienteCpf.setVisible(false);
+        avisoAplicacaoPacienteEmail.setVisible(false);
+        avisoAplicacaoVacinaNome.setVisible(false);
+        avisoAplicacaoVacinaDose.setVisible(false);
+        avisoAplicacaoData.setVisible(false);
+        
+        carregarPrincipal.setVisible(false);
     }
     
     public void buscar(JLabel avisoAplicacaoPacienteNome, JLabel avisoAplicacaoPacienteCpf, 
@@ -498,7 +511,12 @@ public class AplicacaoController {
         aplicacaoDao.pesquisar(aplicacaoLista, dado);    
     }
     
-    public void alterar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JSpinner aplicacaoVacinaDose, 
+    public void pesquisar(JTable aplicacaoListaTabela){     
+        aplicacaoDao.pesquisar(aplicacaoListaTabela);    
+    }
+    
+    //ALTERAR PELA TABELA
+    /*public void alterar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JSpinner aplicacaoVacinaDose, 
             JTextField aplicacaoVacinaData, JTextField aplicacaoVacinaDataRetorno){
         
         int linhaSelecionada = aplicacaoLista.getSelectedRow();
@@ -522,7 +540,7 @@ public class AplicacaoController {
                     ,"Controle de aplicação", JOptionPane.WARNING_MESSAGE);
             }  
         }
-    }
+    }*/
     
     public void deletar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
         JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail){

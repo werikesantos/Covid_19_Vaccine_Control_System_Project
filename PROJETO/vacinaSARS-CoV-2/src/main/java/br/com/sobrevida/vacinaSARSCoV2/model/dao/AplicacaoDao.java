@@ -207,6 +207,31 @@ public class AplicacaoDao{
         }
     }
     
+    public void pesquisar(JTable aplicacaoListaTabela){
+
+        String sql = 
+            "SELECT ap.idCidadao AS CÓDIGO, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose_aplicada AS APLICAÇÃO, ap.data_aplicacao AS DATA, ap.previsao AS PREVISÃO "
+                +"FROM aplicacao ap "
+                +"INNER JOIN cidadao ci "
+                +"ON ap.idCidadao = ci.id "
+                +"INNER JOIN vacina va "
+                +"ON ap.idVacina = va.id ";
+               
+        try(Connection conn = connectionFactory.connection()){
+
+            ps = conn.prepareStatement(sql);
+
+            result = ps.executeQuery();
+
+            aplicacaoListaTabela.setModel(DbUtils.resultSetToTableModel(result));
+                        
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     public boolean alterar(AplicacaoModel aplicacaoModel, boolean resultado){
          
         boolean result = resultado;
