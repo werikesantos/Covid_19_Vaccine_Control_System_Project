@@ -8,6 +8,8 @@ import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import net.proteanit.sql.DbUtils;
 
@@ -28,7 +30,7 @@ public class AplicacaoDao{
                 
         String sql = 
             "SELECT "
-                +"desenvolvedora "
+                +"id, desenvolvedora, qtd_Dose, periodo "
             +"FROM "
                 +"bd_vacina_sars_cov_2.vacina";
         
@@ -42,7 +44,10 @@ public class AplicacaoDao{
                 
                 VacinaModel vacinaModel = new VacinaModel();
 
+                vacinaModel.setId(result.getInt("id"));
                 vacinaModel.setDesenvolvedora(result.getString("desenvolvedora"));
+                vacinaModel.setQtd_Dose(result.getInt("qtd_Dose"));
+                vacinaModel.setPeriodo(result.getString("periodo"));
                 
                 vacinas.add(vacinaModel);
             }
@@ -93,10 +98,10 @@ public class AplicacaoDao{
                 cidadaoModel.setEmail(email);
                 cidadaoModel.setDesenvolvedora(desenvolvedora);
                 cidadaoModel.setQtd_Dose(qtd_Dose);
-                cidadaoModel.setDose(dose);
-                cidadaoModel.setUnica(unica);
-                cidadaoModel.setPrimeira(primeira);
-                cidadaoModel.setSegunda(segunda);
+                //cidadaoModel.setDose(dose);
+                //cidadaoModel.setUnica(unica);
+                //cidadaoModel.setPrimeira(primeira);
+                //cidadaoModel.setSegunda(segunda);
                 
                 return cidadaoModel;
             }
@@ -153,9 +158,9 @@ public class AplicacaoDao{
         
         String sql = 
             "INSERT INTO "
-                +"bd_vacina_sars_cov_2.aplicacao(idCidadao, idVacina, dose, unica, primeira, segunda) "
+                +"bd_vacina_sars_cov_2.aplicacao(idCidadao, idVacina, dose_aplicada, data_aplicacao, previsao) "
             +"VALUES "
-                +"(?, ?, ?, ?, ?, ?)";
+                +"(?, ?, ?, ?, ?)";
         
         try(Connection conn = connectionFactory.connection()){
             
@@ -163,10 +168,9 @@ public class AplicacaoDao{
             
             ps.setInt(1, cidadaoModel.getIdCidadao());
             ps.setInt(2, cidadaoModel.getIdVacina());
-            ps.setInt(3, cidadaoModel.getDose());
-            ps.setString(4, cidadaoModel.getUnica());
-            ps.setString(5, cidadaoModel.getPrimeira());
-            ps.setString(6, cidadaoModel.getSegunda());
+            ps.setInt(3, cidadaoModel.getDoseAplicada());
+            ps.setString(4, cidadaoModel.getDataAplicacao());
+            ps.setString(5, cidadaoModel.getPrevisao());
             
             ps.execute();
             ps.close();
@@ -210,7 +214,7 @@ public class AplicacaoDao{
     public void pesquisar(JTable aplicacaoListaTabela){
 
         String sql = 
-            "SELECT ap.idCidadao AS CÓDIGO, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose_aplicada AS APLICAÇÃO, ap.data_aplicacao AS DATA, ap.previsao AS PREVISÃO "
+            "SELECT ap.id AS CÓDIGO, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose_aplicada AS APLICAÇÃO, ap.data_aplicacao AS DATA, ap.previsao AS PREVISÃO "
                 +"FROM aplicacao ap "
                 +"INNER JOIN cidadao ci "
                 +"ON ap.idCidadao = ci.id "
@@ -232,6 +236,29 @@ public class AplicacaoDao{
         }
     }
     
+    public void atualizarComboBox(JComboBox aplicacaoVacinaNome){
+
+        String sql = 
+            "SELECT "
+                +"desenvolvedora "
+            +"FROM "
+                +"bd_vacina_sars_cov_2.vacina";
+               
+        try(Connection conn = connectionFactory.connection()){
+
+            ps = conn.prepareStatement(sql);
+
+            result = ps.executeQuery();
+
+            aplicacaoVacinaNome.setModel((ComboBoxModel) DbUtils.resultSetToTableModel(result));
+                        
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     public boolean alterar(AplicacaoModel aplicacaoModel, boolean resultado){
          
         boolean result = resultado;
@@ -240,18 +267,17 @@ public class AplicacaoDao{
             "UPDATE "
                 +"bd_vacina_sars_cov_2.aplicacao "
             +"SET "
-                +"dose = ?, unica = ?, primeira = ?, segunda = ? "
-            +"WHERE idCidadao = ?";
+                +"dose_aplicada = ?, data_aplicacao = ?, previsao = ? "
+            +"WHERE id = ?";
                         
         try(Connection conn = connectionFactory.connection()){
             
             ps = conn.prepareStatement(sql);
             
-            ps.setInt(1, aplicacaoModel.getDose());
-            ps.setString(2, aplicacaoModel.getUnica());
-            ps.setString(3, aplicacaoModel.getPrimeira());
-            ps.setString(4, aplicacaoModel.getSegunda());
-            ps.setInt(5, aplicacaoModel.getIdCidadao());
+            ps.setInt(1, aplicacaoModel.getDoseAplicada());
+            ps.setString(2, aplicacaoModel.getDataAplicacao());
+            ps.setString(3, aplicacaoModel.getPrevisao());
+            ps.setInt(4, aplicacaoModel.getId());
             
             ps.execute();
             ps.close();

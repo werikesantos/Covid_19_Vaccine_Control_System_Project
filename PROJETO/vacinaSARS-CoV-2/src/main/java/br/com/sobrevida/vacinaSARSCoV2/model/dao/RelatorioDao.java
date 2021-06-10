@@ -42,7 +42,7 @@ public class RelatorioDao{
                 cidadaoModel.setNome(result.getString("nome"));
                 cidadaoModel.setEmail(result.getString("email"));
                 cidadaoModel.setCelular(result.getString("celular"));
-                cidadaoModel.setSegunda(result.getString("segunda"));
+                //cidadaoModel.setSegunda(result.getString("segunda"));
                 
                 relatorioAplicacao.add(cidadaoModel);
             }
