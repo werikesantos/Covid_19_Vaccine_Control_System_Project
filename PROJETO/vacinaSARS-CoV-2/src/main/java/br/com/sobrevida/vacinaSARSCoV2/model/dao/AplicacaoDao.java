@@ -64,7 +64,7 @@ public class AplicacaoDao{
         cidadao = cidadaoModel;
         
         String sql = 
-            "SELECT ci.id, ci.nome, ci.cpf, ci.email, va.desenvolvedora, va.qtd_Dose, ap.dose, ap.unica, ap.primeira, ap.segunda "
+            "SELECT ci.id, ci.nome, ci.cpf, ci.email, va.desenvolvedora, ap.dose_aplicada, ap.data_aplicacao, ap.previsao "
             +"FROM aplicacao ap "
             +"INNER JOIN cidadao ci "
             +"ON ap.idCidadao = ci.id "
@@ -86,22 +86,18 @@ public class AplicacaoDao{
                 String cpf = result.getString("cpf");
                 String email = result.getString("email");
                 String desenvolvedora = result.getString("desenvolvedora");
-                int qtd_Dose = result.getInt("qtd_Dose");
-                int dose = result.getInt("dose");
-                String unica = result.getString("unica");
-                String primeira = result.getString("primeira");
-                String segunda = result.getString("segunda");
+                int doseAplicada = result.getInt("dose_aplicada");
+                String dataAplicacao = result.getString("data_aplicacao");
+                String previsao = result.getString("previsao");
                  
                 cidadaoModel.setId(id);
                 cidadaoModel.setNome(nome);
                 cidadaoModel.setCpf(cpf);
                 cidadaoModel.setEmail(email);
                 cidadaoModel.setDesenvolvedora(desenvolvedora);
-                cidadaoModel.setQtd_Dose(qtd_Dose);
-                //cidadaoModel.setDose(dose);
-                //cidadaoModel.setUnica(unica);
-                //cidadaoModel.setPrimeira(primeira);
-                //cidadaoModel.setSegunda(segunda);
+                cidadaoModel.setDoseAplicada(doseAplicada);
+                cidadaoModel.setDataAplicacao(dataAplicacao);
+                cidadaoModel.setPrevisao(previsao);
                 
                 return cidadaoModel;
             }
@@ -186,7 +182,7 @@ public class AplicacaoDao{
     public void pesquisar(JTable aplicacaoLista, String dado){
 
         String sql = 
-            "SELECT ap.idCidadao AS CÓDIGO, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose AS APLICAÇÃO, ap.unica AS ÚNICA_DOSE, ap.primeira AS 1ª_DOSE, ap.segunda AS RETORNO "
+            "SELECT ap.id AS CÓDIGO, ap.idCidadao AS PACIENTE, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose_aplicada AS APLICAÇÃO, ap.data_aplicacao AS DATA, ap.previsao AS PREVISÃO "
             +"FROM aplicacao ap "
             +"INNER JOIN cidadao ci "
             +"ON ap.idCidadao = ci.id "
@@ -201,7 +197,7 @@ public class AplicacaoDao{
             ps.setString(1, dado + "%");
 
             result = ps.executeQuery();
-
+              
             aplicacaoLista.setModel(DbUtils.resultSetToTableModel(result));
             
             ps.close();
@@ -214,7 +210,7 @@ public class AplicacaoDao{
     public void pesquisar(JTable aplicacaoListaTabela){
 
         String sql = 
-            "SELECT ap.id AS CÓDIGO, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose_aplicada AS APLICAÇÃO, ap.data_aplicacao AS DATA, ap.previsao AS PREVISÃO "
+            "SELECT ap.id AS CÓDIGO, ap.idCidadao AS PACIENTE, ci.nome AS NOME, ci.cpf AS CPF, ci.email AS E_MAIL, va.desenvolvedora AS VACINA, ap.dose_aplicada AS APLICAÇÃO, ap.data_aplicacao AS DATA, ap.previsao AS PREVISÃO "
                 +"FROM aplicacao ap "
                 +"INNER JOIN cidadao ci "
                 +"ON ap.idCidadao = ci.id "
@@ -235,30 +231,7 @@ public class AplicacaoDao{
             e.printStackTrace();
         }
     }
-    
-    public void atualizarComboBox(JComboBox aplicacaoVacinaNome){
-
-        String sql = 
-            "SELECT "
-                +"desenvolvedora "
-            +"FROM "
-                +"bd_vacina_sars_cov_2.vacina";
-               
-        try(Connection conn = connectionFactory.connection()){
-
-            ps = conn.prepareStatement(sql);
-
-            result = ps.executeQuery();
-
-            aplicacaoVacinaNome.setModel((ComboBoxModel) DbUtils.resultSetToTableModel(result));
-                        
-            ps.close();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    
+       
     public boolean alterar(AplicacaoModel aplicacaoModel, boolean resultado){
          
         boolean result = resultado;
