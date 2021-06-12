@@ -83,7 +83,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoSenha.add(jLabel69);
         jLabel69.setBounds(22, 18, 30, 30);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/relatorio.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/impri4.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
