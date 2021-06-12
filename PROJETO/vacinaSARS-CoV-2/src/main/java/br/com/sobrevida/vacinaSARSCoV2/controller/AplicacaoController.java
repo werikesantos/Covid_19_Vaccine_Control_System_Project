@@ -727,30 +727,70 @@ public class AplicacaoController {
         }
     }
     
-    public void deletar(JTable aplicacaoLista, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
-        JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail){
+    public void deletar(JLabel carregarPrincipal, JTable aplicacaoListaTabela, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
+        JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail, JComboBox aplicacaoVacinaNome, 
+        JSpinner aplicacaoVacinaDose, JFormattedTextField aplicacaoVacinaData, 
+        JFormattedTextField aplicacaoVacinaDataRetorno, JTextField aplicacaoIdAplicacao){
           
-        int linhaSelecionada = aplicacaoLista.getSelectedRow();
-        int idCidadao = (int) aplicacaoLista.getModel().getValueAt(linhaSelecionada, 0);
-        String nome = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 1).toString();
-        String cpf = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 2).toString();
-        String email = aplicacaoLista.getModel().getValueAt(linhaSelecionada, 3).toString();
+        int linhaSelecionada = aplicacaoListaTabela.getSelectedRow();
+        int idAplicacao = (int) aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 0);
+        String nome = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 2).toString();
+        String cpf = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 3).toString();
+        String nomeVacina = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 5).toString();
+        String dose = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 6).toString();
+        String aplicacao = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 7).toString();
+        String previsao = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 8).toString();
         
-        if((!"".equals(idCidadao))){
+        if((!"".equals(idAplicacao))){
             
-            aplicacaoModel.setIdCidadao(idCidadao);
+            Object[] opcao = {"Sim", "Não"};
+            int respostaUsuario = JOptionPane.showOptionDialog(null, "Deseja excluir essa Aplicação?\nCódigo: "+idAplicacao+"\nNome: "+nome+"\nCPF: "+cpf+"\nVacina: "+nomeVacina+"\nDose: "+dose+"\nAplicação: "+aplicacao+"\nPrevisão: "+previsao
+                ,"Exclusão de aplicações", JOptionPane.YES_NO_OPTION,
+                    JOptionPane.PLAIN_MESSAGE, null, opcao, opcao[0]
+                );
             
-            JOptionPane.showMessageDialog(null, "Esse registro será deletado:\nID: "+idCidadao+"\nPaciente: "+nome+"\nCPF: "+cpf+"\nE-Mail: "+email
-                ,"Atenção", JOptionPane.WARNING_MESSAGE);
-                    
-            boolean result = aplicacaoDao.deletar(aplicacaoModel, false); 
+            if(respostaUsuario == JOptionPane.YES_OPTION){
+                
+                carregarPrincipal.setVisible(true);
+
+                new Thread(){
+                    int i = 0;
+                    public void run() {
+                        while (i < 100) {
+                            i = i + 5;
+                            try {
+                                sleep(100);
+                            } catch (Exception e) {
+                            }
+                        }
+                        aplicacaoModel.setId(idAplicacao);
+                        boolean result = aplicacaoDao.deletar(aplicacaoModel, false); 
             
-            if(result = true){
-                JOptionPane.showMessageDialog(null, "Registro de aplicação deletado com sucesso", "Deletado", JOptionPane.WARNING_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(null, "Não foi possível deletar o registro de aplicação\nID: "+idCidadao+"\nDesenvolvedora: "+nome+"\nProdutora: "+cpf+"\nParceira: "+email
-                    ,"Erro", JOptionPane.WARNING_MESSAGE);
+                        if(result = true){
+                            
+                            aplicacaoIdAplicacao.setText(null);
+                            aplicacaoIdCodigo.setText(null);
+                            aplicacaoPacienteNome.setText(null);
+                            aplicacaoPacienteCpf.setText(null);
+                            aplicacaoPacienteEmail.setText(null);
+                            aplicacaoVacinaNome.setSelectedIndex(0);
+                            aplicacaoVacinaDose.setValue(0);
+                            aplicacaoVacinaDataRetorno.setText(null);
+                            aplicacaoVacinaData.setText(null);
+                            
+                            pesquisar(aplicacaoListaTabela);
+                            carregarPrincipal.setVisible(false);
+                            
+                            JOptionPane.showMessageDialog(null, "Registro de aplicação deletado com sucesso!", "Deletar", JOptionPane.WARNING_MESSAGE);
+                        }else{
+                            carregarPrincipal.setVisible(false);
+                            //vacinaDao.deletar(vacinaModel, false);
+                            JOptionPane.showMessageDialog(null, "Não foi possível deletar o registro de aplicação\nCódigo: "+idAplicacao+"\nNome: "+nome+"\nCPF: "+cpf+"\nVacina: "+nomeVacina+"\nDose: "+dose+"\nAplicação: "+aplicacao+"\nPrevisão: "+previsao
+                                ,"Erro", JOptionPane.WARNING_MESSAGE);
+                        }
+                    }
+                }.start();
             }
-        }  
+        } 
     }
 }

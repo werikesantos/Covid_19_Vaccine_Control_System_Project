@@ -4676,11 +4676,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_aplicacaoBtnSalvarKeyPressed
 
     private void aplicacaoBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnDeletarActionPerformed
-        aplicacaoController.deletar(aplicacaoListaTabela, aplicacaoIdCodigo, aplicacaoPacienteNome, 
-            aplicacaoPacienteCpf, aplicacaoPacienteEmail);
+        aplicacaoConsultar.setText("Pacientes...");
+        aplicacaoAplicacao.setText("Aplicações...");
+        aplicacaoPesquisar.setText("Pesquisar...");
+        aplicacaoController.deletar(carregarPrincipal, aplicacaoListaTabela, aplicacaoIdCodigo, aplicacaoPacienteNome, 
+            aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaDose, aplicacaoVacinaData,
+            aplicacaoVacinaDataRetorno, aplicacaoIdAplicacao
+        );
     }//GEN-LAST:event_aplicacaoBtnDeletarActionPerformed
 
     private void aplicacaoBtnDeletarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoBtnDeletarKeyPressed
+        aplicacaoConsultar.setText("Pacientes...");
+        aplicacaoAplicacao.setText("Aplicações...");
+        aplicacaoPesquisar.setText("Pesquisar...");
+        aplicacaoController.deletar(carregarPrincipal, aplicacaoListaTabela, aplicacaoIdCodigo, aplicacaoPacienteNome, 
+            aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaDose, aplicacaoVacinaData,
+            aplicacaoVacinaDataRetorno, aplicacaoIdAplicacao
+        );
     }//GEN-LAST:event_aplicacaoBtnDeletarKeyPressed
 
     private void aplicacaoBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnLimparActionPerformed
@@ -5305,6 +5317,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_atualizarBtnAplicacaoMouseClicked
 
     private void atualizarBtnAplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBtnAplicacaoActionPerformed
+        carregarPrincipal.setVisible(true);
+        new Thread(){
+            int i=0;
+            public void run(){
+                while(i<100){
+                    i = i+5;
+                    try{
+                        sleep(100);
+                    }catch (Exception e){
+                    }
+                }
+                aplicacaoController.pesquisar(aplicacaoListaTabela);
+                carregarPrincipal.setVisible(false);
+            }
+        }.start();
     }//GEN-LAST:event_atualizarBtnAplicacaoActionPerformed
 
     private void aplicacaoBtnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnConsultarActionPerformed

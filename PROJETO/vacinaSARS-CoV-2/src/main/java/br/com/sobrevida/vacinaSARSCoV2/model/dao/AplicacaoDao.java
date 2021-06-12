@@ -332,13 +332,13 @@ public class AplicacaoDao{
             "DELETE FROM "
                 +"bd_vacina_sars_cov_2.aplicacao "
             +"WHERE "
-                +"idCidadao = ?";
+                +"id = ?";
         
         try(Connection conn = connectionFactory.connection()){
             
             ps = conn.prepareStatement(sql);
             
-            ps.setInt(1, aplicacaoModel.getIdCidadao());
+            ps.setInt(1, aplicacaoModel.getId());
             
             ps.execute();
             ps.close();
