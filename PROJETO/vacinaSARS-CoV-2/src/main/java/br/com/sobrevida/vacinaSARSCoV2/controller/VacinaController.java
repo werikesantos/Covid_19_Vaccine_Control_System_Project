@@ -53,7 +53,7 @@ public class VacinaController{
                     if(result == true){
                         JOptionPane.showMessageDialog(null, "Vacina cadastrada com sucesso!"
                             ,"Cadastro de Vacinas", JOptionPane.PLAIN_MESSAGE);
-                
+                        
                         pesquisar(vacinaListaTabela);
                         avisoDesenvolvedora.setVisible(false);
                         avisoProdutora.setVisible(false);
@@ -71,11 +71,11 @@ public class VacinaController{
                         vacinaDescricaoAreaTexto.setText("");
                     }else{
                         JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                            + "Por favor, verifique e tente novamente."
+                            + "Essa vacina já possuí cadastro."
                             ,"Cadastro de Vacinas", JOptionPane.WARNING_MESSAGE
                         );
-                        vacinaDoses.setSelectedIndex(0);
-                        vacinaPeriodo.setValue(0);        
+                        //vacinaDoses.setSelectedIndex(0);
+                        //vacinaPeriodo.setValue(0);        
                     }   
                 }else{
                     JOptionPane.showMessageDialog(null, "Será necessário cadastrar um período,\npara a próxima dose!"
@@ -109,11 +109,11 @@ public class VacinaController{
                     vacinaDescricaoAreaTexto.setText("");
                 }else{
                     JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                        + "Por favor, verifique e tente novamente."
+                        + "Essa vacina já possuí cadastro."
                         ,"Cadastro de Vacinas", JOptionPane.WARNING_MESSAGE
                     );
-                    vacinaDoses.setSelectedIndex(0);
-                    vacinaPeriodo.setValue(0);        
+                    //vacinaDoses.setSelectedIndex(0);
+                    //vacinaPeriodo.setValue(0);        
                 }    
             }      
         }else{
@@ -356,7 +356,11 @@ public class VacinaController{
                 String produtora = result.getProdutora();
                 String parceira = result.getParceira();
                 int doses = result.getQtd_Dose();//é inteiro
+                
                 String periodo = result.getPeriodo();// é uma string
+                if(periodo.equals("-")){
+                    periodo = "0";
+                }
                 //int periodos = Integer.parseInt(periodo);
                 String descricao = result.getDescicao();
 

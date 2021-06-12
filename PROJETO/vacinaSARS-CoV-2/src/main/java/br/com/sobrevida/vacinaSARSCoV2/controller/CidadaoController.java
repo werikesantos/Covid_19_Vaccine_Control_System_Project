@@ -338,7 +338,7 @@ public class CidadaoController {
         }
     }
     
-    public void alterar(JLabel carregarPrincipal1, JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
+    public void alterar(JLabel carregarPrincipal, JTextField pacienteConsultar, JTextField pacienteIdCodigo, 
         JTable pacienteListaTabela, JTextField pacientePrimeiroNome, JTextField pacienteSobreNome, 
         JTextField pacienteNascimento, JTextField pacienteCelular, JTextField pacienteCpf, 
         JTextField pacienteEndereco, JTextField pacienteEnderecoNumero, JTextField pacienteEmail){
@@ -374,7 +374,7 @@ public class CidadaoController {
                 boolean result = cidadaoDao.alterar(cidadaoModel, false);
 
                 if(result = true){
-                    carregarPrincipal1.setVisible(false);
+                    carregarPrincipal.setVisible(false);
 
                     JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso.", 
                         "Atualização", JOptionPane.PLAIN_MESSAGE);
@@ -392,7 +392,7 @@ public class CidadaoController {
                     //pacienteEmail.setText("");               
                 }
             }else{
-                carregarPrincipal1.setVisible(false);
+                carregarPrincipal.setVisible(false);
 
                 JOptionPane.showMessageDialog(null, "Erro ao atualizar.", 
                     "Erro", JOptionPane.WARNING_MESSAGE);
@@ -408,7 +408,7 @@ public class CidadaoController {
                 pacienteEmail.setText("");
             }
         }else{
-            carregarPrincipal1.setVisible(false);
+            carregarPrincipal.setVisible(false);
             JOptionPane.showMessageDialog(null, "Código de usuário não localizado.", 
                 "Atualização", JOptionPane.ERROR_MESSAGE);
         }

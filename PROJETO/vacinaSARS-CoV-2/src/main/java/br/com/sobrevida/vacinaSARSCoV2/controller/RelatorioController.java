@@ -72,7 +72,7 @@ public class RelatorioController{
                 coluna2 = new PdfPCell(new Paragraph(cidadaoModel.getNome()));
                 coluna3 = new PdfPCell(new Paragraph(cidadaoModel.getEmail()));
                 coluna4 = new PdfPCell(new Paragraph(cidadaoModel.getCelular()));
-                coluna5 = new PdfPCell(new Paragraph(cidadaoModel.getSegunda()));
+                //coluna5 = new PdfPCell(new Paragraph(cidadaoModel.getSegunda()));
 
                 tabela.addCell(coluna1);
                 tabela.addCell(coluna2);

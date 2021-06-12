@@ -31,10 +31,19 @@ public class GerarRelatorio extends javax.swing.JFrame {
 
         avisoSenha = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         linhaSeparador1 = new javax.swing.JSeparator();
         jLabel69 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        fim = new javax.swing.JFormattedTextField();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        avisoAplicacaoData = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        inicio = new javax.swing.JFormattedTextField();
+        avisoAplicacaoData1 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobrevida - Controle de Aplicações");
@@ -67,11 +76,6 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jLabel1.setText("Controle de aplicações");
         avisoSenha.add(jLabel1);
         jLabel1.setBounds(60, 20, 250, 23);
-
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel2.setText("Gerar relatório de controle de segunda dose?");
-        avisoSenha.add(jLabel2);
-        jLabel2.setBounds(40, 80, 300, 20);
         avisoSenha.add(linhaSeparador1);
         linhaSeparador1.setBounds(20, 50, 720, 2);
 
@@ -79,14 +83,85 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoSenha.add(jLabel69);
         jLabel69.setBounds(22, 18, 30, 30);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/relatorio.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/impri4.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
         avisoSenha.add(jButton1);
-        jButton1.setBounds(680, 70, 40, 40);
+        jButton1.setBounds(670, 70, 40, 40);
+
+        fim.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        try {
+            fim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        fim.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        avisoSenha.add(fim);
+        fim.setBounds(480, 80, 100, 28);
+
+        jLabel71.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel71.setText("Gerar relatório");
+        avisoSenha.add(jLabel71);
+        jLabel71.setBounds(650, 120, 100, 15);
+
+        jLabel61.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel61.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel61.setText("Qual a data da aplicação?");
+        avisoSenha.add(jLabel61);
+        jLabel61.setBounds(20, 90, 170, 16);
+
+        avisoAplicacaoData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoData.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoData.setText("*");
+        avisoSenha.add(avisoAplicacaoData);
+        avisoAplicacaoData.setBounds(470, 80, 10, 15);
+
+        jLabel62.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel62.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel62.setText("Para");
+        avisoSenha.add(jLabel62);
+        jLabel62.setBounds(438, 90, 30, 16);
+
+        jLabel63.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel63.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel63.setText("De");
+        avisoSenha.add(jLabel63);
+        jLabel63.setBounds(240, 90, 40, 16);
+
+        inicio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        try {
+            inicio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        inicio.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        avisoSenha.add(inicio);
+        inicio.setBounds(280, 80, 100, 28);
+
+        avisoAplicacaoData1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoAplicacaoData1.setForeground(new java.awt.Color(255, 0, 0));
+        avisoAplicacaoData1.setText("*");
+        avisoSenha.add(avisoAplicacaoData1);
+        avisoAplicacaoData1.setBounds(270, 80, 10, 15);
+
+        jLabel73.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel73.setText("Inicio");
+        avisoSenha.add(jLabel73);
+        jLabel73.setBounds(280, 110, 70, 15);
+
+        jLabel72.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel72.setText("Fim");
+        avisoSenha.add(jLabel72);
+        jLabel72.setBounds(480, 110, 70, 15);
 
         getContentPane().add(avisoSenha);
         avisoSenha.setBounds(0, 0, 770, 360);
@@ -187,11 +262,20 @@ public class GerarRelatorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel avisoAplicacaoData;
+    private javax.swing.JLabel avisoAplicacaoData1;
     private javax.swing.JPanel avisoSenha;
+    private javax.swing.JFormattedTextField fim;
+    private javax.swing.JFormattedTextField inicio;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JSeparator linhaSeparador1;
     // End of variables declaration//GEN-END:variables
 }

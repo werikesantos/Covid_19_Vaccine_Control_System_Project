@@ -9,10 +9,9 @@ public class AplicacaoModel extends VacinaModel{
     private int id;
     private int idCidadao;
     private int idVacina ;
-    private int dose;
-    private String unica;
-    private String primeira;
-    private String segunda;
+    private int doseAplicada;
+    private String dataAplicacao;
+    private String previsao;
 
     /**
      * @return the id
@@ -55,49 +54,37 @@ public class AplicacaoModel extends VacinaModel{
     /**
      * @return the dose
      */
-    public int getDose() {
-        return dose;
+    public int getDoseAplicada() {
+        return doseAplicada;
     }
     /**
-     * @param dose the dose to set
+     * @param doseAplicada the dose to set
      */
-    public void setDose(int dose) {
-        this.dose = dose;
+    public void setDoseAplicada(int doseAplicada) {
+        this.doseAplicada = doseAplicada;
     }
     /**
      * @return the unica
      */
-    public String getUnica() {
-        return unica;
+    public String getDataAplicacao() {
+        return dataAplicacao;
     }
     /**
-     * @param unica the unica to set
+     * @param dataAplicacao the unica to set
      */
-    public void setUnica(String unica) {
-        this.unica = unica;
+    public void setDataAplicacao(String dataAplicacao) {
+        this.dataAplicacao = dataAplicacao;
     }
     /**
      * @return the primeira
      */
-    public String getPrimeira() {
-        return primeira;
+    public String getPrevisao() {
+        return previsao;
     }
     /**
-     * @param primeira the primeira to set
+     * @param previsao the primeira to set
      */
-    public void setPrimeira(String primeira) {
-        this.primeira = primeira;
-    }
-    /**
-     * @return the segunda
-     */
-    public String getSegunda() {
-        return segunda;
-    }
-    /**
-     * @param segunda the segunda to set
-     */
-    public void setSegunda(String segunda) {
-        this.segunda = segunda;
+    public void setPrevisao(String previsao) {
+        this.previsao = previsao;
     }
 }

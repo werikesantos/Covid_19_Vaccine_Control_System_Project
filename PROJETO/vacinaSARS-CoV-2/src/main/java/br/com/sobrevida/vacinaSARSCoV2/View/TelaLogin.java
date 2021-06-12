@@ -206,9 +206,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(48, 47, 61));
-        jLabel2.setText("Powered by Group Seven LTDA ® ");
+        jLabel2.setText("Powered by W4 Group LTDA ® ");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(605, 465, 210, 15);
+        jLabel2.setBounds(626, 465, 180, 15);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transparente.png"))); // NOI18N
         jPanel1.add(jLabel7);
