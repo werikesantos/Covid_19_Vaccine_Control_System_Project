@@ -124,16 +124,16 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jLabel62.setBackground(new java.awt.Color(51, 51, 51));
         jLabel62.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel62.setText("Fim");
+        jLabel62.setText("Para");
         avisoSenha.add(jLabel62);
-        jLabel62.setBounds(440, 90, 30, 16);
+        jLabel62.setBounds(438, 90, 30, 16);
 
         jLabel63.setBackground(new java.awt.Color(51, 51, 51));
         jLabel63.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel63.setText("Inicio");
+        jLabel63.setText("De");
         avisoSenha.add(jLabel63);
-        jLabel63.setBounds(230, 90, 40, 16);
+        jLabel63.setBounds(240, 90, 40, 16);
 
         inicio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         try {
@@ -153,13 +153,13 @@ public class GerarRelatorio extends javax.swing.JFrame {
 
         jLabel73.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel73.setText("Data inicio");
+        jLabel73.setText("Inicio");
         avisoSenha.add(jLabel73);
         jLabel73.setBounds(280, 110, 70, 15);
 
         jLabel72.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel72.setText("Data fim");
+        jLabel72.setText("Fim");
         avisoSenha.add(jLabel72);
         jLabel72.setBounds(480, 110, 70, 15);
 

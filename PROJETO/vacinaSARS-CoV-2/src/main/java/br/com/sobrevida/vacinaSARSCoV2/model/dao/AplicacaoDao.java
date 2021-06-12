@@ -64,7 +64,7 @@ public class AplicacaoDao{
         cidadao = cidadaoModel;
         
         String sql = 
-            "SELECT ci.id, ci.nome, ci.cpf, ci.email, va.desenvolvedora, ap.dose_aplicada, ap.data_aplicacao, ap.previsao "
+            "SELECT ci.id, ap.id, ci.nome, ci.cpf, ci.email, va.desenvolvedora, ap.dose_aplicada, ap.data_aplicacao, ap.previsao "
             +"FROM aplicacao ap "
             +"INNER JOIN cidadao ci "
             +"ON ap.idCidadao = ci.id "
@@ -81,7 +81,8 @@ public class AplicacaoDao{
             result = ps.executeQuery();
                         
             while(result.next()){
-                int id = result.getInt("id");
+                int id = result.getInt("ci.id");
+                int idAplicacao = result.getInt("ap.id");
                 String nome = result.getString("nome");
                 String cpf = result.getString("cpf");
                 String email = result.getString("email");
@@ -90,7 +91,67 @@ public class AplicacaoDao{
                 String dataAplicacao = result.getString("data_aplicacao");
                 String previsao = result.getString("previsao");
                  
-                cidadaoModel.setId(id);
+                cidadaoModel.setIdCidadao(id);
+                cidadaoModel.setId(idAplicacao);
+                cidadaoModel.setNome(nome);
+                cidadaoModel.setCpf(cpf);
+                cidadaoModel.setEmail(email);
+                cidadaoModel.setDesenvolvedora(desenvolvedora);
+                cidadaoModel.setDoseAplicada(doseAplicada);
+                cidadaoModel.setDataAplicacao(dataAplicacao);
+                cidadaoModel.setPrevisao(previsao);
+                
+                return cidadaoModel;
+            }
+            ps.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        cidadao.setIdCidadao(0);
+        return cidadao;
+    }
+    
+    public CidadaoModel aplicacao(CidadaoModel cidadaoModel){
+            
+        cidadao = cidadaoModel;
+        
+        String sql = 
+            "SELECT ap.id, ap.idCidadao, ci.nome, ci.cpf, ci.email, va.desenvolvedora, ap.dose_aplicada, ap.data_aplicacao, ap.previsao "
+            +"FROM aplicacao ap "
+            +"INNER JOIN cidadao ci "
+            +"ON ap.idCidadao = ci.id "
+            +"INNER JOIN vacina va "
+            +"ON ap.idVacina = va.id "
+            +"WHERE ap.id = ?";
+               
+        try(Connection conn = connectionFactory.connection()){
+            
+            ps = conn.prepareStatement(sql);
+              
+            ps.setInt(1, cidadao.getId());
+            
+            result = ps.executeQuery();
+                        
+            while(result.next()){
+                int idAplicacao = result.getInt("ap.id");
+                int idCidadao = result.getInt("ap.idCidadao");
+                
+                if(idCidadao == 0){
+                    cidadao.setIdCidadao(0);
+                    return cidadao;
+                }
+                
+                String nome = result.getString("ci.nome");
+                String cpf = result.getString("ci.cpf");
+                String email = result.getString("ci.email");
+                String desenvolvedora = result.getString("va.desenvolvedora");
+                int doseAplicada = result.getInt("ap.dose_aplicada");
+                String dataAplicacao = result.getString("ap.data_aplicacao");
+                String previsao = result.getString("ap.previsao");
+                 
+                cidadaoModel.setId(idAplicacao);
+                cidadaoModel.setIdCidadao(idCidadao);
                 cidadaoModel.setNome(nome);
                 cidadaoModel.setCpf(cpf);
                 cidadaoModel.setEmail(email);
