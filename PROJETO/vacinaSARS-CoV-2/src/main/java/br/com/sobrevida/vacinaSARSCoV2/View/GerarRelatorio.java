@@ -23,6 +23,8 @@ public class GerarRelatorio extends javax.swing.JFrame {
         
         avisoDe.setVisible(false);
         avisoPara.setVisible(false);
+        
+        imprimirCarregar.setVisible(false);
     }
 
     /**
@@ -49,6 +51,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoDe = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
+        imprimirCarregar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobrevida - Controle de Aplicações");
@@ -173,6 +176,10 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoSenha.add(jLabel72);
         jLabel72.setBounds(480, 110, 70, 15);
 
+        imprimirCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/imprimir40.gif"))); // NOI18N
+        avisoSenha.add(imprimirCarregar);
+        imprimirCarregar.setBounds(700, 5, 40, 40);
+
         getContentPane().add(avisoSenha);
         avisoSenha.setBounds(0, 0, 770, 360);
 
@@ -191,69 +198,53 @@ public class GerarRelatorio extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void imprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimirMouseClicked
-        RelatorioController relatorioController = new RelatorioController();
-        
-        String dePegar = de.getText(); 
-        String paraPegar = para.getText();
-        
-        if((!"  /  /    ".equals(dePegar)) && (!"  /  /    ".equals(paraPegar))){
-            Object[] opcao = {"Sim", "Não"};
-            int respostaUsuario = JOptionPane.showOptionDialog(null, "Gerando relatório de controle de próximas doses.\n Deseja continuar?",
-                     "Controle de aplicações", JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE, null, opcao, opcao[0]
-            );
-
-            if (respostaUsuario == JOptionPane.YES_OPTION) {
-                try {
-                    relatorioController.gerarPDF(de, para);
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ParseException ex) {
-                    Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "Por favor, preencher todos os campos obrigatórios!"
-                ,"Gerar relatório", JOptionPane.ERROR_MESSAGE
-            );
-            avisoDe.setVisible(true);
-            avisoPara.setVisible(true);
-        }
     }//GEN-LAST:event_imprimirMouseClicked
 
     private void imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirActionPerformed
-        RelatorioController relatorioController = new RelatorioController();
-        
-        String dePegar = de.getText(); 
-        String paraPegar = para.getText();
-        
-        if((!"  /  /    ".equals(dePegar)) && (!"  /  /    ".equals(paraPegar))){
-            Object[] opcao = {"Sim", "Não"};
-            int respostaUsuario = JOptionPane.showOptionDialog(null, "Gerando relatório de controle de próximas doses.\n Deseja continuar?",
-                     "Controle de aplicações", JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE, null, opcao, opcao[0]
-            );
-
-            if (respostaUsuario == JOptionPane.YES_OPTION) {
-                try {
-                    relatorioController.gerarPDF(de, para);
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ParseException ex) {
-                    Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
+        new Thread(){
+            int i=0;
+            public void run(){
+                while(i<100){
+                    i = i+5;
+                    try{
+                        imprimirCarregar.setVisible(true);
+                        sleep(120);
+                    }catch (Exception e){  
+                    }
+                }
+                RelatorioController relatorioController = new RelatorioController();
+                String dePegar = de.getText();
+                String paraPegar = para.getText();
+                if((!"  /  /    ".equals(dePegar)) && (!"  /  /    ".equals(paraPegar))){
+                    imprimirCarregar.setVisible(false);
+                    Object[] opcao = {"Sim", "Não"};
+                    int respostaUsuario = JOptionPane.showOptionDialog(null, "Gerando relatório de controle de próximas doses.\nDeseja continuar?",
+                            "Controle de aplicações", JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE, null, opcao, opcao[0]
+                    );
+                    
+                    if (respostaUsuario == JOptionPane.YES_OPTION) {
+                        try {
+                            imprimirCarregar.setVisible(true);
+                            relatorioController.gerarPDF(de, para, imprimirCarregar);
+                        } catch (IOException ex) {
+                            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (ParseException ex) {
+                            Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }else{
+                    imprimirCarregar.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Por favor, preencher todos os campos obrigatórios!"
+                        ,"Gerar relatório", JOptionPane.ERROR_MESSAGE
+                    );
+                    avisoDe.setVisible(true);
+                    avisoPara.setVisible(true);
                 }
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Por favor, preencher todos os campos obrigatórios!"
-                ,"Gerar relatório", JOptionPane.ERROR_MESSAGE
-            );
-            avisoDe.setVisible(true);
-            avisoPara.setVisible(true);
-        }
+        }.start();
     }//GEN-LAST:event_imprimirActionPerformed
 
     /**
@@ -328,6 +319,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
     private javax.swing.JPanel avisoSenha;
     private javax.swing.JFormattedTextField de;
     private javax.swing.JButton imprimir;
+    private javax.swing.JLabel imprimirCarregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;

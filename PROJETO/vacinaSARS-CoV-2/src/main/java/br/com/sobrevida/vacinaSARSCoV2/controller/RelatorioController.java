@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Random;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 
 /**
  *
@@ -30,7 +31,7 @@ public class RelatorioController{
     
     RelatorioDao relatorioDao = new RelatorioDao();
     
-    public void gerarPDF(JFormattedTextField de, JFormattedTextField para) throws IOException, SQLException, ParseException{
+    public void gerarPDF(JFormattedTextField de, JFormattedTextField para, JLabel imprimirCarregar) throws IOException, SQLException, ParseException{
         
         String dePegar = de.getText(); 
         String paraPegar = para.getText();
@@ -60,9 +61,13 @@ public class RelatorioController{
             Image logoTipo1 = Image.getInstance("src/main/resources/image/relatorioBranco.png");
             relatorio.add(logoTipo1);
             
-            Paragraph paragrafo0 = new Paragraph(" ");
-            paragrafo0.setAlignment(0);
+            Paragraph paragrafo0 = new Paragraph("COD."+result);
+            paragrafo0.setAlignment(2);
             relatorio.add(paragrafo0);
+            
+            Paragraph paragrafo2 = new Paragraph("");
+            paragrafo2.setAlignment(0);
+            relatorio.add(paragrafo2);
             
             Paragraph paragrafo = new Paragraph("RELATÓRIO DE CONTROLE DE APLICAÇÕES");
             paragrafo.setAlignment(1);
@@ -103,6 +108,7 @@ public class RelatorioController{
             
             relatorio.add(tabela);   
             relatorio.close();
+            imprimirCarregar.setVisible(false);
             Desktop.getDesktop().open(new File("C:\\Users\\WERIKE\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
 
         }catch (DocumentException e) {
