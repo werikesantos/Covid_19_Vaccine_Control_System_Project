@@ -6,10 +6,11 @@ import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.ComboBoxModel;
-import javax.swing.JComboBox;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JTable;
 import net.proteanit.sql.DbUtils;
 
@@ -89,7 +90,15 @@ public class AplicacaoDao{
                 String desenvolvedora = result.getString("desenvolvedora");
                 int doseAplicada = result.getInt("dose_aplicada");
                 String dataAplicacao = result.getString("data_aplicacao");
-                String previsao = result.getString("previsao");
+                
+                String previsaoFormatada;
+                Date previsao = result.getDate("ap.previsao");
+                if(previsao == null){
+                    previsaoFormatada = "";
+                }else{
+                    DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                    previsaoFormatada = dateFormat.format(previsao);
+                }
                  
                 cidadaoModel.setIdCidadao(id);
                 cidadaoModel.setId(idAplicacao);
@@ -99,7 +108,7 @@ public class AplicacaoDao{
                 cidadaoModel.setDesenvolvedora(desenvolvedora);
                 cidadaoModel.setDoseAplicada(doseAplicada);
                 cidadaoModel.setDataAplicacao(dataAplicacao);
-                cidadaoModel.setPrevisao(previsao);
+                cidadaoModel.setPrevisao(previsaoFormatada);
                 
                 return cidadaoModel;
             }
@@ -148,8 +157,16 @@ public class AplicacaoDao{
                 String desenvolvedora = result.getString("va.desenvolvedora");
                 int doseAplicada = result.getInt("ap.dose_aplicada");
                 String dataAplicacao = result.getString("ap.data_aplicacao");
-                String previsao = result.getString("ap.previsao");
-                 
+                
+                String previsaoFormatada;
+                Date previsao = result.getDate("ap.previsao");
+                if(previsao == null){
+                    previsaoFormatada = "";
+                }else{
+                    DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                    previsaoFormatada = dateFormat.format(previsao);
+                }
+
                 cidadaoModel.setId(idAplicacao);
                 cidadaoModel.setIdCidadao(idCidadao);
                 cidadaoModel.setNome(nome);
@@ -158,7 +175,7 @@ public class AplicacaoDao{
                 cidadaoModel.setDesenvolvedora(desenvolvedora);
                 cidadaoModel.setDoseAplicada(doseAplicada);
                 cidadaoModel.setDataAplicacao(dataAplicacao);
-                cidadaoModel.setPrevisao(previsao);
+                cidadaoModel.setPrevisao(previsaoFormatada);
                 
                 return cidadaoModel;
             }

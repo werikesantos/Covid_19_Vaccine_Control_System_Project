@@ -2,6 +2,8 @@ package br.com.sobrevida.vacinaSARSCoV2.view;
 
 import br.com.sobrevida.vacinaSARSCoV2.controller.RelatorioController;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -18,6 +20,11 @@ public class GerarRelatorio extends javax.swing.JFrame {
         //ALTERANDO O ICONE PADRAO DO JAVA
         IconeSistema iconeSistema = new IconeSistema();
         iconeSistema.inserirIcone(this);
+        
+        avisoDe.setVisible(false);
+        avisoPara.setVisible(false);
+        
+        imprimirCarregar.setVisible(false);
     }
 
     /**
@@ -33,17 +40,18 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         linhaSeparador1 = new javax.swing.JSeparator();
         jLabel69 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        fim = new javax.swing.JFormattedTextField();
+        imprimir = new javax.swing.JButton();
+        para = new javax.swing.JFormattedTextField();
         jLabel71 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        avisoAplicacaoData = new javax.swing.JLabel();
+        avisoPara = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        inicio = new javax.swing.JFormattedTextField();
-        avisoAplicacaoData1 = new javax.swing.JLabel();
+        de = new javax.swing.JFormattedTextField();
+        avisoDe = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
+        imprimirCarregar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobrevida - Controle de Aplicações");
@@ -83,24 +91,29 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoSenha.add(jLabel69);
         jLabel69.setBounds(22, 18, 30, 30);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/impri4.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/impri4.png"))); // NOI18N
+        imprimir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                imprimirMouseClicked(evt);
             }
         });
-        avisoSenha.add(jButton1);
-        jButton1.setBounds(670, 70, 40, 40);
+        imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imprimirActionPerformed(evt);
+            }
+        });
+        avisoSenha.add(imprimir);
+        imprimir.setBounds(670, 70, 40, 40);
 
-        fim.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        para.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         try {
-            fim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            para.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        fim.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        avisoSenha.add(fim);
-        fim.setBounds(480, 80, 100, 28);
+        para.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        avisoSenha.add(para);
+        para.setBounds(480, 80, 100, 28);
 
         jLabel71.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(102, 102, 102));
@@ -115,11 +128,11 @@ public class GerarRelatorio extends javax.swing.JFrame {
         avisoSenha.add(jLabel61);
         jLabel61.setBounds(20, 90, 170, 16);
 
-        avisoAplicacaoData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoData.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoData.setText("*");
-        avisoSenha.add(avisoAplicacaoData);
-        avisoAplicacaoData.setBounds(470, 80, 10, 15);
+        avisoPara.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoPara.setForeground(new java.awt.Color(255, 0, 0));
+        avisoPara.setText("*");
+        avisoSenha.add(avisoPara);
+        avisoPara.setBounds(470, 80, 10, 15);
 
         jLabel62.setBackground(new java.awt.Color(51, 51, 51));
         jLabel62.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -133,23 +146,23 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jLabel63.setForeground(new java.awt.Color(51, 51, 51));
         jLabel63.setText("De");
         avisoSenha.add(jLabel63);
-        jLabel63.setBounds(240, 90, 40, 16);
+        jLabel63.setBounds(250, 90, 30, 16);
 
-        inicio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        de.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         try {
-            inicio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            de.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        inicio.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        avisoSenha.add(inicio);
-        inicio.setBounds(280, 80, 100, 28);
+        de.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        avisoSenha.add(de);
+        de.setBounds(280, 80, 100, 28);
 
-        avisoAplicacaoData1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        avisoAplicacaoData1.setForeground(new java.awt.Color(255, 0, 0));
-        avisoAplicacaoData1.setText("*");
-        avisoSenha.add(avisoAplicacaoData1);
-        avisoAplicacaoData1.setBounds(270, 80, 10, 15);
+        avisoDe.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        avisoDe.setForeground(new java.awt.Color(255, 0, 0));
+        avisoDe.setText("*");
+        avisoSenha.add(avisoDe);
+        avisoDe.setBounds(270, 80, 10, 15);
 
         jLabel73.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(102, 102, 102));
@@ -162,6 +175,10 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jLabel72.setText("Fim");
         avisoSenha.add(jLabel72);
         jLabel72.setBounds(480, 110, 70, 15);
+
+        imprimirCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/imprimir40.gif"))); // NOI18N
+        avisoSenha.add(imprimirCarregar);
+        imprimirCarregar.setBounds(700, 5, 40, 40);
 
         getContentPane().add(avisoSenha);
         avisoSenha.setBounds(0, 0, 770, 360);
@@ -180,20 +197,55 @@ public class GerarRelatorio extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
     }//GEN-LAST:event_formWindowClosed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        RelatorioController relatorioController = new RelatorioController();
+    private void imprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimirMouseClicked
+    }//GEN-LAST:event_imprimirMouseClicked
 
-        int sair = JOptionPane.showConfirmDialog(null, "Relatório de controle de segunda dose será gerado.\n Deseja continuar?"
-            ,"Relatório de Controle",JOptionPane.YES_NO_OPTION);
-
-        if(sair == JOptionPane.YES_OPTION){
-            try{
-                relatorioController.teste();
-            }catch(IOException ex){
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+    private void imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirActionPerformed
+        new Thread(){
+            int i=0;
+            public void run(){
+                while(i<100){
+                    i = i+5;
+                    try{
+                        imprimirCarregar.setVisible(true);
+                        sleep(120);
+                    }catch (Exception e){  
+                    }
+                }
+                RelatorioController relatorioController = new RelatorioController();
+                String dePegar = de.getText();
+                String paraPegar = para.getText();
+                if((!"  /  /    ".equals(dePegar)) && (!"  /  /    ".equals(paraPegar))){
+                    imprimirCarregar.setVisible(false);
+                    Object[] opcao = {"Sim", "Não"};
+                    int respostaUsuario = JOptionPane.showOptionDialog(null, "Gerando relatório de controle de próximas doses.\nDeseja continuar?",
+                            "Controle de aplicações", JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE, null, opcao, opcao[0]
+                    );
+                    
+                    if (respostaUsuario == JOptionPane.YES_OPTION) {
+                        try {
+                            imprimirCarregar.setVisible(true);
+                            relatorioController.gerarPDF(de, para, imprimirCarregar);
+                        } catch (IOException ex) {
+                            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (ParseException ex) {
+                            Logger.getLogger(GerarRelatorio.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }else{
+                    imprimirCarregar.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Por favor, preencher todos os campos obrigatórios!"
+                        ,"Gerar relatório", JOptionPane.ERROR_MESSAGE
+                    );
+                    avisoDe.setVisible(true);
+                    avisoPara.setVisible(true);
+                }
             }
-        }
-    }//GEN-LAST:event_jButton1MouseClicked
+        }.start();
+    }//GEN-LAST:event_imprimirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,12 +314,12 @@ public class GerarRelatorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel avisoAplicacaoData;
-    private javax.swing.JLabel avisoAplicacaoData1;
+    private javax.swing.JLabel avisoDe;
+    private javax.swing.JLabel avisoPara;
     private javax.swing.JPanel avisoSenha;
-    private javax.swing.JFormattedTextField fim;
-    private javax.swing.JFormattedTextField inicio;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JFormattedTextField de;
+    private javax.swing.JButton imprimir;
+    private javax.swing.JLabel imprimirCarregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -277,5 +329,6 @@ public class GerarRelatorio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JSeparator linhaSeparador1;
+    private javax.swing.JFormattedTextField para;
     // End of variables declaration//GEN-END:variables
 }

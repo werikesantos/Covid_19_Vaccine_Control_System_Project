@@ -1,5 +1,7 @@
 package br.com.sobrevida.vacinaSARSCoV2.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author WERIKE

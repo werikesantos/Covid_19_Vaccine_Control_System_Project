@@ -16,7 +16,6 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 //import java.sql.Date; 
-import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -119,7 +118,7 @@ public class AplicacaoController {
             String previsao = cidadao.getPrevisao();
             
             String previsaoFormat;
-            if(!("NÃO").equals(previsao)){
+            if(!("").equals(previsao)){
                 String[] dPrevisao = previsao.split("-");
                 
                 int diaPrevisao = Integer.parseInt(dPrevisao[0]);
@@ -222,8 +221,7 @@ public class AplicacaoController {
             String previsao = cidadao.getPrevisao();
             
             String previsaoFormat;
-            
-            if(!("NÃO").equals(previsao)){
+            if(!("").equals(previsao)){
                 String[] dPrevisao = previsao.split("-");
                 
                 int diaPrevisao = Integer.parseInt(dPrevisao[0]);

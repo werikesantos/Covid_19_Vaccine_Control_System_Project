@@ -3,9 +3,9 @@ CREATE TABLE aplicacao(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     idCidadao INT NOT NULL,
     idVacina INT NOT NULL,
-    dose_aplicada INT(1) NOT NULL UNIQUE,
+    dose_aplicada INT(1) NOT NULL,
     data_aplicacao VARCHAR(10) NOT NULL,
-    previsao VARCHAR(10),
+    previsao DATE,
     FOREIGN KEY (idCidadao) REFERENCES cidadao(id),
     FOREIGN KEY (idVacina) REFERENCES vacina(id)
 );

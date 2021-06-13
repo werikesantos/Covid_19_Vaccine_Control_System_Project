@@ -540,9 +540,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuRelatorios = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         menuSistema = new javax.swing.JMenu();
-        sobreMenu = new javax.swing.JMenuItem();
-        ajuda = new javax.swing.JMenuItem();
         link = new javax.swing.JMenuItem();
+        sobre = new javax.swing.JMenuItem();
+        ajuda = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
         trocarPerfil = new javax.swing.JMenuItem();
         sair = new javax.swing.JMenuItem();
@@ -3982,14 +3982,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        sobreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/informacao1.png"))); // NOI18N
-        sobreMenu.setText("Sobre");
-        sobreMenu.addActionListener(new java.awt.event.ActionListener() {
+        link.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/link.png"))); // NOI18N
+        link.setText("Link");
+        link.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sobreMenuActionPerformed(evt);
+                linkActionPerformed(evt);
             }
         });
-        menuSistema.add(sobreMenu);
+        menuSistema.add(link);
+
+        sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/informacao1.png"))); // NOI18N
+        sobre.setText("Sobre");
+        sobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobreActionPerformed(evt);
+            }
+        });
+        menuSistema.add(sobre);
 
         ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajuda1.png"))); // NOI18N
         ajuda.setText("Ajuda");
@@ -3999,15 +4008,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         menuSistema.add(ajuda);
-
-        link.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/link.png"))); // NOI18N
-        link.setText("Link");
-        link.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                linkActionPerformed(evt);
-            }
-        });
-        menuSistema.add(link);
 
         menuPrincipal.add(menuSistema);
 
@@ -4961,22 +4961,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sobreSistemaTelaMouseClicked
 
-    private void sobreMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreMenuActionPerformed
-        linkSistema.setVisible(false);
-        cadastroAplicacaoTela.setVisible(false);
-        cadastroCidadaoTela.setVisible(false);
+    private void linkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkActionPerformed
+        sobreSistemaTela.setVisible(false);
         cadastroVacinaTela.setVisible(false);
-        sublinhadoAplicacao.setVisible(false);
-        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
+        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoVacina.setVisible(false);
+        cadastroCidadaoTela.setVisible(false);
         sublinhadoPaciente.setVisible(false);
         botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
-        sublinhadoVacina.setVisible(false);
-        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
+        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
+        sublinhadoAplicacao.setVisible(false);
+        cadastroAplicacaoTela.setVisible(false);
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoRelatorio.setVisible(false);
         gerarRelatorio.setVisible(false);
-        sobreSistemaTela.setVisible(true);
-    }//GEN-LAST:event_sobreMenuActionPerformed
+        ajuda1.setVisible(false);
+        linkSistema.setVisible(true);
+    }//GEN-LAST:event_linkActionPerformed
 
     private void closeCadastroVacina3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina3MouseClicked
         // TODO add your handling code here:
@@ -5074,23 +5075,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ajuda9MouseClicked
 
-    private void ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajudaActionPerformed
+    private void sobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreActionPerformed
         linkSistema.setVisible(false);
-        sobreSistemaTela.setVisible(false);
-        cadastroVacinaTela.setVisible(false);
-        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
-        sublinhadoVacina.setVisible(false);
+        cadastroAplicacaoTela.setVisible(false);
         cadastroCidadaoTela.setVisible(false);
+        cadastroVacinaTela.setVisible(false);
+        sublinhadoAplicacao.setVisible(false);
+        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoPaciente.setVisible(false);
         botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
-        botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
-        sublinhadoAplicacao.setVisible(false);
-        cadastroAplicacaoTela.setVisible(false);
+        sublinhadoVacina.setVisible(false);
+        botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoRelatorio.setVisible(false);
         gerarRelatorio.setVisible(false);
-        ajuda1.setVisible(true);
-    }//GEN-LAST:event_ajudaActionPerformed
+        sobreSistemaTela.setVisible(true);
+    }//GEN-LAST:event_sobreActionPerformed
 
     private void ajudaBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajudaBtn1MouseClicked
         ajuda1.setVisible(false);
@@ -5194,7 +5194,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ajudaBtn11MouseClicked
 
-    private void linkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkActionPerformed
+    private void ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajudaActionPerformed
+        linkSistema.setVisible(false);
         sobreSistemaTela.setVisible(false);
         cadastroVacinaTela.setVisible(false);
         botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
@@ -5208,9 +5209,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoRelatorio.setVisible(false);
         gerarRelatorio.setVisible(false);
-        ajuda1.setVisible(false);
-        linkSistema.setVisible(true);
-    }//GEN-LAST:event_linkActionPerformed
+        ajuda1.setVisible(true);
+    }//GEN-LAST:event_ajudaActionPerformed
 
     private void aplicacaoBtnAlterar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnAlterar2ActionPerformed
         carregarPrincipal.setVisible(true);
@@ -5915,7 +5915,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel painel;
     private javax.swing.JPanel painelPrincipal;
     private javax.swing.JMenuItem sair;
-    private javax.swing.JMenuItem sobreMenu;
+    private javax.swing.JMenuItem sobre;
     private javax.swing.JPanel sobreSistemaTela;
     private javax.swing.JLabel sublinhadoAplicacao;
     private javax.swing.JLabel sublinhadoPaciente;
