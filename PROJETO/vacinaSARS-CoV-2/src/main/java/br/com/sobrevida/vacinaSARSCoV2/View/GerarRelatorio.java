@@ -186,19 +186,14 @@ public class GerarRelatorio extends javax.swing.JFrame {
 
         setBounds(110, 160, 779, 391);
     }// </editor-fold>//GEN-END:initComponents
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
     }//GEN-LAST:event_formWindowOpened
-
     private void avisoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_avisoSenhaMouseClicked
     }//GEN-LAST:event_avisoSenhaMouseClicked
-
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
     }//GEN-LAST:event_formWindowClosed
-
     private void imprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimirMouseClicked
     }//GEN-LAST:event_imprimirMouseClicked
-
     private void imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirActionPerformed
         new Thread(){
             int i=0;
@@ -311,7 +306,6 @@ public class GerarRelatorio extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel avisoDe;
     private javax.swing.JLabel avisoPara;

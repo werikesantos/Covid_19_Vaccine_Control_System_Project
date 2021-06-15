@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 public class TelaLoginCadastro extends javax.swing.JFrame{
 
     UsuarioController usuarioController = new UsuarioController();
-    IconeSistema utilitario = new IconeSistema();
     TelaLogin telaLogin = new TelaLogin();
     
     public TelaLoginCadastro(){
@@ -370,11 +369,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                                 );
                             }
                         } else {
+                            carga.setVisible(false);
+                            loginEmail.setText("");
                             loginSenha.setText("");
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            carga.setVisible(false);
                             JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                                     + "Utilizar somente letras e números.", "Cadastro de usuário",
                                     JOptionPane.ERROR_MESSAGE
@@ -387,9 +387,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        nomeCompleto.setText("");
-                        apelido.setText("");
-                        cpf.setText("");
                         JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                             + "Mínimo de oito e máximo de dezesseis caracteres.\n"
                             + "O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário",
@@ -400,11 +397,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
             }.start();
         }
     }//GEN-LAST:event_loginEmailKeyPressed
-
     private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
-
     }//GEN-LAST:event_loginEmailActionPerformed
-
     private void boxMostraSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxMostraSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
 
@@ -452,11 +446,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                                 );
                             }
                         } else {
+                            carga.setVisible(false);
+                            loginEmail.setText("");
                             loginSenha.setText("");
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            carga.setVisible(false);
                             JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                                 + "Utilizar somente letras e números.", "Cadastro de usuário",
                                 JOptionPane.ERROR_MESSAGE
@@ -469,9 +464,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        nomeCompleto.setText("");
-                        apelido.setText("");
-                        cpf.setText("");
                         JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                             + "Mínimo de oito e máximo de dezesseis caracteres.\n"
                             + "O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário",
@@ -548,11 +540,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                                 );
                             }
                         } else {
+                            carga.setVisible(false);
+                            loginEmail.setText("");
                             loginSenha.setText("");
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            carga.setVisible(false);
                             JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                                 + "Utilizar somente letras e números.", "Cadastro de usuário",
                                 JOptionPane.ERROR_MESSAGE
@@ -565,9 +558,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        nomeCompleto.setText("");
-                        apelido.setText("");
-                        cpf.setText("");
                         JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                             + "Mínimo de oito e máximo de dezesseis caracteres.\n"
                             + "O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário",
@@ -578,7 +568,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
             }.start();
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
-
     private void mostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenhaActionPerformed
     }//GEN-LAST:event_mostraSenhaActionPerformed
 
@@ -629,11 +618,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                                 );
                             }
                         } else {
+                            carga.setVisible(false);
+                            loginEmail.setText("");
                             loginSenha.setText("");
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            carga.setVisible(false);
                             JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                                 + "Utilizar somente letras e números.", "Cadastro de usuário",
                                 JOptionPane.ERROR_MESSAGE
@@ -646,9 +636,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        nomeCompleto.setText("");
-                        apelido.setText("");
-                        cpf.setText("");
                         JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                             + "Mínimo de oito e máximo de dezesseis caracteres.\n"
                             + "O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário",
@@ -707,11 +694,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                                 );
                             }
                         } else {
+                            carga.setVisible(false);
+                            loginEmail.setText("");
                             loginSenha.setText("");
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            carga.setVisible(false);
                             JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                                 + "Utilizar somente letras e números.", "Cadastro de usuário",
                                 JOptionPane.ERROR_MESSAGE
@@ -724,9 +712,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        nomeCompleto.setText("");
-                        apelido.setText("");
-                        cpf.setText("");
                         JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                             + "Mínimo de oito e máximo de dezesseis caracteres.\n"
                             + "O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário",
@@ -737,11 +722,8 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
             }.start();
         }
     }//GEN-LAST:event_mostraSenha1KeyPressed
-
     private void mostraSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenha1ActionPerformed
-
     }//GEN-LAST:event_mostraSenha1ActionPerformed
-
     private void loginSenha1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenha1KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
 
@@ -789,11 +771,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                                 );
                             }
                         } else {
+                            carga.setVisible(false);
+                            loginEmail.setText("");
                             loginSenha.setText("");
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            carga.setVisible(false);
                             JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                                 + "Utilizar somente letras e números.", "Cadastro de usuário",
                                 JOptionPane.ERROR_MESSAGE
@@ -806,9 +789,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        nomeCompleto.setText("");
-                        apelido.setText("");
-                        cpf.setText("");
                         JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                             + "Mínimo de oito e máximo de dezesseis caracteres.\n"
                             + "O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário",
@@ -821,7 +801,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
     }//GEN-LAST:event_loginSenha1KeyPressed
 
     private void signUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUPActionPerformed
-
         new Thread(){
             int i=0;
 
@@ -866,11 +845,12 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                             );
                         } 
                     }else{
+                        carga.setVisible(false);
+                        loginEmail.setText("");
                         loginSenha.setText("");
                         loginSenha1.setText("");
                         mostraSenha.setText("");
                         mostraSenha1.setText("");
-                        carga.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Preencher o campo de apelido com no mínimo quatro e no máximo dez caracteres.\n"
                             +"Utilizar somente letras e números.", "Cadastro de usuário", 
                             JOptionPane.ERROR_MESSAGE
@@ -883,9 +863,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
                     loginSenha1.setText("");
                     mostraSenha.setText("");
                     mostraSenha1.setText("");
-                    nomeCompleto.setText("");
-                    apelido.setText("");
-                    cpf.setText("");
                     JOptionPane.showMessageDialog(null, "Utilizar somente letras e números.\n"
                         +"Mínimo de oito e máximo de dezesseis caracteres.\n"
                         +"O sistema diferencia letras maiúsculas de minúsculas.", "Cadastro de usuário", 
@@ -895,21 +872,13 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
             }
         }.start();
     }//GEN-LAST:event_signUPActionPerformed
-
     private void nomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCompletoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_nomeCompletoActionPerformed
-
     private void nomeCompletoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeCompletoKeyPressed
-        // TODO add your handling code here:
     }//GEN-LAST:event_nomeCompletoKeyPressed
-
     private void apelidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apelidoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_apelidoActionPerformed
-
     private void apelidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apelidoKeyPressed
-        // TODO add your handling code here:
     }//GEN-LAST:event_apelidoKeyPressed
 
     /**
@@ -947,7 +916,6 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apelido;
     private javax.swing.JCheckBox boxMostraSenha;

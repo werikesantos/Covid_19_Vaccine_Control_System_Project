@@ -4,6 +4,7 @@ import br.com.sobrevida.vacinaSARSCoV2.controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -271,7 +272,9 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Usuário não localizado!"
+                            ,"Login - erro", JOptionPane.ERROR_MESSAGE
+                        );
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -280,11 +283,8 @@ public class TelaLogin extends javax.swing.JFrame {
             }.start();
         }
     }//GEN-LAST:event_loginEmailKeyPressed
-
     private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
-
     }//GEN-LAST:event_loginEmailActionPerformed
-
     private void boxMostraSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxMostraSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
 
@@ -317,7 +317,9 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Usuário não localizado!"
+                            ,"Login - erro", JOptionPane.ERROR_MESSAGE
+                        );
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -371,7 +373,9 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Usuário não localizado!"
+                            ,"Login - erro", JOptionPane.ERROR_MESSAGE
+                        );
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -380,11 +384,8 @@ public class TelaLogin extends javax.swing.JFrame {
             }.start();
         }
     }//GEN-LAST:event_mostraSenhaKeyPressed
-
     private void mostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenhaActionPerformed
-
     }//GEN-LAST:event_mostraSenhaActionPerformed
-
     private void loginSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenhaKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
 
@@ -417,7 +418,9 @@ public class TelaLogin extends javax.swing.JFrame {
                         carregar1.setVisible(true);
                     }else{
                         carga.setVisible(false);
-                        //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Usuário não localizado!"
+                            ,"Login - erro", JOptionPane.ERROR_MESSAGE
+                        );
                         loginEmail.setText("");
                         loginSenha.setText("");
                         mostraSenha.setText("");
@@ -458,7 +461,9 @@ public class TelaLogin extends javax.swing.JFrame {
                     carregar1.setVisible(true);
                 }else{
                     carga.setVisible(false);
-                    //TRAR ERRO!!!!!!!!!!!!!!! avisoTelaLogin.setVisible(true);
+                    JOptionPane.showMessageDialog(null, "Usuário não localizado!"
+                        ,"Login - erro", JOptionPane.ERROR_MESSAGE
+                    );
                     loginEmail.setText("");
                     loginSenha.setText("");
                     mostraSenha.setText("");
@@ -466,9 +471,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_loginBotaoActionPerformed
-
     private void loginBotaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBotaoMouseClicked
-
     }//GEN-LAST:event_loginBotaoMouseClicked
     /**
      * @param args the command line arguments

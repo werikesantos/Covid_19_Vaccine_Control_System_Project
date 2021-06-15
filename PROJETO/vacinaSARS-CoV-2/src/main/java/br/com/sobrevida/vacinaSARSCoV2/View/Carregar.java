@@ -76,7 +76,6 @@ public class Carregar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       
         new Thread(){
             int i=0;
             
@@ -135,7 +134,6 @@ public class Carregar extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel carrega;
     private javax.swing.JLabel imgFundo;

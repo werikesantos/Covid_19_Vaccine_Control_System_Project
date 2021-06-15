@@ -42,15 +42,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String usuario = UsuarioDao.apelido;
         String apelidoUsuario = usuario+"!";
         nomeUsuario.setText(apelidoUsuario);
-        
-        //aplicacaoController.buscarVacinaNome(aplicacaoVacinaNome);
               
         //SE ALTO AJUSTA AO TAMANHO DO MONITOR
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
-        //ALTERANDO O ICONE PADRAO DO JAVA
-//IconeSistema iconeSistema = new IconeSistema();
-//iconeSistema.inserirIcone(this);
         
         cadastroCidadaoTela.setVisible(false);
         cadastroVacinaTela.setVisible(false);
@@ -96,7 +90,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sublinhadoVacina.setVisible(false);
         sublinhadoAplicacao.setVisible(false);
         sublinhadoRelatorio.setVisible(false);
-        //sairTelaPrincipal.setVisible(false);
     }
         
     public void sair(JFrame sairTelaPrincipal){
@@ -4093,7 +4086,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoRelatorio.setVisible(false);
     }//GEN-LAST:event_btnCidadaoCadastroActionPerformed
-
     private void trocarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trocarPerfilMouseClicked
     }//GEN-LAST:event_trocarPerfilMouseClicked
     private void trocarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trocarPerfilActionPerformed
@@ -4122,7 +4114,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
     private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
     }//GEN-LAST:event_sairMouseClicked
-
     private void closeCadastroPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroPacienteMouseClicked
         sublinhadoPaciente.setVisible(false);
         botaoCadastroPaciente.setForeground(new java.awt.Color(102, 102, 102));
@@ -4209,6 +4200,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_pacienteBtnLimparKeyPressed
+
     private void pacienteConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteConsultarActionPerformed
         String campoConsultar = pacienteConsultar.getText();
         if((!"".equals(campoConsultar)) && (!"Consultar...".equals(campoConsultar))){
@@ -4231,6 +4223,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }.start();
         }
     }//GEN-LAST:event_pacienteConsultarActionPerformed
+
     private void pacienteConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteConsultarMouseClicked
         pacienteConsultar.setText("");
         pacientePesquisar.setText("Pesquisar...");
@@ -4280,7 +4273,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pacientePesquisarKeyReleased
     private void pacienteListaTabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteListaTabelaMouseClicked
     }//GEN-LAST:event_pacienteListaTabelaMouseClicked
-
     private void pacienteBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteBtnDeletarActionPerformed
         cidadaoController.deletar(carregarPrincipal1, pacienteListaTabela, pacienteIdCodigo, pacienteListaTabela, pacientePrimeiroNome,
             pacienteSobreNome, pacienteNascimento, pacienteCelular, pacienteCpf, pacienteEndereco,
@@ -4330,7 +4322,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastroPacienteMousePressed
     private void painelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelMousePressed
     }//GEN-LAST:event_painelMousePressed
-
     private void botaoCadastroVacinaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroVacinaMouseClicked
         linkSistema.setVisible(false);
         sobreSistemaTela.setVisible(false);
@@ -4347,15 +4338,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoRelatorio.setVisible(false);
     }//GEN-LAST:event_botaoCadastroVacinaMouseClicked
-
     private void botaoCadastroVacinaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroVacinaMousePressed
     }//GEN-LAST:event_botaoCadastroVacinaMousePressed
-
     private void closeCadastroVacinaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacinaMouseClicked
         sublinhadoVacina.setVisible(false);
         botaoCadastroVacina.setForeground(new java.awt.Color(102, 102, 102));
         cadastroVacinaTela.setVisible(false);
     }//GEN-LAST:event_closeCadastroVacinaMouseClicked
+
     private void vacinaPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vacinaPesquisarMouseClicked
         vacinaPesquisar.setText("");
     }//GEN-LAST:event_vacinaPesquisarMouseClicked
@@ -4382,6 +4372,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }.start();
         }
     }//GEN-LAST:event_vacinaPesquisarKeyReleased
+
     private void vacinaConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vacinaConsultarMouseClicked
         vacinaConsultar.setText("");
     }//GEN-LAST:event_vacinaConsultarMouseClicked
@@ -4443,6 +4434,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnSalvarActionPerformed
+
     private void vacinaBtnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaBtnSalvarKeyPressed
         carregarPrincipal2.setVisible(true);
         vacinaConsultar.setText("Consultar...");
@@ -4464,10 +4456,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnSalvarKeyPressed
+
     private void vacinaBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnDeletarActionPerformed
         vacinaController.deletar(carregarPrincipal2, vacinaListaTabela, vacinaIdCodigo, contadorCaracter, 
             vacinaDesenvolvedora, vacinaProdutora, vacinaParceira, vacinaDoses, vacinaPeriodo, vacinaDescricaoAreaTexto);
     }//GEN-LAST:event_vacinaBtnDeletarActionPerformed
+
     private void vacinaBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnAlterarActionPerformed
         carregarPrincipal2.setVisible(true);
         new Thread(){
@@ -4488,6 +4482,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
         }.start();
     }//GEN-LAST:event_vacinaBtnAlterarActionPerformed
+
     private void vacinaBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacinaBtnLimparActionPerformed
         carregarPrincipal2.setVisible(true);
         vacinaConsultar.setText("Consultar...");
@@ -4509,6 +4504,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_vacinaBtnLimparActionPerformed
+
     private void vacinaBtnLimparKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaBtnLimparKeyPressed
         carregarPrincipal2.setVisible(true);
         vacinaConsultar.setText("Consultar...");
@@ -4585,11 +4581,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sublinhadoRelatorio.setVisible(true);
         gerarRelatorio.setVisible(true);
     }//GEN-LAST:event_botaoRelatorioMouseClicked
-
     private void botaoRelatorioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMousePressed
-        // TODO add your handling code here:
     }//GEN-LAST:event_botaoRelatorioMousePressed
-
     private void closeCadastroVacina1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina1MouseClicked
         sublinhadoAplicacao.setVisible(false);
         botaoCadastroAplicacao.setForeground(new java.awt.Color(102, 102, 102));
@@ -4599,11 +4592,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void aplicacaoPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoPesquisarMouseClicked
         aplicacaoPesquisar.setText("");
     }//GEN-LAST:event_aplicacaoPesquisarMouseClicked
-
     private void aplicacaoPesquisarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoPesquisarKeyPressed
-        // TODO add your handling code here:
     }//GEN-LAST:event_aplicacaoPesquisarKeyPressed
-
     private void aplicacaoPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoPesquisarKeyReleased
         String campoPesquisar = aplicacaoPesquisar.getText();
         if(!"Pesquisar...".equals(campoPesquisar)){
@@ -4629,10 +4619,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void aplicacaoConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoConsultarMouseClicked
         aplicacaoConsultar.setText("");
     }//GEN-LAST:event_aplicacaoConsultarMouseClicked
-
     private void aplicacaoConsultarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoConsultarMouseEntered
     }//GEN-LAST:event_aplicacaoConsultarMouseEntered
-
     private void aplicacaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoConsultarActionPerformed
         carregarPrincipal.setVisible(true);
         new Thread(){
@@ -4661,32 +4649,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_aplicacaoConsultarActionPerformed
-
     private void aplicacaoConsultarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoConsultarKeyPressed
     }//GEN-LAST:event_aplicacaoConsultarKeyPressed
-
     private void aplicacaoIdCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoIdCodigoMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_aplicacaoIdCodigoMouseClicked
-
     private void aplicacaoPacienteNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoPacienteNomeMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_aplicacaoPacienteNomeMouseClicked
-
     private void aplicacaoBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnSalvarActionPerformed
         aplicacaoController.salvar(carregarPrincipal, aplicacaoListaTabela, avisoAplicacaoPacienteNome, 
             avisoAplicacaoPacienteCpf, avisoAplicacaoPacienteEmail, avisoAplicacaoVacinaNome, avisoAplicacaoVacinaDose, 
             avisoAplicacaoData, avisoAplicacaoVacinaDataRetorno, aplicacaoConsultar, aplicacaoIdCodigo, aplicacaoPacienteNome, 
             aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaDose, 
-            aplicacaoVacinaDataRetorno, aplicacaoVacinaData, aplicacaoPesquisar, aplicacaoAplicacao);
+            aplicacaoVacinaDataRetorno, aplicacaoVacinaData, aplicacaoPesquisar, aplicacaoAplicacao, aplicacaoIdAplicacao);
     }//GEN-LAST:event_aplicacaoBtnSalvarActionPerformed
 
     private void aplicacaoBtnSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoBtnSalvarKeyPressed
-        aplicacaoController.salvar(carregarPrincipal, aplicacaoListaTabela, avisoAplicacaoPacienteNome, 
+/*        aplicacaoController.salvar(carregarPrincipal, aplicacaoListaTabela, avisoAplicacaoPacienteNome, 
             avisoAplicacaoPacienteCpf, avisoAplicacaoPacienteEmail, avisoAplicacaoVacinaNome, avisoAplicacaoVacinaDose, 
             avisoAplicacaoData, avisoAplicacaoVacinaDataRetorno, aplicacaoConsultar, aplicacaoIdCodigo, aplicacaoPacienteNome, 
             aplicacaoPacienteCpf, aplicacaoPacienteEmail, aplicacaoVacinaNome, aplicacaoVacinaDose, 
-            aplicacaoVacinaDataRetorno, aplicacaoVacinaData, aplicacaoPesquisar, aplicacaoAplicacao);
+            aplicacaoVacinaDataRetorno, aplicacaoVacinaData, aplicacaoPesquisar, aplicacaoAplicacao);*/
     }//GEN-LAST:event_aplicacaoBtnSalvarKeyPressed
 
     private void aplicacaoBtnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoBtnDeletarActionPerformed
@@ -4732,26 +4714,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_aplicacaoBtnLimparActionPerformed
-
     private void aplicacaoBtnLimparKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoBtnLimparKeyPressed
     }//GEN-LAST:event_aplicacaoBtnLimparKeyPressed
-
     private void aplicacaoListaTabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoListaTabelaMouseClicked
     }//GEN-LAST:event_aplicacaoListaTabelaMouseClicked
-
     private void cadastroAplicacaoTelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroAplicacaoTelaMouseClicked
         aplicacaoConsultar.setText("Pacientes...");
         aplicacaoPesquisar.setText("Pesquisar...");
         aplicacaoAplicacao.setText("Aplicações...");
     }//GEN-LAST:event_cadastroAplicacaoTelaMouseClicked
-
     private void aplicacaoPacienteEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoPacienteEmailMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_aplicacaoPacienteEmailMouseClicked
-
     private void aplicacaoVacinaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoVacinaNomeActionPerformed
     }//GEN-LAST:event_aplicacaoVacinaNomeActionPerformed
-
     private void btnAplicacoesCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicacoesCadastroActionPerformed
         linkSistema.setVisible(false);
         sobreSistemaTela.setVisible(false);
@@ -4797,10 +4772,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         gerarRelatorio.setVisible(false);
     }//GEN-LAST:event_imagemFundoPrincipalMouseClicked
-
     private void menuCadastroCidadaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroCidadaoActionPerformed
     }//GEN-LAST:event_menuCadastroCidadaoActionPerformed
-
     private void menuCadastroCidadaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCadastroCidadaoMouseClicked
         sublinhadoRelatorio.setVisible(false);
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
@@ -4964,11 +4937,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sublinhadoRelatorio.setVisible(false);
         gerarRelatorio.setVisible(false);
     }//GEN-LAST:event_closeCadastroVacina2MouseClicked
-
     private void sobreSistemaTelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreSistemaTelaMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_sobreSistemaTelaMouseClicked
-
     private void linkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkActionPerformed
         sobreSistemaTela.setVisible(false);
         cadastroVacinaTela.setVisible(false);
@@ -4986,34 +4956,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ajuda1.setVisible(false);
         linkSistema.setVisible(true);
     }//GEN-LAST:event_linkActionPerformed
-
     private void closeCadastroVacina3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina3MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina3MouseClicked
-
     private void ajuda1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda1MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda1MouseClicked
-
     private void closeCadastroVacina4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina4MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina4MouseClicked
-
     private void ajuda2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda2MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda2MouseClicked
-
     private void closeCadastroVacina5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina5MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina5MouseClicked
-
     private void ajuda3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda3MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda3MouseClicked
-
     private void botaoCadastroAplicacaoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroAplicacaoMousePressed
     }//GEN-LAST:event_botaoCadastroAplicacaoMousePressed
-
     private void botaoCadastroAplicacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroAplicacaoMouseClicked
         aplicacaoVacinaNome.removeAllItems();
         aplicacaoVacinaNome.addItem("-");
@@ -5034,55 +4990,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRelatorio.setForeground(new java.awt.Color(102, 102, 102));
         sublinhadoRelatorio.setVisible(false);
     }//GEN-LAST:event_botaoCadastroAplicacaoMouseClicked
-
     private void closeCadastroVacina6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina6MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina6MouseClicked
-
     private void ajuda4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda4MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda4MouseClicked
-
     private void closeCadastroVacina7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina7MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina7MouseClicked
-
     private void ajuda5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda5MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda5MouseClicked
-
     private void closeCadastroVacina8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina8MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina8MouseClicked
-
     private void ajuda6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda6MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda6MouseClicked
-
     private void closeCadastroVacina9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina9MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina9MouseClicked
-
     private void ajuda7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda7MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda7MouseClicked
-
     private void closeCadastroVacina10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina10MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina10MouseClicked
-
     private void ajuda8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda8MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda8MouseClicked
-
     private void closeCadastroVacina11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina11MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina11MouseClicked
-
     private void ajuda9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajuda9MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajuda9MouseClicked
-
     private void sobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreActionPerformed
         linkSistema.setVisible(false);
         cadastroAplicacaoTela.setVisible(false);
@@ -5181,27 +5112,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void fecha9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fecha9MouseClicked
         ajuda9.setVisible(false);
     }//GEN-LAST:event_fecha9MouseClicked
-
     private void closeCadastroVacina12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCadastroVacina12MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_closeCadastroVacina12MouseClicked
-
     private void ajudaBtn10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajudaBtn10MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajudaBtn10MouseClicked
-
     private void fecha10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fecha10MouseClicked
         linkSistema.setVisible(false);
     }//GEN-LAST:event_fecha10MouseClicked
-
     private void linkSistemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkSistemaMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_linkSistemaMouseClicked
-
     private void ajudaBtn11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajudaBtn11MouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_ajudaBtn11MouseClicked
-
     private void ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajudaActionPerformed
         linkSistema.setVisible(false);
         sobreSistemaTela.setVisible(false);
@@ -5241,11 +5162,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_aplicacaoBtnAlterar2ActionPerformed
-
     private void aplicacaoBtnAlterar2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoBtnAlterar2KeyPressed
-        // TODO add your handling code here:
     }//GEN-LAST:event_aplicacaoBtnAlterar2KeyPressed
-
     private void vacinaDescricaoAreaTextoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vacinaDescricaoAreaTextoKeyReleased
        String contaTexto = vacinaDescricaoAreaTexto.getText();
        String total = Integer.toString(contaTexto.length());
@@ -5398,22 +5316,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.start();
     }//GEN-LAST:event_pacienteBtnAlterarFormKeyPressed
-
     private void pacienteBtnAlterarFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pacienteBtnAlterarFormMouseClicked
     }//GEN-LAST:event_pacienteBtnAlterarFormMouseClicked
-
     private void pacientePesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacientePesquisarActionPerformed
     }//GEN-LAST:event_pacientePesquisarActionPerformed
-
     private void aplicacaoVacinaDataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoVacinaDataKeyReleased
     }//GEN-LAST:event_aplicacaoVacinaDataKeyReleased
-
     private void aplicacaoVacinaNomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aplicacaoVacinaNomeKeyReleased
     }//GEN-LAST:event_aplicacaoVacinaNomeKeyReleased
-
     private void atualizarBtnAplicacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atualizarBtnAplicacaoMouseClicked
     }//GEN-LAST:event_atualizarBtnAplicacaoMouseClicked
-
     private void atualizarBtnAplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBtnAplicacaoActionPerformed
         carregarPrincipal.setVisible(true);
         new Thread(){
@@ -5486,10 +5398,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
         }.start(); 
     }//GEN-LAST:event_aplicacaoBtnConsultar1ActionPerformed
-
     private void aplicacaoIdAplicacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aplicacaoIdAplicacaoMouseClicked
     }//GEN-LAST:event_aplicacaoIdAplicacaoMouseClicked
-
     private void aplicacaoAplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoAplicacaoActionPerformed
         carregarPrincipal.setVisible(true);
         new Thread(){
@@ -5510,7 +5420,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
         }.start();
     }//GEN-LAST:event_aplicacaoAplicacaoActionPerformed
-
     private void aplicacaoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoPesquisarActionPerformed
     }//GEN-LAST:event_aplicacaoPesquisarActionPerformed
 
