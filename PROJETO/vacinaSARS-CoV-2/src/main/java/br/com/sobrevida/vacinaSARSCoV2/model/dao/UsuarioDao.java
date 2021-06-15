@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 public class UsuarioDao{
 
     public static String apelido;
+    public static String nome;
     
     ConnectionFactory connectionFactory = new ConnectionFactory();
     PreparedStatement ps; 
@@ -55,7 +56,7 @@ public class UsuarioDao{
     
     public void pegarApelido(String bancoEmail, String bancoSenha){
         
-        String sql = "SELECT apelido FROM bd_vacina_sars_cov_2.usuario WHERE email = ? AND senha = ?;";
+        String sql = "SELECT nome, apelido FROM bd_vacina_sars_cov_2.usuario WHERE email = ? AND senha = ?;";
         
         try(Connection conn = connectionFactory.connection()){
         
@@ -69,8 +70,10 @@ public class UsuarioDao{
             while(result.next()){
                 
                 String apelido = result.getString("apelido");
+                String nome = result.getString("nome");
                   
                 this.apelido = apelido;
+                this.nome = nome;
             }
             ps.close();
         }

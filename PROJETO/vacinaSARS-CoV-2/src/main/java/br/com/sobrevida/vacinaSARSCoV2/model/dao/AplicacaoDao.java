@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JTable;
 import net.proteanit.sql.DbUtils;
@@ -226,10 +227,15 @@ public class AplicacaoDao{
         return cidadao;
     }
     
-    public boolean salvar(CidadaoModel cidadaoModel, boolean resultado){
+    public boolean salvar(CidadaoModel cidadaoModel, boolean resultado) throws ParseException{
          
         boolean result = resultado;
         
+        String previsao = cidadaoModel.getPrevisao();
+        
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        Date previsaoFormatada = new Date(format.parse(previsao).getTime());
+
         String sql = 
             "INSERT INTO "
                 +"bd_vacina_sars_cov_2.aplicacao(idCidadao, idVacina, dose_aplicada, data_aplicacao, previsao) "
@@ -244,7 +250,7 @@ public class AplicacaoDao{
             ps.setInt(2, cidadaoModel.getIdVacina());
             ps.setInt(3, cidadaoModel.getDoseAplicada());
             ps.setString(4, cidadaoModel.getDataAplicacao());
-            ps.setString(5, cidadaoModel.getPrevisao());
+            ps.setDate(5, previsaoFormatada);
             
             ps.execute();
             ps.close();

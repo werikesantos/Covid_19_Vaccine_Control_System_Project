@@ -1,7 +1,5 @@
 package br.com.sobrevida.vacinaSARSCoV2.model;
 
-import java.sql.Date;
-
 /**
  *
  * @author WERIKE
@@ -13,6 +11,7 @@ public class AplicacaoModel extends VacinaModel{
     private int idVacina ;
     private int doseAplicada;
     private String dataAplicacao;
+    private String retorno;
     private String previsao;
 
     /**
@@ -54,7 +53,7 @@ public class AplicacaoModel extends VacinaModel{
         this.idVacina = idVacina;
     }
     /**
-     * @return the dose
+     * @return the doseAplicada
      */
     public int getDoseAplicada() {
         return doseAplicada;
@@ -66,7 +65,7 @@ public class AplicacaoModel extends VacinaModel{
         this.doseAplicada = doseAplicada;
     }
     /**
-     * @return the unica
+     * @return the dataAplicacao
      */
     public String getDataAplicacao() {
         return dataAplicacao;
@@ -78,7 +77,19 @@ public class AplicacaoModel extends VacinaModel{
         this.dataAplicacao = dataAplicacao;
     }
     /**
-     * @return the primeira
+     * @return the retorno
+     */
+    public String getRetorno() {
+        return retorno;
+    }
+    /**
+     * @param retorno the unica to set
+     */
+    public void setRetorno(String retorno) {
+        this.retorno = retorno;
+    }
+    /**
+     * @return the previsao
      */
     public String getPrevisao() {
         return previsao;

@@ -20,7 +20,7 @@ public class TelaLoginCadastro extends javax.swing.JFrame{
         setLocationRelativeTo(null);
         
         //ALTERANDO O ICONE PADRAO DO JAVA
-        utilitario.inserirIcone(this);
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/sobrevidaIcone1.png")).getImage());
         
         //TELA DE AVISOS
         carga.setVisible(false);

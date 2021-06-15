@@ -27,6 +27,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal(){
         initComponents();
         
+        //ALTERANDO O ICONE PADRAO DO JAVA
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/sobrevidaIcone1.png")).getImage());
+        
         cidadaoController.pesquisa(pacienteListaTabela);
         vacinaController.pesquisar(vacinaListaTabela);
         aplicacaoController.pesquisar(aplicacaoListaTabela);
@@ -46,8 +49,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         //ALTERANDO O ICONE PADRAO DO JAVA
-        IconeSistema iconeSistema = new IconeSistema();
-        iconeSistema.inserirIcone(this);
+//IconeSistema iconeSistema = new IconeSistema();
+//iconeSistema.inserirIcone(this);
         
         cadastroCidadaoTela.setVisible(false);
         cadastroVacinaTela.setVisible(false);
@@ -710,6 +713,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         aplicacaoPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 aplicacaoPesquisarMouseClicked(evt);
+            }
+        });
+        aplicacaoPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aplicacaoPesquisarActionPerformed(evt);
             }
         });
         aplicacaoPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -5502,6 +5510,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
         }.start();
     }//GEN-LAST:event_aplicacaoAplicacaoActionPerformed
+
+    private void aplicacaoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacaoPesquisarActionPerformed
+    }//GEN-LAST:event_aplicacaoPesquisarActionPerformed
 
     /**
      * @param args the command line arguments

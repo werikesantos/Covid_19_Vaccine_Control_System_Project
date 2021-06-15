@@ -18,8 +18,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
         initComponents();
         
         //ALTERANDO O ICONE PADRAO DO JAVA
-        IconeSistema iconeSistema = new IconeSistema();
-        iconeSistema.inserirIcone(this);
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/sobrevidaIcone1.png")).getImage());
         
         avisoDe.setVisible(false);
         avisoPara.setVisible(false);

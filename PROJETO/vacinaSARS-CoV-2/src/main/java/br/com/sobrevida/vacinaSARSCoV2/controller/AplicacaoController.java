@@ -5,6 +5,7 @@ import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.AplicacaoDao;
 import static java.lang.Thread.sleep;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,10 @@ import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
-//import java.sql.Date; 
+import java.sql.Date; 
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -358,9 +361,8 @@ public class AplicacaoController {
         String vacinaData = (aplicacaoVacinaData.getText());
 
         if((pacienteNome.equals(pacienteNomeTeste)) && (pacienteCpf.equals(pacienteCpfTeste)) 
-                && (pacienteEmail.equals(pacienteEmailTeste)) && (vaNome.equals(vacinaNomeTeste)) && (!"".equals(vacinaDose)) 
-                && ((!"".equals(vacinaDataRetorno)) && (!"  /  /    ".equals(vacinaDataRetorno))) 
-                && (!"".equals(vacinaData)) && (!"  /  /    ".equals(vacinaDataRetorno))){
+            && (pacienteEmail.equals(pacienteEmailTeste)) && (vaNome.equals(vacinaNomeTeste)) && (vacinaDose.equals(vacinaDose)) 
+            && (!"  /  /    ".equals(vacinaData))){
 
             vacinas.forEach(vacina -> {
                 int idCidadao = Integer.parseInt(aplicacaoIdCodigo.getText()); 
@@ -426,7 +428,12 @@ public class AplicacaoController {
                                             }catch (Exception e){  
                                             }
                                         }
-                                        boolean result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        boolean result = false;
+                                        try {
+                                            result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        } catch (ParseException ex) {
+                                            Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
 
                                         if(result == true){
                                             pesquisar(aplicacaoListaTabela);
@@ -534,7 +541,12 @@ public class AplicacaoController {
                                             }catch (Exception e){  
                                             }
                                         }
-                                        boolean result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        boolean result = false;
+                                        try {
+                                            result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        } catch (ParseException ex) {
+                                            Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
 
                                         if(result == true){
                                             pesquisar(aplicacaoListaTabela);

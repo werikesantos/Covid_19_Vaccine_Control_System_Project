@@ -12,8 +12,7 @@ public class Carregar extends javax.swing.JFrame {
         initComponents();
         
         //ALTERANDO O ICONE PADRAO DO JAVA
-        IconeSistema utilitario = new IconeSistema();
-        utilitario.inserirIcone(this);
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/sobrevidaIcone1.png")).getImage());
     }
 
     /**

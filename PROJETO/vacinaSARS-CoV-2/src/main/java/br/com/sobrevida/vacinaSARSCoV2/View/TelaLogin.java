@@ -17,8 +17,7 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
         //ALTERANDO O ICONE PADRAO DO JAVA
-        IconeSistema utilitario = new IconeSistema();
-        utilitario.inserirIcone(this);
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/sobrevidaIcone1.png")).getImage());
         
         carga.setVisible(false);
     }
