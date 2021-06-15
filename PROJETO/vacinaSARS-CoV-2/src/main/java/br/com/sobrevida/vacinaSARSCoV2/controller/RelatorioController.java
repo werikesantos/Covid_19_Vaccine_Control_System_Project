@@ -2,6 +2,7 @@ package br.com.sobrevida.vacinaSARSCoV2.controller;
 
 import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.RelatorioDao;
+import br.com.sobrevida.vacinaSARSCoV2.model.dao.UsuarioDao;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;
@@ -33,6 +34,8 @@ public class RelatorioController{
     
     public void gerarPDF(JFormattedTextField de, JFormattedTextField para, JLabel imprimirCarregar) throws IOException, SQLException, ParseException{
         
+        String usuario = UsuarioDao.nome;
+        
         String dePegar = de.getText(); 
         String paraPegar = para.getText();
         
@@ -55,26 +58,34 @@ public class RelatorioController{
         try{
             //new FileOutputStream("src\\resources\\relatorios\\Relatorio2.pdf")
             PdfWriter.getInstance(relatorio, new FileOutputStream("C:\\Users\\WERIKE\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
-
+            
             relatorio.open();
             
             Image logoTipo1 = Image.getInstance("src/main/resources/image/relatorioBranco.png");
             relatorio.add(logoTipo1);
-            
-            Paragraph paragrafo0 = new Paragraph("COD."+result);
+
+            Paragraph paragrafo0 = new Paragraph("Cod. "+result);
             paragrafo0.setAlignment(2);
             relatorio.add(paragrafo0);
             
-            Paragraph paragrafo2 = new Paragraph("");
-            paragrafo2.setAlignment(0);
+            Paragraph paragrafo1 = new Paragraph("De "+dePegar+" Para "+paraPegar);
+            paragrafo1.setAlignment(2);
+            relatorio.add(paragrafo1);
+            
+            Paragraph paragrafo2 = new Paragraph("Responsável: "+usuario);
+            paragrafo2.setAlignment(2);
             relatorio.add(paragrafo2);
             
-            Paragraph paragrafo = new Paragraph("RELATÓRIO DE CONTROLE DE APLICAÇÕES");
-            paragrafo.setAlignment(1);
-            relatorio.add(paragrafo);
+            Paragraph paragrafo3 = new Paragraph(" ");
+            paragrafo3.setAlignment(2);
+            relatorio.add(paragrafo3);
             
-            paragrafo = new Paragraph(" ");
-            relatorio.add(paragrafo);
+            Paragraph paragrafo4 = new Paragraph("RELATÓRIO DE CONTROLE DE APLICAÇÕES");
+            paragrafo4.setAlignment(1);
+            relatorio.add(paragrafo4);
+            
+            paragrafo4 = new Paragraph(" ");
+            relatorio.add(paragrafo4);
             
             PdfPTable tabela = new PdfPTable(5);
 

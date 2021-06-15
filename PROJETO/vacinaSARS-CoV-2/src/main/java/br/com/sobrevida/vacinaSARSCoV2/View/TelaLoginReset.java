@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 public class TelaLoginReset extends javax.swing.JFrame {
 
     UsuarioController usuarioController = new UsuarioController();
-    IconeSistema utilitario = new IconeSistema();
     TelaLogin telaLogin = new TelaLogin();
     
     public TelaLoginReset() {
@@ -21,7 +20,7 @@ public class TelaLoginReset extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         //ALTERANDO O ICONE PADRAO DO JAVA
-        utilitario.inserirIcone(this);
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/sobrevidaIcone1.png")).getImage());
 
         carga.setVisible(false);
     }
@@ -235,11 +234,8 @@ public class TelaLoginReset extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void mostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenhaActionPerformed
-
     }//GEN-LAST:event_mostraSenhaActionPerformed
-
     private void signUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUPActionPerformed
         
         new Thread(){
@@ -275,7 +271,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                             loginSenha1.setText("");
                             mostraSenha.setText("");
                             mostraSenha1.setText("");
-                            //AvisoTelaLoginReset.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!", 
+                                "Reset de senha", JOptionPane.PLAIN_MESSAGE
+                            );
                         }
                     } 
                 }else{
@@ -311,15 +309,10 @@ public class TelaLoginReset extends javax.swing.JFrame {
             loginSenha1.setVisible(true);
         }
     }//GEN-LAST:event_boxMostraSenhaActionPerformed
-
     private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
-
     }//GEN-LAST:event_loginEmailActionPerformed
-
     private void mostraSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostraSenha1ActionPerformed
-
     }//GEN-LAST:event_mostraSenha1ActionPerformed
-
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         TelaLoginReset.this.dispose();
         new TelaLoginReset().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -362,7 +355,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                //AvisoTelaLoginReset.setVisible(true);
+                                JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!", 
+                                    "Reset de senha", JOptionPane.PLAIN_MESSAGE
+                                );
                             }
                         } 
                     }else{
@@ -419,7 +414,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                //AvisoTelaLoginReset.setVisible(true);
+                                JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!", 
+                                    "Reset de senha", JOptionPane.PLAIN_MESSAGE
+                                );
                             }
                         } 
                     }else{
@@ -476,7 +473,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                //AvisoTelaLoginReset.setVisible(true);
+                                JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!", 
+                                    "Reset de senha", JOptionPane.PLAIN_MESSAGE
+                                );
                             }
                         } 
                     }else{
@@ -533,7 +532,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                //AvisoTelaLoginReset.setVisible(true);
+                                JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!", 
+                                    "Reset de senha", JOptionPane.PLAIN_MESSAGE
+                                );
                             }
                         } 
                     }else{
@@ -590,7 +591,9 @@ public class TelaLoginReset extends javax.swing.JFrame {
                                 loginSenha1.setText("");
                                 mostraSenha.setText("");
                                 mostraSenha1.setText("");
-                                //AvisoTelaLoginReset.setVisible(true);
+                                JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!", 
+                                    "Reset de senha", JOptionPane.PLAIN_MESSAGE
+                                );
                             }
                         } 
                     }else{
@@ -648,7 +651,6 @@ public class TelaLoginReset extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox boxMostraSenha;
     private javax.swing.JLabel carga;

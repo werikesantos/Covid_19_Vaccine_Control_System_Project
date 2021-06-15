@@ -5,6 +5,7 @@ import br.com.sobrevida.vacinaSARSCoV2.model.CidadaoModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.VacinaModel;
 import br.com.sobrevida.vacinaSARSCoV2.model.dao.AplicacaoDao;
 import static java.lang.Thread.sleep;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,10 @@ import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
-//import java.sql.Date; 
+import java.sql.Date; 
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -339,7 +342,8 @@ public class AplicacaoController {
         JTextField aplicacaoConsultar, JTextField aplicacaoIdCodigo, JTextField aplicacaoPacienteNome, 
         JTextField aplicacaoPacienteCpf, JTextField aplicacaoPacienteEmail, JComboBox aplicacaoVacinaNome, 
         JSpinner aplicacaoVacinaDose, JTextField aplicacaoVacinaDataRetorno, 
-        JTextField aplicacaoVacinaData, JTextField aplicacaoPesquisar, JTextField aplicacaoAplicacao){
+        JTextField aplicacaoVacinaData, JTextField aplicacaoPesquisar, JTextField aplicacaoAplicacao,
+        JTextField aplicacaoIdAplicacao){
   
         String pacienteNome = (aplicacaoPacienteNome.getText());
         String pacienteCpf = (aplicacaoPacienteCpf.getText());
@@ -358,9 +362,8 @@ public class AplicacaoController {
         String vacinaData = (aplicacaoVacinaData.getText());
 
         if((pacienteNome.equals(pacienteNomeTeste)) && (pacienteCpf.equals(pacienteCpfTeste)) 
-                && (pacienteEmail.equals(pacienteEmailTeste)) && (vaNome.equals(vacinaNomeTeste)) && (!"".equals(vacinaDose)) 
-                && ((!"".equals(vacinaDataRetorno)) && (!"  /  /    ".equals(vacinaDataRetorno))) 
-                && (!"".equals(vacinaData)) && (!"  /  /    ".equals(vacinaDataRetorno))){
+            && (pacienteEmail.equals(pacienteEmailTeste)) && (vaNome.equals(vacinaNomeTeste)) && (vacinaDose.equals(vacinaDose)) 
+            && (!"  /  /    ".equals(vacinaData))){
 
             vacinas.forEach(vacina -> {
                 int idCidadao = Integer.parseInt(aplicacaoIdCodigo.getText()); 
@@ -426,7 +429,12 @@ public class AplicacaoController {
                                             }catch (Exception e){  
                                             }
                                         }
-                                        boolean result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        boolean result = false;
+                                        try {
+                                            result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        } catch (ParseException ex) {
+                                            Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
 
                                         if(result == true){
                                             pesquisar(aplicacaoListaTabela);
@@ -443,6 +451,7 @@ public class AplicacaoController {
                                             aplicacaoVacinaDose.setValue(0);
                                             aplicacaoVacinaDataRetorno.setText(null);
                                             aplicacaoVacinaData.setText(null);
+                                            aplicacaoIdAplicacao.setText(null);
 
                                             avisoAplicacaoVacinaDataRetorno.setVisible(false);
                                             avisoAplicacaoPacienteNome.setVisible(false);
@@ -514,8 +523,8 @@ public class AplicacaoController {
 
                         if(respostaUsuario == JOptionPane.YES_OPTION){
 
-                            if((!"".equals(vacinaNome)) && (!"".equals(doseConfirmada)) && (!"".equals(data)) && 
-                                (!"".equals(retorno))){
+                            if((!"".equals(vacinaNome)) && (!"".equals(doseConfirmada)) && (!"  /  /    ".equals(data)) && 
+                                (!"  /  /    ".equals(retornar))){
 
                                 cidadaoModel.setIdCidadao(idCidadao);
                                 cidadaoModel.setIdVacina(idVacina);
@@ -534,7 +543,12 @@ public class AplicacaoController {
                                             }catch (Exception e){  
                                             }
                                         }
-                                        boolean result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        boolean result = false;
+                                        try {
+                                            result = aplicacaoDao.salvar(cidadaoModel, false);
+                                        } catch (ParseException ex) {
+                                            Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
 
                                         if(result == true){
                                             pesquisar(aplicacaoListaTabela);
@@ -559,6 +573,7 @@ public class AplicacaoController {
                                             avisoAplicacaoVacinaNome.setVisible(false);
                                             avisoAplicacaoVacinaDose.setVisible(false);
                                             avisoAplicacaoData.setVisible(false);
+                                            aplicacaoIdAplicacao.setText(null);
 
                                             JOptionPane.showMessageDialog(null, "Aplicação cadastrada com sucesso!"
                                                 ,"Cadastro de Aplicações", JOptionPane.PLAIN_MESSAGE);
@@ -737,12 +752,11 @@ public class AplicacaoController {
         String nomeVacina = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 5).toString();
         String dose = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 6).toString();
         String aplicacao = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 7).toString();
-        String previsao = aplicacaoListaTabela.getModel().getValueAt(linhaSelecionada, 8).toString();
         
         if((!"".equals(idAplicacao))){
             
             Object[] opcao = {"Sim", "Não"};
-            int respostaUsuario = JOptionPane.showOptionDialog(null, "Deseja excluir essa Aplicação?\nCódigo: "+idAplicacao+"\nNome: "+nome+"\nCPF: "+cpf+"\nVacina: "+nomeVacina+"\nDose: "+dose+"\nAplicação: "+aplicacao+"\nPrevisão: "+previsao
+            int respostaUsuario = JOptionPane.showOptionDialog(null, "Deseja excluir essa Aplicação?\nCódigo: "+idAplicacao+"\nNome: "+nome+"\nCPF: "+cpf+"\nVacina: "+nomeVacina+"\nDose: "+dose+"\nAplicação: "+aplicacao
                 ,"Exclusão de aplicações", JOptionPane.YES_NO_OPTION,
                     JOptionPane.PLAIN_MESSAGE, null, opcao, opcao[0]
                 );
@@ -783,7 +797,7 @@ public class AplicacaoController {
                         }else{
                             carregarPrincipal.setVisible(false);
                             //vacinaDao.deletar(vacinaModel, false);
-                            JOptionPane.showMessageDialog(null, "Não foi possível deletar o registro de aplicação\nCódigo: "+idAplicacao+"\nNome: "+nome+"\nCPF: "+cpf+"\nVacina: "+nomeVacina+"\nDose: "+dose+"\nAplicação: "+aplicacao+"\nPrevisão: "+previsao
+                            JOptionPane.showMessageDialog(null, "Não foi possível deletar o registro de aplicação\nCódigo: "+idAplicacao+"\nNome: "+nome+"\nCPF: "+cpf+"\nVacina: "+nomeVacina+"\nDose: "+dose+"\nAplicação: "+aplicacao
                                 ,"Erro", JOptionPane.WARNING_MESSAGE);
                         }
                     }

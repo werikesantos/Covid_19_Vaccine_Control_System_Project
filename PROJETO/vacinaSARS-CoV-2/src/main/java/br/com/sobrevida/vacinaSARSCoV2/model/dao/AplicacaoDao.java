@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JTable;
 import net.proteanit.sql.DbUtils;
@@ -226,33 +227,64 @@ public class AplicacaoDao{
         return cidadao;
     }
     
-    public boolean salvar(CidadaoModel cidadaoModel, boolean resultado){
+    public boolean salvar(CidadaoModel cidadaoModel, boolean resultado) throws ParseException{
          
         boolean result = resultado;
         
-        String sql = 
+        String previsao = cidadaoModel.getPrevisao();
+        
+        if(!"NÃO".equals(previsao)){
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            Date previsaoFormatada = new Date(format.parse(previsao).getTime());
+            
+            String sql = 
             "INSERT INTO "
                 +"bd_vacina_sars_cov_2.aplicacao(idCidadao, idVacina, dose_aplicada, data_aplicacao, previsao) "
             +"VALUES "
                 +"(?, ?, ?, ?, ?)";
         
-        try(Connection conn = connectionFactory.connection()){
-            
-            ps = conn.prepareStatement(sql);
-            
-            ps.setInt(1, cidadaoModel.getIdCidadao());
-            ps.setInt(2, cidadaoModel.getIdVacina());
-            ps.setInt(3, cidadaoModel.getDoseAplicada());
-            ps.setString(4, cidadaoModel.getDataAplicacao());
-            ps.setString(5, cidadaoModel.getPrevisao());
-            
-            ps.execute();
-            ps.close();
-            
-            return resultado = true;
-        }
-        catch(Exception e){
-            e.printStackTrace();
+            try(Connection conn = connectionFactory.connection()){
+
+                ps = conn.prepareStatement(sql);
+
+                ps.setInt(1, cidadaoModel.getIdCidadao());
+                ps.setInt(2, cidadaoModel.getIdVacina());
+                ps.setInt(3, cidadaoModel.getDoseAplicada());
+                ps.setString(4, cidadaoModel.getDataAplicacao());
+                ps.setDate(5, previsaoFormatada);
+
+                ps.execute();
+                ps.close();
+
+                return resultado = true;
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }else{
+            String sql = 
+            "INSERT INTO "
+                +"bd_vacina_sars_cov_2.aplicacao(idCidadao, idVacina, dose_aplicada, data_aplicacao) "
+            +"VALUES "
+                +"(?, ?, ?, ?)";
+        
+            try(Connection conn = connectionFactory.connection()){
+
+                ps = conn.prepareStatement(sql);
+
+                ps.setInt(1, cidadaoModel.getIdCidadao());
+                ps.setInt(2, cidadaoModel.getIdVacina());
+                ps.setInt(3, cidadaoModel.getDoseAplicada());
+                ps.setString(4, cidadaoModel.getDataAplicacao());
+
+                ps.execute();
+                ps.close();
+
+                return resultado = true;
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
         return result;
     }
