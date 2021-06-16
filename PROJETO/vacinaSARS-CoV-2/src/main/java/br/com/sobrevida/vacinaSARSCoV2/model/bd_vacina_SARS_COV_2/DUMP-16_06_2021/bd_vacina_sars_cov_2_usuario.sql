@@ -16,28 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `perfil`
+-- Table structure for table `usuario`
 --
 
-DROP TABLE IF EXISTS `perfil`;
+DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `perfil` (
+CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(80) NOT NULL,
+  `idPerfil` int NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `apelido` varchar(10) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(16) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `usuario` (`usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `cpf` (`cpf`),
+  UNIQUE KEY `email` (`email`),
+  KEY `idPerfil` (`idPerfil`),
+  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `perfil`
+-- Dumping data for table `usuario`
 --
 
-LOCK TABLES `perfil` WRITE;
-/*!40000 ALTER TABLE `perfil` DISABLE KEYS */;
-INSERT INTO `perfil` VALUES (1,'Administrador'),(2,'Paciente'),(3,'Recepcionista');
-/*!40000 ALTER TABLE `perfil` ENABLE KEYS */;
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,3,'Werike Santos','Guilherme','444.555.655-10','werike','1'),(2,3,'Guilherme Silva Alves','Guilherme','444.785.965-44','guilhermes1@gmail.com','12345678'),(3,3,'Lucas nunes','Lucas','444.878.365-05','lucasnunes@gmail.com','12345678'),(4,3,'Camila vieira','Camila','457.156.482-58','camila@gmail.com','10324589'),(6,3,'Victor santos','Victor','456.789.456-54','victor@gmail.com','96354872'),(7,3,'Juvenal Arturiano','Juvenal','448.546.556-92','juvenal@gmail.com','12345678'),(8,3,'Carminha Souza Silva','Carminha','485.451.511-58','carminha@gmail.com','87654321');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-04 17:59:18
+-- Dump completed on 2021-06-16  1:46:32

@@ -408,8 +408,6 @@ public class AplicacaoController {
 
                         if(respostaUsuario == JOptionPane.YES_OPTION){
                             
-                            carregarPrincipal.setVisible(true);
-                            
                             if((!"".equals(vacinaNome)) && (!"".equals(doseConfirmada)) && (!"".equals(data))){
 
                                 cidadaoModel.setIdCidadao(idCidadao);
@@ -417,65 +415,48 @@ public class AplicacaoController {
                                 cidadaoModel.setDoseAplicada(doseConfirmada);
                                 cidadaoModel.setDataAplicacao(data);
                                 cidadaoModel.setPrevisao(retorno);
+                                
+                                boolean result = false;
+                                try {
+                                    result = aplicacaoDao.salvar(cidadaoModel, false);
+                                } catch (ParseException ex) {
+                                    Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
+                                }
 
-                                carregarPrincipal.setVisible(true);
-                                new Thread(){
-                                    int i=0;
-                                    public void run(){
-                                        while(i<100){
-                                            i = i+5;
-                                            try{
-                                                sleep(100);
-                                            }catch (Exception e){  
-                                            }
-                                        }
-                                        boolean result = false;
-                                        try {
-                                            result = aplicacaoDao.salvar(cidadaoModel, false);
-                                        } catch (ParseException ex) {
-                                            Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
-                                        }
+                                if (result == true) {
+                                    pesquisar(aplicacaoListaTabela);
 
-                                        if(result == true){
-                                            pesquisar(aplicacaoListaTabela);
-                                            carregarPrincipal.setVisible(false);
+                                    aplicacaoConsultar.setText("Pacientes...");
+                                    aplicacaoPesquisar.setText("Pesquisar...");
+                                    aplicacaoAplicacao.setText("Aplicações...");
+                                    aplicacaoIdCodigo.setText(null);
+                                    aplicacaoPacienteNome.setText(null);
+                                    aplicacaoPacienteCpf.setText(null);
+                                    aplicacaoPacienteEmail.setText(null);
+                                    aplicacaoVacinaNome.setSelectedIndex(0);
+                                    aplicacaoVacinaDose.setValue(0);
+                                    aplicacaoVacinaDataRetorno.setText(null);
+                                    aplicacaoVacinaData.setText(null);
+                                    aplicacaoIdAplicacao.setText(null);
 
-                                            aplicacaoConsultar.setText("Pacientes...");
-                                            aplicacaoPesquisar.setText("Pesquisar...");
-                                            aplicacaoAplicacao.setText("Aplicações...");
-                                            aplicacaoIdCodigo.setText(null);
-                                            aplicacaoPacienteNome.setText(null);
-                                            aplicacaoPacienteCpf.setText(null);
-                                            aplicacaoPacienteEmail.setText(null);
-                                            aplicacaoVacinaNome.setSelectedIndex(0);
-                                            aplicacaoVacinaDose.setValue(0);
-                                            aplicacaoVacinaDataRetorno.setText(null);
-                                            aplicacaoVacinaData.setText(null);
-                                            aplicacaoIdAplicacao.setText(null);
+                                    avisoAplicacaoVacinaDataRetorno.setVisible(false);
+                                    avisoAplicacaoPacienteNome.setVisible(false);
+                                    avisoAplicacaoPacienteCpf.setVisible(false);
+                                    avisoAplicacaoPacienteEmail.setVisible(false);
+                                    avisoAplicacaoVacinaNome.setVisible(false);
+                                    avisoAplicacaoVacinaDose.setVisible(false);
+                                    avisoAplicacaoData.setVisible(false);
 
-                                            avisoAplicacaoVacinaDataRetorno.setVisible(false);
-                                            avisoAplicacaoPacienteNome.setVisible(false);
-                                            avisoAplicacaoPacienteCpf.setVisible(false);
-                                            avisoAplicacaoPacienteEmail.setVisible(false);
-                                            avisoAplicacaoVacinaNome.setVisible(false);
-                                            avisoAplicacaoVacinaDose.setVisible(false);
-                                            avisoAplicacaoData.setVisible(false);
-
-                                            JOptionPane.showMessageDialog(null, "Aplicação cadastrada com sucesso!"
-                                                ,"Cadastro de Aplicações", JOptionPane.PLAIN_MESSAGE
-                                            );
-                                        }else{
-                                            carregarPrincipal.setVisible(false);
-                                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                                + "Por favor, verifique e tente novamente.",
-                                                "Aplicação de Vacinas", JOptionPane.WARNING_MESSAGE
-                                            );  
-                                        }    
-                                    }
-                                }.start();
+                                    JOptionPane.showMessageDialog(null, "Aplicação cadastrada com sucesso!",
+                                        "Cadastro de Aplicações", JOptionPane.PLAIN_MESSAGE
+                                    );
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                                            + "Por favor, verifique e tente novamente.",
+                                            "Aplicação de Vacinas", JOptionPane.WARNING_MESSAGE
+                                    );
+                                } 
                             }else{
-                                carregarPrincipal.setVisible(false);
-
                                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                                     + "Por favor, preencher todos os campos marcados."
                                     ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
@@ -489,7 +470,7 @@ public class AplicacaoController {
                         JOptionPane.showMessageDialog(null, "Não ultrapasse o limite máximo de\n"+qtdDose+" dose(s) para essa Vacina!", 
                             "Atenção", JOptionPane.ERROR_MESSAGE
                         );
-                    }else if((dose > 0) && (dose < qtdDose)){
+                    }else if((dose > 0) && (dose < qtdDose)){           
                         doseConfirmada = dose;
 
                         String[] resultado = aplicacaoData.split("/");
@@ -515,7 +496,9 @@ public class AplicacaoController {
                         String mostrar = diaMostrar+mesMostrar+anoMostrar;
 
                         aplicacaoVacinaDataRetorno.setText(mostrar);
-
+                        
+                        carregarPrincipal.setVisible(false);
+                        
                         Object[] opcao = {"Sim", "Não"};
                         int respostaUsuario = JOptionPane.showOptionDialog(null, "Deseja continuar para salvar?\n\nVacina: "+vacinaNome+"\nDose que será aplicada: "+doseConfirmada+"ª dose\nData da aplicação: "+data+"\nData do retorno: "+retornar+"\n"
                             ,"Confirmar", JOptionPane.YES_NO_OPTION,
@@ -531,64 +514,46 @@ public class AplicacaoController {
                                 cidadaoModel.setDoseAplicada(doseConfirmada);
                                 cidadaoModel.setDataAplicacao(data);
                                 cidadaoModel.setPrevisao(retornar);
+                                
+                                boolean result = false;
+                                try {
+                                    result = aplicacaoDao.salvar(cidadaoModel, false);
+                                } catch (ParseException ex) {
+                                    Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
+                                }
 
-                                carregarPrincipal.setVisible(true);
-                                new Thread(){
-                                    int i=0;
-                                    public void run(){
-                                        while(i<100){
-                                            i = i+5;
-                                            try{
-                                                sleep(100);
-                                            }catch (Exception e){  
-                                            }
-                                        }
-                                        boolean result = false;
-                                        try {
-                                            result = aplicacaoDao.salvar(cidadaoModel, false);
-                                        } catch (ParseException ex) {
-                                            Logger.getLogger(AplicacaoController.class.getName()).log(Level.SEVERE, null, ex);
-                                        }
+                                if (result == true) {
+                                    pesquisar(aplicacaoListaTabela);
 
-                                        if(result == true){
-                                            pesquisar(aplicacaoListaTabela);
-                                            carregarPrincipal.setVisible(false);
+                                    aplicacaoConsultar.setText("Pacientes...");
+                                    aplicacaoPesquisar.setText("Pesquisar...");
+                                    aplicacaoAplicacao.setText("Aplicações...");
+                                    aplicacaoIdCodigo.setText(null);
+                                    aplicacaoPacienteNome.setText(null);
+                                    aplicacaoPacienteCpf.setText(null);
+                                    aplicacaoPacienteEmail.setText(null);
+                                    aplicacaoVacinaNome.setSelectedIndex(0);
+                                    aplicacaoVacinaDose.setValue(0);
+                                    aplicacaoVacinaDataRetorno.setText(null);
+                                    aplicacaoVacinaData.setText(null);
 
-                                            aplicacaoConsultar.setText("Pacientes...");
-                                            aplicacaoPesquisar.setText("Pesquisar...");
-                                            aplicacaoAplicacao.setText("Aplicações...");
-                                            aplicacaoIdCodigo.setText(null);
-                                            aplicacaoPacienteNome.setText(null);
-                                            aplicacaoPacienteCpf.setText(null);
-                                            aplicacaoPacienteEmail.setText(null);
-                                            aplicacaoVacinaNome.setSelectedIndex(0);
-                                            aplicacaoVacinaDose.setValue(0);
-                                            aplicacaoVacinaDataRetorno.setText(null);
-                                            aplicacaoVacinaData.setText(null);
+                                    avisoAplicacaoVacinaDataRetorno.setVisible(false);
+                                    avisoAplicacaoPacienteNome.setVisible(false);
+                                    avisoAplicacaoPacienteCpf.setVisible(false);
+                                    avisoAplicacaoPacienteEmail.setVisible(false);
+                                    avisoAplicacaoVacinaNome.setVisible(false);
+                                    avisoAplicacaoVacinaDose.setVisible(false);
+                                    avisoAplicacaoData.setVisible(false);
 
-                                            avisoAplicacaoVacinaDataRetorno.setVisible(false);
-                                            avisoAplicacaoPacienteNome.setVisible(false);
-                                            avisoAplicacaoPacienteCpf.setVisible(false);
-                                            avisoAplicacaoPacienteEmail.setVisible(false);
-                                            avisoAplicacaoVacinaNome.setVisible(false);
-                                            avisoAplicacaoVacinaDose.setVisible(false);
-                                            avisoAplicacaoData.setVisible(false);
-                                            aplicacaoIdAplicacao.setText(null);
-
-                                            JOptionPane.showMessageDialog(null, "Aplicação cadastrada com sucesso!"
-                                                ,"Cadastro de Aplicações", JOptionPane.PLAIN_MESSAGE);
-                                        }else{
-                                            carregarPrincipal.setVisible(false);
-                                            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
-                                                + "Por favor, verifique e tente novamente.",
-                                                "Aplicação de Vacinas", JOptionPane.WARNING_MESSAGE
-                                            ); 
-                                        }    
-                                    }
-                                }.start();
+                                    JOptionPane.showMessageDialog(null, "Aplicação cadastrada com sucesso!",
+                                        "Cadastro de Aplicações", JOptionPane.PLAIN_MESSAGE);
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
+                                        + "Por favor, verifique e tente novamente.",
+                                        "Aplicação de Vacinas", JOptionPane.WARNING_MESSAGE
+                                    );
+                                }   
                             }else{
-                                carregarPrincipal.setVisible(false);
-
                                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar!\n"
                                     + "Por favor, preencher todos os campos marcados."
                                     ,"Cadastro de Paciente", JOptionPane.WARNING_MESSAGE
@@ -602,8 +567,6 @@ public class AplicacaoController {
                 }
             }); 
         }else{
-            carregarPrincipal.setVisible(false);
-
             JOptionPane.showMessageDialog(null, "Por favor, preencher todos os campos marcados!", 
                 "Atenção", JOptionPane.WARNING_MESSAGE);
                 
@@ -618,7 +581,7 @@ public class AplicacaoController {
             avisoAplicacaoData.setVisible(true);  
         }
     }
-
+    
     public void pesquisar(JTable aplicacaoLista, String dado){     
         aplicacaoDao.pesquisar(aplicacaoLista, dado);    
     }
