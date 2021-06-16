@@ -117,11 +117,13 @@ public class RelatorioController{
                 tabela.addCell(coluna5);
             }
             
-            relatorio.add(tabela);   
+            relatorio.add(tabela);
             relatorio.close();
             imprimirCarregar.setVisible(false);
             Desktop.getDesktop().open(new File("C:\\Users\\WERIKE\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
-
+            de.setText("");
+            para.setText("");
+            
         }catch (DocumentException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -16,32 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `usuario`
+-- Table structure for table `aplicacao`
 --
 
-DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `aplicacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuario` (
+CREATE TABLE `aplicacao` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `idPerfil` int NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `senha` varchar(16) NOT NULL,
+  `idCidadao` int NOT NULL,
+  `idVacina` int NOT NULL,
+  `dose_aplicada` int NOT NULL,
+  `data_aplicacao` varchar(10) NOT NULL,
+  `previsao` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  KEY `idPerfil` (`idPerfil`),
-  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `idCidadao` (`idCidadao`),
+  KEY `idVacina` (`idVacina`),
+  CONSTRAINT `aplicacao_ibfk_1` FOREIGN KEY (`idCidadao`) REFERENCES `cidadao` (`id`),
+  CONSTRAINT `aplicacao_ibfk_2` FOREIGN KEY (`idVacina`) REFERENCES `vacina` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuario`
+-- Dumping data for table `aplicacao`
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,3,'werike','1'),(2,1,'lucasnunes@gmail.com','12345678'),(3,3,'riri','12345678'),(4,3,'vivi','12345678'),(5,3,'vovo','12345678'),(6,3,'veve','12345678'),(7,3,'vcvc','12345678'),(8,3,'bebe','12345678'),(9,3,'ble','12345678'),(10,3,'bla','12345678'),(11,3,'bra','12345678'),(12,3,'bli','12345678'),(13,3,'blo','12345678'),(14,3,'nho','12345678'),(15,3,'nu','12345678'),(16,3,'sobre','12345678'),(17,3,'vo','12345678'),(18,3,'cri','12345678'),(19,3,'vi','12345678'),(20,3,'leila ','12345678'),(21,3,'leila','12345678'),(22,3,'lu','87654321');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+LOCK TABLES `aplicacao` WRITE;
+/*!40000 ALTER TABLE `aplicacao` DISABLE KEYS */;
+INSERT INTO `aplicacao` VALUES (1,1,1,1,'20-05-2021','2021-06-20'),(30,32,6,1,'20-03-2021',NULL),(33,20,5,1,'27-03-2021','2021-06-25'),(34,10,4,1,'14-05-2021','2021-06-25'),(35,6,3,1,'27-03-2021','2021-06-25'),(36,15,2,1,'28-05-2021','2021-06-25'),(38,22,1,1,'27-03-2021','2021-06-25'),(39,25,2,1,'28-05-2021','2021-06-25'),(40,18,5,1,'27-03-2021','2021-06-25'),(41,24,4,1,'14-05-2021','2021-06-25'),(46,23,4,1,'14-05-2021','2021-06-25');
+/*!40000 ALTER TABLE `aplicacao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-23 19:04:37
+-- Dump completed on 2021-06-16  1:46:31
