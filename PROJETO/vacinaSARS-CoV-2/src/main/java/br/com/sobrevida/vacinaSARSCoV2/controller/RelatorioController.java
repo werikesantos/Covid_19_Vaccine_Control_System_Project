@@ -61,7 +61,7 @@ public class RelatorioController{
             
             relatorio.open();
             
-            Image logoTipo1 = Image.getInstance("src/main/resources/image/relatorioBranco.png");
+            Image logoTipo1 = Image.getInstance("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\resources\\image\\relatorioBranco.png");
             relatorio.add(logoTipo1);
 
             Paragraph paragrafo0 = new Paragraph("Cod. "+result);
