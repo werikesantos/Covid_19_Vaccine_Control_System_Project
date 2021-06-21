@@ -4916,18 +4916,6 @@
             <Property name="useNullLayout" type="boolean" value="true"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel28">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/werike_github.png"/>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="320" y="110" width="290" height="250"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="javax.swing.JLabel" name="closeLink">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4955,7 +4943,7 @@
             <Component class="javax.swing.JSeparator" name="linhaSeparador9">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="60" y="440" width="842" height="-1"/>
+                  <AbsoluteConstraints x="60" y="370" width="842" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -4974,11 +4962,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Vers&#xf5;es do sistema"/>
+                <Property name="text" type="java.lang.String" value="Redes Sociais"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="98" y="410" width="210" height="30"/>
+                  <AbsoluteConstraints x="98" y="340" width="210" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5018,83 +5006,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="60" y="410" width="30" height="30"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel29">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="12" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Werike Marques Santos"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="353" y="360" width="180" height="20"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel110">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="GitHub"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="353" y="90" width="80" height="20"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel126">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/werike_linkedin.png"/>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="110" width="290" height="250"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel134">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Linkedin"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="62" y="90" width="80" height="20"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel140">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="12" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Werike Marques Santos"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="62" y="360" width="180" height="20"/>
+                  <AbsoluteConstraints x="60" y="340" width="30" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5110,7 +5022,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="480" width="340" height="-1"/>
+                  <AbsoluteConstraints x="60" y="100" width="340" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5126,7 +5038,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="630" width="380" height="-1"/>
+                  <AbsoluteConstraints x="60" y="250" width="380" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5142,7 +5054,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="650" y="590" width="40" height="40"/>
+                  <AbsoluteConstraints x="640" y="210" width="40" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5158,7 +5070,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="570" y="630" width="200" height="-1"/>
+                  <AbsoluteConstraints x="560" y="250" width="200" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5174,7 +5086,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="540" width="390" height="-1"/>
+                  <AbsoluteConstraints x="60" y="160" width="390" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5190,7 +5102,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="590" width="390" height="-1"/>
+                  <AbsoluteConstraints x="60" y="210" width="390" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5206,7 +5118,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="610" width="390" height="-1"/>
+                  <AbsoluteConstraints x="60" y="230" width="390" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5222,7 +5134,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="650" y="500" width="40" height="40"/>
+                  <AbsoluteConstraints x="640" y="120" width="40" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5238,7 +5150,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="520" width="410" height="-1"/>
+                  <AbsoluteConstraints x="60" y="140" width="410" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5254,7 +5166,19 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="560" y="540" width="230" height="16"/>
+                  <AbsoluteConstraints x="550" y="160" width="230" height="16"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel16">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/youtubeGithub.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="30" y="390" width="290" height="230"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5947,61 +5871,46 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel13" min="-2" pref="81" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jLabel14" min="-2" pref="216" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel143" min="-2" pref="216" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel32" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="jLabel34" pref="205" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel19" min="-2" pref="81" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jLabel31" min="-2" pref="205" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel13" min="-2" pref="81" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jLabel14" min="-2" pref="205" max="-2" attributes="0"/>
+                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel9" min="-2" pref="87" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jLabel12" min="-2" pref="216" max="-2" attributes="0"/>
+                                          <Component id="jLabel12" min="-2" pref="205" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel32" min="-2" pref="87" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                                                  <Component id="jLabel34" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel1" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                                              <Component id="jLabel74" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel6" min="-2" pref="97" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                                  <Component id="jLabel8" min="-2" pref="216" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel75" min="-2" pref="117" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel170" min="-2" pref="224" max="-2" attributes="0"/>
-                                                      <Component id="jLabel80" min="-2" pref="224" max="-2" attributes="0"/>
-                                                      <Component id="jLabel171" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="jLabel7" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel4" min="-2" pref="168" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel5" min="-2" pref="216" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel4" min="-2" pref="168" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel5" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel143" min="-2" pref="205" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel6" min="-2" pref="97" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" pref="205" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel19" min="-2" pref="81" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jLabel31" min="-2" pref="216" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel1" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="21" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6017,7 +5926,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel143" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -6044,18 +5953,7 @@
                                   <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                              <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel80" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel170" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel171" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="22" max="32767" attributes="0"/>
+                              <EmptySpace pref="121" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6193,61 +6091,6 @@
                         <Property name="text" type="java.lang.String" value="Drive"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel74">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="13" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Message"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel75">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Romanos 11:36"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel80">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Porque dele, e por ele, e para ele, "/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel170">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="s&#xe3;o todas as coisas; gl&#xf3;ria, pois, "/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel171">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="a ele eternamente. Am&#xe9;m."/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel143">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -6301,69 +6144,53 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel20" min="-2" pref="78" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel30" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel25" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel15" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="jLabel35" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="jLabel36" min="-2" pref="121" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel39" pref="275" max="32767" attributes="0"/>
+                                          <Component id="jLabel39" alignment="0" pref="275" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel37" min="-2" pref="187" max="-2" attributes="0"/>
+                                                  <Component id="jLabel21" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                                   <Component id="jLabel38" min="-2" pref="253" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel15" min="-2" pref="202" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel23" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
-                                                  <Component id="jLabel18" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel24" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabel21" alignment="0" pref="187" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel36" min="-2" pref="121" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel37" min="-2" pref="187" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel16" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
-                                                  <Component id="jLabel27" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
-                                                  <Component id="jLabel35" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel17" min="-2" pref="187" max="-2" attributes="0"/>
-                                                  <Component id="jLabel26" min="-2" pref="187" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel171" min="-2" pref="224" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel20" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                          <Component id="jLabel74" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel75" min="-2" pref="117" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel170" max="32767" attributes="0"/>
+                                          <Component id="jLabel80" pref="224" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6373,36 +6200,13 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -6415,7 +6219,18 @@
                               <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="29" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel170" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel171" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="31" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6430,28 +6245,6 @@
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Project Specifications"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel16">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Front-end"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel18">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="13" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Developer"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel20">
@@ -6473,18 +6266,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Werike Marques Santos"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel22">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Vinicius Oliveira"/>
+                        <Property name="text" type="java.lang.String" value="Werike Santos"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel25">
@@ -6496,28 +6278,6 @@
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="RA: 818130324"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel27">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Back-end"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel30">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="RA: 821132396"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel35">
@@ -6586,29 +6346,7 @@
                         <Property name="text" type="java.lang.String" value="Publicidade e Propaganda -"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel26">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Werike Marques Santos"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel17">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Verdana" size="12" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Werike Marques Santos"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel23">
+                    <Component class="javax.swing.JLabel" name="jLabel74">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Verdana" size="13" style="1"/>
@@ -6616,10 +6354,21 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Documentation"/>
+                        <Property name="text" type="java.lang.String" value="Message"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel24">
+                    <Component class="javax.swing.JLabel" name="jLabel75">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Verdana" size="12" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Romanos 11:36"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel80">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Verdana" size="12" style="0"/>
@@ -6627,7 +6376,29 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Vinicius Oliveira"/>
+                        <Property name="text" type="java.lang.String" value="Porque dele, e por ele, e para ele, "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel170">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Verdana" size="12" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="66" red="66" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="s&#xe3;o todas as coisas; gl&#xf3;ria, pois, "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel171">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Verdana" size="12" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="66" red="66" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="a ele eternamente. Am&#xe9;m."/>
                       </Properties>
                     </Component>
                   </SubComponents>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\target\vacinaSARS-CoV-2-1.0-jar-with-dependencies.jar</jar>
+  <outfile>C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\target\Sobrevida.exe</outfile>
+  <errTitle>Por favor, faça o download do Java</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\xampp\htdocs\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\resources\image\down.ico</icon>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>11.0.10</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>Gerenciador de vacinas</fileDescription>
+    <copyright>NIT</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>Sobrevida</productName>
+    <companyName>Sobrevida</companyName>
+    <internalName>Sobrevida</internalName>
+    <originalFilename>Sobrevida.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>PORTUGUESE_BRAZIL</language>
+  </versionInfo>
+</launch4jConfig>
