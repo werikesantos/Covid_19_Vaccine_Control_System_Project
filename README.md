@@ -66,8 +66,13 @@ cd Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevid
 
 # Ajustando rota do relatório 
 - Criar uma pasta em qualquer lugar com o seguinte nome: "RELATÓRIO DE CONTROLE DE APLICAÇÕES"
-- Copiar o caminho dessa pasta e colar na linha 123 dentro do arquivo abaixo:
+- Copiar o caminho dessa pasta e colar na linha 60 e 123 dentro do arquivo abaixo:
 cd Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevida\vacinaSARSCoV2\controller\RelatorioController.java
+- Copiar o caminho que leva a imagem(conforme descrito abaixo) e colar na linha 63 desse mesmo arquivo conforme descrito acima
+cd .\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\resources\image\relatorioBranco.png
+
+# importar dump no MySQL
+cd .\Projeto_Vacina_Codiv19\PROJETO\vacinaSARS-CoV-2\src\main\java\br\com\sobrevida\vacinaSARSCoV2\model\bd_vacina_SARS_COV_2\DUMP-16_06_2021
 
 # executar o projeto
 - Copiar o executável localizado no caminho abaixo e colar na área de trabalho:
