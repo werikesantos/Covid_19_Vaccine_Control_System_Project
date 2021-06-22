@@ -44,7 +44,6 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,3,'Werike Santos','Guilherme','444.555.655-10','werike','1'),(2,3,'Guilherme Silva Alves','Guilherme','444.785.965-44','guilhermes1@gmail.com','12345678'),(3,3,'Lucas nunes','Lucas','444.878.365-05','lucasnunes@gmail.com','12345678'),(4,3,'Camila vieira','Camila','457.156.482-58','camila@gmail.com','10324589'),(6,3,'Victor santos','Victor','456.789.456-54','victor@gmail.com','96354872'),(7,3,'Juvenal Arturiano','Juvenal','448.546.556-92','juvenal@gmail.com','12345678'),(8,3,'Carminha Souza Silva','Carminha','485.451.511-58','carminha@gmail.com','87654321');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

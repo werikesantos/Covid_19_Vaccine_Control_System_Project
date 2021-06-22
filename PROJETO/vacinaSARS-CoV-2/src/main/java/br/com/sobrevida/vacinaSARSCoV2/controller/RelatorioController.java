@@ -56,12 +56,11 @@ public class RelatorioController{
         String arquivoPDF = "Relatório_"+result+".pdf";
         
         try{
-            //new FileOutputStream("src\\resources\\relatorios\\Relatorio2.pdf")
-            PdfWriter.getInstance(relatorio, new FileOutputStream("C:\\Users\\WERIKE\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
+            PdfWriter.getInstance(relatorio, new FileOutputStream("C:\\Users\\NOME\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
             
             relatorio.open();
             
-            Image logoTipo1 = Image.getInstance("C:\\xampp\\htdocs\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\resources\\image\\relatorioBranco.png");
+            Image logoTipo1 = Image.getInstance("C:\\CAMINHO\\Projeto_Vacina_Codiv19\\PROJETO\\vacinaSARS-CoV-2\\src\\main\\resources\\image\\relatorioBranco.png");
             relatorio.add(logoTipo1);
 
             Paragraph paragrafo0 = new Paragraph("Cod. "+result);
@@ -120,7 +119,7 @@ public class RelatorioController{
             relatorio.add(tabela);
             relatorio.close();
             imprimirCarregar.setVisible(false);
-            Desktop.getDesktop().open(new File("C:\\Users\\WERIKE\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
+            Desktop.getDesktop().open(new File("C:\\Users\\NOME\\Desktop\\RELATÓRIO DE CONTROLE DE APLICAÇÕES\\"+arquivoPDF));
             de.setText("");
             para.setText("");
             
