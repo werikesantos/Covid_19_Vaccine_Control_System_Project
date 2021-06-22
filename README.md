@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=pOBHq4WMrwY&t=5s
 
 Sobrevida é uma aplicação Java desktop construída durante o 1ª semestre de 2021, e apresentada no evento **EXPO SÃO JUDAS TI** - organizado pela [Universidade São Judas Tadeu](https://sites.google.com/saojudas.br/exposaojudasti/projetos/bancas-20211 "Aluno - Werike Marques Santos").
 
-O sistema foi desenvolvido com o objetivo de ajudar funcionários da recepção e/ou administração, no controle de aplicações de vacinas realizadas para o SARS-COV-2.
+O sistema foi desenvolvido com o objetivo de ajudar funcionários da recepção e/ou administração, no controle de aplicações de vacinas contra o SARS-COV-2.
 
 ## Layout 
 ![Inicializando o sistema 1](https://github.com/werikesantos/Projeto_Vacina_Codiv19/blob/master/PROJETO/vacinaSARS-CoV-2/src/main/resources/image/layout/01.png)
