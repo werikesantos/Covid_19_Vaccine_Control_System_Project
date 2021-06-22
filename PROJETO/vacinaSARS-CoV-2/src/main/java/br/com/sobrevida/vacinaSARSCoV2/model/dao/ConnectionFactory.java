@@ -9,17 +9,11 @@ import java.sql.DriverManager;
 public class ConnectionFactory{
     
     private final String URL = "jdbc:mysql://";
-    private final String USUARIO = "covid";
-    private final String SENHA = "Covid2021";
-    private final String HOST = "localhost:";
-    private final String PORTA = "3306/";
+    private final String USUARIO = "usuario";//COLOQUE AQUI O USUARIO CRIADO NO BANCO DE DADOS
+    private final String SENHA = "senha";//COLOQUE AQUI A SENHA CRIADA NO BANCO DE DADOS
+    private final String HOST = "localhost:"; //COLOQUE AQUI O SEU LOCALHOST OU IP CONFORME O BANCO DE DADOS
+    private final String PORTA = "3333/"; //COLOQUE AQUI A NUMERAÇÃO DA SUA PORTA INDICADA NO BANCO DE DADOS
     private final String BD = "bd_vacina_sars_cov_2";
-    
-    /* REAJUSTAR E TESTAR:
-     * 
-     * Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_pessoas?useTimezone=true&serverTimezone=UTC&user=root&password=fluminense");
-     *
-    */
     
     public Connection connection(){ 
         try{
